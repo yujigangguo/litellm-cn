@@ -114,7 +114,7 @@ function TeamAdminEditableFieldsForm({
     saveSettings(values, {
       onSuccess: () => {
         form.reset(values);
-        toast.success("Team admin editable fields updated successfully");
+        toast.success("团队管理员可编辑字段更新成功");
       },
       onError: (error) => {
         toast.fromError(error);

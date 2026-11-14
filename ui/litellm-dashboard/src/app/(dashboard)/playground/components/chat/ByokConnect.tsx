@@ -41,7 +41,7 @@ export function ByokConnect({
 
   const connect = async () => {
     if (!credential.trim()) {
-      toast.error("Enter your API key");
+      toast.error("请输入 API 密钥");
       return;
     }
     setIsSaving(true);

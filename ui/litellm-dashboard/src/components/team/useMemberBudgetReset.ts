@@ -63,7 +63,7 @@ export const useMemberBudgetReset = (gateway: MemberBudgetResetGateway) => {
           `Reset ${outcome.attempted} of ${total} member ${pluralize(total, "budget", "budgets")}; the rest could not be reset`,
         );
       } else {
-        toast.fromError("Team updated, but member budgets could not be reset");
+        toast.fromError("团队已更新，但成员预算无法重置");
       }
       setState({ phase: "resetFailed", pending, attempted: outcome.attempted });
       await refreshTeamData();
@@ -118,7 +118,7 @@ export const useMemberBudgetReset = (gateway: MemberBudgetResetGateway) => {
     setState({ phase: "idle" });
     try {
       await gateway.saveTeam(pending.updateData);
-      if (isCurrent(run)) toast.success("Team settings updated successfully");
+      if (isCurrent(run)) toast.success("团队设置更新成功");
     } catch (error) {
       console.error("Error updating team:", error);
     }

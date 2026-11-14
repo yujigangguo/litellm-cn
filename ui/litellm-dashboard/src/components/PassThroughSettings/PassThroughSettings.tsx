@@ -83,7 +83,7 @@ const PassThroughSettings: React.FC<PassThroughSettingsProps> = ({ accessToken, 
       const updatedSettings = generalSettings.filter((setting) => setting.id !== endpointToDelete);
       setGeneralSettings(updatedSettings);
 
-      toast.success("Endpoint deleted successfully.");
+      toast.success("端点删除成功。");
     } catch (error) {
       console.error("Error deleting the endpoint:", error);
       toast.fromError("Error deleting the endpoint: " + error);

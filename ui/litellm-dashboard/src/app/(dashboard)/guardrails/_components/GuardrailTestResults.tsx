@@ -102,9 +102,9 @@ export function GuardrailTestResults({ results, errors }: GuardrailTestResultsPr
                         onClick={async () => {
                           const success = await copyToClipboard(result.response_text);
                           if (success) {
-                            toast.success("Result copied to clipboard");
+                            toast.success("结果已复制到剪贴板");
                           } else {
-                            toast.fromError("Failed to copy result");
+                            toast.fromError("复制结果失败");
                           }
                         }}
                       >

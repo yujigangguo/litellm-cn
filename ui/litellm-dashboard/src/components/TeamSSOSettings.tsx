@@ -135,7 +135,7 @@ const TeamSSOSettings: React.FC<TeamSSOSettingsProps> = ({ accessToken }) => {
       } catch (error) {
         console.error("Error fetching team SSO settings:", error);
         setFetchError(true);
-        toast.fromError("Failed to fetch team settings");
+        toast.fromError("获取团队设置失败");
       } finally {
         setLoading(false);
       }
@@ -154,10 +154,10 @@ const TeamSSOSettings: React.FC<TeamSSOSettingsProps> = ({ accessToken }) => {
       setValues(newValues);
       setEditedValues(newValues);
       setIsEditing(false);
-      toast.success("Default team settings updated successfully");
+      toast.success("默认团队设置更新成功");
     } catch (error) {
       console.error("Error updating team settings:", error);
-      toast.fromError("Failed to update team settings");
+      toast.fromError("更新团队设置失败");
     } finally {
       setSaving(false);
     }

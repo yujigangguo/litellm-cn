@@ -25,7 +25,7 @@ function EmptyState() {
         <Inbox className="size-5 text-muted-foreground" />
       </div>
       <div className="text-sm font-medium text-foreground">暂无防护规则</div>
-      <div className="text-sm text-muted-foreground">Add a guardrail to start filtering requests and responses.</div>
+      <div className="text-sm text-muted-foreground">添加防护规则以开始过滤请求和响应。</div>
     </div>
   );
 }

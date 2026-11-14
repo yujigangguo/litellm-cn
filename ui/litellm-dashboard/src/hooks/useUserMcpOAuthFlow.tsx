@@ -181,7 +181,7 @@ export const useUserMcpOAuthFlow = ({
       const raw = getStorage(FLOW_STATE_KEY);
       flowState = raw ? JSON.parse(raw) : null;
     } catch (_) {
-      setError("Failed to resume OAuth flow. Please retry.");
+      setError("恢复 OAuth 流程失败，请重试。");
       setStatus("error");
       processingRef.current = false;
       clearStorage(FLOW_STATE_KEY);
@@ -224,7 +224,7 @@ export const useUserMcpOAuthFlow = ({
 
       setStatus("success");
       setError(null);
-      toast.success("Connected successfully");
+      toast.success("连接成功");
       onSuccess();
     } catch (err) {
       const msg = extractErrorMessage(err);

@@ -157,16 +157,16 @@ const ViewUserDashboard: React.FC<ViewUserDashboardProps> = ({
   const handleResetPassword = useCallback(
     async (userId: string) => {
       if (!accessToken) {
-        toast.fromError("Access token not found");
+        toast.fromError("未找到访问令牌");
         return;
       }
       try {
-        toast.success("Generating password reset link...");
+        toast.success("正在生成密码重置链接…");
         const data = await invitationCreateCall(accessToken, userId);
         setInvitationLinkData(data);
         setIsInvitationLinkModalVisible(true);
       } catch (error) {
-        toast.fromError("Failed to generate password reset link");
+        toast.fromError("生成密码重置链接失败");
       }
     },
     [accessToken],
@@ -185,10 +185,10 @@ const ViewUserDashboard: React.FC<ViewUserDashboardProps> = ({
           return { ...previousData, users: updatedUsers };
         });
 
-        toast.success("User deleted successfully");
+        toast.success("用户删除成功");
       } catch (error) {
         console.error("Error deleting user:", error);
-        toast.fromError("Failed to delete user");
+        toast.fromError("删除用户失败");
       } finally {
         setIsDeleteModalOpen(false);
         setUserToDelete(null);

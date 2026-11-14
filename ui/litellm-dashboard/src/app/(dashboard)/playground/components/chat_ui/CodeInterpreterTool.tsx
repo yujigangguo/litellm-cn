@@ -39,7 +39,7 @@ const CodeInterpreterTool: React.FC<CodeInterpreterToolProps> = ({
 
   const handleToggle = (checked: boolean) => {
     if (checked && !isOpenAI) {
-      toast.warning("Code Interpreter is only available for OpenAI models");
+      toast.warning("代码解释器仅适用于 OpenAI 模型");
       return;
     }
     onEnabledChange(checked);

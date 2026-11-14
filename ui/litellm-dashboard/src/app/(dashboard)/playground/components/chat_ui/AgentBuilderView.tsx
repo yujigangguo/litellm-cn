@@ -240,7 +240,7 @@ export default function AgentBuilderView({
       return list;
     } catch (e) {
       console.error(e);
-      toast.fromError("Failed to load agents");
+      toast.fromError("加载助手失败");
       return [];
     } finally {
       setLoadingAgents(false);
@@ -333,7 +333,7 @@ export default function AgentBuilderView({
 
   const handleSaveAgent = async () => {
     if (!accessToken || !draftName?.trim() || !draftUnderlyingModel) {
-      toast.fromError("Name and underlying model are required");
+      toast.fromError("名称和底层模型必填");
       return;
     }
     setSaving(true);
@@ -360,7 +360,7 @@ export default function AgentBuilderView({
       setSelectedId(created ? getAgentSelectionKey(created) : list[0] ? getAgentSelectionKey(list[0]) : null);
       goToTab("chat");
     } catch (e) {
-      toast.fromError("Failed to save agent");
+      toast.fromError("保存助手失败");
     } finally {
       setSaving(false);
     }
@@ -368,7 +368,7 @@ export default function AgentBuilderView({
 
   const handleUpdateAgent = async () => {
     if (!accessToken || !selectedAgent || !selectedAgentModelId || !draftName?.trim() || !draftUnderlyingModel) {
-      toast.fromError("Name and underlying model are required");
+      toast.fromError("名称和底层模型必填");
       return;
     }
     setSaving(true);
@@ -388,13 +388,13 @@ export default function AgentBuilderView({
         },
         selectedAgentModelId,
       );
-      toast.success("Agent updated successfully");
+      toast.success("助手更新成功");
       const list = await loadAgents();
       const stillSelected = list.find((a) => getAgentModelId(a) === selectedAgentModelId);
       const target = stillSelected ?? list[0];
       setSelectedId(target ? getAgentSelectionKey(target) : null);
     } catch (e) {
-      toast.fromError("Failed to update agent");
+      toast.fromError("更新助手失败");
     } finally {
       setSaving(false);
     }
@@ -412,12 +412,12 @@ export default function AgentBuilderView({
       const keyValue = response?.key ?? null;
       if (keyValue) {
         setCreatedKeyValue(keyValue);
-        toast.success("Virtual key created. Use it in the curl example below.");
+        toast.success("虚拟密钥已创建，请在下方 curl 示例中使用。");
       } else {
-        toast.fromError("Key created but value not returned");
+        toast.fromError("密钥已创建，但未返回密钥值");
       }
     } catch (e) {
-      toast.fromError("Failed to create key for agent");
+      toast.fromError("为助手创建密钥失败");
     } finally {
       setCreatingKey(false);
     }
@@ -433,12 +433,12 @@ export default function AgentBuilderView({
     setDeleting(true);
     try {
       await modelDeleteCall(accessToken, selectedAgentModelId);
-      toast.success("Agent deleted");
+      toast.success("助手已删除");
       const list = await loadAgents();
       const remaining = list.filter((a) => getAgentModelId(a) !== selectedAgentModelId);
       setSelectedId(remaining.length > 0 ? getAgentSelectionKey(remaining[0]) : null);
     } catch (e) {
-      toast.fromError("Failed to delete agent");
+      toast.fromError("删除助手失败");
     } finally {
       setDeleting(false);
       setConfirmingDelete(false);

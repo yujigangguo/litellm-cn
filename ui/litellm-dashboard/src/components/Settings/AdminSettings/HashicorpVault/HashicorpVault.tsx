@@ -63,7 +63,7 @@ export default function HashicorpVault() {
   const handleDelete = () => {
     deleteConfig(undefined, {
       onSuccess: () => {
-        toast.success("Hashicorp Vault configuration deleted");
+        toast.success("Hashicorp Vault 配置已删除");
         setIsDeleteModalOpen(false);
       },
       onError: (err) => toast.fromError(err),

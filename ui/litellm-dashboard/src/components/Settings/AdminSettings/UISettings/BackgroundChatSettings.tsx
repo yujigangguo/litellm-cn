@@ -10,7 +10,7 @@ export default function BackgroundChatSettings() {
   const update = $api.useMutation("patch", "/update/background_chat_settings", {
     onSuccess: () => {
       void query.refetch();
-      toast.success("Background chat settings saved.");
+      toast.success("后台聊天设置已保存。");
     },
     onError: (error) => toast.fromError(error),
   });

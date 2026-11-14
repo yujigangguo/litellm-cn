@@ -730,7 +730,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
       const response = await teamInfoCall(accessToken, teamId);
       setTeamData(response);
     } catch (error) {
-      toast.fromError("Failed to load team information");
+      toast.fromError("加载团队信息失败");
       console.error("Error fetching team info:", error);
     } finally {
       setLoading(false);
@@ -742,7 +742,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
     try {
       setTeamData(await teamInfoCall(accessToken, teamId));
     } catch {
-      toast.fromError("Failed to load team information");
+      toast.fromError("加载团队信息失败");
     } finally {
       void queryClient.invalidateQueries({ queryKey: teamMemberBudgetQueryKey(teamId) });
     }
@@ -833,7 +833,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
       await teamMemberAddCall(accessToken, teamId, member);
       void queryClient.invalidateQueries({ queryKey: teamMemberBudgetQueryKey(teamId) });
 
-      toast.success("Team member added successfully");
+      toast.success("团队成员添加成功");
       setIsAddMemberModalVisible(false);
       form.reset(teamFormValues());
 
@@ -881,7 +881,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
       await teamMemberUpdateCall(accessToken, teamId, member);
       void queryClient.invalidateQueries({ queryKey: teamMemberBudgetQueryKey(teamId) });
 
-      toast.success("Team member updated successfully");
+      toast.success("团队成员更新成功");
       setIsEditMemberModalVisible(false);
 
       // Fetch updated team info
@@ -919,7 +919,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
       await teamMemberDeleteCall(accessToken, teamId, memberToDelete);
       void queryClient.invalidateQueries({ queryKey: teamMemberBudgetQueryKey(teamId) });
 
-      toast.success("Team member removed successfully");
+      toast.success("团队成员移除成功");
 
       // Fetch updated team info
       const updatedTeamData = await teamInfoCall(accessToken, teamId);
@@ -928,7 +928,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
       // Notify parent component of the update
       onUpdate(updatedTeamData);
     } catch (error) {
-      toast.fromError("Failed to remove team member");
+      toast.fromError("移除团队成员失败");
       console.error("Error removing team member:", error);
     } finally {
       setIsDeleting(false);
@@ -979,7 +979,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
     setIsTeamSaving(true);
     try {
       await persistTeamUpdate(accessToken, { team_id: teamId, ...changes });
-      toast.success("Team settings updated successfully");
+      toast.success("团队设置更新成功");
       await fetchTeamInfo();
     } catch (error) {
       console.error("Error updating team:", error);
@@ -1002,7 +1002,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
           try {
             secretManagerSettings = JSON.parse(values.secret_manager_settings);
           } catch (e) {
-            toast.fromError("Invalid JSON in secret manager settings");
+            toast.fromError("密钥管理器设置中的 JSON 无效");
             return;
           }
         }
@@ -1017,7 +1017,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
           try {
             estimatedOutputTokensPerModel = JSON.parse(trimmedEstimates);
           } catch (e) {
-            toast.fromError("Invalid JSON in estimated output tokens per model");
+            toast.fromError("每个模型的预估输出 Token JSON 无效");
             return;
           }
         }
@@ -1279,7 +1279,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
       }
 
       await persistTeamUpdate(accessToken, updateData);
-      toast.success("Team settings updated successfully");
+      toast.success("团队设置更新成功");
       await fetchTeamInfo();
     } catch (error) {
       console.error("Error updating team:", error);
@@ -1624,7 +1624,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                     />
                   </Field>
 
-                  <FormField control={form.control} name="max_budget" label="Max Budget (USD)">
+                  <FormField control={form.control} name="max_budget" label="预算上限（美元）">
                     {({ ref, value, ...field }) => (
                       <NumericalInput {...field} ref={ref} value={value ?? ""} step={0.01} precision={2} />
                     )}
@@ -1841,7 +1841,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                     {({ id, value, onChange }) => (
                       <BudgetDurationDropdown
                         id={id}
-                        placeholder="Never resets"
+                        placeholder="永不过期"
                         value={value}
                         onChange={(next) => onChange(next ?? null)}
                       />
@@ -1857,11 +1857,11 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                     hint="Cap this team's spend on individual models, each with its own reset window. Every key on the team shares the cap unless the key sets its own budget for that model."
                   />
 
-                  <FormField control={form.control} name="tpm_limit" label="Tokens per minute Limit (TPM)">
+                  <FormField control={form.control} name="tpm_limit" label="每分钟 Token 上限（TPM）">
                     {({ ref, value, ...field }) => <NumericalInput {...field} ref={ref} value={value ?? ""} step={1} />}
                   </FormField>
 
-                  <FormField control={form.control} name="rpm_limit" label="Requests per minute Limit (RPM)">
+                  <FormField control={form.control} name="rpm_limit" label="每分钟请求上限（RPM）">
                     {({ ref, value, ...field }) => <NumericalInput {...field} ref={ref} value={value ?? ""} step={1} />}
                   </FormField>
 
@@ -1886,7 +1886,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                       schemaLoading={isTeamMetadataSchemaLoading}
                     />
                     <FieldDescription>
-                      Values are saved as text. Enter JSON for typed values, e.g. 3, true, or {'{"region": "us"}'}.
+                      值以文本保存。需要类型值时请输入 JSON，例如 3、true 或 {'{"region": "us"}'}。
                     </FieldDescription>
                   </Field>
 
@@ -2192,7 +2192,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                     className="mt-4 mb-4 overflow-hidden rounded-lg border"
                   >
                     <CollapsibleTrigger className="group/section flex w-full items-center justify-between px-4 py-3 text-left">
-                      <b>Search Tool Settings</b>
+                      <b>搜索工具设置</b>
                       <ChevronDown className="size-5 shrink-0 text-muted-foreground transition-transform group-data-[panel-open]/section:rotate-180" />
                     </CollapsibleTrigger>
                     <CollapsibleContent className="px-4 pb-3">
@@ -2329,7 +2329,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                 </div>
               )}
               <div>
-                <p className="font-medium">Model Aliases</p>
+                <p className="font-medium">模型别名</p>
                 {(() => {
                   const aliasEntries = Object.entries(info.litellm_model_table?.model_aliases ?? {});
                   if (aliasEntries.length === 0) {
@@ -2636,7 +2636,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
               name: "model_max_budget",
               label: (
                 <span>
-                  Per-Model Budgets{" "}
+                  按模型预算{" "}
                   <SimpleTooltip content="Spend cap per model for this member, each with its own reset period. Starts from the team's default per-model budget; saving a change stores a per-model budget for this member only.">
                     <Info className="ml-1 inline size-3.5 align-text-bottom" />
                   </SimpleTooltip>

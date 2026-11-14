@@ -153,7 +153,7 @@ function BudgetFilterFields({ get, set }: FilterDraft) {
           onChange={(selected) => set("budget_duration", selected)}
         />
       </DataTableFilterField>
-      <DataTableFilterField label="Max Budget (USD)">
+      <DataTableFilterField label="预算上限（美元）">
         <div className="flex items-center gap-2">
           <Input
             type="number"

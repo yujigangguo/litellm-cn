@@ -411,7 +411,7 @@ function KeyEditSession({
           </FormField>
 
           <Field>
-            <FieldLabel htmlFor={keyTypeFieldId}>Key Type</FieldLabel>
+            <FieldLabel htmlFor={keyTypeFieldId}>密钥类型</FieldLabel>
             <KeyTypeSelect
               id={keyTypeFieldId}
               value={keyTypeFromRoutes(allowedRoutes)}
@@ -452,7 +452,7 @@ function KeyEditSession({
           <KeyBudgetNumberField
             control={form.control}
             name="max_budget"
-            label="Max Budget (USD)"
+            label="预算上限（美元）"
             placeholder="Enter a numerical value"
           />
 
@@ -469,7 +469,7 @@ function KeyEditSession({
                 id={id}
                 value={value as string | null}
                 onChange={(next) => onChange(next ?? null)}
-                placeholder="Never resets"
+                placeholder="永不过期"
               />
             )}
           </FormField>

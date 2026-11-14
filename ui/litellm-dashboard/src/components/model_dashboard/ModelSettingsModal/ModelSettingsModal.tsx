@@ -63,7 +63,7 @@ const ModelSettingsModal: React.FC<ModelSettingsModalProps> = ({ isVisible, onCa
     try {
       await mutateAsync(formValues, {
         onSuccess: () => {
-          toast.success("Model storage settings updated successfully");
+          toast.success("模型存储设置更新成功");
           refetch();
           onSuccess?.();
         },

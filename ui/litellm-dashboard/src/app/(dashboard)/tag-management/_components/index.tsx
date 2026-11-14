@@ -73,7 +73,7 @@ const TagManagement: React.FC<TagProps> = ({ accessToken, userID, userRole }) =>
         rpm_limit: formValues.rpm_limit,
         budget_duration: formValues.budget_duration,
       });
-      toast.success("Tag created successfully");
+      toast.success("标签创建成功");
       setIsCreateModalVisible(false);
       fetchTags();
     } catch (error) {
@@ -92,7 +92,7 @@ const TagManagement: React.FC<TagProps> = ({ accessToken, userID, userRole }) =>
     setIsDeleting(true);
     try {
       await tagDeleteCall(accessToken, tagToDelete);
-      toast.success("Tag deleted successfully");
+      toast.success("标签删除成功");
       fetchTags();
     } catch (error) {
       console.error("Error deleting tag:", error);

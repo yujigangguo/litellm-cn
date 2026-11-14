@@ -115,10 +115,10 @@ const fallbackCopyToClipboard = (text: string, messageText: string): boolean => 
       textArea.remove();
       if (previouslyFocused instanceof HTMLElement) previouslyFocused.focus();
     }
-    toast.fromError("Failed to copy to clipboard");
+    toast.fromError("复制到剪贴板失败");
     return false;
   } catch (err) {
-    toast.fromError("Failed to copy to clipboard");
+    toast.fromError("复制到剪贴板失败");
     console.error("Failed to copy: ", err);
     return false;
   }

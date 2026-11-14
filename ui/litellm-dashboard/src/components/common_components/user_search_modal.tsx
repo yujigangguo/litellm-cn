@@ -203,7 +203,7 @@ const UserSearchModal: React.FC<UserSearchModalProps> = ({
                 }
               </FormField>
 
-              <div className="text-center">OR</div>
+              <div className="text-center">或</div>
 
               <FormField control={form.control} name="user_id" label="用户 ID">
                 {({ id, value, onChange }) => renderUserSearch("user_id", "Search by user ID", { id, value, onChange })}

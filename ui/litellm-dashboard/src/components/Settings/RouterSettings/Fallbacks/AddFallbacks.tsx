@@ -112,7 +112,7 @@ export default function AddFallbacks({ accessToken, value = [], onChange, disabl
         setIsSaving(false);
       }
     } else {
-      toast.fromError("onChange callback not provided");
+      toast.fromError("未提供 onChange 回调");
     }
   };
 

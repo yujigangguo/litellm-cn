@@ -27,9 +27,9 @@ const SessionManagement: React.FC<SessionManagementProps> = ({
     if (responsesSessionId) {
       try {
         await navigator.clipboard.writeText(responsesSessionId);
-        toast.success("Response ID copied to clipboard!");
+        toast.success("响应 ID 已复制到剪贴板！");
       } catch {
-        toast.error("Unable to copy response ID");
+        toast.error("无法复制响应 ID");
       }
     }
   };

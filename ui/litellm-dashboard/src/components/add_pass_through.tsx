@@ -38,7 +38,7 @@ const passThroughFormSchema = z.object({
   target: z
     .string()
     .min(1, "Target URL is required")
-    .pipe(z.url({ error: "Please enter a valid URL" })),
+    .pipe(z.url({ error: "请输入有效的 URL" })),
   methods: z.array(z.string()).optional(),
   include_subpath: z.boolean(),
   headers: keyValuePairsSchema,
@@ -130,7 +130,7 @@ const AddPassThroughEndpoint: React.FC<AddFallbacksProps> = ({
 
       setPassThroughItems([...passThroughItems, createdEndpoint]);
 
-      toast.success("Pass-through endpoint created successfully");
+      toast.success("透传端点创建成功");
       form.reset(emptyFormValues);
       setGuardrails({});
       setIsModalVisible(false);

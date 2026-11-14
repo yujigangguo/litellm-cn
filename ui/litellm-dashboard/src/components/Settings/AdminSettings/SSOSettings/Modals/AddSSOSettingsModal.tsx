@@ -30,7 +30,7 @@ const AddSSOSettingsModal: React.FC<AddSSOSettingsModalProps> = ({ isVisible, on
 
     await mutateAsync(payload, {
       onSuccess: () => {
-        toast.success("SSO settings added successfully");
+        toast.success("SSO 设置添加成功");
         onSuccess();
       },
       onError: (error) => {

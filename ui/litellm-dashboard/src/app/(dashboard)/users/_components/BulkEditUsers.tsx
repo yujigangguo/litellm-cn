@@ -89,7 +89,7 @@ const BulkEditUserModal: React.FC<BulkEditUserModalProps> = ({
 
   const handleSubmit = async (formValues: any) => {
     if (!accessToken) {
-      toast.fromError("Access token not found");
+      toast.fromError("未找到访问令牌");
       return;
     }
 
@@ -125,7 +125,7 @@ const BulkEditUserModal: React.FC<BulkEditUserModalProps> = ({
       const hasTeamAdditions = addToTeams && selectedTeams.length > 0;
 
       if (!hasUserUpdates && !hasTeamAdditions) {
-        toast.fromError("Please modify at least one field or select teams to add users to");
+        toast.fromError("请至少修改一个字段，或选择要添加用户的团队");
         return;
       }
 
@@ -212,7 +212,7 @@ const BulkEditUserModal: React.FC<BulkEditUserModalProps> = ({
       onCancel();
     } catch (error) {
       console.error("Bulk operation failed:", error);
-      toast.fromError("Failed to perform bulk operations");
+      toast.fromError("执行批量操作失败");
     } finally {
       setLoading(false);
     }

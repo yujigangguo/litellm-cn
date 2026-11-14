@@ -114,13 +114,13 @@ const SearchTools: React.FC<SearchToolsProps> = ({ accessToken, userRole, userID
     setIsDeleting(true);
     try {
       await deleteSearchTool(accessToken, toolIdToDelete);
-      toast.success("Deleted search tool successfully");
+      toast.success("搜索工具删除成功");
       setIsDeleteModalOpen(false);
       setToolToDelete(null);
       refetch();
     } catch (error) {
       console.error("Error deleting the search tool:", error);
-      toast.error("Failed to delete search tool");
+      toast.error("删除搜索工具失败");
     } finally {
       setIsDeleting(false);
     }
@@ -147,19 +147,19 @@ const SearchTools: React.FC<SearchToolsProps> = ({ accessToken, userRole, userID
 
       try {
         await updateSearchTool(accessToken, selectedToolId, buildSearchToolPayload(values));
-        toast.success("Search tool updated successfully");
+        toast.success("搜索工具更新成功");
         setEditModalVisible(false);
         form.reset(EMPTY_EDIT_VALUES);
         setSelectedToolId(null);
         refetch();
       } catch (error) {
         console.error("Failed to update search tool:", error);
-        toast.error("Failed to update search tool");
+        toast.error("更新搜索工具失败");
       }
     },
     (errors) => {
       console.error("Failed to update search tool:", errors);
-      toast.error("Failed to update search tool");
+      toast.error("更新搜索工具失败");
     },
   );
 
@@ -200,7 +200,7 @@ const SearchTools: React.FC<SearchToolsProps> = ({ accessToken, userRole, userID
           )}
         </FormField>
 
-        <FormField control={form.control} name="api_key" label="API Key" description="API key for the search provider">
+        <FormField control={form.control} name="api_key" label="API 密钥" description="API key for the search provider">
           {({ ref, value, ...field }) => (
             <PasswordInput {...field} ref={ref} value={value ?? ""} placeholder="Enter API key" />
           )}

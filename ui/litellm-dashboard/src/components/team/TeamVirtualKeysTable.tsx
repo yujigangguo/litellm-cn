@@ -191,7 +191,7 @@ export function TeamVirtualKeysTable({ teamId, teamAlias, organization }: TeamVi
       {
         id: "user_email",
         accessorKey: "user",
-        header: "User Email",
+        header: "用户邮箱",
         size: 160,
         enableSorting: false,
         cell: (info) => {

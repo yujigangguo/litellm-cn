@@ -47,7 +47,7 @@ const ClassifierPromptEditor: React.FC<ClassifierPromptEditorProps> = ({
       setDefaultPrompt(fetched);
       setDraft(initialDraftText(systemPrompt, fetched));
     } catch {
-      toast.fromError("Could not load the default classifier prompt");
+      toast.fromError("无法加载默认分类器提示词");
       setIsOpen(false);
     } finally {
       setIsLoading(false);

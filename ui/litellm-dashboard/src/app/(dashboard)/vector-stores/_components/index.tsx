@@ -102,7 +102,7 @@ const VectorStoreManagement: React.FC<VectorStoreProps> = ({ accessToken, userID
     setIsDeleting(true);
     try {
       await vectorStoreDeleteCall(accessToken, vectorStoreToDelete);
-      toast.success("Vector store deleted successfully");
+      toast.success("向量库删除成功");
       fetchVectorStores();
     } catch (error) {
       console.error("Error deleting vector store:", error);

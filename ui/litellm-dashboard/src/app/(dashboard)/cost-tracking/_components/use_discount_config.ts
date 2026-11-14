@@ -47,7 +47,7 @@ export function useDiscountConfig({ accessToken }: UseDiscountConfigProps): UseD
       }
     } catch (error) {
       console.error("Error fetching discount config:", error);
-      toast.fromError("Failed to fetch discount configuration");
+      toast.fromError("获取折扣配置失败");
     }
   }, [accessToken]);
 
@@ -67,7 +67,7 @@ export function useDiscountConfig({ accessToken }: UseDiscountConfigProps): UseD
         });
 
         if (response.ok) {
-          toast.success("Discount configuration updated successfully");
+          toast.success("折扣配置更新成功");
           await fetchDiscountConfig();
         } else {
           const errorData = await response.json();
@@ -76,7 +76,7 @@ export function useDiscountConfig({ accessToken }: UseDiscountConfigProps): UseD
         }
       } catch (error) {
         console.error("Error updating discount config:", error);
-        toast.fromError("Failed to update discount configuration");
+        toast.fromError("更新折扣配置失败");
       }
     },
     [accessToken, fetchDiscountConfig],
@@ -85,13 +85,13 @@ export function useDiscountConfig({ accessToken }: UseDiscountConfigProps): UseD
   const handleAddProvider = useCallback(
     async (selectedProvider: string | undefined, newDiscount: string, modelPattern: string): Promise<boolean> => {
       if (!selectedProvider || !newDiscount) {
-        toast.fromError("Please select a provider and enter discount percentage");
+        toast.fromError("请选择供应商并输入折扣百分比");
         return false;
       }
 
       const percentageValue = parseFloat(newDiscount);
       if (isNaN(percentageValue) || percentageValue < 0 || percentageValue > 100) {
-        toast.fromError("Discount must be between 0% and 100%");
+        toast.fromError("折扣必须在 0% 到 100% 之间");
         return false;
       }
 
@@ -100,7 +100,7 @@ export function useDiscountConfig({ accessToken }: UseDiscountConfigProps): UseD
       const providerValue = getProviderBackendValue(selectedProvider);
 
       if (!providerValue) {
-        toast.fromError("Invalid provider selected");
+        toast.fromError("选择的供应商无效");
         return false;
       }
 

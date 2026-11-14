@@ -38,7 +38,7 @@ export function GuardrailDeleteModal({ guardrail, accessToken, onClose, onDelete
       onClose();
       onDeleted();
     } catch {
-      toast.fromError("Failed to delete guardrail");
+      toast.fromError("删除防护规则失败");
       onClose();
     } finally {
       setIsDeleting(false);

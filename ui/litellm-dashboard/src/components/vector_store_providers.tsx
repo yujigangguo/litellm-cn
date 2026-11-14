@@ -74,7 +74,7 @@ export const vectorStoreProviderFields: Record<string, VectorStoreFieldConfig[]>
     },
     {
       name: "api_key",
-      label: "API Key",
+      label: "API 密钥",
       tooltip: "Enter the API key from your deployed litellm-pgvector server",
       placeholder: "your-deployed-api-key",
       required: true,
@@ -125,7 +125,7 @@ export const vectorStoreProviderFields: Record<string, VectorStoreFieldConfig[]>
   openai: [
     {
       name: "api_key",
-      label: "API Key",
+      label: "API 密钥",
       tooltip: "Enter your OpenAI API key",
       placeholder: "sk-...",
       required: true,
@@ -135,7 +135,7 @@ export const vectorStoreProviderFields: Record<string, VectorStoreFieldConfig[]>
   azure: [
     {
       name: "api_key",
-      label: "API Key",
+      label: "API 密钥",
       tooltip: "Enter your Azure OpenAI API key",
       placeholder: "your-azure-api-key",
       required: true,
@@ -153,7 +153,7 @@ export const vectorStoreProviderFields: Record<string, VectorStoreFieldConfig[]>
   milvus: [
     {
       name: "api_key",
-      label: "API Key",
+      label: "API 密钥",
       tooltip:
         "To obtain a token, you should use a colon (:) to concatenate the username and password that you use to access your Milvus instance (e.g., username:password)",
       placeholder: "username:password or api key",

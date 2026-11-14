@@ -554,14 +554,14 @@ export function MCPToolsetsTab({ accessToken, userRole }: MCPToolsetsTabProps) {
   const handleCreate = async (name: string, description: string | undefined, tools: MCPToolsetTool[]) => {
     if (!accessToken) return;
     await createMCPToolset(accessToken, { toolset_name: name, description, tools });
-    toast.success("Toolset created");
+    toast.success("工具集已创建");
     queryClient.invalidateQueries({ queryKey: ["mcpToolsets"] });
   };
 
   const handleUpdate = async (name: string, description: string | undefined, tools: MCPToolsetTool[]) => {
     if (!accessToken || !editToolset) return;
     await updateMCPToolset(accessToken, { toolset_id: editToolset.toolset_id, toolset_name: name, description, tools });
-    toast.success("Toolset updated");
+    toast.success("工具集已更新");
     queryClient.invalidateQueries({ queryKey: ["mcpToolsets"] });
     setEditToolset(null);
   };
@@ -571,7 +571,7 @@ export function MCPToolsetsTab({ accessToken, userRole }: MCPToolsetsTabProps) {
     setDeleting(true);
     try {
       await deleteMCPToolset(accessToken, deleteId);
-      toast.success("Toolset deleted");
+      toast.success("工具集已删除");
       queryClient.invalidateQueries({ queryKey: ["mcpToolsets"] });
       setDeleteId(null);
     } finally {

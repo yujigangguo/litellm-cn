@@ -880,7 +880,7 @@ export function TeamGuardrailsTab({ accessToken }: TeamGuardrailsTabProps) {
         litellm_params,
         guardrail_info: values.guardrail_info ? JSON.parse(values.guardrail_info) : undefined,
       });
-      toast.success("Guardrail submitted for review");
+      toast.success("防护规则已提交审核");
       setIsSubmitModalOpen(false);
       submitForm.reset();
       fetchSubmissions();
@@ -908,7 +908,7 @@ export function TeamGuardrailsTab({ accessToken }: TeamGuardrailsTabProps) {
       setGuardrails((prev) => prev.map((x) => (x.id === id ? { ...x, forwardKey: newValue } : x)));
       toast.success(newValue ? "Forward API key enabled" : "Forward API key disabled");
     } catch {
-      toast.fromError("Failed to update forward API key");
+      toast.fromError("更新转发 API 密钥失败");
     }
   }
 
@@ -932,9 +932,9 @@ export function TeamGuardrailsTab({ accessToken }: TeamGuardrailsTabProps) {
             : x,
         ),
       );
-      toast.success("Static headers updated");
+      toast.success("静态请求头已更新");
     } catch {
-      toast.fromError("Failed to update static headers");
+      toast.fromError("更新静态请求头失败");
     }
   }
 
@@ -945,9 +945,9 @@ export function TeamGuardrailsTab({ accessToken }: TeamGuardrailsTabProps) {
         litellm_params: { extra_headers: extraHeaders },
       });
       setGuardrails((prev) => prev.map((x) => (x.id === id ? { ...x, extraHeaders } : x)));
-      toast.success("Forward client headers updated");
+      toast.success("转发客户端请求头已更新");
     } catch {
-      toast.fromError("Failed to update forward client headers");
+      toast.fromError("更新转发客户端请求头失败");
     }
   }
 
@@ -958,9 +958,9 @@ export function TeamGuardrailsTab({ accessToken }: TeamGuardrailsTabProps) {
       setConfirmAction(null);
       if (selectedId === id) setSelectedId(null);
       await fetchSubmissions();
-      toast.success("Guardrail approved");
+      toast.success("防护规则已批准");
     } catch {
-      toast.fromError("Failed to approve guardrail");
+      toast.fromError("批准防护规则失败");
     }
   }
 
@@ -971,9 +971,9 @@ export function TeamGuardrailsTab({ accessToken }: TeamGuardrailsTabProps) {
       setConfirmAction(null);
       if (selectedId === id) setSelectedId(null);
       await fetchSubmissions();
-      toast.success("Guardrail rejected");
+      toast.success("防护规则已拒绝");
     } catch {
-      toast.fromError("Failed to reject guardrail");
+      toast.fromError("拒绝防护规则失败");
     }
   }
 

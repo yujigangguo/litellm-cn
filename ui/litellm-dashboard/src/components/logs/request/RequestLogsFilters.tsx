@@ -46,7 +46,7 @@ const CREDENTIAL_FILTER_ITEMS = [
 const SPAN_TYPE_FILTER_ITEMS = [
   { value: ALL_VALUE, label: "All Types" },
   { value: "llm", label: "LLM" },
-  { value: "agent", label: "Agent" },
+  { value: "agent", label: "助手" },
   { value: "mcp", label: "MCP" },
   { value: "batch", label: "Batch" },
 ] as const;

@@ -244,7 +244,7 @@ const VectorStoreForm: React.FC<VectorStoreFormProps> = ({
       try {
         metadata = metadataJson.trim() ? JSON.parse(metadataJson) : {};
       } catch (e) {
-        toast.fromError("Invalid JSON in metadata field");
+        toast.fromError("metadata 字段中的 JSON 无效");
         return;
       }
 
@@ -257,7 +257,7 @@ const VectorStoreForm: React.FC<VectorStoreFormProps> = ({
         litellm_credential_name: formValues.litellm_credential_name,
         litellm_params: buildVectorStoreLitellmParams(formValues.custom_llm_provider, formValues),
       });
-      toast.success("Vector store created successfully");
+      toast.success("向量库创建成功");
       form.reset(EMPTY_VALUES);
       setMetadataJson("{}");
       onSuccess();

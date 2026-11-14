@@ -49,7 +49,7 @@ export default function CloudZeroUpdateModal({ open, onOk, onCancel, settings }:
   const handleSubmit = (values: CloudZeroFormValues) => {
     updateMutation.mutate(buildCloudZeroPayload(values), {
       onSuccess: () => {
-        toast.success("CloudZero integration updated successfully");
+        toast.success("CloudZero 集成更新成功");
         form.reset(EMPTY_CLOUDZERO_FORM_VALUES);
         onOk();
       },

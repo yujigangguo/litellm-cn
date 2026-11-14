@@ -142,7 +142,7 @@ const VectorStoreInfoView: React.FC<VectorStoreInfoViewProps> = ({
       try {
         metadata = metadataString ? JSON.parse(metadataString) : {};
       } catch (e) {
-        toast.fromError("Invalid JSON in metadata field");
+        toast.fromError("metadata 字段中的 JSON 无效");
         return;
       }
 
@@ -155,7 +155,7 @@ const VectorStoreInfoView: React.FC<VectorStoreInfoViewProps> = ({
       };
 
       await vectorStoreUpdateCall(accessToken, updateData);
-      toast.success("Vector store updated successfully");
+      toast.success("向量库更新成功");
       setIsEditing(false);
       fetchVectorStoreDetails();
     } catch (error) {
@@ -301,7 +301,7 @@ const VectorStoreInfoView: React.FC<VectorStoreInfoViewProps> = ({
                           Either select existing credentials OR enter provider credentials below
                         </p>
 
-                        <FormField control={form.control} name="litellm_credential_name" label="Existing Credentials">
+                        <FormField control={form.control} name="litellm_credential_name" label="现有凭据">
                           {({ id, value, onChange }) => (
                             <SearchSelect
                               inputId={id}
@@ -317,7 +317,7 @@ const VectorStoreInfoView: React.FC<VectorStoreInfoViewProps> = ({
 
                         <div className="flex items-center">
                           <div className="grow border-t border-border"></div>
-                          <span className="px-4 text-muted-foreground text-sm">OR</span>
+                          <span className="px-4 text-muted-foreground text-sm">或</span>
                           <div className="grow border-t border-border"></div>
                         </div>
 

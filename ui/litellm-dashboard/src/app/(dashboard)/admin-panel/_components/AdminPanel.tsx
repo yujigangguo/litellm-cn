@@ -107,7 +107,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ proxySettings }) => {
   const handleShowAllowedIPs = async () => {
     try {
       if (premiumUser !== true) {
-        toast.fromError("This feature is only available for premium users. Please upgrade your account.");
+        toast.fromError("此功能仅高级版用户可用，请升级账户。");
         return;
       }
       if (accessToken) {
@@ -134,7 +134,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ proxySettings }) => {
         // Fetch the updated list of IPs
         const updatedIPs = await getAllowedIPs(accessToken);
         setAllowedIPs(updatedIPs);
-        toast.success("IP address added successfully");
+        toast.success("IP 地址添加成功");
       }
     } catch (error) {
       console.error("Error adding IP:", error);
@@ -156,7 +156,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ proxySettings }) => {
         // Fetch the updated list of IPs
         const updatedIPs = await getAllowedIPs(accessToken);
         setAllowedIPs(updatedIPs.length > 0 ? updatedIPs : [all_ip_address_allowed]);
-        toast.success("IP address deleted successfully");
+        toast.success("IP 地址删除成功");
       } catch (error) {
         console.error("Error deleting IP:", error);
         toast.fromError(`Failed to delete IP address ${error}`);
@@ -257,7 +257,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ proxySettings }) => {
                   onClick={() =>
                     premiumUser === true
                       ? setIsUIAccessControlModalVisible(true)
-                      : toast.fromError("Only premium users can configure UI access control")
+                      : toast.fromError("只有高级版用户才能配置 UI 访问控制")
                   }
                 >
                   UI Access Control
@@ -354,7 +354,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ proxySettings }) => {
                   accessToken={accessToken}
                   onSuccess={() => {
                     handleUIAccessControlOk();
-                    toast.success("UI Access Control settings updated successfully");
+                    toast.success("UI 访问控制设置更新成功");
                   }}
                 />
               </DialogContent>

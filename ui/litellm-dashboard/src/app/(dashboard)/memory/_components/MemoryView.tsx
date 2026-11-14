@@ -147,7 +147,7 @@ export const MemoryView: React.FC<MemoryViewProps> = ({ accessToken }) => {
       try {
         metadataPayload = JSON.parse(metadataText);
       } catch {
-        toast.error("Metadata must be valid JSON (or leave empty).");
+        toast.error("metadata 必须是有效的 JSON（或留空）。");
         return false;
       }
     }

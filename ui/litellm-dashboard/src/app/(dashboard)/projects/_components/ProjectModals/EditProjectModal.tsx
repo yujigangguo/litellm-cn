@@ -94,7 +94,7 @@ function EditProjectForm({ project, onClose, onSuccess }: Omit<EditProjectModalP
       { projectId: project.project_id, params },
       {
         onSuccess: () => {
-          toast.success("Project updated successfully");
+          toast.success("项目更新成功");
           onSuccess?.();
           onClose();
         },

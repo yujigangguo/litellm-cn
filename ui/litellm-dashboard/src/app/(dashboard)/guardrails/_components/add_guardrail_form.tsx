@@ -313,7 +313,7 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
         setDecisionModelGroups(parseDecisionModelGroups(modelGroupsResp?.data));
       } catch (error) {
         console.error("Error fetching guardrail data:", error);
-        toast.fromError("Failed to load guardrail configuration");
+        toast.fromError("加载防护规则配置失败");
       }
     };
 
@@ -449,7 +449,7 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
     // Validate configuration steps
     if (currentStep === 1) {
       if (shouldRenderPIIConfigSettings(selectedProvider) && selectedEntities.length === 0) {
-        toast.fromError("Please select at least one PII entity to continue");
+        toast.fromError("请至少选择一个 PII 实体后继续");
         return;
       }
       if (isDecisionModelProvider) {
@@ -500,7 +500,7 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
       setLoading(true);
       // First validate currently visible fields
       if (!(await form.trigger())) {
-        toast.fromError("Failed to create guardrail: please fix the highlighted fields");
+        toast.fromError("创建防护规则失败：请修正高亮字段");
         return;
       }
 
@@ -590,7 +590,7 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
           selectedPatterns.length > 0 || blockedWords.length > 0 || selectedContentCategories.length > 0;
         if (!hasContentFilterSelections && !hasCompetitorIntent) {
           toast.fromError(
-            "Please configure at least one content filter setting (category, pattern, keyword, or competitor intent)",
+            "请至少配置一项内容过滤设置（分类、模式、关键词或竞品意图）",
           );
           setLoading(false);
           return;
@@ -645,7 +645,7 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
           // For some guardrails, the config values need to be in litellm_params
           guardrailData.guardrail_info = configObj;
         } catch (error) {
-          toast.fromError("Invalid JSON in configuration");
+          toast.fromError("配置中的 JSON 无效");
           setLoading(false);
           return;
         }
@@ -654,7 +654,7 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
       if (guardrailProvider === "llm_as_a_judge") {
         const criteria: GuardrailCriterion[] = values.criteria ?? [];
         if (criteria.length === 0) {
-          toast.fromError("Add at least one evaluation criterion");
+          toast.fromError("请至少添加一个评估标准");
           setLoading(false);
           return;
         }
@@ -688,7 +688,7 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
 
       if (guardrailProvider === "tool_permission") {
         if (toolPermissionConfig.rules.length === 0) {
-          toast.fromError("Add at least one tool permission rule");
+          toast.fromError("请至少添加一条工具权限规则");
           setLoading(false);
           return;
         }
@@ -765,7 +765,7 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
 
       await createGuardrailCall(accessToken, guardrailData);
 
-      toast.success("Guardrail created successfully");
+      toast.success("防护规则创建成功");
 
       // Reset form and close modal
       resetForm();

@@ -83,7 +83,7 @@ const MCPCredentialsTab: React.FC<Props> = ({ accessToken }) => {
         (prev ?? []).filter((c) => c.server_id !== serverId),
       );
     } catch {
-      toast.error("Failed to revoke connection. Please try again.");
+      toast.error("撤销连接失败，请重试。");
     } finally {
       setRevoking((prev) => {
         const n = new Set(prev);

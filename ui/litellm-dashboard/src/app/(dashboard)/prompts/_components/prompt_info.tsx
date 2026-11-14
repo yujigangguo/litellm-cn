@@ -71,7 +71,7 @@ const PromptInfoView: React.FC<PromptInfoProps> = ({
       }
       setSelectedVersion(response.prompt_spec.version || null);
     } catch (error) {
-      toast.fromError("Failed to load prompt information");
+      toast.fromError("加载提示词信息失败");
       console.error("Error fetching prompt info:", error);
     } finally {
       setLoading(false);
@@ -155,7 +155,7 @@ const PromptInfoView: React.FC<PromptInfoProps> = ({
       onClose();
     } catch (error) {
       console.error("Error deleting prompt:", error);
-      toast.fromError("Failed to delete prompt");
+      toast.fromError("删除提示词失败");
     } finally {
       setIsDeleting(false);
       setShowDeleteConfirm(false);

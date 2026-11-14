@@ -84,7 +84,7 @@ const PerUserUsage: React.FC<PerUserUsageProps> = ({ accessToken, selectedTags, 
       cell: ({ row }) => <span className="font-medium">{row.original.user_id}</span>,
     },
     {
-      header: "User Email",
+      header: "用户邮箱",
       accessorKey: "user_email",
       cell: ({ row }) => row.original.user_email || "N/A",
     },

@@ -38,7 +38,7 @@ const MakeSkillPublicForm: React.FC<MakeSkillPublicFormProps> = ({
 
   const handleNext = () => {
     if (selectedSkills.size === 0) {
-      toast.fromError("Please select at least one skill");
+      toast.fromError("请至少选择一个技能");
       return;
     }
     setCurrentStep(1);
@@ -71,7 +71,7 @@ const MakeSkillPublicForm: React.FC<MakeSkillPublicFormProps> = ({
 
   const handleSubmit = async () => {
     if (selectedSkills.size === 0) {
-      toast.fromError("Please select at least one skill");
+      toast.fromError("请至少选择一个技能");
       return;
     }
 
@@ -96,7 +96,7 @@ const MakeSkillPublicForm: React.FC<MakeSkillPublicFormProps> = ({
       onSuccess();
     } catch (error) {
       console.error("Error publishing skills:", error);
-      toast.fromError("Failed to update skills. Please try again.");
+      toast.fromError("更新技能失败，请重试。");
     } finally {
       setLoading(false);
     }

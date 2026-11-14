@@ -39,7 +39,7 @@ export const runSemanticFilterTest = async ({
   setTestError: (error: string | null) => void;
 }) => {
   if (!testQuery || !testModel || !accessToken) {
-    toast.error("Please enter a query and select a model");
+    toast.error("请输入查询并选择模型");
     return;
   }
 
@@ -52,17 +52,17 @@ export const runSemanticFilterTest = async ({
     const parsedResult = parseFilterHeaders(headers);
 
     if (!parsedResult) {
-      toast.warning("Semantic filter is not enabled or no tools were filtered");
+      toast.warning("语义筛选未启用，或没有工具被过滤");
       return;
     }
 
     setTestResult(parsedResult);
-    toast.success("Semantic filter test completed successfully");
+    toast.success("语义筛选测试完成");
   } catch (error) {
     console.error("Test failed:", error);
     const message = error instanceof Error && error.message ? error.message : "Failed to test semantic filter";
     setTestError(message);
-    toast.error("Failed to test semantic filter");
+    toast.error("测试语义筛选失败");
   } finally {
     setIsTesting(false);
   }

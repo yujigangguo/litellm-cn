@@ -64,7 +64,7 @@ const PromptCompressionTab: React.FC<PromptCompressionTabProps> = ({ accessToken
       .then((response) => setGuardrails(compressionGuardrailsOf(response as GuardrailListResponse)))
       .catch((error) => {
         console.error("Failed to load compression guardrails:", error);
-        toast.fromError("Failed to load compression guardrails");
+        toast.fromError("加载压缩防护规则失败");
       })
       .finally(() => setIsLoading(false));
   }, [accessToken]);
@@ -87,12 +87,12 @@ const PromptCompressionTab: React.FC<PromptCompressionTabProps> = ({ accessToken
           defaultOn: values.defaultOn ?? true,
         }),
       );
-      toast.success("Compression guardrail created");
+      toast.success("压缩防护规则已创建");
       form.reset(EMPTY_VALUES);
       await loadGuardrails();
     } catch (error) {
       console.error("Failed to create compression guardrail:", error);
-      toast.fromError("Failed to create compression guardrail");
+      toast.fromError("创建压缩防护规则失败");
     } finally {
       setIsSaving(false);
     }

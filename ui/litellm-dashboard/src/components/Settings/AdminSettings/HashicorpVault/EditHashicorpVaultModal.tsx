@@ -112,7 +112,7 @@ const EditHashicorpVaultModal: React.FC<EditHashicorpVaultModalProps> = ({ isVis
 
     mutate(config, {
       onSuccess: () => {
-        toast.success("Hashicorp Vault configuration updated successfully");
+        toast.success("Hashicorp Vault 配置更新成功");
         onSuccess();
       },
       onError: (err) => {

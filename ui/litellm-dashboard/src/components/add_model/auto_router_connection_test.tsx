@@ -79,7 +79,7 @@ const AutoRouterConnectionTest: React.FC<AutoRouterConnectionTestProps> = ({
   if (targets.length === 0 && !jevRequest) {
     return (
       <p className="text-sm text-muted-foreground">
-        No complexity tiers are configured yet, so there is nothing to test.
+        尚未配置复杂度层级，没有可测试的内容。
       </p>
     );
   }

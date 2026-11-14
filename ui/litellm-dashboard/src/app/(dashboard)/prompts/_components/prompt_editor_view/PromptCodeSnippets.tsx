@@ -286,7 +286,7 @@ main();`;
               variant="outline"
               onClick={() => {
                 navigator.clipboard.writeText(generatedCode);
-                toast.success("Copied to clipboard!");
+                toast.success("已复制到剪贴板！");
               }}
             >
               <CopyIcon />

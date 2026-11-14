@@ -94,7 +94,7 @@ function ModelInformationCell({ model, displayName }: { model: ModelData; displa
             </span>
           </div>
           <div className="flex flex-col gap-0.5">
-            <span className="text-xs text-muted-foreground">LiteLLM Model Name</span>
+            <span className="text-xs text-muted-foreground">LiteLLM 模型名称</span>
             <span className="flex min-w-0 items-center gap-1.5">
               <span className="truncate font-mono text-sm text-foreground" title={litellmModelName}>
                 {litellmModelName}

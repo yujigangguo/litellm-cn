@@ -268,15 +268,15 @@ const CustomCodeModal: React.FC<CustomCodeModalProps> = ({ visible, onClose, onS
   // Save guardrail (create or update)
   const handleSave = async () => {
     if (!guardrailName.trim()) {
-      toast.fromError("Please enter a guardrail name");
+      toast.fromError("请输入防护规则名称");
       return;
     }
     if (!code.trim()) {
-      toast.fromError("Please enter custom code");
+      toast.fromError("请输入自定义代码");
       return;
     }
     if (!accessToken) {
-      toast.fromError("No access token available");
+      toast.fromError("没有可用的访问令牌");
       return;
     }
 
@@ -319,7 +319,7 @@ const CustomCodeModal: React.FC<CustomCodeModalProps> = ({ visible, onClose, onS
         }
 
         await updateGuardrailCall(accessToken, editData.guardrail_id, updateData);
-        toast.success("Custom code guardrail updated successfully");
+        toast.success("自定义代码防护规则更新成功");
       } else {
         // Create new guardrail
         const streamScope = streamScopePayload(mode, streamScopeByMode);
@@ -337,7 +337,7 @@ const CustomCodeModal: React.FC<CustomCodeModalProps> = ({ visible, onClose, onS
         };
 
         await createGuardrailCall(accessToken, guardrailData);
-        toast.success("Custom code guardrail created successfully");
+        toast.success("自定义代码防护规则创建成功");
       }
       onSuccess();
       onClose();
@@ -355,7 +355,7 @@ const CustomCodeModal: React.FC<CustomCodeModalProps> = ({ visible, onClose, onS
   // Test guardrail using backend endpoint
   const handleTest = async () => {
     if (!accessToken) {
-      setTestResult({ error: "No access token available" });
+      setTestResult({ error: "没有可用的访问令牌" });
       return;
     }
 

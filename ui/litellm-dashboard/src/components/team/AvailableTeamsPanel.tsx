@@ -54,11 +54,11 @@ const AvailableTeamsPanel: React.FC<AvailableTeamsProps> = ({ accessToken, userI
         role: "user",
       });
 
-      toast.success("Successfully joined team");
+      toast.success("已成功加入团队");
       setAvailableTeams((teams) => teams.filter((team) => team.team_id !== teamId));
     } catch (error) {
       console.error("Error joining team:", error);
-      toast.fromError("Failed to join team");
+      toast.fromError("加入团队失败");
     }
   };
 

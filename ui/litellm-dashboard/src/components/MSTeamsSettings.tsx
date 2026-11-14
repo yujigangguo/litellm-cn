@@ -77,7 +77,7 @@ const MSTeamsSettings: React.FC<MSTeamsSettingsProps> = ({ accessToken, userID, 
         environment_variables: updatedVariables,
       };
       await setCallbacksCall(accessToken, payload);
-      toast.success("MS Teams settings updated successfully");
+      toast.success("MS Teams 设置更新成功");
     } catch (error) {
       toast.fromError(error);
     }
@@ -144,7 +144,7 @@ const MSTeamsSettings: React.FC<MSTeamsSettingsProps> = ({ accessToken, userID, 
               if (!accessToken) return;
               try {
                 await serviceHealthCheck(accessToken, "ms_teams");
-                toast.success("MS Teams test alert triggered. Check your Teams channel.");
+                toast.success("MS Teams 测试告警已触发，请检查 Teams 频道。");
               } catch (error) {
                 toast.fromError(error);
               }

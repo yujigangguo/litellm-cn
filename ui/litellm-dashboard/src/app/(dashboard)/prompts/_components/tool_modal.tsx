@@ -41,7 +41,7 @@ const ToolModal: React.FC<ToolModalProps> = ({ visible, initialJson, onSave, onC
       setError(null);
       onSave(json);
     } catch (e) {
-      setError("Invalid JSON format. Please check your syntax.");
+      setError("JSON 格式无效，请检查语法。");
     }
   };
 

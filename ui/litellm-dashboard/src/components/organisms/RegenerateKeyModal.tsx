@@ -97,7 +97,7 @@ export function RegenerateKeyModal({ selectedToken, visible, onClose, onKeyUpdat
     try {
       const response = await regenerateKeyCall(accessToken, selectedToken.token || selectedToken.token_id, formValues);
       setRegeneratedKey(response.key);
-      toast.success("Virtual Key regenerated successfully");
+      toast.success("虚拟密钥重新生成成功");
 
       // Build the update payload. Spread the API response first so any new
       // fields it returns (new token, timestamps, etc.) are captured, then
@@ -181,7 +181,7 @@ export function RegenerateKeyModal({ selectedToken, visible, onClose, onKeyUpdat
                 </FormField>
 
                 <div className="grid grid-cols-3 gap-3">
-                  <FormField control={form.control} name="max_budget" label="Max Budget (USD)">
+                  <FormField control={form.control} name="max_budget" label="预算上限（美元）">
                     {({ ref, value, onChange, ...field }) => (
                       <Input
                         {...field}

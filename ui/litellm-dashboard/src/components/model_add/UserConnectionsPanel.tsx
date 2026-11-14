@@ -38,11 +38,11 @@ export default function UserConnectionsPanel() {
     }
     try {
       await userConnectionDeleteCall(accessToken, credentialName);
-      toast.success("GitHub Copilot disconnected");
+      toast.success("GitHub Copilot 已断开");
       setConnectingCredential(null);
       await refreshConnections();
     } catch (error) {
-      toast.error("Failed to disconnect GitHub Copilot");
+      toast.error("断开 GitHub Copilot 失败");
     }
   };
 

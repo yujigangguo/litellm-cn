@@ -58,7 +58,7 @@ const ModelConnectionTest: React.FC<ModelConnectionTestProps> = ({
       const response = await testConnectionRequest(accessToken, litellmParamsObj, modelInfoObj, modelInfoObj?.mode);
 
       if (response.status === "success") {
-        toast.success("Connection test successful!");
+        toast.success("连接测试成功！");
         setError(null);
         setIsSuccess(true);
       } else {
@@ -195,7 +195,7 @@ ${formattedBody}
               className="mt-2"
               onClick={() => {
                 navigator.clipboard.writeText(curlCommand || "");
-                toast.success("Copied to clipboard");
+                toast.success("已复制到剪贴板");
               }}
             >
               <Copy data-icon="inline-start" />

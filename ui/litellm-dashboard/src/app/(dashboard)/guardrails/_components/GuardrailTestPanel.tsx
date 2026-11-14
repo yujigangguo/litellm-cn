@@ -46,7 +46,7 @@ export function GuardrailTestPanel({
 
   const handleSubmit = () => {
     if (!inputText.trim()) {
-      toast.fromError("Please enter text to test");
+      toast.fromError("请输入要测试的文本");
       return;
     }
 
@@ -99,9 +99,9 @@ export function GuardrailTestPanel({
   const handleCopyInput = async () => {
     const success = await copyToClipboard(inputText);
     if (success) {
-      toast.success("Input copied to clipboard");
+      toast.success("输入已复制到剪贴板");
     } else {
-      toast.fromError("Failed to copy input");
+      toast.fromError("复制输入失败");
     }
   };
 

@@ -61,7 +61,7 @@ export function FallbackSelectionForm({
 
   const handleRemoveGroup = (targetId: string) => {
     if (groups.length === 1) {
-      toast.warning("At least one group is required");
+      toast.warning("至少需要一个组");
       return;
     }
     const newGroups = groups.filter((g) => g.id !== targetId);

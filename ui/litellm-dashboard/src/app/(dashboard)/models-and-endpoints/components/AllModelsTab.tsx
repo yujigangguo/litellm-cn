@@ -263,7 +263,7 @@ const AllModelsTab = ({
     try {
       setDeleteLoading(true);
       await modelDeleteCall(accessToken, deleteModalModelId);
-      toast.success("Model deleted successfully");
+      toast.success("模型删除成功");
       queryClient.invalidateQueries({ queryKey: ["models", "list"] });
       refetchModels();
     } catch (error) {
@@ -352,19 +352,19 @@ const AllModelsTab = ({
             <Info className="mt-0.5 size-3.5 shrink-0" />
             {selectedTeamValue === PERSONAL_TEAM_VALUE ? (
               <span>
-                To access these models, create a Virtual Key without selecting a team on the{" "}
+                要访问这些模型，请在不选择团队的情况下创建虚拟密钥，然后前往
                 <a href={uiHref("api-keys")} className="font-medium text-info hover:underline">
-                  Virtual Keys page
+                  虚拟密钥页面
                 </a>
-                .
+                。
               </span>
             ) : (
               <span>
-                To access these models, create a Virtual Key and select Team as &quot;{teamAccessLabel}&quot; on the{" "}
+                要访问这些模型，请创建虚拟密钥并在
                 <a href={uiHref("api-keys")} className="font-medium text-info hover:underline">
-                  Virtual Keys page
+                  虚拟密钥页面
                 </a>
-                .
+                上选择团队为「{teamAccessLabel}」。
               </span>
             )}
           </div>
@@ -373,9 +373,9 @@ const AllModelsTab = ({
 
       <DeleteResourceModal
         isOpen={!!deleteModalModelId}
-        title="Delete Model"
-        alertMessage="This action cannot be undone."
-        message="Are you sure you want to delete this model?"
+        title="删除模型"
+        alertMessage="此操作无法撤销。"
+        message="确定要删除此模型吗？"
         resourceInformationTitle="Model Information"
         resourceInformation={
           modelToDelete
@@ -385,7 +385,7 @@ const AllModelsTab = ({
                   value: modelToDelete.model_name || "Not Set",
                 },
                 {
-                  label: "LiteLLM Model Name",
+                  label: "LiteLLM 模型名称",
                   value: modelToDelete.litellm_model_name || "Not Set",
                 },
                 {

@@ -144,7 +144,7 @@ const CreateSearchTool: React.FC<CreateSearchToolProps> = ({
       if (accessToken != null) {
         const response = await createSearchTool(accessToken, payload);
 
-        toast.success("Search tool created successfully");
+        toast.success("搜索工具创建成功");
         form.reset(EMPTY_VALUES);
         setModalVisible(false);
         onCreateSuccess(response);
@@ -164,7 +164,7 @@ const CreateSearchTool: React.FC<CreateSearchToolProps> = ({
   const handleTestConnection = async () => {
     const isValid = await form.trigger(["search_provider", "api_key"]);
     if (!isValid) {
-      toast.error("Please fill in Search Provider and API Key before testing");
+      toast.error("测试前请填写搜索供应商和 API 密钥");
       return;
     }
 
@@ -262,7 +262,7 @@ const CreateSearchTool: React.FC<CreateSearchToolProps> = ({
                       {...field}
                       ref={ref}
                       value={value ?? ""}
-                      placeholder="Enter your API key"
+                      placeholder="请输入 API 密钥"
                       groupClassName="h-10 rounded-lg"
                     />
                   )}

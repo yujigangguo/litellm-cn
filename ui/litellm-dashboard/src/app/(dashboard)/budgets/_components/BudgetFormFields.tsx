@@ -40,7 +40,7 @@ type NumberFieldName = "tpm_limit" | "rpm_limit" | "tpd_limit" | "max_budget";
 const NO_RESET = "never";
 
 const RESET_OPTIONS = [
-  { value: NO_RESET, label: "in total" },
+  { value: NO_RESET, label: "总计" },
   { value: "24h", label: "per day" },
   { value: "7d", label: "per week" },
   { value: "30d", label: "per month" },
@@ -66,7 +66,7 @@ function SpendLimitField({ form }: { form: BudgetForm }) {
   return (
     <Field className="gap-2">
       <FieldLabel htmlFor={amountId}>
-        Spend limit
+        花费上限
         <OptionalBadge />
       </FieldLabel>
       <ButtonGroup className="w-full">
@@ -139,14 +139,14 @@ export function BudgetFormFields({ form, isEditing }: { form: BudgetForm; isEdit
       <FieldSeparator />
       <FieldSet className="gap-3">
         <FieldLegend className="mb-4 flex items-center gap-2 text-[15px] leading-[22px] font-semibold">
-          Rate limits
+          速率限制
           <OptionalBadge />
         </FieldLegend>
-        <RateLimitField form={form} name="tpm_limit" label="Tokens per minute" />
-        <RateLimitField form={form} name="rpm_limit" label="Requests per minute" />
-        <RateLimitField form={form} name="tpd_limit" label="Batch tokens per day" />
+        <RateLimitField form={form} name="tpm_limit" label="每分钟 Token" />
+        <RateLimitField form={form} name="rpm_limit" label="每分钟请求" />
+        <RateLimitField form={form} name="tpd_limit" label="每天批处理 Token" />
         <FieldDescription>
-          Batches count against the daily limit instead of the per-minute ones. Provider rate limits still apply.
+          批处理计入每日上限，而不是每分钟上限。供应商速率限制仍然生效。
         </FieldDescription>
       </FieldSet>
     </FieldGroup>

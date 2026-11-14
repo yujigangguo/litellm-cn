@@ -21,7 +21,7 @@ export function AriaAnswer({
   const answerRef = useRef<HTMLDivElement>(null);
   const exportAnswer = () => {
     if (!answerRef.current || !exportAriaAnswer(question ?? "", answerRef.current)) {
-      toast.error("Could not open the PDF print dialog. Please try again.");
+      toast.error("无法打开 PDF 打印对话框，请重试。");
     }
   };
   return (

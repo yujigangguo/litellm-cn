@@ -181,7 +181,7 @@ export default function ChatConversationPage() {
           setMode(modelChatMode(available[0]));
         }
       })
-      .catch(() => toast.error("Could not load models"))
+      .catch(() => toast.error("无法加载模型"))
       .finally(() => setIsLoadingModels(false));
   }, [accessToken]);
 

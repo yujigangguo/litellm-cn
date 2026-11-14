@@ -39,10 +39,10 @@ const EditBudgetModal: React.FC<EditBudgetModalProps> = ({ isModalVisible, setIs
 
   const handleUpdate = async (formValues: BudgetFormValues) => {
     try {
-      toast.info("Making API Call");
+      toast.info("正在调用 API");
       const changedValues = pickDirty(formValues, dirtyFields);
       await updateBudget.mutateAsync(applyBudgetPrecision({ budget_id: formValues.budget_id, ...changedValues }));
-      toast.success("Budget Updated");
+      toast.success("预算已更新");
       form.reset();
       setIsModalVisible(false);
     } catch (error) {

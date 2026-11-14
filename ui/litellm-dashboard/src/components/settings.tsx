@@ -529,7 +529,7 @@ const Settings: React.FC<SettingsPageProps> = ({ accessToken, userRole, userID, 
     } catch (error) {
       toast.fromError(error);
     }
-    toast.success("Alerts updated successfully");
+    toast.success("告警更新成功");
   };
 
   const handleDeleteCallback = (callback: any) => {
@@ -593,7 +593,7 @@ const Settings: React.FC<SettingsPageProps> = ({ accessToken, userRole, userID, 
               onTest={async (cb) => {
                 try {
                   await serviceHealthCheck(accessToken, cb.name);
-                  toast.success("Health check triggered");
+                  toast.success("健康检查已触发");
                 } catch (error) {
                   toast.fromError(parseErrorMessage(error));
                 }
@@ -678,7 +678,7 @@ const Settings: React.FC<SettingsPageProps> = ({ accessToken, userRole, userID, 
                   try {
                     await serviceHealthCheck(accessToken, "slack");
                     toast.success(
-                      "Alert test triggered. Test request to slack made - check logs/alerts on slack to verify",
+                      "告警测试已触发，已向 Slack 发送测试请求；请到 Slack 的日志/告警频道确认。",
                     );
                   } catch (error) {
                     toast.fromError(parseErrorMessage(error));

@@ -11,7 +11,7 @@ import { toast } from "@/lib/toast";
 export function copyText(value: string, label: string): void {
   void navigator.clipboard.writeText(value).then(
     () => toast.success(`${label} copied`),
-    () => toast.error("Unable to copy to clipboard"),
+    () => toast.error("无法复制到剪贴板"),
   );
 }
 

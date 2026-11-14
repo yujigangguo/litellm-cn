@@ -126,7 +126,7 @@ export const AGENT_FORM_CONFIG: {
   },
   optional: {
     key: "optional",
-    title: "Optional Settings",
+    title: "可选设置",
     fields: [
       {
         name: "iconUrl",

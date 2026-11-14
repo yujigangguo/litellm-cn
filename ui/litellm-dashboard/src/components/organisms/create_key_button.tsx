@@ -95,7 +95,7 @@ import { simplifyKeyGenerateError } from "./utils";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const KEY_TYPE_OPTIONS = [
-  { value: "llm_api", label: "AI APIs", hint: "Can call only AI API routes (chat/completions, embeddings, etc.)" },
+  { value: "llm_api", label: "AI API", hint: "Can call only AI API routes (chat/completions, embeddings, etc.)" },
   { value: "management", label: "Management", hint: "Can call only management routes (user/team/key management)" },
   { value: "default", label: "Full Access", hint: "Can call all routes (AI APIs, Management, and read-only)" },
 ];
@@ -474,11 +474,11 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
         );
       }
 
-      toast.info("Making API Call");
+      toast.info("正在调用 API");
       setIsModalVisible(true);
 
       if (built.kind === "agent_not_selected") {
-        toast.fromError("Please select an agent");
+        toast.fromError("请选择助手");
         return;
       }
       const { payload, endpoint } = built;
@@ -497,7 +497,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
       queryClient.invalidateQueries({ queryKey: keyKeys.lists() });
 
       setApiKey(response["key"]);
-      toast.success("Virtual Key Created");
+      toast.success("虚拟密钥已创建");
       form.reset(formDefaults);
       setBudgetLimits([]);
       setTagRateLimits([]);
@@ -609,7 +609,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
       setUserOptions(options);
     } catch (error) {
       console.error("Error fetching users:", error);
-      if (isLatestSearch()) toast.fromError("Failed to search for users");
+      if (isLatestSearch()) toast.fromError("搜索用户失败");
     } finally {
       if (isLatestSearch()) setUserSearchLoading(false);
     }
@@ -762,17 +762,17 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
       <Dialog open={isModalVisible} onOpenChange={(open) => !open && handleCancel()}>
         <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-[1000px]">
           <DialogHeader>
-            <DialogTitle className="text-xl font-semibold text-foreground">Create New Key</DialogTitle>
+            <DialogTitle className="text-xl font-semibold text-foreground">新建密钥</DialogTitle>
           </DialogHeader>
           <MountedFormProvider value={mountedForm}>
             <form onSubmit={handleSubmit}>
               {/* Section 1: Key Ownership */}
               <div className="mb-8">
-                <h3 className="text-lg font-medium text-foreground mb-4">Key Ownership</h3>
+                <h3 className="text-lg font-medium text-foreground mb-4">密钥归属</h3>
                 <Field className="mb-4">
                   <FieldLabel>
                     <span>
-                      Owned By{" "}
+                      归属人{" "}
                       <SimpleTooltip content="Select who will own this Virtual Key">
                         <Info className="ml-1 inline size-3.5 align-text-bottom" />
                       </SimpleTooltip>
@@ -785,21 +785,21 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                   >
                     <label className={KEY_OWNER_LABEL_CLASS}>
                       <RadioGroupItem value="you" />
-                      You
+                      你
                     </label>
                     <label className={KEY_OWNER_LABEL_CLASS}>
                       <RadioGroupItem value="service_account" />
-                      Service Account
+                      服务账号
                     </label>
                     {ownerScope !== "none" && (
                       <label className={KEY_OWNER_LABEL_CLASS}>
                         <RadioGroupItem value="another_user" />
-                        Another User
+                        其他用户
                       </label>
                     )}
                     <label className={KEY_OWNER_LABEL_CLASS}>
                       <RadioGroupItem value="agent" />
-                      Agent <Badge>New</Badge>
+                      助手 <Badge>新建</Badge>
                     </label>
                   </RadioGroup>
                 </Field>
@@ -809,7 +809,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                   <div className="mt-4 p-4 bg-purple-50 border border-purple-200 rounded-md dark:bg-purple-950 dark:border-purple-800">
                     <div className="mb-3">
                       <label htmlFor="create-key-agent" className="text-sm font-medium text-foreground">
-                        Select Agent <span className="text-destructive">*</span>
+                        选择助手 <span className="text-destructive">*</span>
                       </label>
                     </div>
                     <SearchSelect
@@ -924,7 +924,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
               {/* Section 2: Key Details */}
               {!isFormDisabled && (
                 <div className="mb-8">
-                  <h3 className="text-lg font-medium text-foreground mb-4">Key Details</h3>
+                  <h3 className="text-lg font-medium text-foreground mb-4">密钥详情</h3>
                   <MountedFormField
                     label={
                       <span>
@@ -990,7 +990,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                   <MountedFormField
                     label={
                       <span>
-                        Key Type{" "}
+                        密钥类型{" "}
                         <SimpleTooltip content="Select the type of key to determine what routes and operations this key can access">
                           <Info className="ml-1 inline size-3.5 align-text-bottom" />
                         </SimpleTooltip>
@@ -1037,7 +1037,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                   <Collapsible className="mt-4 mb-4 overflow-hidden rounded-lg border">
                     <h3 className="m-0 text-lg font-medium text-foreground">
                       <CollapsibleTrigger className={SECTION_HEADER_CLASS}>
-                        Optional Settings
+                        可选设置
                         <ChevronDown className={SECTION_CHEVRON_CLASS} />
                       </CollapsibleTrigger>
                     </h3>
@@ -1046,7 +1046,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                         className="mt-4"
                         label={
                           <span>
-                            Max Budget (USD){" "}
+                            预算上限（美元）{" "}
                             <SimpleTooltip content="Maximum amount in USD this key can spend. When reached, the key will be blocked from making further requests">
                               <Info className="ml-1 inline size-3.5 align-text-bottom" />
                             </SimpleTooltip>
@@ -1106,7 +1106,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                       <Field className="mt-4">
                         <FieldLabel>
                           <span>
-                            Per-Model Budgets{" "}
+                            按模型预算{" "}
                             <SimpleTooltip content="Cap spend on individual models, each with its own reset window. Enforced across every request this key makes; usage is reported on the key's info page.">
                               <Info className="ml-1 inline size-3.5 align-text-bottom" />
                             </SimpleTooltip>
@@ -1163,7 +1163,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                         className="mt-4"
                         label={
                           <span>
-                            Tokens per minute Limit (TPM){" "}
+                            每分钟 Token 上限（TPM）{" "}
                             <SimpleTooltip content="Maximum number of tokens this key can process per minute. Helps control usage and costs">
                               <Info className="ml-1 inline size-3.5 align-text-bottom" />
                             </SimpleTooltip>
@@ -1204,7 +1204,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                         className="mt-4"
                         label={
                           <span>
-                            Requests per minute Limit (RPM){" "}
+                            每分钟请求上限（RPM）{" "}
                             <SimpleTooltip content="Maximum number of API requests this key can make per minute. Helps prevent abuse and manage load">
                               <Info className="ml-1 inline size-3.5 align-text-bottom" />
                             </SimpleTooltip>
@@ -1245,7 +1245,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                         className="mt-4"
                         label={
                           <span>
-                            Tokens per day Limit (TPD){" "}
+                            每天 Token 上限（TPD）{" "}
                             <SimpleTooltip content="Daily token budget for batch submissions (/v1/batches). When set, batch input files are charged against this 24h window instead of the key's TPM/RPM limits. Online requests keep using TPM/RPM.">
                               <Info className="ml-1 inline size-3.5 align-text-bottom" />
                             </SimpleTooltip>
@@ -1606,7 +1606,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                       </MountedFormField>
                       <Collapsible className="mt-4 mb-4 overflow-hidden rounded-lg border">
                         <CollapsibleTrigger className={SECTION_HEADER_CLASS}>
-                          <b>MCP Settings</b>
+                          <b>MCP 设置</b>
                           <ChevronDown className={SECTION_CHEVRON_CLASS} />
                         </CollapsibleTrigger>
                         <CollapsibleContent className="px-4 pb-3">
@@ -1650,14 +1650,14 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
 
                       <Collapsible className="mt-4 mb-4 overflow-hidden rounded-lg border">
                         <CollapsibleTrigger className={SECTION_HEADER_CLASS}>
-                          <b>Agent Settings</b>
+                          <b>助手设置</b>
                           <ChevronDown className={SECTION_CHEVRON_CLASS} />
                         </CollapsibleTrigger>
                         <CollapsibleContent className="px-4 pb-3">
                           <MountedFormField
                             label={
                               <span>
-                                Allowed Agents{" "}
+                                允许的助手{" "}
                                 <SimpleTooltip content="Select which agents or access groups this key can access">
                                   <Info className="ml-1 inline size-3.5 align-text-bottom" />
                                 </SimpleTooltip>
@@ -1680,7 +1680,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
 
                       <Collapsible className="mt-4 mb-4 overflow-hidden rounded-lg border">
                         <CollapsibleTrigger className={SECTION_HEADER_CLASS}>
-                          <b>Skill Settings</b>
+                          <b>技能设置</b>
                           <ChevronDown className={SECTION_CHEVRON_CLASS} />
                         </CollapsibleTrigger>
                         <CollapsibleContent className="px-4 pb-3">
@@ -1792,7 +1792,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
 
                       <Collapsible className="mt-4 mb-4 overflow-hidden rounded-lg border">
                         <CollapsibleTrigger className={SECTION_HEADER_CLASS}>
-                          <b>Model Aliases</b>
+                          <b>模型别名</b>
                           <ChevronDown className={SECTION_CHEVRON_CLASS} />
                         </CollapsibleTrigger>
                         <CollapsibleContent className="px-4 pb-3">
@@ -1893,7 +1893,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
 
               <div style={{ textAlign: "right", marginTop: "10px" }}>
                 <Button type="submit" disabled={isFormDisabled}>
-                  Create Key
+                  创建密钥
                 </Button>
               </div>
             </form>

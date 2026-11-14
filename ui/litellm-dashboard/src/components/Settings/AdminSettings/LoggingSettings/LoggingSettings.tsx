@@ -295,7 +295,7 @@ const LoggingSettings: React.FC = () => {
     const updateParams = buildUpdateParams(formValues);
     const submitUpdate = () =>
       mutate(updateParams, {
-        onSuccess: () => toast.success("Spend logs settings updated successfully"),
+        onSuccess: () => toast.success("花费日志设置更新成功"),
         onError: (error) => toast.fromError("Failed to save spend logs settings: " + parseErrorMessage(error)),
       });
 

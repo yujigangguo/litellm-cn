@@ -26,8 +26,8 @@ export const getProjectKeysTableColumns = (): ColumnDef<KeyResponse>[] => [
   {
     id: "key_alias",
     accessorKey: "key_alias",
-    meta: { title: "Key Name" },
-    header: "Key Name",
+    meta: { title: "密钥名称" },
+    header: "密钥名称",
     enableSorting: false,
     cell: ({ row }) => (
       <IdentityCell

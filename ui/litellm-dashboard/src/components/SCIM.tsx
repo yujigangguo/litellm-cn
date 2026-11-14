@@ -50,7 +50,7 @@ const SCIMConfig: React.FC<SCIMConfigProps> = ({ accessToken, userID, proxySetti
 
   const handleCreateSCIMToken = async (values: SCIMTokenFormValues) => {
     if (!accessToken || !userID) {
-      toast.fromError("You need to be logged in to create a SCIM token");
+      toast.fromError("需要登录后才能创建 SCIM 令牌");
       return;
     }
 
@@ -66,7 +66,7 @@ const SCIMConfig: React.FC<SCIMConfigProps> = ({ accessToken, userID, proxySetti
 
       const response = await keyCreateCall(accessToken, userID, formData);
       setTokenData(response);
-      toast.success("SCIM token created successfully");
+      toast.success("SCIM 令牌创建成功");
     } catch (error: any) {
       console.error("Error creating SCIM token:", error);
       toast.fromError("Failed to create SCIM token: " + parseErrorMessage(error));
@@ -104,7 +104,7 @@ const SCIMConfig: React.FC<SCIMConfigProps> = ({ accessToken, userID, proxySetti
               </p>
               <div className="flex items-center">
                 <Input value={scimBaseUrl} disabled={true} readOnly className="grow" />
-                <CopyToClipboard text={scimBaseUrl} onCopy={() => toast.success("URL copied to clipboard")}>
+                <CopyToClipboard text={scimBaseUrl} onCopy={() => toast.success("URL 已复制到剪贴板")}>
                   <Button type="button" className="ml-2 flex items-center">
                     <Copy />
                     复制
@@ -164,7 +164,7 @@ const SCIMConfig: React.FC<SCIMConfigProps> = ({ accessToken, userID, proxySetti
                   </p>
                   <div className="flex items-center">
                     <Input value={tokenData.key} className="grow mr-2" type="password" disabled={true} readOnly />
-                    <CopyToClipboard text={tokenData.key} onCopy={() => toast.success("Token copied to clipboard")}>
+                    <CopyToClipboard text={tokenData.key} onCopy={() => toast.success("Token 已复制到剪贴板")}>
                       <Button type="button" className="flex items-center">
                         <Copy />
                         复制

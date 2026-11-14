@@ -109,7 +109,7 @@ const BulkCreateUsersButton: React.FC<BulkCreateUsersProps> = ({
     // Check file type
     if (file.type !== "text/csv" && !file.name.endsWith(".csv")) {
       setFileError(`Invalid file type: ${file.name}. Please upload a CSV file (.csv extension).`);
-      toast.fromError("Invalid file type. Please upload a CSV file.");
+      toast.fromError("文件类型无效，请上传 CSV 文件。");
       return;
     }
 
@@ -505,7 +505,7 @@ const BulkCreateUsersButton: React.FC<BulkCreateUsersProps> = ({
             <div className="mt-1">
               <div className="flex items-center">
                 <span className="text-xs text-muted-foreground truncate max-w-[150px]">{record.invitation_link}</span>
-                <CopyToClipboard text={record.invitation_link} onCopy={() => toast.success("Invitation link copied!")}>
+                <CopyToClipboard text={record.invitation_link} onCopy={() => toast.success("邀请链接已复制！")}>
                   <button className="ml-1 text-info text-xs hover:text-info/80">复制</button>
                 </CopyToClipboard>
               </div>
@@ -538,7 +538,7 @@ const BulkCreateUsersButton: React.FC<BulkCreateUsersProps> = ({
       <Dialog open={isModalVisible} onOpenChange={(open) => !open && setIsModalVisible(false)}>
         <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-[800px]">
           <DialogHeader>
-            <DialogTitle>Bulk Invite Users</DialogTitle>
+            <DialogTitle>批量邀请用户</DialogTitle>
           </DialogHeader>
           <div className="flex flex-col">
             {/* Step indicator */}

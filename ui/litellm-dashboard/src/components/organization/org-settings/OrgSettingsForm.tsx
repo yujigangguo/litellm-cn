@@ -63,7 +63,7 @@ export const OrgSettingsForm = ({
   const mutation = useMutation({
     mutationFn: (body: OrgPatchBody) => patchOrganization(organizationId, body),
     onSuccess: () => {
-      toast.success("Organization settings updated successfully");
+      toast.success("组织设置更新成功");
       queryClient.invalidateQueries({ queryKey: organizationKeys.all });
       onSaved();
     },
@@ -93,7 +93,7 @@ export const OrgSettingsForm = ({
           )}
         </FormField>
 
-        <FormField control={form.control} name="max_budget" label="Max Budget (USD)">
+        <FormField control={form.control} name="max_budget" label="预算上限（美元）">
           {({ ref, ...field }) => <Input {...field} ref={ref} type="number" step="any" min={0} />}
         </FormField>
 
@@ -118,11 +118,11 @@ export const OrgSettingsForm = ({
           )}
         </FormField>
 
-        <FormField control={form.control} name="tpm_limit" label="Tokens per minute Limit (TPM)">
+        <FormField control={form.control} name="tpm_limit" label="每分钟 Token 上限（TPM）">
           {({ ref, ...field }) => <Input {...field} ref={ref} type="number" step={1} min={0} />}
         </FormField>
 
-        <FormField control={form.control} name="rpm_limit" label="Requests per minute Limit (RPM)">
+        <FormField control={form.control} name="rpm_limit" label="每分钟请求上限（RPM）">
           {({ ref, ...field }) => <Input {...field} ref={ref} type="number" step={1} min={0} />}
         </FormField>
 

@@ -138,7 +138,7 @@ const ModelGroupAliasSettings: React.FC<ModelGroupAliasSettingsProps> = ({
       return true;
     } catch (error) {
       console.error("Failed to save model group alias settings:", error);
-      toast.fromError("Failed to save model group alias settings");
+      toast.fromError("保存模型组别名设置失败");
       return false;
     }
   };
@@ -147,13 +147,13 @@ const ModelGroupAliasSettings: React.FC<ModelGroupAliasSettingsProps> = ({
     if (writesDisabled) return;
 
     if (!newAlias.aliasName || !newAlias.targetModelGroup) {
-      toast.fromError("Please provide both alias name and target model group");
+      toast.fromError("请同时提供别名和目标模型组");
       return;
     }
 
     // Check for duplicate alias names
     if (aliases.some((alias) => alias.aliasName === newAlias.aliasName)) {
-      toast.fromError("An alias with this name already exists");
+      toast.fromError("该名称的别名已存在");
       return;
     }
 
@@ -168,7 +168,7 @@ const ModelGroupAliasSettings: React.FC<ModelGroupAliasSettingsProps> = ({
     if (await saveAliasesToBackend(updatedAliases)) {
       setAliases(updatedAliases);
       setNewAlias({ aliasName: "", targetModelGroup: "" });
-      toast.success("Alias added successfully");
+      toast.success("别名添加成功");
     }
   };
 
@@ -183,13 +183,13 @@ const ModelGroupAliasSettings: React.FC<ModelGroupAliasSettingsProps> = ({
     if (!editingAlias) return;
 
     if (!editingAlias.aliasName || !editingAlias.targetModelGroup) {
-      toast.fromError("Please provide both alias name and target model group");
+      toast.fromError("请同时提供别名和目标模型组");
       return;
     }
 
     // Check for duplicate alias names (excluding current alias)
     if (aliases.some((alias) => alias.id !== editingAlias.id && alias.aliasName === editingAlias.aliasName)) {
-      toast.fromError("An alias with this name already exists");
+      toast.fromError("该名称的别名已存在");
       return;
     }
 
@@ -205,7 +205,7 @@ const ModelGroupAliasSettings: React.FC<ModelGroupAliasSettingsProps> = ({
       }
       setAliases(updatedAliases);
       setEditingAlias(null);
-      toast.success("Alias updated successfully");
+      toast.success("别名更新成功");
     }
   };
 
@@ -225,7 +225,7 @@ const ModelGroupAliasSettings: React.FC<ModelGroupAliasSettingsProps> = ({
         pinned: current.pinned.filter((name) => name !== deletedName),
       }));
       setAliases(updatedAliases);
-      toast.success("Alias deleted successfully");
+      toast.success("别名删除成功");
     }
   };
 

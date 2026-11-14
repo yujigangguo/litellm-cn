@@ -93,7 +93,7 @@ export function describeBudgetResetSchedule(
   }
   if (!budgetDuration) {
     return {
-      label: "Never resets",
+      label: "永不过期",
       resetAt: null,
       period: null,
       tooltip: "This budget has no reset window, so this is lifetime spend for as long as the membership exists.",

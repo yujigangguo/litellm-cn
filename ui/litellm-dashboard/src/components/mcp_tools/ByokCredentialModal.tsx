@@ -45,7 +45,7 @@ export const ByokCredentialModal: React.FC<ByokCredentialModalProps> = ({ server
 
   const handleAuthorize = async () => {
     if (!apiKey.trim()) {
-      toast.error("Please enter your API key");
+      toast.error("请输入 API 密钥");
       return;
     }
     setLoading(true);
@@ -177,11 +177,11 @@ export const ByokCredentialModal: React.FC<ByokCredentialModalProps> = ({ server
 
               <div className="mb-4">
                 <label htmlFor={apiKeyInputId} className="block text-sm font-semibold text-foreground mb-2">
-                  {serverDisplayName} API Key
+                  {serverDisplayName} API 密钥
                 </label>
                 <PasswordInput
                   id={apiKeyInputId}
-                  placeholder="Enter your API key"
+                  placeholder="请输入 API 密钥"
                   value={apiKey}
                   onChange={(e) => setApiKey(e.target.value)}
                   groupClassName="rounded-lg"

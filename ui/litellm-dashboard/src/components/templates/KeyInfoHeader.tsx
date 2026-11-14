@@ -96,7 +96,7 @@ function UserField({ userAlias, userEmail, userId }: { userAlias?: string | null
     <div className="flex flex-col gap-2 text-xs min-w-[200px] max-w-[300px]">
       {[
         { label: "用户别名", value: userAlias ?? null },
-        { label: "User Email", value: userEmail || null },
+        { label: "用户邮箱", value: userEmail || null },
         { label: "用户 ID", value: userId || null },
       ].map(({ label, value }) => (
         <div key={label} className="flex flex-col min-w-0">
@@ -188,7 +188,7 @@ export function KeyInfoHeader({
         <div style={{ marginBottom: 16 }}>
           <Button onClick={onCreateNew}>
             <Plus className="size-3.5" />
-            Create New Key
+            新建密钥
           </Button>
         </div>
       )}

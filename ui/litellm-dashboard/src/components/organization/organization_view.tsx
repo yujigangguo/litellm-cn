@@ -77,11 +77,11 @@ const OrganizationInfoView: React.FC<OrganizationInfoProps> = ({
       };
       await organizationMemberAddCall(accessToken, organizationId, member);
 
-      toast.success("Organization member added successfully");
+      toast.success("组织成员添加成功");
       setIsAddMemberModalVisible(false);
       queryClient.invalidateQueries({ queryKey: organizationKeys.all });
     } catch (error) {
-      toast.fromError("Failed to add organization member");
+      toast.fromError("添加组织成员失败");
       console.error("Error adding organization member:", error);
     }
   };
@@ -97,11 +97,11 @@ const OrganizationInfoView: React.FC<OrganizationInfoProps> = ({
       };
 
       await organizationMemberUpdateCall(accessToken, organizationId, member);
-      toast.success("Organization member updated successfully");
+      toast.success("组织成员更新成功");
       setIsEditMemberModalVisible(false);
       queryClient.invalidateQueries({ queryKey: organizationKeys.all });
     } catch (error) {
-      toast.fromError("Failed to update organization member");
+      toast.fromError("更新组织成员失败");
       console.error("Error updating organization member:", error);
     }
   };
@@ -111,11 +111,11 @@ const OrganizationInfoView: React.FC<OrganizationInfoProps> = ({
       if (!accessToken) return;
 
       await organizationMemberDeleteCall(accessToken, organizationId, values.user_id);
-      toast.success("Organization member deleted successfully");
+      toast.success("组织成员删除成功");
       setIsEditMemberModalVisible(false);
       queryClient.invalidateQueries({ queryKey: organizationKeys.all });
     } catch (error) {
-      toast.fromError("Failed to delete organization member");
+      toast.fromError("删除组织成员失败");
       console.error("Error deleting organization member:", error);
     }
   };

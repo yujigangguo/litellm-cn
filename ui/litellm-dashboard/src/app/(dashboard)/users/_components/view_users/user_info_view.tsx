@@ -159,7 +159,7 @@ export default function UserInfoView({
         setUserModels(availableModels);
       } catch (error) {
         console.error("Error fetching user data:", error);
-        toast.fromError("Failed to fetch user data");
+        toast.fromError("获取用户数据失败");
       } finally {
         setIsLoading(false);
       }
@@ -204,7 +204,7 @@ export default function UserInfoView({
         user_id: userId,
       };
       await teamMemberAddCall(accessToken, selectedTeamId, member);
-      toast.success("User added to team successfully");
+      toast.success("用户已成功加入团队");
       setIsAddTeamModalOpen(false);
       // Re-fetch user data to refresh teams
       const data = await userGetInfoV2(accessToken, userId);
@@ -244,7 +244,7 @@ export default function UserInfoView({
         user_id: userId,
       };
       await teamMemberDeleteCall(accessToken, teamToRemove.team_id, member);
-      toast.success("User removed from team successfully");
+      toast.success("用户已从团队移除");
       setIsRemoveTeamModalOpen(false);
       setTeamToRemove(null);
       // Re-fetch user data to refresh teams
@@ -282,16 +282,16 @@ export default function UserInfoView({
 
   const handleResetPassword = async () => {
     if (!accessToken) {
-      toast.fromError("Access token not found");
+      toast.fromError("未找到访问令牌");
       return;
     }
     try {
-      toast.success("Generating password reset link...");
+      toast.success("正在生成密码重置链接…");
       const data = await invitationCreateCall(accessToken, userId);
       setInvitationLinkData(data);
       setIsInvitationLinkModalVisible(true);
     } catch (error) {
-      toast.fromError("Failed to generate password reset link");
+      toast.fromError("生成密码重置链接失败");
     }
   };
 
@@ -300,14 +300,14 @@ export default function UserInfoView({
       if (!accessToken) return;
       setIsDeletingUser(true);
       await userDeleteCall(accessToken, [userId]);
-      toast.success("User deleted successfully");
+      toast.success("用户删除成功");
       if (onDelete) {
         onDelete();
       }
       onClose();
     } catch (error) {
       console.error("Error deleting user:", error);
-      toast.fromError("Failed to delete user");
+      toast.fromError("删除用户失败");
     } finally {
       setIsDeleteModalOpen(false);
       setIsDeletingUser(false);
@@ -353,11 +353,11 @@ export default function UserInfoView({
           : userData.object_permission,
       });
 
-      toast.success("User updated successfully");
+      toast.success("用户更新成功");
       setIsEditing(false);
     } catch (error) {
       console.error("Error updating user:", error);
-      toast.fromError("Failed to update user");
+      toast.fromError("更新用户失败");
     }
   };
 

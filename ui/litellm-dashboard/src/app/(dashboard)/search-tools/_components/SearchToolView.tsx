@@ -85,7 +85,7 @@ export const SearchToolView: React.FC<SearchToolViewProps> = ({
 
         <Card>
           <CardContent>
-            <p className="text-sm text-muted-foreground">API Key</p>
+            <p className="text-sm text-muted-foreground">API 密钥</p>
             <p className="mt-2 text-foreground">{searchTool.litellm_params.api_key ? "****" : "Not set"}</p>
           </CardContent>
         </Card>

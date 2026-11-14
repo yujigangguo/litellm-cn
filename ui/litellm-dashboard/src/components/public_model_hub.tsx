@@ -275,7 +275,7 @@ const PublicModelHub: React.FC<PublicModelHubProps> = ({ accessToken, isEmbedded
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
-    toast.success("Copied to clipboard!");
+    toast.success("已复制到剪贴板！");
   };
 
   const formatCapabilityName = (key: string) => {

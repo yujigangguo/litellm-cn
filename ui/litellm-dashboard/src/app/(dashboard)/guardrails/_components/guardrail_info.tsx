@@ -193,7 +193,7 @@ const GuardrailInfoView: React.FC<GuardrailInfoProps> = ({ guardrailId, onClose,
         setSelectedPiiActions({});
       }
     } catch (error) {
-      toast.fromError("Failed to load guardrail information");
+      toast.fromError("加载防护规则信息失败");
       console.error("Error fetching guardrail info:", error);
     } finally {
       setLoading(false);
@@ -486,19 +486,19 @@ const GuardrailInfoView: React.FC<GuardrailInfoProps> = ({ guardrailId, onClose,
 
       // Only proceed with update if there are actual changes
       if (Object.keys(updateData).length === 0) {
-        toast.info("No changes detected");
+        toast.info("未检测到更改");
         setIsEditing(false);
         return;
       }
 
       await updateGuardrailCall(accessToken, guardrailId, updateData);
-      toast.success("Guardrail updated successfully");
+      toast.success("防护规则更新成功");
       setHasUnsavedContentFilterChanges(false);
       fetchGuardrailInfo();
       setIsEditing(false);
     } catch (error) {
       console.error("Error updating guardrail:", error);
-      toast.fromError("Failed to update guardrail");
+      toast.fromError("更新防护规则失败");
     }
   };
 

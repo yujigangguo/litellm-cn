@@ -129,7 +129,7 @@ const SSOModals: React.FC<SSOModalsProps> = ({
   // Enhanced form submission handler
   const handleFormSubmit = async (formValues: SSOSettingsFormValues) => {
     if (!accessToken) {
-      toast.fromError("No access token available");
+      toast.fromError("没有可用的访问令牌");
       return;
     }
 
@@ -198,7 +198,7 @@ const SSOModals: React.FC<SSOModalsProps> = ({
   // Handle clearing SSO settings
   const handleClearSSO = async () => {
     if (!accessToken) {
-      toast.fromError("No access token available");
+      toast.fromError("没有可用的访问令牌");
       return;
     }
 
@@ -237,10 +237,10 @@ const SSOModals: React.FC<SSOModalsProps> = ({
       // Close the main SSO modal and trigger refresh
       handleAddSSOOk();
 
-      toast.success("SSO settings cleared successfully");
+      toast.success("SSO 设置清除成功");
     } catch (error) {
       console.error("Failed to clear SSO settings:", error);
-      toast.fromError("Failed to clear SSO settings");
+      toast.fromError("清除 SSO 设置失败");
     }
   };
 

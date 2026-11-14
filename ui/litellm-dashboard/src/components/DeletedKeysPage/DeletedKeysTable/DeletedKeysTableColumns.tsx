@@ -88,8 +88,8 @@ export const getDeletedKeysTableColumns = (): ColumnDef<DeletedKeyResponse>[] =>
   {
     id: "user_email",
     accessorKey: "user_email",
-    meta: { title: "User Email" },
-    header: "User Email",
+    meta: { title: "用户邮箱" },
+    header: "用户邮箱",
     size: 160,
     enableSorting: false,
     cell: ({ row }) => <TruncatedTextCell value={row.original.user_email} />,

@@ -283,7 +283,7 @@ const CreateMCPServer: React.FC<CreateMCPServerProps> = ({
       // its own credential write.
       setAuthorizedIdentity(getOAuthAuthorizationIdentity(allFieldsValue(form)));
 
-      toast.success("OAuth authorization successful! Please click 'Create MCP Server' to save the configuration.");
+      toast.success("OAuth 授权成功！请点击「创建 MCP 服务」保存配置。");
     },
     onBeforeRedirect: persistCreateUiState,
     flowSource: "create",
@@ -482,9 +482,9 @@ const CreateMCPServer: React.FC<CreateMCPServerProps> = ({
         }
 
         if (isAdmin) {
-          toast.success("MCP Server created successfully");
+          toast.success("MCP 服务创建成功");
         } else {
-          toast.success("MCP Server submitted for admin review", {
+          toast.success("MCP 服务已提交管理员审核", {
             description: "Once an admin approves it, the server will appear in your MCP Servers list.",
           });
         }

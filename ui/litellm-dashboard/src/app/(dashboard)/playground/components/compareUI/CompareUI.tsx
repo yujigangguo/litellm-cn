@@ -482,7 +482,7 @@ export default function CompareUI({ accessToken, disabledPersonalKeyCreation }: 
       return;
     }
     if (!effectiveApiKey) {
-      toast.fromError("Please provide a Virtual Key or select Current UI Session");
+      toast.fromError("请提供虚拟密钥，或选择当前 UI 会话");
       return;
     }
     const targetComparisons = comparisons;

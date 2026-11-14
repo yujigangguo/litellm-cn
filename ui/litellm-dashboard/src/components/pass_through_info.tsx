@@ -176,7 +176,7 @@ const PassThroughInfoView: React.FC<PassThroughInfoProps> = ({
 
       const headers = parseHeaders(values.headers);
       if (headers === null) {
-        toast.fromError("Invalid JSON format for headers");
+        toast.fromError("请求头的 JSON 格式无效");
         return;
       }
 
@@ -205,7 +205,7 @@ const PassThroughInfoView: React.FC<PassThroughInfoProps> = ({
       }
     } catch (error) {
       console.error("Error updating endpoint:", error);
-      toast.fromError("Failed to update pass through endpoint");
+      toast.fromError("更新透传端点失败");
     }
   };
 
@@ -214,14 +214,14 @@ const PassThroughInfoView: React.FC<PassThroughInfoProps> = ({
       if (!accessToken || !endpointData?.id) return;
 
       await deletePassThroughEndpointsCall(accessToken, endpointData.id);
-      toast.success("Pass through endpoint deleted successfully");
+      toast.success("透传端点删除成功");
       onClose();
       if (onEndpointUpdated) {
         onEndpointUpdated();
       }
     } catch (error) {
       console.error("Error deleting endpoint:", error);
-      toast.fromError("Failed to delete pass through endpoint");
+      toast.fromError("删除透传端点失败");
     }
   };
 

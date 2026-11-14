@@ -303,7 +303,7 @@ const MCPNetworkSettings: React.FC<MCPNetworkSettingsProps> = ({ accessToken }) 
       (result): result is PromiseRejectedResult => result.status === "rejected",
     );
     if (failures.length === 0) {
-      toast.success("MCP network settings saved");
+      toast.success("MCP 网络设置已保存");
       return;
     }
     failures.forEach((failure) => toast.fromError(failure.reason));

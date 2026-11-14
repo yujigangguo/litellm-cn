@@ -134,7 +134,7 @@ export function ModelMaxBudgetEditor({
         <div className="mb-2">{blurb}</div>
         <Button variant="outline" size="sm" onClick={addEntry} disabled={!premiumUser} title={hintWhenLocked}>
           <Plus className="w-3 h-3" />
-          Add Model Budget
+          添加模型预算
         </Button>
       </div>
     );
@@ -222,7 +222,7 @@ export function ModelMaxBudgetEditor({
       })}
       <Button variant="outline" size="sm" onClick={addEntry} disabled={!premiumUser} title={hintWhenLocked}>
         <Plus className="w-3 h-3" />
-        Add Model Budget
+        添加模型预算
       </Button>
     </div>
   );

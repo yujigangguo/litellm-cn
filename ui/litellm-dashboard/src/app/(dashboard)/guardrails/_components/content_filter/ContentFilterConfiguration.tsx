@@ -119,7 +119,7 @@ const ContentFilterConfiguration: React.FC<ContentFilterConfigurationProps> = ({
 
   const handleAddPrebuiltPattern = () => {
     if (!selectedPatternName) {
-      toast.error("Please select a pattern");
+      toast.error("请选择模式");
       return;
     }
 
@@ -140,7 +140,7 @@ const ContentFilterConfiguration: React.FC<ContentFilterConfigurationProps> = ({
 
   const handleAddCustomPattern = () => {
     if (!customPatternName || !customPatternRegex) {
-      toast.error("Please provide pattern name and regex");
+      toast.error("请提供模式名称和正则表达式");
       return;
     }
 
@@ -160,7 +160,7 @@ const ContentFilterConfiguration: React.FC<ContentFilterConfigurationProps> = ({
 
   const handleAddKeyword = () => {
     if (!newKeyword) {
-      toast.error("Please enter a keyword");
+      toast.error("请输入关键词");
       return;
     }
 

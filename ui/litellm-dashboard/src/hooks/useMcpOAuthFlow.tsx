@@ -155,8 +155,8 @@ export const useMcpOAuthFlow = ({
     const credentials = getCredentials() || {};
 
     if (!accessToken) {
-      setError("Missing admin token");
-      toast.error("Access token missing. Please re-authenticate and try again.");
+      setError("缺少管理员令牌");
+      toast.error("访问令牌缺失，请重新登录后重试。");
       return;
     }
 
@@ -288,9 +288,9 @@ export const useMcpOAuthFlow = ({
     } catch (err) {
       clearStoredFlow();
       processingRef.current = false;
-      setError("Failed to resume OAuth flow. Please retry.");
+      setError("恢复 OAuth 流程失败，请重试。");
       setStatus("error");
-      toast.error("Failed to resume OAuth flow. Please retry.");
+      toast.error("恢复 OAuth 流程失败，请重试。");
       return;
     }
 
@@ -360,7 +360,7 @@ export const useMcpOAuthFlow = ({
       setTokenResponse(token);
       setStatus("success");
       setError(null);
-      toast.success("OAuth token retrieved successfully");
+      toast.success("OAuth 令牌获取成功");
     } catch (err) {
       if (resetVersion !== resetVersionRef.current) {
         return;

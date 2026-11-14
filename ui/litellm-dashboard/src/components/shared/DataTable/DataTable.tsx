@@ -359,7 +359,7 @@ function DefaultEmptyState() {
         <SearchX className="size-5 text-muted-foreground" />
       </div>
       <div className="text-sm font-medium text-foreground">没有结果</div>
-      <div className="text-sm text-muted-foreground">No rows match your search or filters.</div>
+      <div className="text-sm text-muted-foreground">没有符合搜索或筛选条件的行。</div>
     </div>
   );
 }

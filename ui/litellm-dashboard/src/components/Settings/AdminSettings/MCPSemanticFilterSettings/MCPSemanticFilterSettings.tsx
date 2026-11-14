@@ -164,7 +164,7 @@ export default function MCPSemanticFilterSettings({ accessToken }: MCPSemanticFi
         setIsDirty(false);
         setSaveSuccess(true);
         setTimeout(() => setSaveSuccess(false), 3000);
-        toast.success("Settings updated successfully. Changes will be applied across all pods within 10 seconds.");
+        toast.success("设置更新成功，改动会在 10 秒内应用到所有实例。");
       },
       onError: (error) => {
         toast.fromError(error);

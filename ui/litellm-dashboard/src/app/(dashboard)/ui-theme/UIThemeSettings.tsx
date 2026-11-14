@@ -71,7 +71,7 @@ const UIThemeSettings: React.FC<UIThemeSettingsProps> = ({ userID, userRole, acc
         }),
       });
       if (response.ok) {
-        toast.success("Theme settings updated successfully!");
+        toast.success("主题设置更新成功！");
         setLogoUrl(logoUrlInput || null);
         setLogoUrlDark(logoUrlDarkInput || null);
         setFaviconUrl(faviconUrlInput || null);
@@ -80,7 +80,7 @@ const UIThemeSettings: React.FC<UIThemeSettingsProps> = ({ userID, userRole, acc
       }
     } catch (error) {
       console.error("Error updating theme settings:", error);
-      toast.fromError("Failed to update theme settings");
+      toast.fromError("更新主题设置失败");
     } finally {
       setLoading(false);
     }
@@ -106,13 +106,13 @@ const UIThemeSettings: React.FC<UIThemeSettingsProps> = ({ userID, userRole, acc
         body: JSON.stringify({ logo_url: null, logo_url_dark: null, favicon_url: null }),
       });
       if (response.ok) {
-        toast.success("Theme settings reset to default!");
+        toast.success("主题设置已恢复默认！");
       } else {
         throw new Error("Failed to reset");
       }
     } catch (error) {
       console.error("Error resetting theme settings:", error);
-      toast.fromError("Failed to reset theme settings");
+      toast.fromError("重置主题设置失败");
     } finally {
       setLoading(false);
     }

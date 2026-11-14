@@ -65,7 +65,7 @@ function UserBannerSettingsForm({ persisted, isLoading, isPending, saveBanner }:
   const handleSave = () => {
     saveBanner(draft, {
       onSuccess: () => {
-        toast.success("User banner updated successfully");
+        toast.success("用户横幅更新成功");
       },
       onError: (error) => {
         toast.fromError(error);

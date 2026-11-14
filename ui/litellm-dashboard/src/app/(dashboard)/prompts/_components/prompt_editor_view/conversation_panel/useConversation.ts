@@ -38,12 +38,12 @@ export const useConversation = (prompt: any, accessToken: string | null) => {
 
   const handleSendMessage = async () => {
     if (!accessToken) {
-      toast.fromError("Access token is required");
+      toast.fromError("访问令牌必填");
       return;
     }
 
     if (extractedVariables.length > 0 && !allVariablesFilled) {
-      toast.fromError("Please fill in all template variables");
+      toast.fromError("请填写所有模板变量");
       return;
     }
 
@@ -208,14 +208,14 @@ export const useConversation = (prompt: any, accessToken: string | null) => {
       abortController.abort();
       setAbortController(null);
       setIsLoading(false);
-      toast.info("Request cancelled");
+      toast.info("请求已取消");
     }
   };
 
   const handleClearConversation = () => {
     setMessages([]);
     setVariablesFilled(false);
-    toast.success("Chat history cleared.");
+    toast.success("聊天记录已清空。");
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {

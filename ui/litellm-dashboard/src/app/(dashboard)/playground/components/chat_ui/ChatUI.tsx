@@ -536,7 +536,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
       abortControllerRef.current.abort();
       abortControllerRef.current = null;
       setIsLoading(false);
-      toast.info("Request cancelled");
+      toast.info("请求已取消");
     }
   };
 
@@ -727,7 +727,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
 
   const handleSendMessage = async () => {
     if (endpointType === null) {
-      toast.fromError("Please select an endpoint before sending a request");
+      toast.fromError("发送请求前请先选择端点");
       return;
     }
 
@@ -736,19 +736,19 @@ const ChatUI: React.FC<ChatUIProps> = ({
 
     // For image edits, require both image and prompt
     if (endpointType === EndpointType.IMAGE_EDITS && uploadedImages.length === 0) {
-      toast.fromError("Please upload at least one image for editing");
+      toast.fromError("请至少上传一张要编辑的图片");
       return;
     }
 
     // For audio transcriptions, require audio file
     if (endpointType === EndpointType.TRANSCRIPTION && !uploadedAudio) {
-      toast.fromError("Please upload an audio file for transcription");
+      toast.fromError("请上传要转写的音频文件");
       return;
     }
 
     // For A2A agents, require agent selection
     if (endpointType === EndpointType.A2A_AGENTS && !selectedAgent) {
-      toast.fromError("Please select an agent to send a message");
+      toast.fromError("请选择要发送消息的助手");
       return;
     }
 
@@ -758,11 +758,11 @@ const ChatUI: React.FC<ChatUIProps> = ({
       const rawSelected =
         selectedMCPServers.length === 1 && selectedMCPServers[0] !== "__all__" ? selectedMCPServers[0] : null;
       if (!rawSelected) {
-        toast.fromError("Please select an MCP server to test");
+        toast.fromError("请选择要测试的 MCP 服务");
         return;
       }
       if (!selectedMCPDirectTool) {
-        toast.fromError("Please select an MCP tool to call");
+        toast.fromError("请选择要调用的 MCP 工具");
         return;
       }
       // For toolsets, find the tool in the servers that back this toolset
@@ -780,7 +780,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
       }
       const mcpTool = searchPool.find((t: any) => t.name === selectedMCPDirectTool);
       if (!mcpTool) {
-        toast.fromError("Please wait for tool schema to load");
+        toast.fromError("请等待工具 schema 加载完成");
         return;
       }
       try {
@@ -805,7 +805,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
     ];
 
     if (modelRequiredEndpoints.includes(endpointType as EndpointType) && !selectedModel) {
-      toast.fromError("Please select a model before sending a request");
+      toast.fromError("发送请求前请先选择模型");
       return;
     }
 
@@ -816,7 +816,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
     const effectiveApiKey = simplified ? accessToken : apiKeySource === "session" ? accessToken : apiKey;
 
     if (!effectiveApiKey) {
-      toast.fromError("Please provide a Virtual Key or select Current UI Session");
+      toast.fromError("请提供虚拟密钥，或选择当前 UI 会话");
       return;
     }
 
@@ -832,7 +832,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
       try {
         newUserMessage = await createMultimodalMessage(inputMessage, responsesUploadedImage);
       } catch (error) {
-        toast.fromError("Failed to process image. Please try again.");
+        toast.fromError("处理图片失败，请重试。");
         return;
       }
     }
@@ -841,7 +841,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
       try {
         newUserMessage = await createChatMultimodalMessage(inputMessage, chatUploadedImage);
       } catch (error) {
-        toast.fromError("Failed to process image. Please try again.");
+        toast.fromError("处理图片失败，请重试。");
         return;
       }
     } else {
@@ -1178,7 +1178,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
     handleRemoveResponsesImage();
     handleRemoveChatImage();
     handleRemoveAudio();
-    toast.success("Chat history cleared.");
+    toast.success("聊天记录已清空。");
   };
 
   const onModelChange = (value: string | null) => {
@@ -1475,7 +1475,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
                 {endpointType === EndpointType.A2A_AGENTS && (
                   <div>
                     <label className="mb-2 flex items-center text-sm font-medium text-foreground">
-                      <Bot className="mr-2 size-4" aria-hidden="true" /> Select Agent
+                      <Bot className="mr-2 size-4" aria-hidden="true" /> 选择助手
                     </label>
                     <SearchSelect
                       value={selectedAgent}
@@ -2096,7 +2096,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
                             onToggle={() => {
                               codeInterpreter.toggle();
                               if (!codeInterpreter.enabled) {
-                                toast.success("Code Interpreter enabled!");
+                                toast.success("代码解释器已启用！");
                               }
                             }}
                           />
@@ -2173,8 +2173,8 @@ const ChatUI: React.FC<ChatUIProps> = ({
               size="sm"
               onClick={() => {
                 void navigator.clipboard.writeText(generatedCode).then(
-                  () => toast.success("Copied to clipboard!"),
-                  () => toast.error("Unable to copy to clipboard"),
+                  () => toast.success("已复制到剪贴板！"),
+                  () => toast.error("无法复制到剪贴板"),
                 );
               }}
             >

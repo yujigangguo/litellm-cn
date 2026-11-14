@@ -66,7 +66,7 @@ function AccessGroupEditForm({ accessGroup, onCancel, onSuccess }: Omit<AccessGr
         { accessGroupId: accessGroup.access_group_id, params },
         {
           onSuccess: () => {
-            toast.success("Access group updated successfully");
+            toast.success("访问组更新成功");
             onSuccess?.();
             onCancel();
           },

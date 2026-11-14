@@ -42,7 +42,7 @@ const DeleteSSOSettingsModal: React.FC<DeleteSSOSettingsModalProps> = ({ isVisib
 
     await editSSOSettings(clearSettings, {
       onSuccess: () => {
-        toast.success("SSO settings cleared successfully");
+        toast.success("SSO 设置清除成功");
         onCancel();
         onSuccess();
       },

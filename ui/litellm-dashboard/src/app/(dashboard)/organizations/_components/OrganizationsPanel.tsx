@@ -78,7 +78,7 @@ const OrganizationsPanel: React.FC<OrganizationsPanelProps> = ({ userRole, acces
     try {
       setIsDeleting(true);
       await organizationDeleteCall(accessToken, orgToDelete);
-      toast.success("Organization deleted successfully");
+      toast.success("组织删除成功");
 
       setIsDeleteModalOpen(false);
       setOrgToDelete(null);

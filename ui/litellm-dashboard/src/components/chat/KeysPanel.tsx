@@ -141,10 +141,10 @@ const KeysPanel: React.FC<Props> = ({ accessToken, userId, premiumUser }) => {
 
       const response = await regenerateKeyCall(accessToken, rotateTarget.token || rotateTarget.token_id, payload);
       setRegeneratedKey(response.key);
-      toast.success("Key rotated successfully");
+      toast.success("密钥轮换成功");
       queryClient.invalidateQueries({ queryKey: [KEYS_QUERY_KEY] });
     } catch {
-      toast.error("Failed to rotate key");
+      toast.error("轮换密钥失败");
     } finally {
       setIsRegenerating(false);
     }
@@ -308,7 +308,7 @@ const KeysPanel: React.FC<Props> = ({ accessToken, userId, premiumUser }) => {
               </div>
               <div className="grid grid-cols-3 gap-3">
                 <div className="flex flex-col gap-1.5">
-                  <Label>Max Budget (USD)</Label>
+                  <Label>预算上限（美元）</Label>
                   <Input
                     type="number"
                     step="0.01"

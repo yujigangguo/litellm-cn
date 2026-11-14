@@ -25,10 +25,10 @@ const getBudgetLabel = (
   memberSpendText: string,
   budgetDecimals: number,
 ): string => {
-  if (budget === null) return "· Unlimited";
+  if (budget === null) return "· 不限";
   const formattedBudget = formatNumberWithCommas(budget, budgetDecimals);
-  if (usesTeamMemberBudget) return `· ${memberSpendText} of $${formattedBudget} (team member)`;
-  return `of $${formattedBudget}`;
+  if (usesTeamMemberBudget) return `· ${memberSpendText} / $${formattedBudget}（团队成员）`;
+  return `/ $${formattedBudget}`;
 };
 
 const getMeterValueText = (
@@ -39,7 +39,7 @@ const getMeterValueText = (
 ): string => {
   if (!hasBudget || budget === null) return "";
   const formattedBudget = formatNumberWithCommas(budget, budgetDecimals);
-  return `${meterSpendText} of $${formattedBudget}`;
+  return `${meterSpendText} / $${formattedBudget}`;
 };
 
 export function SpendBudgetCell({

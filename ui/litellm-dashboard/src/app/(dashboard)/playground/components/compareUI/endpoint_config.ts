@@ -46,7 +46,7 @@ export const ENDPOINT_CONFIGS: Record<EndpointIdType, EndpointConfig> = {
     id: EndpointId.A2A_AGENTS,
     label: "/a2a (Agents)",
     selectorType: "agent",
-    selectorLabel: "Agent",
+    selectorLabel: "助手",
     selectorPlaceholder: "Select an agent",
     inputPlaceholder: "Send a message to compare agents",
     loadingMessage: "Gathering responses from all agents...",

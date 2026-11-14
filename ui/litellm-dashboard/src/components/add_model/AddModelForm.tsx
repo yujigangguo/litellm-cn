@@ -122,7 +122,7 @@ const AddModelForm: React.FC<AddModelFormProps> = ({
       toast.error(extractProxyErrorMessage(error));
       return;
     }
-    toast.success("Credential added successfully");
+    toast.success("凭据添加成功");
     setIsCredentialModalOpen(false);
     setIsFederatedCredentialModalOpen(false);
     await queryClient.invalidateQueries({ queryKey: credentialsKeys.all });
@@ -137,7 +137,7 @@ const AddModelForm: React.FC<AddModelFormProps> = ({
   const rejectMissingCredential = (): boolean => {
     const missing = selectedAuthType?.credentialOnly === true && !selectedCredentialName;
     if (missing) {
-      toast.error("Create or select a credential for this auth type");
+      toast.error("请为此认证类型创建或选择凭据");
     }
     return missing;
   };
@@ -337,12 +337,12 @@ const AddModelForm: React.FC<AddModelFormProps> = ({
                       {/* Credentials */}
                       <div className="mb-4">
                         <span className="text-sm text-muted-foreground">
-                          Either select existing credentials OR enter new provider credentials below
+                          选择现有凭据，或在下方输入新的供应商凭据
                         </span>
                       </div>
 
                       <MountedFormField
-                        label="Existing Credentials"
+                        label="现有凭据"
                         name="litellm_credential_name"
                         defaultValue={null}
                         className="mb-4"
@@ -363,7 +363,7 @@ const AddModelForm: React.FC<AddModelFormProps> = ({
                         <>
                           <div className="flex items-center my-4">
                             <div className="grow border-t border-border"></div>
-                            <span className="px-4 text-muted-foreground text-sm">OR</span>
+                            <span className="px-4 text-muted-foreground text-sm">或</span>
                             <div className="grow border-t border-border"></div>
                           </div>
                           <ProviderSpecificFields
@@ -375,14 +375,14 @@ const AddModelForm: React.FC<AddModelFormProps> = ({
                           {canCreateFederatedCredential && (
                             <div className="mb-4 flex flex-col items-start gap-2">
                               <span className="text-sm text-muted-foreground">
-                                Workload identity federation is saved as a credential, then attached to this model.
+                                工作负载身份联合保存为凭据后会附加到此模型。
                               </span>
                               <Button
                                 type="button"
                                 variant="outline"
                                 onClick={() => setIsFederatedCredentialModalOpen(true)}
                               >
-                                Use workload identity federation
+                                使用工作负载身份联合
                               </Button>
                             </div>
                           )}
@@ -390,7 +390,7 @@ const AddModelForm: React.FC<AddModelFormProps> = ({
                       )}
                       <div className="flex items-center my-4">
                         <div className="grow border-t border-border"></div>
-                        <span className="px-4 text-muted-foreground text-sm">Additional Model Info Settings</span>
+                        <span className="px-4 text-muted-foreground text-sm">附加模型信息设置</span>
                         <div className="grow border-t border-border"></div>
                       </div>
                       {/* Team-only Model Switch - Only show for proxy admins, not team admins */}
@@ -420,7 +420,7 @@ const AddModelForm: React.FC<AddModelFormProps> = ({
                                   }
                                 }}
                                 disabled={!premiumUser}
-                                aria-label="Team-BYOK Model"
+                                aria-label="团队自带密钥模型"
                               />
                             </span>
                           </SimpleTooltip>

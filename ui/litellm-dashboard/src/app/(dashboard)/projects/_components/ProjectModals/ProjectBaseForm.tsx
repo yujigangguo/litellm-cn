@@ -194,7 +194,7 @@ export function ProjectBaseForm({ form, advancedOpen, onAdvancedOpenChange }: Pr
         </FormField>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          <FormField control={form.control} name="max_budget" label="Max Budget (USD)">
+          <FormField control={form.control} name="max_budget" label="预算上限（美元）">
             {({ ref, value, onChange, ...field }) => (
               <InputGroup>
                 <InputGroupAddon>
@@ -398,7 +398,7 @@ export function ProjectBaseForm({ form, advancedOpen, onAdvancedOpenChange }: Pr
             onClick={() => metadata.append({ key: "", value: "" })}
           >
             <Plus />
-            Add Key-Value Pair
+            添加键值对
           </Button>
         </CollapsibleContent>
       </Collapsible>

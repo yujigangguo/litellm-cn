@@ -128,7 +128,7 @@ const UserEnvVarsModal: React.FC<UserEnvVarsModalProps> = ({ server, open, acces
     mutationFn: (values: Record<string, string>) => storeMCPUserEnvVars(accessToken!, server!.server_id, values),
     onSuccess: (saved) => {
       queryClient.setQueryData(queryKey, saved);
-      toast.success("Credentials saved");
+      toast.success("凭据已保存");
       onSaved?.(saved);
       close();
     },
@@ -141,7 +141,7 @@ const UserEnvVarsModal: React.FC<UserEnvVarsModalProps> = ({ server, open, acces
     mutationFn: () => clearMCPUserEnvVars(accessToken!, server!.server_id),
     onSuccess: (cleared) => {
       queryClient.setQueryData(queryKey, cleared);
-      toast.success("Credentials cleared");
+      toast.success("凭据已清除");
       onSaved?.(cleared);
       close();
     },

@@ -70,7 +70,7 @@ export const AccessGroupCreateDialog = ({
   const mutation = useMutation({
     mutationFn: (body: AccessGroupCreateBody) => createAccessGroup(body),
     onSuccess: () => {
-      toast.success("Access group created successfully");
+      toast.success("访问组创建成功");
       queryClient.invalidateQueries({ queryKey: accessGroupKeys.all });
       closeAndReset();
     },
@@ -172,7 +172,7 @@ export const AccessGroupCreateDialog = ({
             </TabsContent>
 
             <TabsContent value="agents" className="pt-4">
-              <FormField control={form.control} name="agentIds" label="Allowed Agents">
+              <FormField control={form.control} name="agentIds" label="允许的助手">
                 {({ id, value, onChange }) => (
                   <MultiSelect
                     id={id}

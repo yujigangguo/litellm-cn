@@ -23,7 +23,7 @@ export const BATCH_CALL_TYPES = ["acreate_batch", "create_batch", "aretrieve_bat
 
 export const SPAN_TYPE_LABELS: Record<string, string> = {
   llm: "LLM",
-  agent: "Agent",
+  agent: "助手",
   mcp: "MCP",
   batch: "Batch",
 };

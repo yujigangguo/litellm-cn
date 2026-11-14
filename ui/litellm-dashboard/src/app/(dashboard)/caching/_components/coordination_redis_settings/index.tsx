@@ -40,7 +40,7 @@ const CoordinationRedisSettings: React.FC = () => {
 
   useEffect(() => {
     if (isError) {
-      toast.fromError("Failed to load coordination Redis settings");
+      toast.fromError("加载协调 Redis 设置失败");
     }
   }, [isError]);
 
@@ -65,7 +65,7 @@ const CoordinationRedisSettings: React.FC = () => {
     try {
       const result = await testConnection.mutateAsync(buildCoordinationPayload(redisType, values));
       if (result.status === "healthy") {
-        toast.success("Coordination Redis connection test successful!");
+        toast.success("协调 Redis 连接测试成功！");
       } else {
         toast.fromError(`Connection test failed: ${result.error ?? "Unknown error"}`);
       }
@@ -82,9 +82,9 @@ const CoordinationRedisSettings: React.FC = () => {
 
     try {
       await updateSettings.mutateAsync(buildCoordinationPayload(redisType, values));
-      toast.success("Coordination Redis settings saved. Restart the proxy to apply them.");
+      toast.success("协调 Redis 设置已保存，重启代理后生效。");
     } catch {
-      toast.fromError("Failed to update coordination Redis settings");
+      toast.fromError("更新协调 Redis 设置失败");
     }
   };
 

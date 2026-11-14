@@ -42,7 +42,7 @@ export const FEDERATION_CORE_FIELDS: readonly FederationField[] = [
   },
   {
     key: "anthropic_service_account_id",
-    label: "Service Account ID",
+    label: "服务账号 ID",
     tooltip: "The svac_ id the federation rule targets. Anthropic's reference lists it as required.",
     placeholder: "svac_...",
     required: false,

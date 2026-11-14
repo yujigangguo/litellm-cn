@@ -50,7 +50,7 @@ const CacheSettings: React.FC<CacheSettingsProps> = ({ accessToken }) => {
       setRedisType(toRedisType(currentValues.redis_type));
     } catch (error) {
       console.error("Failed to load cache settings:", error);
-      toast.fromError("Failed to load cache settings");
+      toast.fromError("加载缓存设置失败");
     }
   }, [accessToken, form]);
 
@@ -105,7 +105,7 @@ const CacheSettings: React.FC<CacheSettingsProps> = ({ accessToken }) => {
         buildCachePayload(redisType, values, { forTesting: true }),
       );
       if (result.status === "success") {
-        toast.success("Cache connection test successful!");
+        toast.success("缓存连接测试成功！");
       } else {
         toast.fromError(`Connection test failed: ${result.message || result.error}`);
       }
@@ -129,11 +129,11 @@ const CacheSettings: React.FC<CacheSettingsProps> = ({ accessToken }) => {
     setIsSaving(true);
     try {
       await updateCacheSettingsCall(accessToken, buildCachePayload(redisType, values, { forTesting: false }));
-      toast.success("Cache settings updated successfully");
+      toast.success("缓存设置更新成功");
       await loadCacheSettings();
     } catch (error) {
       console.error("Failed to save cache settings:", error);
-      toast.fromError("Failed to update cache settings");
+      toast.fromError("更新缓存设置失败");
     } finally {
       setIsSaving(false);
     }

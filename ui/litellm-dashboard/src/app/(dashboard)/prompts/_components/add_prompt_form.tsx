@@ -70,7 +70,7 @@ const AddPromptForm: React.FC<AddPromptFormProps> = ({ visible, onClose, accessT
     const picked = event.target.files?.[0];
     if (!picked) return;
     if (!picked.name.endsWith(".prompt")) {
-      toast.fromError("Please upload a .prompt file");
+      toast.fromError("请上传 .prompt 文件");
       clearSelectedFile();
       return;
     }
@@ -104,21 +104,21 @@ const AddPromptForm: React.FC<AddPromptFormProps> = ({ visible, onClose, accessT
       };
     } catch (conversionError) {
       console.error("Error converting prompt file:", conversionError);
-      toast.fromError("Failed to convert prompt file to JSON");
+      toast.fromError("提示词文件转为 JSON 失败");
       return null;
     }
   };
 
   const handleSubmit = async (values: AddPromptFormValues) => {
     if (!accessToken) {
-      toast.fromError("Access token is required");
+      toast.fromError("访问令牌必填");
       return;
     }
 
     const isDotprompt = promptIntegration === "dotprompt";
 
     if (isDotprompt && !selectedFile) {
-      toast.fromError("Please upload a .prompt file");
+      toast.fromError("请上传 .prompt 文件");
       return;
     }
 
@@ -134,12 +134,12 @@ const AddPromptForm: React.FC<AddPromptFormProps> = ({ visible, onClose, accessT
 
     try {
       await createPromptCall(accessToken, promptData);
-      toast.success("Prompt created successfully!");
+      toast.success("提示词创建成功！");
       handleCancel();
       onSuccess();
     } catch (createError) {
       console.error("Error creating prompt:", createError);
-      toast.fromError("Failed to create prompt");
+      toast.fromError("创建提示词失败");
     } finally {
       setLoading(false);
     }

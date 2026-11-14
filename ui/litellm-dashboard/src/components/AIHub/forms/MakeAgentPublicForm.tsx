@@ -39,7 +39,7 @@ const MakeAgentPublicForm: React.FC<MakeAgentPublicFormProps> = ({
   const handleNext = () => {
     if (currentStep === 0) {
       if (selectedAgents.size === 0) {
-        toast.fromError("Please select at least one agent to make public");
+        toast.fromError("请至少选择一个要公开的助手");
         return;
       }
       setCurrentStep(1);
@@ -85,7 +85,7 @@ const MakeAgentPublicForm: React.FC<MakeAgentPublicFormProps> = ({
 
   const handleSubmit = async () => {
     if (selectedAgents.size === 0) {
-      toast.fromError("Please select at least one agent to make public");
+      toast.fromError("请至少选择一个要公开的助手");
       return;
     }
 
@@ -101,7 +101,7 @@ const MakeAgentPublicForm: React.FC<MakeAgentPublicFormProps> = ({
       onSuccess();
     } catch (error) {
       console.error("Error making agents public:", error);
-      toast.fromError("Failed to make agents public. Please try again.");
+      toast.fromError("将助手设为公开失败，请重试。");
     } finally {
       setLoading(false);
     }

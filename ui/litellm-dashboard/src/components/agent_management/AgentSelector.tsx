@@ -70,7 +70,7 @@ const AgentSelector: React.FC<AgentSelectorProps> = ({
     ...agents.map((agent) => ({
       label: `${agent.agent_name || agent.agent_id}`,
       value: agent.agent_id,
-      description: "Agent",
+      description: "助手",
     })),
   ];
 

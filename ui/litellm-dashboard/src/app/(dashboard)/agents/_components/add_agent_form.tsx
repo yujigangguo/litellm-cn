@@ -339,12 +339,12 @@ const AddAgentForm: React.FC<AddAgentFormProps> = ({ visible, onClose, accessTok
 
   const handleCreateAgent = async () => {
     if (!accessToken) {
-      toast.error("No access token available");
+      toast.error("没有可用的访问令牌");
       return;
     }
 
     if (keyAssignOption === "existing_key" && !selectedExistingKey) {
-      toast.error("Please select an existing key to assign");
+      toast.error("请选择要分配的现有密钥");
       return;
     }
 
@@ -358,7 +358,7 @@ const AddAgentForm: React.FC<AddAgentFormProps> = ({ visible, onClose, accessTok
       const values = form.getValues();
       const built = buildAgentData(values);
       if (!built) {
-        toast.error("Failed to build agent data");
+        toast.error("构建助手数据失败");
         setIsSubmitting(false);
         return;
       }
@@ -957,7 +957,7 @@ const AddAgentForm: React.FC<AddAgentFormProps> = ({ visible, onClose, accessTok
                   {keyAssignOption === "create_new" && (
                     <div className="mt-3 space-y-3" onClick={(e) => e.stopPropagation()}>
                       <Field className="gap-1">
-                        <FieldLabel htmlFor="agent-new-key-name">Key Name</FieldLabel>
+                        <FieldLabel htmlFor="agent-new-key-name">密钥名称</FieldLabel>
                         <Input
                           id="agent-new-key-name"
                           value={newKeyName}
@@ -1060,7 +1060,7 @@ const AddAgentForm: React.FC<AddAgentFormProps> = ({ visible, onClose, accessTok
         <DialogHeader>
           <div className="flex items-center space-x-3 border-b border-border pb-4">
             {selectedLogo && currentStep < 1 && (
-              <Logo src={selectedLogo} label="Agent" className="h-6 w-6 object-contain" />
+              <Logo src={selectedLogo} label="助手" className="h-6 w-6 object-contain" />
             )}
             <DialogTitle className="text-xl font-semibold text-foreground">添加助手</DialogTitle>
           </div>

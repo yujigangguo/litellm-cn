@@ -21,7 +21,7 @@ const PromptEditorView: React.FC<PromptEditorViewProps> = ({ onClose, onSuccess,
         return parseExistingPrompt(initialPromptData);
       } catch (error) {
         console.error("Error parsing existing prompt:", error);
-        toast.fromError("Failed to parse prompt data");
+        toast.fromError("解析提示词数据失败");
       }
     }
     return {
@@ -142,7 +142,7 @@ const PromptEditorView: React.FC<PromptEditorViewProps> = ({ onClose, onSuccess,
       setShowToolModal(false);
       setEditingToolIndex(null);
     } catch (error) {
-      toast.fromError("Invalid JSON format");
+      toast.fromError("JSON 格式无效");
     }
   };
 
@@ -171,7 +171,7 @@ const PromptEditorView: React.FC<PromptEditorViewProps> = ({ onClose, onSuccess,
       setActiveVersionId(`${versionData.prompt_id}.v${versionNum}`);
     } catch (error) {
       console.error("Error loading version:", error);
-      toast.fromError("Failed to load prompt version");
+      toast.fromError("加载提示词版本失败");
     }
   };
 
@@ -185,12 +185,12 @@ const PromptEditorView: React.FC<PromptEditorViewProps> = ({ onClose, onSuccess,
 
   const handleSave = async () => {
     if (!accessToken) {
-      toast.fromError("Access token is required");
+      toast.fromError("访问令牌必填");
       return;
     }
 
     if (!prompt.name || prompt.name.trim() === "") {
-      toast.fromError("Please enter a valid prompt name");
+      toast.fromError("请输入有效的提示词名称");
       return;
     }
 
@@ -214,10 +214,10 @@ const PromptEditorView: React.FC<PromptEditorViewProps> = ({ onClose, onSuccess,
 
       if (editMode && initialPromptData?.prompt_spec?.prompt_id) {
         await updatePromptCall(accessToken, initialPromptData.prompt_spec.prompt_id, promptData);
-        toast.success("Prompt updated successfully!");
+        toast.success("提示词更新成功！");
       } else {
         await createPromptCall(accessToken, promptData);
-        toast.success("Prompt created successfully!");
+        toast.success("提示词创建成功！");
       }
       onSuccess();
       onClose();

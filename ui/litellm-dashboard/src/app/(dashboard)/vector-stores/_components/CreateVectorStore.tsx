@@ -135,12 +135,12 @@ const CreateVectorStore: React.FC<CreateVectorStoreProps> = ({ accessToken, onSu
 
   const handleCreateVectorStore = async () => {
     if (documents.length === 0) {
-      toast.warning("Please upload at least one document");
+      toast.warning("请至少上传一个文档");
       return;
     }
 
     if (!selectedProvider) {
-      toast.warning("Please select a provider");
+      toast.warning("请选择供应商");
       return;
     }
 
@@ -158,17 +158,17 @@ const CreateVectorStore: React.FC<CreateVectorStoreProps> = ({ accessToken, onSu
       const bucketName = asText(providerParams.vector_bucket_name);
       const indexName = asText(providerParams.index_name);
       if (bucketName && bucketName.length < 3) {
-        toast.warning("Vector bucket name must be at least 3 characters");
+        toast.warning("向量桶名称至少需要 3 个字符");
         return;
       }
       if (indexName && indexName.length > 0 && indexName.length < 3) {
-        toast.warning("Index name must be at least 3 characters if provided");
+        toast.warning("索引名称至少需要 3 个字符");
         return;
       }
     }
 
     if (!accessToken) {
-      toast.error("No access token available");
+      toast.error("没有可用的访问令牌");
       return;
     }
 

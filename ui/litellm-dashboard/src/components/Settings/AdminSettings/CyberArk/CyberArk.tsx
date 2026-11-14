@@ -62,7 +62,7 @@ export default function CyberArk() {
   const handleDelete = () => {
     deleteConfig(undefined, {
       onSuccess: () => {
-        toast.success("CyberArk configuration deleted");
+        toast.success("CyberArk 配置已删除");
         setIsDeleteModalOpen(false);
       },
       onError: (err) => toast.fromError(err),

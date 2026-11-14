@@ -541,9 +541,9 @@ export function MCPSubmissionsTab({ accessToken }: MCPSubmissionsTabProps) {
     setIsSavingRules(true);
     try {
       await updateConfigFieldSetting(accessToken, SETTINGS_KEY, requiredFields);
-      toast.success("Submission rules saved");
+      toast.success("提交规则已保存");
     } catch {
-      toast.fromError("Failed to save submission rules");
+      toast.fromError("保存提交规则失败");
     } finally {
       setIsSavingRules(false);
     }
@@ -569,7 +569,7 @@ export function MCPSubmissionsTab({ accessToken }: MCPSubmissionsTabProps) {
       await fetchData();
       toast.success(`MCP server "${serverName}" approved`);
     } catch {
-      toast.fromError("Failed to approve MCP server");
+      toast.fromError("批准 MCP 服务失败");
     } finally {
       setConfirmAction(null);
     }
@@ -582,7 +582,7 @@ export function MCPSubmissionsTab({ accessToken }: MCPSubmissionsTabProps) {
       await fetchData();
       toast.success(`MCP server "${serverName}" rejected`);
     } catch {
-      toast.fromError("Failed to reject MCP server");
+      toast.fromError("拒绝 MCP 服务失败");
     } finally {
       setConfirmAction(null);
     }

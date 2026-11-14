@@ -49,7 +49,7 @@ const EmailEventSettings: React.FC<EmailEventSettingsProps> = ({ accessToken }) 
 
     try {
       await updateEmailEventSettings(accessToken, { settings: eventSettings });
-      toast.success("Email event settings updated successfully");
+      toast.success("邮件事件设置更新成功");
     } catch (error) {
       console.error("Failed to update email event settings:", error);
       toast.fromError(error);
@@ -61,7 +61,7 @@ const EmailEventSettings: React.FC<EmailEventSettingsProps> = ({ accessToken }) 
 
     try {
       await resetEmailEventSettings(accessToken);
-      toast.success("Email event settings reset to defaults");
+      toast.success("邮件事件设置已恢复默认");
       // Refresh settings after reset
       fetchEventSettings();
     } catch (error) {

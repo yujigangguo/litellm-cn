@@ -90,7 +90,7 @@ const commitObjectField = (raw: string, onChange: (value: unknown) => void): voi
   if (isPlainObject(parsed)) {
     onChange(parsed);
   } else {
-    toast.error("Enter a valid JSON object for this configuration");
+    toast.error("请为此配置输入有效的 JSON 对象");
   }
 };
 
@@ -279,7 +279,7 @@ const GuardrailProviderFields: React.FC<GuardrailProviderFieldsProps> = ({
         populateGuardrailProviderMap(data);
       } catch (error) {
         console.error("Error fetching provider params:", error);
-        setError("Failed to load provider parameters");
+        setError("加载供应商参数失败");
       } finally {
         setLoading(false);
       }

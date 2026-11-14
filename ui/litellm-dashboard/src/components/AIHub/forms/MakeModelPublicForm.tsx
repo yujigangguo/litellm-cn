@@ -60,7 +60,7 @@ const MakeModelPublicForm: React.FC<MakeModelPublicFormProps> = ({
   const handleNext = () => {
     if (currentStep === 0) {
       if (selectedModels.size === 0) {
-        toast.fromError("Please select at least one model to make public");
+        toast.fromError("请至少选择一个要公开的模型");
         return;
       }
       setCurrentStep(1);
@@ -113,7 +113,7 @@ const MakeModelPublicForm: React.FC<MakeModelPublicFormProps> = ({
 
   const handleSubmit = async () => {
     if (selectedModels.size === 0) {
-      toast.fromError("Please select at least one model to make public");
+      toast.fromError("请至少选择一个要公开的模型");
       return;
     }
 
@@ -127,7 +127,7 @@ const MakeModelPublicForm: React.FC<MakeModelPublicFormProps> = ({
       onSuccess();
     } catch (error) {
       console.error("Error making model groups public:", error);
-      toast.fromError("Failed to make model groups public. Please try again.");
+      toast.fromError("将模型组设为公开失败，请重试。");
     } finally {
       setLoading(false);
     }

@@ -105,7 +105,7 @@ const EditCyberArkModal: React.FC<EditCyberArkModalProps> = ({ isVisible, onCanc
 
     mutate(config, {
       onSuccess: () => {
-        toast.success("CyberArk configuration updated successfully");
+        toast.success("CyberArk 配置更新成功");
         onSuccess();
       },
       onError: (err) => {

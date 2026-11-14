@@ -211,13 +211,13 @@ export function PlaygroundChat({
 
   const newChat = () => {
     clearChat();
-    toast.success("Chat history cleared.");
+    toast.success("聊天记录已清空。");
   };
 
   const resetAll = () => {
     clearChat();
     reset();
-    toast.success("Chat and settings reset");
+    toast.success("聊天和设置已重置");
   };
 
   const code = (sdk: CodeSdk): string => {
@@ -262,7 +262,7 @@ export function PlaygroundChat({
       )}
       {capabilities.target === "agent" && (
         <TargetPicker
-          label="Agent"
+          label="助手"
           placeholder="Select an agent"
           groups={[
             {

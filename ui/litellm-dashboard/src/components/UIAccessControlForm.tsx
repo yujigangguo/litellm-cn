@@ -112,7 +112,7 @@ const UIAccessControlForm: React.FC<UIAccessControlFormProps> = ({ accessToken, 
 
   const handleUIAccessSubmit = async (formValues: UIAccessControlFormValues) => {
     if (!accessToken) {
-      toast.fromError("No access token available");
+      toast.fromError("没有可用的访问令牌");
       return;
     }
 
@@ -133,7 +133,7 @@ const UIAccessControlForm: React.FC<UIAccessControlFormProps> = ({ accessToken, 
       onSuccess();
     } catch (error) {
       console.error("Failed to save UI access settings:", error);
-      toast.fromError("Failed to save UI access settings");
+      toast.fromError("保存 UI 访问设置失败");
     } finally {
       setLoading(false);
     }

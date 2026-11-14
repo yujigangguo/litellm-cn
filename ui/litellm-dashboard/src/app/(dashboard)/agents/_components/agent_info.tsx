@@ -140,7 +140,7 @@ const AgentInfoView: React.FC<AgentInfoViewProps> = ({ agentId, onClose, accessT
       }
     } catch (error) {
       console.error("Error fetching agent info:", error);
-      toast.error("Failed to load agent information");
+      toast.error("加载助手信息失败");
     } finally {
       setIsLoading(false);
     }
@@ -249,12 +249,12 @@ const AgentInfoView: React.FC<AgentInfoViewProps> = ({ agentId, onClose, accessT
         object_permission: buildMcpObjectPermission(values),
         access_group_ids: values.access_group_ids ?? [],
       });
-      toast.success("Agent updated successfully");
+      toast.success("助手更新成功");
       setIsEditing(false);
       fetchAgentInfo();
     } catch (error) {
       console.error("Error updating agent:", error);
-      toast.error("Failed to update agent");
+      toast.error("更新助手失败");
     } finally {
       setIsSaving(false);
     }
@@ -489,7 +489,7 @@ const AgentInfoView: React.FC<AgentInfoViewProps> = ({ agentId, onClose, accessT
             <TabsContent value="settings" keepMounted>
               <Card className="block p-6">
                 <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-lg font-medium">Agent Settings</h3>
+                  <h3 className="text-lg font-medium">助手设置</h3>
                   {!isEditing && (
                     <Button
                       onClick={() => {

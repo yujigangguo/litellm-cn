@@ -90,7 +90,7 @@ const EditSSOSettingsModal: React.FC<EditSSOSettingsModalProps> = ({ isVisible, 
 
       await mutateAsync(payload, {
         onSuccess: () => {
-          toast.success("SSO settings updated successfully");
+          toast.success("SSO 设置更新成功");
           onSuccess();
         },
         onError: (error) => {

@@ -59,7 +59,7 @@ export function CloudZeroIntegrationSettings({ settings, onSettingsUpdated }: Cl
       { limit: 10 },
       {
         onSuccess: (data) => {
-          toast.success("Dry run completed successfully");
+          toast.success("试运行完成");
         },
         onError: (error) => {
           toast.error(error?.message || "Failed to perform dry run");
@@ -77,7 +77,7 @@ export function CloudZeroIntegrationSettings({ settings, onSettingsUpdated }: Cl
       { operation: "replace_hourly" },
       {
         onSuccess: () => {
-          toast.success("Data successfully exported to CloudZero");
+          toast.success("数据已成功导出到 CloudZero");
           setIsExportConfirmOpen(false);
         },
         onError: (error) => {
@@ -109,7 +109,7 @@ export function CloudZeroIntegrationSettings({ settings, onSettingsUpdated }: Cl
 
     deleteMutation.mutate(undefined, {
       onSuccess: () => {
-        toast.success("CloudZero integration deleted successfully");
+        toast.success("CloudZero 集成删除成功");
         setIsDeleteModalOpen(false);
         onSettingsUpdated();
       },

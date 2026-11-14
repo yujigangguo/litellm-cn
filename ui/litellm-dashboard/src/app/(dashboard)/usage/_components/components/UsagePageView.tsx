@@ -195,7 +195,7 @@ const UsagePage: React.FC<UsagePageProps> = ({ teams, organizations, teamsLoadin
     const cleanup = cleanUsageUrl(urlParams, { allowedViews, isAdmin, canViewTeamClients });
     if (!cleanup) return;
     if (cleanup.deniedAccess)
-      toast.warning("You don't have access to that usage view", { id: "usage-url-access-denied" });
+      toast.warning("你没有权限查看该用量视图", { id: "usage-url-access-denied" });
     void setUrlParams(cleanup.patch);
   }, [accessSettled, urlParams, allowedViews, isAdmin, canViewTeamClients, setUrlParams]);
 

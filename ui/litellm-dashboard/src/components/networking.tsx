@@ -436,7 +436,7 @@ export const handleError = async (errorData: string | any) => {
     // Convert errorData to string if it isn't already
     const errorString = typeof errorData === "string" ? errorData : JSON.stringify(errorData);
     if (errorString.includes("Authentication Error - Expired Key")) {
-      toast.info("UI Session Expired. Logging out.");
+      toast.info("UI 会话已过期，正在退出登录。");
       lastErrorTime = currentTime;
       clearTokenCookies();
       const browserLocation = getWindowLocation();
@@ -3209,7 +3209,7 @@ export const updateConfigFieldSetting = async (accessToken: string, fieldName: s
       config_type: "general_settings",
     };
     const data = await apiClient.post(`/config/field/update`, { accessToken, body: formData });
-    toast.success("Successfully updated value!");
+    toast.success("值更新成功！");
     return data;
     // Handle success - you might want to update some state or UI based on the created key
   } catch (error) {
@@ -3225,7 +3225,7 @@ export const deleteConfigFieldSetting = async (accessToken: string, fieldName: s
       config_type: "general_settings",
     };
     const data = await apiClient.post(`/config/field/delete`, { accessToken, body: formData });
-    toast.success("Field reset on proxy");
+    toast.success("字段已在代理端重置");
     return data;
     // Handle success - you might want to update some state or UI based on the created key
   } catch (error) {
@@ -3491,7 +3491,7 @@ export const testMCPSemanticFilter = async (accessToken: string, model: string, 
             require_approval: "never",
           },
         ],
-        tool_choice: "required",
+        tool_choice: "必填",
       }),
     });
 
@@ -6258,7 +6258,7 @@ export const updatePassThroughEndpoint = async (
     }
 
     const data = await response.json();
-    toast.success("Pass through endpoint updated successfully");
+    toast.success("透传端点更新成功");
     return data;
   } catch (error) {
     console.error("Failed to update pass through endpoint:", error);

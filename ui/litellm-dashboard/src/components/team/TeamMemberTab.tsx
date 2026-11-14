@@ -307,7 +307,7 @@ export default function TeamMemberTab({
       { teamId: teamData.team_id, userId: memberToResetBudget.user_id },
       {
         onSuccess: () => {
-          toast.success("Team member budget reset to the team default");
+          toast.success("团队成员预算已重置为团队默认值");
           setMemberToResetBudget(null);
           onMemberBudgetReset();
         },

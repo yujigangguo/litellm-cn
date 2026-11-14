@@ -127,7 +127,7 @@ const PromptsPanel: React.FC<PromptsProps> = ({ accessToken, userRole }) => {
       fetchPrompts(); // Refresh the list
     } catch (error) {
       console.error("Error deleting prompt:", error);
-      toast.fromError("Failed to delete prompt");
+      toast.fromError("删除提示词失败");
     } finally {
       setIsDeleting(false);
       setPromptToDelete(null);

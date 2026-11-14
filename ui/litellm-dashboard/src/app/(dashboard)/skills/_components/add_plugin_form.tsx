@@ -170,34 +170,34 @@ const AddPluginForm: React.FC<AddPluginFormProps> = ({ visible, onClose, accessT
 
   const handleSubmit = async (values: AddPluginFormValues) => {
     if (!accessToken) {
-      toast.error("No access token available");
+      toast.error("没有可用的访问令牌");
       return;
     }
 
     if (!urlPreview) {
-      toast.error("Please enter a valid repository or zip archive URL");
+      toast.error("请输入有效的仓库或 zip 压缩包 URL");
       return;
     }
 
     if (!validatePluginName(values.name)) {
-      toast.error("Skill name must be kebab-case (lowercase letters, numbers, and hyphens only)");
+      toast.error("技能名称必须是 kebab-case（仅小写字母、数字和连字符）");
       return;
     }
 
     if (values.version && !isValidSemanticVersion(values.version)) {
-      toast.error("Version must be in semantic versioning format (e.g., 1.0.0)");
+      toast.error("版本必须符合语义化版本格式（例如 1.0.0）");
       return;
     }
 
     if (values.authorEmail && !isValidEmail(values.authorEmail)) {
-      toast.error("Invalid email format");
+      toast.error("邮箱格式无效");
       return;
     }
 
     setIsSubmitting(true);
     try {
       await registerClaudeCodePlugin(accessToken, buildRegisterRequest(values, urlPreview.parsed));
-      toast.success("Skill registered successfully");
+      toast.success("技能注册成功");
       form.reset(EMPTY_VALUES);
       setUrlPreview(null);
       setSubPathLock(null);

@@ -44,7 +44,7 @@ export const AgentIdentityFields = ({ accessToken }: { accessToken: string | nul
         }
       })
       .catch(() => {
-        if (active) setError("Could not load the gateway's trusted identity providers");
+        if (active) setError("无法加载网关信任的身份提供商");
       });
     return () => {
       active = false;

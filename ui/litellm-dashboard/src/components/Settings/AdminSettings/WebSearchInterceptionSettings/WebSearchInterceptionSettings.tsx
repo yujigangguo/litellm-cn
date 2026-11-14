@@ -139,7 +139,7 @@ function WebSearchInterceptionForm({ accessToken, initial, schema }: WebSearchIn
     updateSettings(formValues, {
       onSuccess: () => {
         form.reset(formValues);
-        toast.success("Settings updated successfully. Changes will be applied across all pods within 10 seconds.");
+        toast.success("设置更新成功，改动会在 10 秒内应用到所有实例。");
       },
       onError: (saveError) => {
         toast.fromError(saveError);

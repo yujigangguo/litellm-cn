@@ -48,7 +48,7 @@ export default function CredentialsPanel() {
         ...newCredential,
         ...(valuesToDelete.length > 0 ? { credential_values_to_delete: valuesToDelete } : {}),
       });
-      toast.success("Credential updated successfully");
+      toast.success("凭据更新成功");
       setIsUpdateModalOpen(false);
       await refetchCredentials();
     } catch (error) {
@@ -63,7 +63,7 @@ export default function CredentialsPanel() {
     try {
       const newCredential = buildCredential(submission, submission.credential_values);
       await credentialCreateCall(accessToken, newCredential);
-      toast.success("Credential added successfully");
+      toast.success("凭据添加成功");
       setIsAddModalOpen(false);
       await refetchCredentials();
     } catch (error) {
@@ -78,10 +78,10 @@ export default function CredentialsPanel() {
     setIsCredentialDeleting(true);
     try {
       await credentialDeleteCall(accessToken, credentialToDelete.credential_name);
-      toast.success("Credential deleted successfully");
+      toast.success("凭据删除成功");
       await refetchCredentials();
     } catch (error) {
-      toast.error("Failed to delete credential");
+      toast.error("删除凭据失败");
     } finally {
       setCredentialToDelete(null);
       setIsDeleteModalOpen(false);

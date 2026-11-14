@@ -65,7 +65,7 @@ export function LiteAdminConversation({
                     <AriaAnswer message={entry.message} chart={entry.chart} question={entry.question} />
                   ) : (
                     <article aria-label="Your question" className="space-y-2">
-                      <p className="text-right text-xs font-medium text-muted-foreground">You</p>
+                      <p className="text-right text-xs font-medium text-muted-foreground">你</p>
                       <ChatMessageContent
                         message={entry.message}
                         allowImages={false}

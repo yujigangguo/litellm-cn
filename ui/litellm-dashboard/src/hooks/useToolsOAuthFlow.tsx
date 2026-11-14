@@ -173,7 +173,7 @@ export const useToolsOAuthFlow = ({
       payload = JSON.parse(storedResult);
       flowState = peeked;
     } catch (_) {
-      setError("Failed to resume OAuth flow. Please retry.");
+      setError("恢复 OAuth 流程失败，请重试。");
       setStatus("error");
       processingRef.current = false;
       clearStorage(FLOW_STATE_KEY);
@@ -218,7 +218,7 @@ export const useToolsOAuthFlow = ({
 
       setStatus("success");
       setError(null);
-      toast.success("Connected successfully");
+      toast.success("连接成功");
       onSuccessRef.current(token.access_token);
     } catch (err) {
       const msg = extractErrorMessage(err);

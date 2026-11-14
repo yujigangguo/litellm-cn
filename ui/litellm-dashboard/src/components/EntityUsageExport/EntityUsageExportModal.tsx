@@ -34,7 +34,7 @@ const EntityUsageExportModal: React.FC<EntityUsageExportModalProps> = ({
       onClose();
     } catch (error) {
       console.error("Error exporting data:", error);
-      toast.fromError("Failed to export data");
+      toast.fromError("导出数据失败");
     } finally {
       setIsExporting(false);
     }

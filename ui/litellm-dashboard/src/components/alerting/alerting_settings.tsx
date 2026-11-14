@@ -74,7 +74,7 @@ const AlertingSettings: React.FC<AlertingSettingsProps> = ({ accessToken, premiu
         }
       }
       // update value in state
-      toast.success("Wait 10s for proxy to update.");
+      toast.success("等待 10 秒让代理更新。");
     } catch (error) {
       toast.error(extractProxyErrorMessage(error));
     }

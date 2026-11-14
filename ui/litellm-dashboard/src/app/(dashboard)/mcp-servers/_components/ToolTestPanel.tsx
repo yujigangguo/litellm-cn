@@ -118,18 +118,18 @@ export function ToolTestPanel({
   const handleCopyResult = async () => {
     const success = await copyToClipboard(JSON.stringify(result, null, 2));
     if (success) {
-      toast.success("Result copied to clipboard");
+      toast.success("结果已复制到剪贴板");
     } else {
-      toast.fromError("Failed to copy result");
+      toast.fromError("复制结果失败");
     }
   };
 
   const handleCopyToolName = async () => {
     const success = await copyToClipboard(tool.name);
     if (success) {
-      toast.success("Tool name copied to clipboard");
+      toast.success("工具名称已复制到剪贴板");
     } else {
-      toast.fromError("Failed to copy tool name");
+      toast.fromError("复制工具名称失败");
     }
   };
 

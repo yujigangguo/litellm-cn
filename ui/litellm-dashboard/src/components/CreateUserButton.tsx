@@ -137,11 +137,11 @@ const labelWithHint = (label: string, hint: string): React.ReactNode => (
 const EmailInvitationsNotice: React.FC = () => (
   <Alert variant="info" className="mb-4">
     <Info />
-    <AlertTitle>Email invitations</AlertTitle>
+    <AlertTitle>邮件邀请</AlertTitle>
     <AlertDescription>
-      New users receive an email invite only when an email integration (SMTP, Resend, or SendGrid) is configured.{" "}
+      只有配置了邮件集成（SMTP、Resend 或 SendGrid）时，新用户才会收到邮件邀请。{" "}
       <a href="https://docs.litellm.ai/docs/proxy/email" target="_blank" rel="noreferrer">
-        Learn how to set up email notifications
+        了解如何设置邮件通知
       </a>
     </AlertDescription>
   </Alert>
@@ -201,7 +201,7 @@ export const CreateUserButton: React.FC<CreateuserProps> = ({
 
   const handleCreate = async (formValues: CreateUserFormValues) => {
     try {
-      toast.info("Making API Call");
+      toast.info("正在调用 API");
       if (!isEmbedded) {
         setIsModalVisible(true);
       }
@@ -228,7 +228,7 @@ export const CreateUserButton: React.FC<CreateuserProps> = ({
         setIsInvitationLinkModalVisible(true);
       }
 
-      toast.success("API user Created");
+      toast.success("API 用户已创建");
       form.reset(defaultValues);
       localStorage.removeItem("userData" + userID);
     } catch (error: any) {
@@ -245,7 +245,7 @@ export const CreateUserButton: React.FC<CreateuserProps> = ({
   }));
 
   const userEmailField = (
-    <FormField control={form.control} name="user_email" label="User Email">
+    <FormField control={form.control} name="user_email" label="用户邮箱">
       {({ ref, value, ...control }) => <Input {...control} ref={ref} value={value ?? ""} />}
     </FormField>
   );
@@ -255,7 +255,7 @@ export const CreateUserButton: React.FC<CreateuserProps> = ({
       control={form.control}
       name="team_id"
       label="团队"
-      description="If selected, user will be added as a 'user' role to the team."
+      description="选中后，用户会以“用户”角色加入团队。"
     >
       {({ id, value, onChange }) => <TeamDropdown id={id} value={value} onChange={onChange} />}
     </FormField>
@@ -270,7 +270,7 @@ export const CreateUserButton: React.FC<CreateuserProps> = ({
   );
 
   const sendInviteEmailField = (
-    <FormField control={form.control} name="send_invite_email" label="Send invitation email" orientation="horizontal">
+    <FormField control={form.control} name="send_invite_email" label="发送邀请邮件" orientation="horizontal">
       {({ id, value, onChange, onBlur }) => (
         <Checkbox id={id} checked={value} onCheckedChange={onChange} onBlur={onBlur} />
       )}
@@ -331,10 +331,10 @@ export const CreateUserButton: React.FC<CreateuserProps> = ({
       <Dialog open={isModalVisible} onOpenChange={(open) => !open && handleCancel()}>
         <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-[800px]">
           <DialogHeader>
-            <DialogTitle>Invite User</DialogTitle>
+            <DialogTitle>邀请用户</DialogTitle>
           </DialogHeader>
           <div className="flex flex-col gap-3">
-            <p className="mb-1 text-sm text-foreground">Create a User who can own keys</p>
+            <p className="mb-1 text-sm text-foreground">创建一个可以拥有密钥的用户</p>
             <EmailInvitationsNotice />
           </div>
           <TooltipProvider>
@@ -353,7 +353,7 @@ export const CreateUserButton: React.FC<CreateuserProps> = ({
                   control={form.control}
                   name="organization_ids"
                   label="组织"
-                  description="The user will be added to the selected organization(s)."
+                  description="用户会被添加到选中的组织。"
                 >
                   {({ id, value, onChange }) => (
                     <Select
@@ -363,7 +363,7 @@ export const CreateUserButton: React.FC<CreateuserProps> = ({
                       onValueChange={(selected: string[]) => onChange(selected.length === 0 ? undefined : selected)}
                     >
                       <SelectTrigger id={id} className="w-full">
-                        <SelectValue placeholder="Select Organization">
+                        <SelectValue placeholder="选择组织">
                           {(selected: string[]) =>
                             selected.length === 0
                               ? "Select Organization"
@@ -394,7 +394,7 @@ export const CreateUserButton: React.FC<CreateuserProps> = ({
                       className={`size-4 transition-transform ${isPersonalKeyOpen ? "rotate-90" : ""}`}
                       aria-hidden
                     />
-                    Personal Key Creation
+                    个人密钥创建
                   </CollapsibleTrigger>
                   <CollapsibleContent className="pt-4">
                     <FormField
@@ -423,7 +423,7 @@ export const CreateUserButton: React.FC<CreateuserProps> = ({
               <div className="mt-4 text-right">
                 <Button type="submit">
                   <UserPlus />
-                  Invite User
+                  邀请用户
                 </Button>
               </div>
             </form>

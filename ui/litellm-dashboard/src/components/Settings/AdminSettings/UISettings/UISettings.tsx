@@ -89,7 +89,7 @@ export default function UISettings() {
       { disable_model_add_for_internal_users: checked },
       {
         onSuccess: () => {
-          toast.success("UI settings updated successfully");
+          toast.success("UI 设置更新成功");
         },
         onError: (error) => {
           toast.fromError(error);
@@ -103,7 +103,7 @@ export default function UISettings() {
       { disable_team_admin_delete_team_user: checked },
       {
         onSuccess: () => {
-          toast.success("UI settings updated successfully");
+          toast.success("UI 设置更新成功");
         },
         onError: (error) => {
           toast.fromError(error);
@@ -115,7 +115,7 @@ export default function UISettings() {
   const handleUpdatePageVisibility = (settings: { enabled_ui_pages_internal_users: string[] | null }) => {
     updateSettings(settings, {
       onSuccess: () => {
-        toast.success("Page visibility settings updated successfully");
+        toast.success("页面可见性设置更新成功");
       },
       onError: (error) => {
         toast.fromError(error);
@@ -128,7 +128,7 @@ export default function UISettings() {
       { forward_client_headers_to_llm_api: checked },
       {
         onSuccess: () => {
-          toast.success("UI settings updated successfully");
+          toast.success("UI 设置更新成功");
         },
         onError: (error) => {
           toast.fromError(error);
@@ -142,7 +142,7 @@ export default function UISettings() {
       { forward_llm_provider_auth_headers: checked },
       {
         onSuccess: () => {
-          toast.success("UI settings updated successfully");
+          toast.success("UI 设置更新成功");
         },
         onError: (error) => {
           toast.fromError(error);
@@ -156,7 +156,7 @@ export default function UISettings() {
       { enable_projects_ui: checked },
       {
         onSuccess: () => {
-          toast.success("UI settings updated successfully. Refreshing page...");
+          toast.success("UI 设置更新成功，正在刷新页面…");
           setTimeout(() => window.location.reload(), 1000);
         },
         onError: (error) => {
@@ -171,7 +171,7 @@ export default function UISettings() {
       { enable_chat_ui: checked },
       {
         onSuccess: () => {
-          toast.success("UI settings updated successfully. Refreshing page...");
+          toast.success("UI 设置更新成功，正在刷新页面…");
           setTimeout(() => window.location.reload(), 1000);
         },
         onError: (error) => {
@@ -186,7 +186,7 @@ export default function UISettings() {
       { require_auth_for_public_ai_hub: checked },
       {
         onSuccess: () => {
-          toast.success("UI settings updated successfully");
+          toast.success("UI 设置更新成功");
         },
         onError: (error) => {
           toast.fromError(error);
@@ -200,7 +200,7 @@ export default function UISettings() {
       { disable_agents_for_internal_users: checked },
       {
         onSuccess: () => {
-          toast.success("UI settings updated successfully");
+          toast.success("UI 设置更新成功");
         },
         onError: (error) => {
           toast.fromError(error);
@@ -214,7 +214,7 @@ export default function UISettings() {
       { allow_agents_for_team_admins: checked },
       {
         onSuccess: () => {
-          toast.success("UI settings updated successfully");
+          toast.success("UI 设置更新成功");
         },
         onError: (error) => {
           toast.fromError(error);
@@ -228,7 +228,7 @@ export default function UISettings() {
       { disable_vector_stores_for_internal_users: checked },
       {
         onSuccess: () => {
-          toast.success("UI settings updated successfully");
+          toast.success("UI 设置更新成功");
         },
         onError: (error) => {
           toast.fromError(error);
@@ -242,7 +242,7 @@ export default function UISettings() {
       { allow_vector_stores_for_team_admins: checked },
       {
         onSuccess: () => {
-          toast.success("UI settings updated successfully");
+          toast.success("UI 设置更新成功");
         },
         onError: (error) => {
           toast.fromError(error);
@@ -256,7 +256,7 @@ export default function UISettings() {
       { scope_user_search_to_org: checked },
       {
         onSuccess: () => {
-          toast.success("UI settings updated successfully");
+          toast.success("UI 设置更新成功");
         },
         onError: (error) => {
           toast.fromError(error);
@@ -270,7 +270,7 @@ export default function UISettings() {
       { moyai_url: null },
       {
         onSuccess: () => {
-          toast.success("UI settings updated successfully");
+          toast.success("UI 设置更新成功");
         },
         onError: (error) => {
           toast.fromError(error);
@@ -284,7 +284,7 @@ export default function UISettings() {
       { disable_custom_api_keys: checked },
       {
         onSuccess: () => {
-          toast.success("UI settings updated successfully");
+          toast.success("UI 设置更新成功");
         },
         onError: (error) => {
           toast.fromError(error);
@@ -337,7 +337,7 @@ export default function UISettings() {
                   updateSettings(
                     { usage_default_time_range: value },
                     {
-                      onSuccess: () => toast.success("UI settings updated successfully"),
+                      onSuccess: () => toast.success("UI 设置更新成功"),
                       onError: (error) => toast.fromError(error),
                     },
                   );

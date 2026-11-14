@@ -25,7 +25,7 @@ export function UserPopoverCell({ userAlias, userEmail, userId, width }: UserPop
     <div className="flex flex-col gap-2 text-xs min-w-[200px] max-w-[300px]">
       {[
         { label: "用户别名", value: userAlias },
-        { label: "User Email", value: userEmail },
+        { label: "用户邮箱", value: userEmail },
         { label: "用户 ID", value: userId },
       ].map(({ label, value }) => (
         <div key={label} className="flex flex-col min-w-0">

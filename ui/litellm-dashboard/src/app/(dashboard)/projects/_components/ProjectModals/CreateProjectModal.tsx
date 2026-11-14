@@ -31,7 +31,7 @@ function CreateProjectForm({ onClose }: { onClose: () => void }) {
 
     createMutation.mutate(params, {
       onSuccess: () => {
-        toast.success("Project created successfully");
+        toast.success("项目创建成功");
         form.reset(emptyProjectFormValues);
         onClose();
       },

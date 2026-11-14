@@ -109,7 +109,7 @@ const TagEditForm: React.FC<TagEditFormProps> = ({ tag, seedBudgetFields, userMo
             <FormField
               control={form.control}
               name="max_budget"
-              label="Max Budget (USD)"
+              label="预算上限（美元）"
               description="Maximum amount in USD this tag can spend"
             >
               {({ ref, value, ...field }) => <NumericalInput {...field} value={value ?? ""} step={0.01} />}
@@ -216,7 +216,7 @@ const TagInfoView: React.FC<TagInfoViewProps> = ({ tagId, onClose, accessToken, 
         rpm_limit: undefined,
         budget_duration: values.budget_duration,
       });
-      toast.success("Tag updated successfully");
+      toast.success("标签更新成功");
       setIsEditing(false);
       fetchTagDetails();
     } catch (error) {

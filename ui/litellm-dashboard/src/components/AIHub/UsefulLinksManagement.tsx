@@ -115,13 +115,13 @@ const UsefulLinksManagement: React.FC<UsefulLinksManagementProps> = ({ accessTok
     try {
       new URL(newLink.url);
     } catch {
-      toast.fromError("Please enter a valid URL");
+      toast.fromError("请输入有效的 URL");
       return;
     }
 
     // Check for duplicate display names
     if (links.some((link) => link.displayName === newLink.displayName)) {
-      toast.fromError("A link with this display name already exists");
+      toast.fromError("该显示名称的链接已存在");
       return;
     }
 
@@ -136,7 +136,7 @@ const UsefulLinksManagement: React.FC<UsefulLinksManagementProps> = ({ accessTok
     if (await saveLinksToBackend(updatedLinks)) {
       setLinks(updatedLinks);
       setNewLink({ url: "", displayName: "" });
-      toast.success("Link added successfully");
+      toast.success("链接添加成功");
     }
   };
 
@@ -151,13 +151,13 @@ const UsefulLinksManagement: React.FC<UsefulLinksManagementProps> = ({ accessTok
     try {
       new URL(editingLink.url);
     } catch {
-      toast.fromError("Please enter a valid URL");
+      toast.fromError("请输入有效的 URL");
       return;
     }
 
     // Check for duplicate display names (excluding current link)
     if (links.some((link) => link.id !== editingLink.id && link.displayName === editingLink.displayName)) {
-      toast.fromError("A link with this display name already exists");
+      toast.fromError("该显示名称的链接已存在");
       return;
     }
 
@@ -166,7 +166,7 @@ const UsefulLinksManagement: React.FC<UsefulLinksManagementProps> = ({ accessTok
     if (await saveLinksToBackend(updatedLinks)) {
       setLinks(updatedLinks);
       setEditingLink(null);
-      toast.success("Link updated successfully");
+      toast.success("链接更新成功");
     }
   };
 
@@ -179,7 +179,7 @@ const UsefulLinksManagement: React.FC<UsefulLinksManagementProps> = ({ accessTok
 
     if (await saveLinksToBackend(updatedLinks)) {
       setLinks(updatedLinks);
-      toast.success("Link deleted successfully");
+      toast.success("链接删除成功");
     }
   };
 
@@ -205,7 +205,7 @@ const UsefulLinksManagement: React.FC<UsefulLinksManagementProps> = ({ accessTok
     if (await saveLinksToBackend(links)) {
       setIsRearranging(false);
       setOriginalLinksOrder([]);
-      toast.success("Link order saved successfully");
+      toast.success("链接顺序保存成功");
     }
   };
 

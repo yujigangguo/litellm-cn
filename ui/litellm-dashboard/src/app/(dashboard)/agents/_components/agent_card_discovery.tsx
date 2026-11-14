@@ -117,7 +117,7 @@ const AgentCardDiscovery: React.FC<AgentCardDiscoveryProps> = ({
 
   const handleDiscover = useCallback(async () => {
     if (!accessToken) {
-      setError("No access token available");
+      setError("没有可用的访问令牌");
       onApplyRef.current(null);
       return;
     }

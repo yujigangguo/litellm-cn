@@ -204,7 +204,7 @@ const PriceDataReload: React.FC<PriceDataReloadProps> = ({
 
   const handleHardRefresh = async () => {
     if (!accessToken) {
-      toast.fromError("No access token available");
+      toast.fromError("没有可用的访问令牌");
       return;
     }
 
@@ -218,11 +218,11 @@ const PriceDataReload: React.FC<PriceDataReloadProps> = ({
         await fetchReloadStatus();
         await fetchSourceInfo();
       } else {
-        toast.fromError("Failed to reload price data");
+        toast.fromError("重新加载价格数据失败");
       }
     } catch (error) {
       console.error("Error reloading price data:", error);
-      toast.fromError("Failed to reload price data. Please try again.");
+      toast.fromError("重新加载价格数据失败，请重试。");
     } finally {
       setIsLoading(false);
     }
@@ -230,13 +230,13 @@ const PriceDataReload: React.FC<PriceDataReloadProps> = ({
 
   const handleScheduleReload = async () => {
     if (!accessToken) {
-      toast.fromError("No access token available");
+      toast.fromError("没有可用的访问令牌");
       return;
     }
 
     const intervalHours = Number(hours);
     if (!isValidReloadInterval(intervalHours)) {
-      toast.fromError("Hours must be a whole number between 1 and 168");
+      toast.fromError("小时数必须是 1 到 168 之间的整数");
       return;
     }
 
@@ -249,11 +249,11 @@ const PriceDataReload: React.FC<PriceDataReloadProps> = ({
         setShowScheduleModal(false);
         await fetchReloadStatus();
       } else {
-        toast.fromError("Failed to schedule periodic reload");
+        toast.fromError("安排定时重载失败");
       }
     } catch (error) {
       console.error("Error scheduling reload:", error);
-      toast.fromError("Failed to schedule periodic reload. Please try again.");
+      toast.fromError("安排定时重载失败，请重试。");
     } finally {
       setIsScheduling(false);
     }
@@ -261,7 +261,7 @@ const PriceDataReload: React.FC<PriceDataReloadProps> = ({
 
   const handleCancelReload = async () => {
     if (!accessToken) {
-      toast.fromError("No access token available");
+      toast.fromError("没有可用的访问令牌");
       return;
     }
 
@@ -270,14 +270,14 @@ const PriceDataReload: React.FC<PriceDataReloadProps> = ({
       const response = await cancelModelCostMapReload(accessToken);
 
       if (response.status === "success") {
-        toast.success("Periodic reload cancelled successfully");
+        toast.success("定时重载已取消");
         await fetchReloadStatus();
       } else {
-        toast.fromError("Failed to cancel periodic reload");
+        toast.fromError("取消定时重载失败");
       }
     } catch (error) {
       console.error("Error cancelling reload:", error);
-      toast.fromError("Failed to cancel periodic reload. Please try again.");
+      toast.fromError("取消定时重载失败，请重试。");
     } finally {
       setIsCancelling(false);
     }

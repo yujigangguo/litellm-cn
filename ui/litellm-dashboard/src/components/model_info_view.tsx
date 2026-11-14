@@ -245,9 +245,9 @@ export default function ModelInfoView({
         custom_llm_provider: localModelData.litellm_params?.custom_llm_provider,
       },
     };
-    toast.info("Storing credential..");
+    toast.info("正在保存凭据…");
     let credentialResponse = await credentialCreateCall(accessToken, credentialItem);
-    toast.success("Credential stored successfully");
+    toast.success("凭据保存成功");
   };
 
   const handleModelUpdate = async (
@@ -260,7 +260,7 @@ export default function ModelInfoView({
 
       const parsedExtraParams = parseModelExtraParams(values.litellm_extra_params);
       if (parsedExtraParams === null) {
-        toast.fromError("LiteLLM Params must be a valid JSON object");
+        toast.fromError("LiteLLM 参数必须是有效的 JSON 对象");
         return;
       }
 
@@ -349,7 +349,7 @@ export default function ModelInfoView({
         if (values.team_id) updatedModelInfo = { ...updatedModelInfo, team_id: values.team_id };
         updatedModelInfo = applyPtuModelInfo(updatedModelInfo, values, ptuCostAttributionEnabled);
       } catch (e) {
-        toast.fromError("Invalid JSON in Model Info");
+        toast.fromError("模型信息中的 JSON 无效");
         return;
       }
 
@@ -393,11 +393,11 @@ export default function ModelInfoView({
         onModelUpdate(updatedModelData);
       }
 
-      toast.success("Model settings updated successfully");
+      toast.success("模型设置更新成功");
       setIsEditing(false);
     } catch (error) {
       console.error("Error updating model:", error);
-      toast.fromError("Failed to update model settings");
+      toast.fromError("更新模型设置失败");
     } finally {
       setIsSaving(false);
     }
@@ -434,7 +434,7 @@ export default function ModelInfoView({
     if (isComplexityRouterModel) {
       const targets = buildComplexityRouterTestTargets(localModelData ?? modelData);
       if (targets.length === 0) {
-        toast.warning("No complexity tiers are configured yet, so there is nothing to test.");
+        toast.warning("尚未配置复杂度层级，没有可测试的内容。");
         return;
       }
       setAutoRouterTestTargets(targets);
@@ -443,7 +443,7 @@ export default function ModelInfoView({
       return;
     }
     try {
-      toast.info("Testing connection...");
+      toast.info("正在测试连接…");
       const response = await testConnectionRequest(
         accessToken,
         {
@@ -462,7 +462,7 @@ export default function ModelInfoView({
       );
 
       if (response.status === "success") {
-        toast.success("Connection test successful!");
+        toast.success("连接测试成功！");
       } else {
         throw new Error(response?.result?.error || response?.message || "Unknown error");
       }
@@ -480,7 +480,7 @@ export default function ModelInfoView({
       setDeleteLoading(true);
       if (!accessToken) return;
       await modelDeleteCall(accessToken, modelId);
-      toast.success("Model deleted successfully");
+      toast.success("模型删除成功");
 
       if (onModelUpdate) {
         onModelUpdate({
@@ -492,7 +492,7 @@ export default function ModelInfoView({
       onClose();
     } catch (error) {
       console.error("Error deleting the model:", error);
-      toast.fromError("Failed to delete model");
+      toast.fromError("删除模型失败");
     } finally {
       setDeleteLoading(false);
       setIsDeleteModalOpen(false);
@@ -751,7 +751,7 @@ export default function ModelInfoView({
             value: modelData?.model_name || "Not Set",
           },
           {
-            label: "LiteLLM Model Name",
+            label: "LiteLLM 模型名称",
             value: modelData?.litellm_model_name || "Not Set",
           },
           {

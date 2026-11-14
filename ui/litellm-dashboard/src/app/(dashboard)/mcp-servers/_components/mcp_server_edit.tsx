@@ -336,7 +336,7 @@ const MCPServerEdit: React.FC<MCPServerEditProps> = ({
       // Re-capture after writing credentials so the token is not invalidated by its own credential write.
       authorizedIdentityRef.current = getOAuthAuthorizationIdentity(allFieldsValue(form));
 
-      toast.success("OAuth authorization successful! Please click 'Update MCP Server' to save the credentials.");
+      toast.success("OAuth 授权成功！请点击「更新 MCP 服务」保存凭据。");
     },
     onBeforeRedirect: persistEditUiState,
     flowSource: "edit",
@@ -812,7 +812,7 @@ const MCPServerEdit: React.FC<MCPServerEditProps> = ({
         }
       }
 
-      toast.success("MCP Server updated successfully");
+      toast.success("MCP 服务更新成功");
       setAppMayNotMatchUpstream(false);
       onSuccess(updated);
     } catch (error: any) {

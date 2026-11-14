@@ -256,7 +256,7 @@ export default function KeyInfoView({
       const nextSoftBudget =
         formValues.soft_budget === "" || formValues.soft_budget == null ? null : Number(formValues.soft_budget);
       if (nextSoftBudget !== null && !Number.isFinite(nextSoftBudget)) {
-        toast.error("Soft Budget must be a finite number");
+        toast.error("软预算必须是有限数字");
         return;
       }
       if (nextSoftBudget === previousSoftBudget) {
@@ -285,7 +285,7 @@ export default function KeyInfoView({
             (toolsetId) => !(allMcpToolsets ?? []).some((toolset) => toolset.toolset_id === toolsetId),
           );
         if (unresolvableSelection && Object.keys(mcpEntitlement.mcp_tool_permissions).length > 0) {
-          toast.error("MCP server or toolset list is unavailable, so MCP permissions cannot be saved yet. Retry.");
+          toast.error("MCP 服务或工具集列表不可用，暂时无法保存 MCP 权限，请重试。");
           return;
         }
         formValues.object_permission = {
@@ -344,7 +344,7 @@ export default function KeyInfoView({
           };
         } catch (error) {
           console.error("Error parsing metadata JSON:", error);
-          toast.error("Invalid metadata JSON");
+          toast.error("metadata JSON 无效");
           return;
         }
       } else {
@@ -411,7 +411,7 @@ export default function KeyInfoView({
       if (onKeyDataUpdate) {
         onKeyDataUpdate(newKeyValues);
       }
-      toast.success("Key updated successfully");
+      toast.success("密钥更新成功");
       setIsEditing(false);
       // Refresh key data here if needed
     } catch (error) {
@@ -425,7 +425,7 @@ export default function KeyInfoView({
       setDeleteLoading(true);
       if (!accessToken) return;
       await keyDeleteCall(accessToken as string, currentKeyData.token || currentKeyData.token_id);
-      toast.success("Key deleted successfully");
+      toast.success("密钥删除成功");
       await queryClient.invalidateQueries({ queryKey: keyKeys.lists() });
       if (onDelete) {
         onDelete();
@@ -743,8 +743,8 @@ export default function KeyInfoView({
                   <h3 className="text-lg font-medium">${formatNumberWithCommas(currentKeyData.spend, 4)}</h3>
                   <p className="text-sm">
                     {memberGate
-                      ? `Team member spend $${formatNumberWithCommas(memberGate.spend ?? 0, 4)} of $${formatNumberWithCommas(memberGate.maxBudget, 2)} (team member budget)`
-                      : `of ${budgetDisplay}`}
+                      ? `团队成员花费 $${formatNumberWithCommas(memberGate.spend ?? 0, 4)} / $${formatNumberWithCommas(memberGate.maxBudget, 2)}（团队成员预算）`
+                      : `预算 ${budgetDisplay}`}
                     <InheritedBudgetHint gates={inheritedGates} />
                   </p>
                   {currentKeyData.budget_reset_at && (

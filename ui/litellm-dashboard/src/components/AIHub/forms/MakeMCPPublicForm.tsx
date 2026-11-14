@@ -115,7 +115,7 @@ const MakeMCPPublicForm: React.FC<MakeMCPPublicFormProps> = ({
       // Make batch API call for all servers
       await makeMCPPublicCall(accessToken, serverIdsToMakePublic);
 
-      toast.success("MCP Hub publication list updated");
+      toast.success("MCP Hub 发布列表已更新");
       handleClose();
       onSuccess();
     } catch (error) {

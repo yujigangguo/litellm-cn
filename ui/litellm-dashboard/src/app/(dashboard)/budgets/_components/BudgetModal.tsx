@@ -22,9 +22,9 @@ const BudgetModal: React.FC<BudgetModalProps> = ({ isModalVisible, setIsModalVis
 
   const handleCreate = async (formValues: BudgetFormValues) => {
     try {
-      toast.info("Making API Call");
+      toast.info("正在调用 API");
       await createBudget.mutateAsync(applyBudgetPrecision(formValues));
-      toast.success("Budget Created");
+      toast.success("预算已创建");
       form.reset();
       setIsModalVisible(false);
     } catch (error) {
@@ -37,7 +37,7 @@ const BudgetModal: React.FC<BudgetModalProps> = ({ isModalVisible, setIsModalVis
     <Dialog open={isModalVisible} onOpenChange={(open) => !open && handleCancel()}>
       <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-lg">
         <DialogHeader>
-          <DialogTitle className="text-[15px] leading-[22px] font-semibold">Create budget</DialogTitle>
+          <DialogTitle className="text-[15px] leading-[22px] font-semibold">创建预算</DialogTitle>
         </DialogHeader>
         <form id={formId} onSubmit={form.handleSubmit(handleCreate)} noValidate>
           <BudgetFormFields form={form} isEditing={false} />
@@ -45,7 +45,7 @@ const BudgetModal: React.FC<BudgetModalProps> = ({ isModalVisible, setIsModalVis
         <DialogFooter>
           <DialogClose render={<Button variant="outline" />}>取消</DialogClose>
           <Button type="submit" form={formId}>
-            Create budget
+            创建预算
           </Button>
         </DialogFooter>
       </DialogContent>

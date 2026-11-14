@@ -140,7 +140,7 @@ export function usePlaygroundSend(deps: SendDeps) {
   const cancel = () => {
     if (!abortRef.current) return;
     stop();
-    toast.info("Request cancelled");
+    toast.info("请求已取消");
   };
 
   const prepare = async (): Promise<PreparedRequest | null> => {
@@ -152,7 +152,7 @@ export function usePlaygroundSend(deps: SendDeps) {
     }
     const direct = settings.endpoint === EndpointType.MCP ? deps.directCall() : null;
     if (settings.endpoint === EndpointType.MCP && !direct) {
-      toast.fromError("Pick an MCP server and a tool to call");
+      toast.fromError("请选择要调用的 MCP 服务和工具");
       return null;
     }
     const toolArguments = await (direct
@@ -164,13 +164,13 @@ export function usePlaygroundSend(deps: SendDeps) {
     if (toolArguments === null) return null;
     if (!deps.signedIn) return null;
     if (!deps.apiKey) {
-      toast.fromError("Please provide a Virtual Key or select Current UI Session");
+      toast.fromError("请提供虚拟密钥，或选择当前 UI 会话");
       return null;
     }
 
     const userMessage = await apiMessage(settings.endpoint, text, files[0]?.file).catch(() => null);
     if (!userMessage) {
-      toast.fromError("Failed to process the attachment. Please try again.");
+      toast.fromError("处理附件失败，请重试。");
       return null;
     }
     return { direct, toolArguments: toolArguments ?? {}, userMessage };

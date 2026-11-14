@@ -75,7 +75,7 @@ const CloudZeroExportModal: React.FC<CloudZeroExportModalProps> = ({ isOpen, onC
       }
     } catch (error) {
       console.error("Error loading CloudZero settings:", error);
-      toast.fromError("Failed to load existing settings");
+      toast.fromError("加载现有设置失败");
     } finally {
       setSettingsLoading(false);
     }
@@ -83,7 +83,7 @@ const CloudZeroExportModal: React.FC<CloudZeroExportModalProps> = ({ isOpen, onC
 
   const handleSaveCloudZeroSettings = async (values: CloudZeroSettings) => {
     if (!accessToken) {
-      toast.fromError("No access token available");
+      toast.fromError("没有可用的访问令牌");
       return;
     }
 
@@ -123,7 +123,7 @@ const CloudZeroExportModal: React.FC<CloudZeroExportModalProps> = ({ isOpen, onC
       }
     } catch (error) {
       console.error("Error saving CloudZero settings:", error);
-      toast.fromError("Failed to save CloudZero settings");
+      toast.fromError("保存 CloudZero 设置失败");
       return false;
     } finally {
       setLoading(false);
@@ -132,7 +132,7 @@ const CloudZeroExportModal: React.FC<CloudZeroExportModalProps> = ({ isOpen, onC
 
   const handleExportCloudZero = async () => {
     if (!accessToken) {
-      toast.fromError("No access token available");
+      toast.fromError("没有可用的访问令牌");
       return;
     }
 
@@ -160,7 +160,7 @@ const CloudZeroExportModal: React.FC<CloudZeroExportModalProps> = ({ isOpen, onC
       }
     } catch (error) {
       console.error("Error exporting to CloudZero:", error);
-      toast.fromError("Failed to export to CloudZero");
+      toast.fromError("导出到 CloudZero 失败");
     } finally {
       setExportLoading(false);
     }
@@ -170,11 +170,11 @@ const CloudZeroExportModal: React.FC<CloudZeroExportModalProps> = ({ isOpen, onC
     setExportLoading(true);
     try {
       // TODO: Implement CSV export functionality
-      toast.info("CSV export functionality coming soon!");
+      toast.info("CSV 导出功能即将上线！");
       onClose();
     } catch (error) {
       console.error("Error exporting CSV:", error);
-      toast.fromError("Failed to export CSV");
+      toast.fromError("导出 CSV 失败");
     } finally {
       setExportLoading(false);
     }

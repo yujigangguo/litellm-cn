@@ -144,11 +144,11 @@ const buildColumns = ({
   {
     id: "user_email",
     accessorFn: (member) => member.user_email || undefined,
-    header: ({ column }) => <DataTableSortHeader column={column} title="User Email" />,
+    header: ({ column }) => <DataTableSortHeader column={column} title="用户邮箱" />,
     sortingFn: "text",
     sortUndefined: "last",
     enableGlobalFilter: true,
-    meta: { title: "User Email" },
+    meta: { title: "用户邮箱" },
     cell: ({ row }) => row.original.user_email || "-",
   },
   {

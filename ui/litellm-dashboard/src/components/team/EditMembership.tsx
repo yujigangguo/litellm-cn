@@ -227,7 +227,7 @@ const MemberModal = <T extends BaseMember>({
             )}
 
             {config.showEmail && config.showUserId && (
-              <div className="text-center text-sm text-muted-foreground">OR</div>
+              <div className="text-center text-sm text-muted-foreground">或</div>
             )}
 
             {config.showUserId && (

@@ -105,8 +105,8 @@ const columns: ColumnDef<ModelMapping>[] = [
     accessorKey: "litellm_model",
     header: () => (
       <span className="flex items-center">
-        LiteLLM Model Name
-        <SimpleTooltip content={<div>The model name LiteLLM will send to the LLM API</div>} width="360px" />
+        LiteLLM 模型名称
+        <SimpleTooltip content={<div>LiteLLM 发送给 LLM API 的模型名称</div>} width="360px" />
       </span>
     ),
   },
@@ -205,7 +205,7 @@ const ConditionalPublicModelName: React.FC = () => {
       name="model_mappings"
       label={
         <span className="flex items-center">
-          Model Mappings
+          模型映射
           <SimpleTooltip content="Map public model names to LiteLLM model names for load balancing" />
         </span>
       }

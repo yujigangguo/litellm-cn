@@ -94,7 +94,7 @@ async function testFallbackModelResponse(selectedModel: string, accessToken: str
   });
 
   try {
-    toast.info("Testing fallback model response...");
+    toast.info("正在测试备用模型响应…");
 
     const response = await client.chat.completions.create({
       model: selectedModel,
@@ -210,7 +210,7 @@ const Fallbacks: React.FC<FallbacksProps> = ({ accessToken, userRole, userID }) 
     try {
       await setCallbacksCall(accessToken, payload);
       setRouterSettings(updatedSettings);
-      toast.success("Router settings updated successfully");
+      toast.success("路由设置更新成功");
     } catch (error) {
       toast.fromError("Failed to update router settings: " + error);
     } finally {

@@ -51,7 +51,7 @@ export const OrgCreateDialog = ({
   const mutation = useMutation({
     mutationFn: (body: OrgCreateBody) => createOrganization(body),
     onSuccess: () => {
-      toast.success("Organization created successfully");
+      toast.success("组织创建成功");
       queryClient.invalidateQueries({ queryKey: organizationKeys.all });
       closeAndReset();
     },
@@ -96,7 +96,7 @@ export const OrgCreateDialog = ({
               )}
             </FormField>
 
-            <FormField control={form.control} name="max_budget" label="Max Budget (USD)">
+            <FormField control={form.control} name="max_budget" label="预算上限（美元）">
               {({ ref, ...field }) => <Input {...field} ref={ref} type="number" step="any" min={0} />}
             </FormField>
 
@@ -121,11 +121,11 @@ export const OrgCreateDialog = ({
               )}
             </FormField>
 
-            <FormField control={form.control} name="tpm_limit" label="Tokens per minute Limit (TPM)">
+            <FormField control={form.control} name="tpm_limit" label="每分钟 Token 上限（TPM）">
               {({ ref, ...field }) => <Input {...field} ref={ref} type="number" step={1} min={0} />}
             </FormField>
 
-            <FormField control={form.control} name="rpm_limit" label="Requests per minute Limit (RPM)">
+            <FormField control={form.control} name="rpm_limit" label="每分钟请求上限（RPM）">
               {({ ref, ...field }) => <Input {...field} ref={ref} type="number" step={1} min={0} />}
             </FormField>
 

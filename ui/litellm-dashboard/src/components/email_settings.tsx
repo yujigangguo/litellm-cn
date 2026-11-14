@@ -78,7 +78,7 @@ const EmailSettings: React.FC<EmailSettingsProps> = ({ accessToken, premiumUser,
     };
     try {
       await setCallbacksCall(accessToken, payload);
-      toast.success("Email settings updated successfully");
+      toast.success("邮件设置更新成功");
     } catch (error) {
       toast.fromError(error);
     }
@@ -161,7 +161,7 @@ const EmailSettings: React.FC<EmailSettingsProps> = ({ accessToken, premiumUser,
                 if (!accessToken) return;
                 try {
                   await serviceHealthCheck(accessToken, "email");
-                  toast.success("Email test triggered. Check your configured email inbox/logs.");
+                  toast.success("邮件测试已触发，请检查配置的邮箱收件箱/日志。");
                 } catch (error) {
                   toast.fromError(error);
                 }

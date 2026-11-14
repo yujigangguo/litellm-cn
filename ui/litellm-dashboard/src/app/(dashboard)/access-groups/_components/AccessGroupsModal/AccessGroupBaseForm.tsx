@@ -160,7 +160,7 @@ export function AccessGroupBaseForm({
       </TabsContent>
 
       <TabsContent value={AGENTS_TAB} className="pt-4">
-        <FormField control={form.control} name="agentIds" label="Allowed Agents">
+        <FormField control={form.control} name="agentIds" label="允许的助手">
           {({ id, value, onChange }) => (
             <MultiSelect
               id={id}

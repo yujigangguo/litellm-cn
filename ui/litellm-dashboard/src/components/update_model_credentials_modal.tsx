@@ -46,7 +46,7 @@ export default function UpdateModelCredentialsModal({
   const handleSubmit = async (values: UpdateCredentialsValues) => {
     const apiKey = values.api_key?.trim();
     if (!apiKey) {
-      toast.fromError("Enter a new API key");
+      toast.fromError("请输入新的 API 密钥");
       return;
     }
     setIsSaving(true);
@@ -56,13 +56,13 @@ export default function UpdateModelCredentialsModal({
         { litellm_params: { api_key: apiKey }, model_info: { id: modelId } },
         modelId,
       );
-      toast.success("API key updated");
+      toast.success("API 密钥已更新");
       form.reset(EMPTY_VALUES);
       onUpdated();
       onCancel();
     } catch (error) {
       console.error("Error updating API key:", error);
-      toast.fromError("Failed to update API key");
+      toast.fromError("更新 API 密钥失败");
     } finally {
       setIsSaving(false);
     }

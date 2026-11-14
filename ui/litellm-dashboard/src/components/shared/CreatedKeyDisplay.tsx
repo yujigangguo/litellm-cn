@@ -49,13 +49,13 @@ const CreatedKeyDisplay: React.FC<CreatedKeyDisplayProps> = ({ apiKey }) => {
 
   const handleCopy = () => {
     setCopied(true);
-    toast.success("Key copied to clipboard");
+    toast.success("密钥已复制到剪贴板");
     setTimeout(() => setCopied(false), 2000);
   };
 
   const handleCopyInstructions = () => {
     setInstructionsCopied(true);
-    toast.success("Instructions copied");
+    toast.success("说明已复制");
     setTimeout(() => setInstructionsCopied(false), 2000);
   };
 
@@ -79,7 +79,7 @@ const CreatedKeyDisplay: React.FC<CreatedKeyDisplayProps> = ({ apiKey }) => {
       <p className="text-sm text-muted-foreground mt-4 mb-1">Gateway URL:</p>
       <div className="bg-muted rounded-md p-2.5 mb-2.5 flex items-center justify-between gap-2">
         <pre className="m-0 whitespace-normal break-words text-foreground">{baseUrl}</pre>
-        <CopyToClipboard text={baseUrl} onCopy={() => toast.success("Gateway URL copied to clipboard")}>
+        <CopyToClipboard text={baseUrl} onCopy={() => toast.success("网关 URL 已复制到剪贴板")}>
           <Button type="button" variant="outline" className="shrink-0">
             复制 URL
           </Button>

@@ -242,7 +242,7 @@ function QuickConnectDialog({ onQuickConnect }: { onQuickConnect: (url: string) 
   const connect = async () => {
     const normalized = normalizeMoyaiUrl(url);
     if (!normalized) {
-      setError("Enter a full http or https URL, without credentials");
+      setError("请输入完整的 http 或 https URL，不要带凭据");
       return;
     }
     setError(null);

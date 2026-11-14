@@ -65,10 +65,10 @@ const BudgetPanel: React.FC<BudgetSettingsPageProps> = ({ accessToken }) => {
     }
     try {
       await deleteBudget.mutateAsync(selectedBudget.budget_id);
-      toast.success("Budget deleted.");
+      toast.success("预算已删除。");
     } catch (error) {
       console.error("Error deleting budget:", error);
-      toast.fromError("Failed to delete budget");
+      toast.fromError("删除预算失败");
     } finally {
       setIsDeleteModalVisible(false);
       setSelectedBudget(null);
@@ -87,7 +87,7 @@ const BudgetPanel: React.FC<BudgetSettingsPageProps> = ({ accessToken }) => {
             <Wallet />
             预算
           </PageHeaderTitle>
-          <PageHeaderDescription>Spend, TPM and RPM limits you can assign to customers.</PageHeaderDescription>
+          <PageHeaderDescription>可分配给客户的花费、TPM 和 RPM 上限。</PageHeaderDescription>
           <PageHeaderControls>
             <PageTabsList>
               {canModify && (

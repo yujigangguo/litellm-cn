@@ -62,7 +62,7 @@ export function useSubscriptionFeeActions({ accessToken, refetch }: Options): Re
       if (request === null) return;
       try {
         await request;
-        toast.success("Monthly fee saved");
+        toast.success("月度费用已保存");
         setFeeModalAccount(null);
         await refetch();
       } catch (error) {
@@ -77,7 +77,7 @@ export function useSubscriptionFeeActions({ accessToken, refetch }: Options): Re
       if (!accessToken || account.fee === null) return;
       try {
         await subscriptionAccountDeleteCall(accessToken, account.fee.subscription_account_id);
-        toast.success("Monthly fee removed");
+        toast.success("月度费用已移除");
         await refetch();
       } catch (error) {
         toast.fromError(error);

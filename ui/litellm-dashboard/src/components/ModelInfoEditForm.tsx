@@ -610,7 +610,7 @@ const ModelInfoEditForm: React.FC<ModelInfoEditFormProps> = ({
             </div>
 
             <div>
-              <FieldLabel>Existing Credentials</FieldLabel>
+              <FieldLabel>现有凭据</FieldLabel>
               {isEditing ? (
                 <FormField control={form.control} name="litellm_credential_name">
                   {({ id, value, onChange }) => (

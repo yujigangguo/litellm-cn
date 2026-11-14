@@ -41,7 +41,7 @@ export default function CloudZeroCreationModal({ open, onOk, onCancel }: CloudZe
   const handleSubmit = (values: CloudZeroFormValues) => {
     createMutation.mutate(buildCloudZeroPayload(values), {
       onSuccess: () => {
-        toast.success("CloudZero integration created successfully");
+        toast.success("CloudZero 集成创建成功");
         form.reset(EMPTY_CLOUDZERO_FORM_VALUES);
         onOk();
       },

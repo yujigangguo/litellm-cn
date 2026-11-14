@@ -199,7 +199,7 @@ const SettingsView = ({ values, roleOptions }: SettingsViewProps) => {
   return (
     <div className="flex flex-col gap-4">
       <ViewRow label="Default Role">{roleLabel === "" ? "Not set" : roleLabel}</ViewRow>
-      <ViewRow label="Max Budget (USD)">{values.max_budget === "" ? "Not set" : values.max_budget}</ViewRow>
+      <ViewRow label="预算上限（美元）">{values.max_budget === "" ? "Not set" : values.max_budget}</ViewRow>
       <ViewRow label="重置预算">{durationLabel}</ViewRow>
       <ViewRow label="Default Models">
         {values.models.length === 0
@@ -240,7 +240,7 @@ const SettingsForm = ({ initialValues, roleOptions, updateSettings, onCancel, on
   const mutation = useMutation({
     mutationFn: (values: DefaultUserSettingsSubmitValues) => updateSettings(buildBody(values)),
     onSuccess: (_result, values) => {
-      toast.success("Default user settings updated successfully");
+      toast.success("默认用户设置更新成功");
       queryClient.invalidateQueries({ queryKey: SETTINGS_QUERY_KEY });
       form.reset(values);
       onSaved();
@@ -286,7 +286,7 @@ const SettingsForm = ({ initialValues, roleOptions, updateSettings, onCancel, on
         <FormField
           control={form.control}
           name="max_budget"
-          label="Max Budget (USD)"
+          label="预算上限（美元）"
           description="Default maximum budget for new users"
         >
           {({ ref, ...field }) => <Input {...field} ref={ref} type="number" step="any" min={0} />}

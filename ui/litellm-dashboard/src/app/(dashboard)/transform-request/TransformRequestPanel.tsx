@@ -69,7 +69,7 @@ ${formattedBody}
       try {
         requestBody = JSON.parse(originalRequestJSON);
       } catch (e) {
-        toast.fromError("Invalid JSON in request body");
+        toast.fromError("请求体中的 JSON 无效");
         setIsLoading(false);
         return;
       }
@@ -82,7 +82,7 @@ ${formattedBody}
 
       // Make the API call using fetch
       if (!accessToken) {
-        toast.fromError("No access token found");
+        toast.fromError("未找到访问令牌");
         setIsLoading(false);
         return;
       }
@@ -100,17 +100,17 @@ ${formattedBody}
 
         // Update state with the formatted curl command
         setTransformedResponse(formattedCurl);
-        toast.success("Request transformed successfully");
+        toast.success("请求转换成功");
       } else {
         // Handle the case where the API returns a different format
         // Try to extract the parts from a string response if needed
         const rawText = typeof data === "string" ? data : JSON.stringify(data);
         setTransformedResponse(rawText);
-        toast.info("Transformed request received in unexpected format");
+        toast.info("收到的转换请求格式异常");
       }
     } catch (err) {
       console.error("Error transforming request:", err);
-      toast.fromError("Failed to transform request");
+      toast.fromError("转换请求失败");
     } finally {
       setIsLoading(false);
     }
@@ -191,7 +191,7 @@ ${formattedBody}
                 className="absolute top-2 right-2"
                 onClick={() => {
                   navigator.clipboard.writeText(transformedResponse || "");
-                  toast.success("Copied to clipboard");
+                  toast.success("已复制到剪贴板");
                 }}
               >
                 <Copy />

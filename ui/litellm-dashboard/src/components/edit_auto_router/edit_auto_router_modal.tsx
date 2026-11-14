@@ -457,7 +457,7 @@ const EditAutoRouterModal: React.FC<EditAutoRouterModalProps> = ({
       form.reset(routerFormValues);
     } catch (error) {
       console.error("Error parsing auto router config:", error);
-      toast.fromError("Error loading auto router configuration");
+      toast.fromError("加载自动路由配置出错");
     }
   };
 
@@ -528,7 +528,7 @@ const EditAutoRouterModal: React.FC<EditAutoRouterModalProps> = ({
       if (!defaultModel) {
         setShowValidationErrors(true);
         toast.fromError(
-          "Add a model to the Simple or Medium tier, or pin a default model, so requests have somewhere to route.",
+          "请在简单或中等层级添加模型，或固定一个默认模型，让请求有路由目标。",
         );
         return;
       }
@@ -583,7 +583,7 @@ const EditAutoRouterModal: React.FC<EditAutoRouterModalProps> = ({
         modelData.model_info.id,
       );
 
-      toast.success("Auto router configuration updated successfully");
+      toast.success("自动路由配置更新成功");
       const updatedModelData = {
         ...modelData,
         model_name: values.auto_router_name,
@@ -624,7 +624,7 @@ const EditAutoRouterModal: React.FC<EditAutoRouterModalProps> = ({
       model_info: updatedModelInfo,
     };
 
-    toast.success("Auto router configuration updated successfully");
+    toast.success("自动路由配置更新成功");
     onSuccess(updatedModelData);
     onCancel();
   };
@@ -633,7 +633,7 @@ const EditAutoRouterModal: React.FC<EditAutoRouterModalProps> = ({
     try {
       setLoading(true);
       await form.handleSubmit(saveValues, () => {
-        toast.fromError("Failed to update auto router configuration");
+        toast.fromError("更新自动路由配置失败");
       })();
     } catch (error) {
       console.error("Error updating auto router:", error);

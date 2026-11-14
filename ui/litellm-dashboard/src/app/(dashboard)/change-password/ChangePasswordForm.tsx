@@ -49,12 +49,12 @@ export function ChangePasswordForm() {
         // The session key was minted restricted; only a fresh login lifts it.
         // Revoke it server-side too (best-effort) so it doesn't sit valid
         // until the expiry reaper gets to it.
-        toast.success("Password updated. Please log in with your new password.");
+        toast.success("密码已更新，请使用新密码登录。");
         await revokeSessionAndClearClientState(accessToken);
         window.location.replace(getUiPageUrl(getLoginUrl(getProxyBaseUrl())));
         return;
       }
-      toast.success("Password updated");
+      toast.success("密码已更新");
       form.reset();
     } catch (error) {
       setSubmitError(extractProxyErrorMessage(error));

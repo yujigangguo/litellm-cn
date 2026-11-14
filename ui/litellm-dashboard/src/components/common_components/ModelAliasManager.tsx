@@ -48,13 +48,13 @@ const ModelAliasManager: React.FC<ModelAliasManagerProps> = ({
 
   const handleAddAlias = () => {
     if (!newAlias.aliasName || !newAlias.targetModel) {
-      toast.fromError("Please provide both alias name and target model");
+      toast.fromError("请同时提供别名和目标模型");
       return;
     }
 
     // Check for duplicate alias names
     if (aliases.some((alias) => alias.aliasName === newAlias.aliasName)) {
-      toast.fromError("An alias with this name already exists");
+      toast.fromError("该名称的别名已存在");
       return;
     }
 
@@ -78,7 +78,7 @@ const ModelAliasManager: React.FC<ModelAliasManagerProps> = ({
       onAliasUpdate(aliasObject);
     }
 
-    toast.success("Alias added successfully");
+    toast.success("别名添加成功");
   };
 
   const handleEditAlias = (alias: AliasItem) => {
@@ -89,13 +89,13 @@ const ModelAliasManager: React.FC<ModelAliasManagerProps> = ({
     if (!editingAlias) return;
 
     if (!editingAlias.aliasName || !editingAlias.targetModel) {
-      toast.fromError("Please provide both alias name and target model");
+      toast.fromError("请同时提供别名和目标模型");
       return;
     }
 
     // Check for duplicate alias names (excluding current alias)
     if (aliases.some((alias) => alias.id !== editingAlias.id && alias.aliasName === editingAlias.aliasName)) {
-      toast.fromError("An alias with this name already exists");
+      toast.fromError("该名称的别名已存在");
       return;
     }
 
@@ -115,7 +115,7 @@ const ModelAliasManager: React.FC<ModelAliasManagerProps> = ({
       onAliasUpdate(aliasObject);
     }
 
-    toast.success("Alias updated successfully");
+    toast.success("别名更新成功");
   };
 
   const handleCancelEdit = () => {
@@ -136,7 +136,7 @@ const ModelAliasManager: React.FC<ModelAliasManagerProps> = ({
       onAliasUpdate(aliasObject);
     }
 
-    toast.success("Alias deleted successfully");
+    toast.success("别名删除成功");
   };
 
   // Convert current aliases to object for config example

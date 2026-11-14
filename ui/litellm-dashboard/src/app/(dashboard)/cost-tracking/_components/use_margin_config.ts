@@ -53,7 +53,7 @@ export function useMarginConfig({ accessToken }: UseMarginConfigProps): UseMargi
       }
     } catch (error) {
       console.error("Error fetching margin config:", error);
-      toast.fromError("Failed to fetch margin configuration");
+      toast.fromError("获取加成配置失败");
     }
   }, [accessToken]);
 
@@ -73,7 +73,7 @@ export function useMarginConfig({ accessToken }: UseMarginConfigProps): UseMargi
         });
 
         if (response.ok) {
-          toast.success("Margin configuration updated successfully");
+          toast.success("加成配置更新成功");
           await fetchMarginConfig();
         } else {
           const errorData = await response.json();
@@ -82,7 +82,7 @@ export function useMarginConfig({ accessToken }: UseMarginConfigProps): UseMargi
         }
       } catch (error) {
         console.error("Error updating margin config:", error);
-        toast.fromError("Failed to update margin configuration");
+        toast.fromError("更新加成配置失败");
       }
     },
     [accessToken, fetchMarginConfig],
@@ -93,7 +93,7 @@ export function useMarginConfig({ accessToken }: UseMarginConfigProps): UseMargi
       const { selectedProvider, marginType, percentageValue, fixedAmountValue } = params;
 
       if (!selectedProvider) {
-        toast.fromError("Please select a provider");
+        toast.fromError("请选择供应商");
         return false;
       }
 
@@ -103,7 +103,7 @@ export function useMarginConfig({ accessToken }: UseMarginConfigProps): UseMargi
       } else {
         const backendValue = getProviderBackendValue(selectedProvider);
         if (!backendValue) {
-          toast.fromError("Invalid provider selected");
+          toast.fromError("选择的供应商无效");
           return false;
         }
         providerValue = backendValue;
@@ -120,14 +120,14 @@ export function useMarginConfig({ accessToken }: UseMarginConfigProps): UseMargi
       if (marginType === "percentage") {
         const percentValue = parseFloat(percentageValue);
         if (isNaN(percentValue) || percentValue < 0 || percentValue > 1000) {
-          toast.fromError("Percentage must be between 0% and 1000%");
+          toast.fromError("百分比必须在 0% 到 1000% 之间");
           return false;
         }
         marginValue = percentValue / 100;
       } else {
         const fixedValue = parseFloat(fixedAmountValue);
         if (isNaN(fixedValue) || fixedValue < 0) {
-          toast.fromError("Fixed amount must be non-negative");
+          toast.fromError("固定金额不能为负数");
           return false;
         }
         marginValue = { fixed_amount: fixedValue };
