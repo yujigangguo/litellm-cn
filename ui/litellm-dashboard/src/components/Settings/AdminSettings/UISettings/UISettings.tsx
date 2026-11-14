@@ -297,7 +297,7 @@ export default function UISettings() {
     <Card>
       <CardHeader>
         <CardTitle>
-          <h3>UI Settings</h3>
+          <h3>UI 设置</h3>
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -449,7 +449,7 @@ export default function UISettings() {
               </div>
               {moyaiUrl ? (
                 <Button variant="outline" size="sm" disabled={isUpdating} onClick={handleDisconnectMoyai}>
-                  Disconnect
+                  断开
                 </Button>
               ) : (
                 <a href={uiHref("moyai")} className="text-sm text-primary underline underline-offset-4">

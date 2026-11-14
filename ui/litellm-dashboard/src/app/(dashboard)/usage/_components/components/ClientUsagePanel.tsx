@@ -194,11 +194,11 @@ export default function ClientUsagePanel({
           {teamId && (
             <div className="space-y-2">
               <label htmlFor="client-usage-member" className="text-xs font-medium text-muted-foreground">
-                Team member
+                团队成员
               </label>
               <SearchSelect
                 id="client-usage-member"
-                aria-label="Team member"
+                aria-label="团队成员"
                 value={userId ? `user:${userId}` : "all"}
                 options={[
                   { value: "all", label: "All members" },
@@ -252,7 +252,7 @@ export default function ClientUsagePanel({
             </div>
           )}
           {ready && !summary && (
-            <p className="rounded-lg border p-4 text-muted-foreground">No {label} usage recorded in this date range.</p>
+            <p className="rounded-lg border p-4 text-muted-foreground">否 {label} usage recorded in this date range.</p>
           )}
           {ready && summary && (
             <>
@@ -263,7 +263,7 @@ export default function ClientUsagePanel({
               </div>
               {summary.requests === 0 ? (
                 <p className="text-sm text-muted-foreground">
-                  No {label} requests in the selected range. Try another date range.
+                  否 {label} requests in the selected range. Try another date range.
                   {(canChooseUser || teamId) && " You can also choose another person."}
                 </p>
               ) : (
@@ -322,7 +322,7 @@ function TokenExplanation({ total, breakdown }: { total: number; breakdown: Clie
     { label: "Cache reads", value: cacheReadTokens, color: stackedUsageColor(0) },
     { label: "Cache writes", value: cacheWriteTokens, color: stackedUsageColor(1) },
     { label: "Uncached input", value: freshInput, color: stackedUsageColor(2) },
-    { label: "Output", value: outputTokens, color: stackedUsageColor(3) },
+    { label: "输出", value: outputTokens, color: stackedUsageColor(3) },
   ];
   const complete = rows.every((row) => row.value !== null);
   return (

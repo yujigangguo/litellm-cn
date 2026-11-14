@@ -36,7 +36,7 @@ const BASE: Capabilities = {
   voice: false,
   customHeaders: true,
   textRequired: true,
-  placeholder: "Send a test request",
+  placeholder: "发送测试请求",
 };
 
 const TEXT_CHAT: Partial<Capabilities> = {
@@ -77,7 +77,7 @@ export const ACCEPT_FOR: Readonly<Record<AttachKind, string>> = {
 };
 
 export const ATTACH_LABEL: Readonly<Record<AttachKind, string>> = {
-  chat: "Attach an image or PDF",
+  chat: "附加图片或 PDF",
   images: "Add images to edit",
   audio: "Attach an audio file",
 };

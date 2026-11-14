@@ -100,7 +100,7 @@ export function describeBudgetResetSchedule(
     };
   }
   return {
-    label: "Unknown",
+    label: "未知",
     resetAt: null,
     period: null,
     tooltip: `Resets every ${budgetDuration}, but the next reset time has not been scheduled yet. ${ROLLOVER_NOTE}`,

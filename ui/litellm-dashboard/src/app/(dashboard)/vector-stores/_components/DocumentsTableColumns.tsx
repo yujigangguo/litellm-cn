@@ -18,7 +18,7 @@ import { copyToClipboard } from "@/utils/dataUtils";
 const STATUS_CONFIG: Record<DocumentUpload["status"], { tone: StatusTone; label: string }> = {
   uploading: { tone: "info", label: "Uploading" },
   done: { tone: "success", label: "Ready" },
-  error: { tone: "error", label: "Error" },
+  error: { tone: "error", label: "错误" },
   removed: { tone: "neutral", label: "Removed" },
 };
 
@@ -53,7 +53,7 @@ function DocumentRowActions({ document, onRemove }: { document: DocumentUpload; 
           onClick={() => onRemove(document.uid)}
         >
           <Trash2 />
-          Remove
+          移除
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
@@ -69,7 +69,7 @@ export const getDocumentsTableColumns = ({ onRemove }: DocumentsTableColumnsDeps
     id: "name",
     accessorKey: "name",
     meta: { title: "名称" },
-    header: "Name",
+    header: "名称",
     enableSorting: false,
     cell: ({ row }) => (
       <div className="flex items-center gap-2">
@@ -86,7 +86,7 @@ export const getDocumentsTableColumns = ({ onRemove }: DocumentsTableColumnsDeps
     id: "status",
     accessorKey: "status",
     meta: { title: "状态", skeleton: "badge" },
-    header: "Status",
+    header: "状态",
     size: 150,
     enableSorting: false,
     cell: ({ row }) => {

@@ -17,7 +17,7 @@ import {
 } from "./overviewData";
 import { ChartSkeleton, Panel, PANEL_INSET_X, Segmented } from "./Primitives";
 
-const METRIC_NOUN: Record<UsageMetric, string> = { spend: "spend", tokens: "tokens", requests: "requests" };
+const METRIC_NOUN: Record<UsageMetric, string> = { spend: "花费", tokens: "Token 数", requests: "请求数" };
 const GRANULARITY_OPTIONS = [
   { value: "day", label: "按天" },
   { value: "week", label: "按周" },
@@ -54,13 +54,13 @@ export default function UsageBreakdownChart({
 
   return (
     <Panel
-      title={`${granularity === "day" ? "按天" : "按周"} usage`}
-      subtitle={`${granularity === "day" ? "按天" : "按周"} ${METRIC_NOUN[state.metric]} by model (top 8, rest grouped as Other)`}
+      title={`${granularity === "day" ? "按天" : "按周"}用量`}
+      subtitle={`${granularity === "day" ? "按天" : "按周"}${METRIC_NOUN[state.metric]}按模型（前 8，其余归为其他）`}
       action={
         <>
           <BreakdownControls state={state} onChange={(next) => setMetric(next.metric)} showDimension={false} />
-          <Segmented label="Bucket size" value={granularity} options={GRANULARITY_OPTIONS} onChange={setGranularity} />
-          <Segmented label="Scale" value={scale} options={SCALE_OPTIONS} onChange={setScale} />
+          <Segmented label="时间粒度" value={granularity} options={GRANULARITY_OPTIONS} onChange={setGranularity} />
+          <Segmented label="刻度" value={scale} options={SCALE_OPTIONS} onChange={setScale} />
         </>
       }
       bodyClassName="px-0 pt-4 pb-0"

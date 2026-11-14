@@ -31,8 +31,8 @@ export type AvailableCallbacks = Record<string, AvailableCallbackMeta>;
 export const callbackRowMode = (record: CallbackRow): string => record.type || record.mode || "success";
 
 const CALLBACK_MODE_LABELS: Record<string, string> = {
-  success: "Success",
-  failure: "Failure",
+  success: "成功",
+  failure: "失败",
   success_and_failure: "Success & Failure",
 };
 
@@ -104,8 +104,8 @@ export const getLoggingCallbacksTableColumns = ({
   {
     id: "name",
     accessorKey: "name",
-    meta: { title: "Callback Name" },
-    header: "Callback Name",
+    meta: { title: "回调名称" },
+    header: "回调名称",
     enableSorting: false,
     cell: ({ row }) => {
       const id = row.original.name;
@@ -119,8 +119,8 @@ export const getLoggingCallbacksTableColumns = ({
   },
   {
     id: "mode",
-    meta: { title: "Mode", skeleton: "badge" },
-    header: "Mode",
+    meta: { title: "模式", skeleton: "badge" },
+    header: "模式",
     size: 240,
     enableSorting: false,
     cell: ({ row }) => {

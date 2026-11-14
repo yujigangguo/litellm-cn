@@ -34,7 +34,7 @@ export const FEDERATION_CORE_FIELDS: readonly FederationField[] = [
   },
   {
     key: "anthropic_organization_id",
-    label: "Organization ID",
+    label: "组织 ID",
     tooltip:
       "The Anthropic organization the federation rule belongs to, shown on the rule's detail page. Leave empty when the proxy sets ANTHROPIC_ORGANIZATION_ID in its environment.",
     required: false,

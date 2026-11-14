@@ -245,7 +245,7 @@ export default function TeamMemberTab({
         const source = getUserBudgetSource(record.user_id);
         return (
           <span className="flex items-center justify-end gap-2">
-            <MoneyCell value={getUserBudget(record.user_id)} decimals={2} emptyText="Unlimited" showZero />
+            <MoneyCell value={getUserBudget(record.user_id)} decimals={2} emptyText="不限" showZero />
             {source !== "none" && (
               <Badge variant={source === "custom" ? "outline" : "secondary"} data-testid="member-budget-source">
                 {BUDGET_SOURCE_LABELS[source]}
@@ -375,7 +375,7 @@ export default function TeamMemberTab({
               取消
             </Button>
             <Button variant="destructive" onClick={handleResetSpend} disabled={isResettingSpend}>
-              Reset
+              重置
             </Button>
           </DialogFooter>
         </DialogContent>

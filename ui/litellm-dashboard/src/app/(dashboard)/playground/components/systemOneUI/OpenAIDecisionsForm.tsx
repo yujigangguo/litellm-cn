@@ -19,7 +19,7 @@ import type { OpenAIDecisionsRequest } from "./lib/openAIDecisions";
 import type { PayloadValidation } from "./lib/validatePayload";
 
 const QUESTION_TYPES: readonly DecisionsQuestionType[] = ["predicate", "choice", "score"];
-const TYPE_LABELS = { predicate: "Predicate", choice: "Choice", score: "Score" };
+const TYPE_LABELS = { predicate: "Predicate", choice: "Choice", score: "分数" };
 
 interface QuestionEditorProps<Q extends DecisionsFormQuestion = DecisionsFormQuestion> {
   question: Q;
@@ -143,14 +143,14 @@ function QuestionCard({ question, index, onChange, onRemove }: QuestionCardProps
         <div className="grid gap-1.5">
           <span className="text-sm font-medium">名称</span>
           <Input
-            aria-label="Question name"
+            aria-label="问题名称"
             value={question.name ?? ""}
             placeholder="Optional question name"
             onChange={(event) => onChange({ ...question, name: event.target.value })}
           />
         </div>
         <div className="grid gap-1.5">
-          <span className="text-sm font-medium">Answer type</span>
+          <span className="text-sm font-medium">回答类型</span>
           <Select
             value={question.type}
             onValueChange={(type) => {
@@ -158,7 +158,7 @@ function QuestionCard({ question, index, onChange, onRemove }: QuestionCardProps
               if (next) onChange(retypeDecisionQuestion(question, next));
             }}
           >
-            <SelectTrigger className="w-full" aria-label="Answer type">
+            <SelectTrigger className="w-full" aria-label="回答类型">
               <SelectValue>{TYPE_LABELS[question.type]}</SelectValue>
             </SelectTrigger>
             <SelectContent>
@@ -177,7 +177,7 @@ function QuestionCard({ question, index, onChange, onRemove }: QuestionCardProps
           id={instructionsId}
           rows={2}
           value={question.instructions ?? ""}
-          placeholder="What should the model decide?"
+          placeholder="模型需要判断什么？"
           onChange={(event) => onChange({ ...question, instructions: event.target.value })}
         />
       </div>
@@ -223,12 +223,12 @@ export default function OpenAIDecisionsForm({ value, onChange, validation, onRes
           </>
         ) : (
           <>
-            <Label htmlFor={inputId}>Input</Label>
+            <Label htmlFor={inputId}>输入</Label>
             <Textarea
               id={inputId}
               rows={4}
               value={form.input ?? ""}
-              placeholder="Paste the text the model should decide about"
+              placeholder="粘贴需要模型判断的文本"
               onChange={(event) => write({ ...form, input: event.target.value })}
             />
           </>
@@ -251,7 +251,7 @@ export default function OpenAIDecisionsForm({ value, onChange, validation, onRes
         <Input
           id={safetyId}
           value={form.safety_identifier ?? ""}
-          placeholder="Optional"
+          placeholder="可选"
           onChange={(event) => write({ ...form, safety_identifier: event.target.value || undefined })}
         />
       </div>

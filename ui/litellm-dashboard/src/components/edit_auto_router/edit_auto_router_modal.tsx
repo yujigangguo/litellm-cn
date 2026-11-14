@@ -784,14 +784,14 @@ const EditAutoRouterModal: React.FC<EditAutoRouterModalProps> = ({
               {submitBlockedReason === null ? (
                 <Button disabled={loading} onClick={handleSubmit}>
                   {loading && <UiLoadingSpinner className="size-4" />}
-                  Save Changes
+                  保存更改
                 </Button>
               ) : (
                 <Tooltip>
                   <TooltipTrigger
                     render={
                       <Button disabled onClick={handleSubmit}>
-                        Save Changes
+                        保存更改
                       </Button>
                     }
                   />

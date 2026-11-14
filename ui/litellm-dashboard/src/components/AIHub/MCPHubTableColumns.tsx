@@ -106,8 +106,8 @@ export const getMCPHubTableColumns = ({ onServerClick }: MCPHubTableColumnsDeps)
   {
     id: "description",
     accessorKey: "description",
-    meta: { title: "Description", className: "hidden md:table-cell" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Description" />,
+    meta: { title: "描述", className: "hidden md:table-cell" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="描述" />,
     size: 240,
     enableSorting: true,
     sortingFn: "alphanumeric",
@@ -120,8 +120,8 @@ export const getMCPHubTableColumns = ({ onServerClick }: MCPHubTableColumnsDeps)
   {
     id: "transport",
     accessorKey: "transport",
-    meta: { title: "Transport", skeleton: "badge", className: "hidden md:table-cell" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Transport" />,
+    meta: { title: "传输", skeleton: "badge", className: "hidden md:table-cell" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="传输" />,
     size: 110,
     enableSorting: true,
     sortingFn: "alphanumeric",
@@ -162,7 +162,7 @@ export const getMCPHubTableColumns = ({ onServerClick }: MCPHubTableColumnsDeps)
   {
     id: "allowed_tools",
     meta: { title: "工具", skeleton: "chips", className: "hidden lg:table-cell" },
-    header: "Tools",
+    header: "工具",
     size: 180,
     enableSorting: false,
     cell: ({ row }) => {

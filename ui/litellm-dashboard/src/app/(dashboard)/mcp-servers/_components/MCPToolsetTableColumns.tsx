@@ -129,8 +129,8 @@ export const getMCPToolsetTableColumns = ({
   {
     id: "description",
     accessorKey: "description",
-    meta: { title: "Description" },
-    header: "Description",
+    meta: { title: "描述" },
+    header: "描述",
     size: 200,
     enableSorting: false,
     cell: ({ row }) => (
@@ -142,7 +142,7 @@ export const getMCPToolsetTableColumns = ({
   {
     id: "tools",
     meta: { title: "工具", skeleton: "chips" },
-    header: "Tools",
+    header: "工具",
     size: 260,
     enableSorting: false,
     cell: ({ row }) => {

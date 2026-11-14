@@ -141,7 +141,7 @@ const SkillHubDashboard: React.FC<SkillHubDashboardProps> = ({
                 <Search className="size-4 text-muted-foreground" />
               </InputGroupAddon>
               <InputGroupInput
-                placeholder="Search by name, namespace, or tag…"
+                placeholder="按名称、命名空间或标签搜索…"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
@@ -150,7 +150,7 @@ const SkillHubDashboard: React.FC<SkillHubDashboardProps> = ({
                   <InputGroupButton
                     size="icon-xs"
                     variant="ghost"
-                    aria-label="Clear search"
+                    aria-label="清除搜索"
                     onClick={() => setSearch("")}
                   >
                     <X className="size-3.5" />
@@ -175,7 +175,7 @@ const SkillHubDashboard: React.FC<SkillHubDashboardProps> = ({
         />
         <div className="mt-3 text-center">
           <p className="text-sm text-muted-foreground">
-            Showing {filteredSkills.length} of {totalSkills} skill{totalSkills !== 1 ? "s" : ""}
+            显示 {filteredSkills.length} of {totalSkills} skill{totalSkills !== 1 ? "s" : ""}
           </p>
         </div>
       </div>

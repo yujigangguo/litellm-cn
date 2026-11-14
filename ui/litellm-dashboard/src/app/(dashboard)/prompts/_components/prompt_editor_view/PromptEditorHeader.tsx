@@ -68,7 +68,7 @@ const PromptEditorHeader: React.FC<PromptEditorHeaderProps> = ({
           value={environment}
           onValueChange={(value) => onEnvironmentChange(String(value))}
         >
-          <SelectTrigger size="sm" className="w-[140px]" aria-label="Environment">
+          <SelectTrigger size="sm" className="w-[140px]" aria-label="环境">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>

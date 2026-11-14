@@ -275,7 +275,7 @@ const SSOModals: React.FC<SSOModalsProps> = ({
               <div className="mt-4 flex items-center justify-end gap-2">
                 {ssoConfigured && (
                   <Button type="button" variant="secondary" onClick={() => setIsClearConfirmModalVisible(true)}>
-                    Clear
+                    清除
                   </Button>
                 )}
                 <Button type="submit">保存</Button>
@@ -316,7 +316,7 @@ const SSOModals: React.FC<SSOModalsProps> = ({
           <p className="text-sm mt-2">4. If Step 3 is successful, you can close this tab</p>
           <div style={{ textAlign: "right", marginTop: "10px" }}>
             <Button type="button" onClick={handleInstructionsOk}>
-              Done
+              完成
             </Button>
           </div>
         </DialogContent>

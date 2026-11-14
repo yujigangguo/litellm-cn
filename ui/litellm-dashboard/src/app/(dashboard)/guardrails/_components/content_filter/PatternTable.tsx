@@ -25,7 +25,7 @@ interface PatternTableProps {
 const PatternTable: React.FC<PatternTableProps> = ({ patterns, onActionChange, onRemove }) => {
   const columns: ColumnDef<Pattern>[] = [
     {
-      header: "Type",
+      header: "类型",
       accessorKey: "type",
       size: 100,
       cell: ({ row }) => <Badge variant="secondary">{row.original.type === "prebuilt" ? "Prebuilt" : "Custom"}</Badge>,
@@ -46,7 +46,7 @@ const PatternTable: React.FC<PatternTableProps> = ({ patterns, onActionChange, o
         ),
     },
     {
-      header: "Action",
+      header: "操作",
       accessorKey: "action",
       size: 150,
       cell: ({ row }) => (
@@ -55,7 +55,7 @@ const PatternTable: React.FC<PatternTableProps> = ({ patterns, onActionChange, o
           value={row.original.action}
           onValueChange={(value: string | null) => value && onActionChange(row.original.id, value as "BLOCK" | "MASK")}
         >
-          <SelectTrigger size="sm" className="w-[120px]" aria-label="Action">
+          <SelectTrigger size="sm" className="w-[120px]" aria-label="操作">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>

@@ -92,7 +92,7 @@ export default function PromptCachingRequestsTable({ accessToken, dateValue }: P
         <Tabs value={filter} onValueChange={changeFilter}>
           <TabsList aria-label="Prompt caching request filters">
             <TabsTrigger value="all">All caching</TabsTrigger>
-            <TabsTrigger value="injected">LiteLLM injected</TabsTrigger>
+            <TabsTrigger value="injected">LiteLLM 注入</TabsTrigger>
             <TabsTrigger value="hits">Cache hits</TabsTrigger>
           </TabsList>
         </Tabs>
@@ -108,7 +108,7 @@ export default function PromptCachingRequestsTable({ accessToken, dateValue }: P
           <div role="alert" className="flex items-center justify-center gap-3 py-8">
             <p>Could not load prompt caching requests</p>
             <Button variant="outline" onClick={() => void requests.refetch()} disabled={requests.isFetching}>
-              Retry
+              重试
             </Button>
           </div>
         )}
@@ -122,7 +122,7 @@ export default function PromptCachingRequestsTable({ accessToken, dateValue }: P
               <Table aria-label="Prompt caching requests">
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Request</TableHead>
+                    <TableHead>请求</TableHead>
                     <TableHead>模型</TableHead>
                     <TableHead>LiteLLM injection</TableHead>
                     <TableHead className="text-right">Cache reads</TableHead>
@@ -189,12 +189,12 @@ export default function PromptCachingRequestsTable({ accessToken, dateValue }: P
                 </Select>
               </div>
               <div className="flex items-center gap-4">
-                <span className="text-sm text-muted-foreground tabular-nums">Page {page}</span>
+                <span className="text-sm text-muted-foreground tabular-nums">第 {page} 页</span>
                 <div className="flex items-center gap-1">
                   <Button
                     variant="outline"
                     size="icon-sm"
-                    aria-label="Go to previous page"
+                    aria-label="转到上一页"
                     disabled={page === 1}
                     onClick={() => setPagination({ scope, cursors: cursors.slice(0, -1) })}
                   >
@@ -203,7 +203,7 @@ export default function PromptCachingRequestsTable({ accessToken, dateValue }: P
                   <Button
                     variant="outline"
                     size="icon-sm"
-                    aria-label="Go to next page"
+                    aria-label="转到下一页"
                     disabled={!requests.data.has_more || !nextCursor}
                     onClick={() => nextCursor && setPagination({ scope, cursors: [...cursors, nextCursor] })}
                   >

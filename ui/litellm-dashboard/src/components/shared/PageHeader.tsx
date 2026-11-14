@@ -28,7 +28,7 @@ export function PageHeaderControls({ className, ...props }: ComponentProps<"div"
   return (
     <div
       role="group"
-      aria-label="Page controls"
+      aria-label="页面控制"
       className={cn("mt-5 flex min-h-9 items-center gap-2", className)}
       {...props}
     />

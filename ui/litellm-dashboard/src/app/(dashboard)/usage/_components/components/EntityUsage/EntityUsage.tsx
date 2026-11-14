@@ -59,7 +59,7 @@ import { ProviderSpendBreakdown } from "./SpendByProvider";
 const BRAND = "#2b3fd6";
 const FLAT_COST_SERIES = "Flat cost";
 const FLAT_COST_COLOR = "#8b5cf6";
-const METRIC_TITLE: Record<UsageMetric, string> = { spend: "Spend", tokens: "Tokens", requests: "Requests" };
+const METRIC_TITLE: Record<UsageMetric, string> = { spend: "花费", tokens: "Token 数", requests: "请求数" };
 /** Summary tiles that carry a sparkline, keyed by tile title, valued by the dailyTotals field. */
 const TILE_TRENDS: Readonly<Record<string, string>> = {
   "Total Spend": "spend",
@@ -394,25 +394,25 @@ const EntityUsage: React.FC<EntityUsageProps> = ({
         cell: ({ row }) => <ShareBar value={row.original.metrics.spend} max={maxEntitySpend} />,
       },
       {
-        header: "Spend",
+        header: "花费",
         accessorKey: "metrics.spend",
         meta: { numeric: true, ...QUIET_HEADER },
         cell: ({ row }) => <MoneyCell value={row.original.metrics.spend} decimals={4} />,
       },
       {
-        header: "Successful",
+        header: "成功",
         accessorKey: "metrics.successful_requests",
         meta: { numeric: true, className: "text-success", ...QUIET_HEADER },
         cell: ({ row }) => row.original.metrics.successful_requests.toLocaleString(),
       },
       {
-        header: "Failed",
+        header: "失败",
         accessorKey: "metrics.failed_requests",
         meta: { numeric: true, className: "text-destructive", ...QUIET_HEADER },
         cell: ({ row }) => row.original.metrics.failed_requests.toLocaleString(),
       },
       {
-        header: "Tokens",
+        header: "Token 数",
         accessorKey: "metrics.total_tokens",
         meta: { numeric: true, ...QUIET_HEADER },
         cell: ({ row }) => row.original.metrics.total_tokens.toLocaleString(),
@@ -516,12 +516,12 @@ const EntityUsage: React.FC<EntityUsageProps> = ({
           <div className="flex flex-wrap items-center gap-2">
             <BreakdownControls state={breakdown} onChange={setBreakdown} showDimension={false} />
             <Segmented
-              label="Bucket size"
+              label="时间粒度"
               value={granularity}
               options={GRANULARITY_OPTIONS}
               onChange={setGranularity}
             />
-            <Segmented label="Scale" value={scale} options={SCALE_OPTIONS} onChange={setScale} />
+            <Segmented label="刻度" value={scale} options={SCALE_OPTIONS} onChange={setScale} />
           </div>
         </header>
         <div className="px-3 pt-4 pb-2">

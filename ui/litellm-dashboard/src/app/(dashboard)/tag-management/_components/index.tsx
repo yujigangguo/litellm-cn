@@ -141,10 +141,10 @@ const TagManagement: React.FC<TagProps> = ({ accessToken, userID, userRole }) =>
       ) : (
         <div className="flex h-full w-full flex-col p-8 pt-10">
           <div className="mt-2 mb-4 flex w-full items-center justify-between">
-            <h1>Tag Management</h1>
+            <h1>标签管理</h1>
             <div className="flex items-center space-x-2">
-              {lastRefreshed && <p className="text-sm">Last Refreshed: {lastRefreshed}</p>}
-              <Button variant="outline" size="icon-sm" aria-label="Refresh tags" onClick={handleRefreshClick}>
+              {lastRefreshed && <p className="text-sm">最近刷新：{lastRefreshed}</p>}
+              <Button variant="outline" size="icon-sm" aria-label="刷新标签" onClick={handleRefreshClick}>
                 <RefreshCw />
               </Button>
             </div>
@@ -163,7 +163,7 @@ const TagManagement: React.FC<TagProps> = ({ accessToken, userID, userRole }) =>
           </div>
 
           <Button className="mb-4 self-start" onClick={() => setIsCreateModalVisible(true)}>
-            + Create New Tag
+            + 创建标签
           </Button>
 
           <div className="mt-2 flex min-h-0 flex-1 flex-col">
@@ -193,7 +193,7 @@ const TagManagement: React.FC<TagProps> = ({ accessToken, userID, userRole }) =>
             title="Delete Tag"
             message="Are you sure you want to delete this tag? This action cannot be undone."
             resourceInformationTitle="Tag Information"
-            resourceInformation={[{ label: "Tag Name", value: tagToDelete, code: true }]}
+            resourceInformation={[{ label: "标签名称", value: tagToDelete, code: true }]}
             onCancel={() => {
               setIsDeleteModalOpen(false);
               setTagToDelete(null);

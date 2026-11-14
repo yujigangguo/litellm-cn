@@ -39,7 +39,7 @@ export function FormattedToolView({ tool }: FormattedToolViewProps) {
               <TableRow>
                 <TableHead>Parameter</TableHead>
                 <TableHead>类型</TableHead>
-                <TableHead>Description</TableHead>
+                <TableHead>描述</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>

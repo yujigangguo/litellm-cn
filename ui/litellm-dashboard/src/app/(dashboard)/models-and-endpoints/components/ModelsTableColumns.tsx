@@ -88,7 +88,7 @@ function ModelInformationCell({ model, displayName }: { model: ModelData; displa
             <span className="truncate text-xs text-muted-foreground">{model.provider || "Unknown provider"}</span>
           </div>
           <div className="flex flex-col gap-0.5">
-            <span className="text-xs text-muted-foreground">Public Model Name</span>
+            <span className="text-xs text-muted-foreground">公开模型名称</span>
             <span className="truncate text-sm font-medium text-foreground" title={displayName}>
               {displayName}
             </span>
@@ -125,7 +125,7 @@ function CredentialsHeader() {
           render={
             <button
               type="button"
-              aria-label="About credential types"
+              aria-label="关于凭据类型"
               data-testid="credentials-header-info"
               className="cursor-pointer text-muted-foreground hover:text-foreground"
             />
@@ -339,7 +339,7 @@ function ModelRowActions({
             <Button
               variant="ghost"
               size="icon-sm"
-              aria-label="Delete model"
+              aria-label="删除模型"
               data-testid={`model-delete-${modelId}`}
               disabled={isConfigModel || !canEditModel}
               className="text-muted-foreground hover:bg-destructive/10 hover:text-destructive"
@@ -385,7 +385,7 @@ export const getModelsTableColumns = ({
     id: MODEL_ID_COLUMN_ID,
     accessorFn: (row) => row.model_info.id,
     meta: { title: "模型 ID" },
-    header: "Model ID",
+    header: "模型 ID",
     enableSorting: false,
     size: 140,
     minSize: 90,
@@ -461,7 +461,7 @@ export const getModelsTableColumns = ({
     id: TEAM_ID_COLUMN_ID,
     accessorFn: (row) => row.model_info.team_id ?? "",
     meta: { title: "团队 ID" },
-    header: "Team ID",
+    header: "团队 ID",
     enableSorting: false,
     size: 140,
     minSize: 90,
@@ -477,7 +477,7 @@ export const getModelsTableColumns = ({
     id: ACCESS_GROUPS_COLUMN_ID,
     accessorFn: (row) => row.model_info.access_groups ?? [],
     meta: { title: "模型访问组", skeleton: "chips" },
-    header: "Model Access Group",
+    header: "模型访问组",
     enableSorting: false,
     size: 200,
     minSize: 120,
@@ -486,8 +486,8 @@ export const getModelsTableColumns = ({
   {
     id: STATUS_COLUMN_ID,
     accessorFn: (row) => row.model_info.db_model,
-    meta: { title: "Source", skeleton: "badge" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Source" />,
+    meta: { title: "来源", skeleton: "badge" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="来源" />,
     enableSorting: true,
     size: 140,
     minSize: 100,
@@ -501,7 +501,7 @@ export const getModelsTableColumns = ({
   {
     id: "actions",
     meta: { title: "操作", className: "text-right", headerClassName: "text-right" },
-    header: "Actions",
+    header: "操作",
     enableSorting: false,
     enableHiding: false,
     enableResizing: false,

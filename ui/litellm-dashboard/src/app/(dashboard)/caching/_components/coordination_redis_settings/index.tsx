@@ -97,7 +97,7 @@ const CoordinationRedisSettings: React.FC = () => {
         <form onSubmit={(event) => event.preventDefault()} className="space-y-6">
           <div className="max-w-3xl space-y-2">
             <div className="flex items-center gap-3">
-              <h3 className="text-sm font-medium text-foreground">Coordination Redis</h3>
+              <h3 className="text-sm font-medium text-foreground">协调 Redis</h3>
               {!isLoading && (
                 <StatusBadge tone={badge.tone} label={badge.label} dataTestId="coordination-redis-source" />
               )}

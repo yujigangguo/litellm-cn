@@ -186,7 +186,7 @@ const HealthCheckDetails: React.FC<{ response: any }> = ({ response }) => {
                   <>
                     <tr>
                       <td colSpan={2} className="pt-4 pb-2 font-semibold text-destructive">
-                        Error Details
+                        错误详情
                       </td>
                     </tr>
                     <TableClickableErrorField label="Error Message" value={errorDetails.message} />

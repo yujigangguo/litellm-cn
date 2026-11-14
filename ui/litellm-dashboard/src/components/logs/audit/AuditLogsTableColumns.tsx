@@ -19,12 +19,12 @@ export type AuditLogEntry = {
 };
 
 export const AUDIT_TABLE_NAME_DISPLAY: Record<string, string> = {
-  LiteLLM_VerificationToken: "Keys",
-  LiteLLM_TeamTable: "Teams",
-  LiteLLM_UserTable: "Users",
-  LiteLLM_OrganizationTable: "Organizations",
-  LiteLLM_ProxyModelTable: "Models",
-  LiteLLM_AgentsTable: "Agents",
+  LiteLLM_VerificationToken: "密钥",
+  LiteLLM_TeamTable: "团队",
+  LiteLLM_UserTable: "用户",
+  LiteLLM_OrganizationTable: "组织",
+  LiteLLM_ProxyModelTable: "模型",
+  LiteLLM_AgentsTable: "助手",
 };
 
 const ACTION_TONE: Record<string, StatusTone> = {
@@ -56,7 +56,7 @@ export const getAuditLogsTableColumns = ({ onViewLog }: AuditLogsTableColumnsDep
   {
     id: "action",
     accessorKey: "action",
-    header: "Action",
+    header: "操作",
     size: 110,
     enableSorting: false,
     cell: ({ row }) => (

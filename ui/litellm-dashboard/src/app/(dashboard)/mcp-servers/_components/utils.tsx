@@ -3,14 +3,14 @@ import { MCPEnvVar, MCPEnvVarScope, type MCPServer } from "@/components/mcp_tool
 export const getMCPNetworkAccess = (
   server: Pick<MCPServer, "available_on_public_internet" | "mcp_info">,
 ): {
-  readonly label: "All Networks" | "Internal Only" | "Unknown";
+  readonly label: string;
   readonly dotClassName: string;
   readonly description: string;
 } => {
   const explicitlyPublished = server.mcp_info?.is_public_explicit;
   if (server.available_on_public_internet === true || explicitlyPublished === true) {
     return {
-      label: "All Networks",
+      label: "所有网络",
       dotClassName: "bg-success",
       description:
         server.available_on_public_internet === true
@@ -20,16 +20,16 @@ export const getMCPNetworkAccess = (
   }
   if (server.available_on_public_internet === false && explicitlyPublished === false) {
     return {
-      label: "Internal Only",
+      label: "仅内部网络",
       dotClassName: "bg-warning",
       description:
-        "Allows requests only from internal/private IP ranges. Authentication and access permissions still apply",
+        "仅允许来自内网/私有 IP 范围的请求。认证和访问权限仍然生效",
     };
   }
   return {
-    label: "Unknown",
+    label: "未知",
     dotClassName: "bg-border",
-    description: "The proxy did not report enough network and publication settings to determine allowed client IPs",
+    description: "代理未报告足够的网络和发布设置，无法确定允许的客户端 IP",
   };
 };
 

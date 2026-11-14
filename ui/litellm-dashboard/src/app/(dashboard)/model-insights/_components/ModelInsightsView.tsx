@@ -27,7 +27,7 @@ import {
 
 const SCALES = ["linear", "log"] as const;
 const GRANULARITIES = ["day", "week"] as const;
-const GRANULARITY_LABELS: Record<Granularity, string> = { day: "Daily", week: "Weekly" };
+const GRANULARITY_LABELS: Record<Granularity, string> = { day: "按天", week: "按周" };
 const METRIC_LABELS: Record<Metric, string> = { requests: "requests", spend: "spend", tokens: "tokens" };
 const RANKING_ROWS = 5;
 
@@ -161,7 +161,7 @@ export default function ModelInsightsView({ accessToken }: { accessToken: string
               </TabsList>
             </Tabs>
             <Tabs value={granularity} onValueChange={(value) => setGranularity(value as Granularity)}>
-              <TabsList aria-label="Bucket size">
+              <TabsList aria-label="时间粒度">
                 {GRANULARITIES.map((value) => (
                   <TabsTrigger key={value} value={value}>
                     {GRANULARITY_LABELS[value]}

@@ -1,7 +1,7 @@
 export type ModelViewType = "groups" | "individual";
 
 const MODEL_VIEW_OPTIONS: readonly { value: ModelViewType; label: string }[] = [
-  { value: "groups", label: "Public Model Name" },
+  { value: "groups", label: "公开模型名称" },
   { value: "individual", label: "Litellm Model Name" },
 ];
 

@@ -299,7 +299,7 @@ const DocsHint: React.FC<{ text: string; href: string }> = ({ text, href }) => (
 
 const ChipList: React.FC<{ values: unknown; emptyLabel: string }> = ({ values, emptyLabel }) => {
   if (!values) {
-    return <>Not Set</>;
+    return <>未设置</>;
   }
   if (!Array.isArray(values)) {
     return <>{String(values)}</>;
@@ -657,7 +657,7 @@ const ModelInfoEditForm: React.FC<ModelInfoEditFormProps> = ({
                           <SelectValue placeholder="Select existing health check model" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value={null}>None</SelectItem>
+                          <SelectItem value={null}>无</SelectItem>
                           {healthCheckModelOptions.map((option) => (
                             <SelectItem key={option.value} value={option.value}>
                               {option.label}
@@ -715,7 +715,7 @@ const ModelInfoEditForm: React.FC<ModelInfoEditFormProps> = ({
                 <Display>
                   {localModelData.litellm_params?.cache_control_injection_points ? (
                     <div>
-                      <p>Enabled</p>
+                      <p>启用</p>
                       <div className="mt-2">
                         {localModelData.litellm_params.cache_control_injection_points.map((point: any, i: number) => (
                           <div key={i} className="mb-1 text-sm text-muted-foreground">
@@ -808,7 +808,7 @@ const ModelInfoEditForm: React.FC<ModelInfoEditFormProps> = ({
               </Button>
               <Button type="submit" disabled={isSaving} aria-busy={isSaving}>
                 {isSaving && <UiLoadingSpinner className="size-4" />}
-                Save Changes
+                保存更改
               </Button>
             </div>
           )}

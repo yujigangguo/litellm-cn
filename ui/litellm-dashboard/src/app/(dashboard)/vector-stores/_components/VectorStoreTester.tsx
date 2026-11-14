@@ -108,7 +108,7 @@ export const VectorStoreTester: React.FC<VectorStoreTesterProps> = ({ vectorStor
         <div className="flex items-center justify-between border-b p-4">
           <div className="flex items-center">
             <Database className="mr-2 size-4 text-primary" />
-            <h4 className="text-base font-medium text-foreground">Test Vector Store</h4>
+            <h4 className="text-base font-medium text-foreground">测试向量库</h4>
           </div>
           {searchHistory.length > 0 && (
             <Button variant="outline" size="sm" onClick={clearHistory}>
@@ -202,7 +202,7 @@ export const VectorStoreTester: React.FC<VectorStoreTesterProps> = ({ vectorStor
                                     {/* Metadata */}
                                     {(result.file_id || result.filename || result.attributes) && (
                                       <div className="mt-3 border-t pt-3">
-                                        <div className="mb-2 text-xs font-medium text-muted-foreground">Metadata</div>
+                                        <div className="mb-2 text-xs font-medium text-muted-foreground">元数据</div>
                                         <div className="space-y-2 text-xs">
                                           {result.file_id && (
                                             <div className="rounded-sm bg-muted/50 p-2">

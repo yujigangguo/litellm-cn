@@ -25,7 +25,7 @@ function EmptyState() {
       <div className="mb-1 flex size-10 items-center justify-center rounded-lg bg-muted">
         <Inbox className="size-5 text-muted-foreground" />
       </div>
-      <div className="text-sm font-medium text-foreground">No skills found</div>
+      <div className="text-sm font-medium text-foreground">未找到技能</div>
       <div className="text-sm text-muted-foreground">Add one to get started.</div>
     </div>
   );

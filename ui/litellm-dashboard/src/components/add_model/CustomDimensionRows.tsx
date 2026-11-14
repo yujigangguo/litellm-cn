@@ -46,7 +46,7 @@ export default function CustomDimensionRows({ rows, disabled, onChange, onWeight
               onClick={() => onRemove(row.id)}
             >
               <Trash2 />
-              Remove
+              移除
             </Button>
           </div>
           <div className="space-y-1">

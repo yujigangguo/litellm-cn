@@ -135,7 +135,7 @@ const LiteLLMModelNameField: React.FC<LiteLLMModelNameFieldProps> = ({
             <MultiSelect
               id={control.id}
               placeholder="Select models"
-              emptyText="No models found"
+              emptyText="未找到模型"
               value={Array.isArray(control.value) ? control.value : []}
               onValueChange={(value: string[]) => {
                 control.onChange(value);

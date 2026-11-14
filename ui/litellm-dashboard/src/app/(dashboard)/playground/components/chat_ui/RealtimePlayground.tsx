@@ -363,12 +363,12 @@ const RealtimePlayground: React.FC<RealtimePlaygroundProps> = ({
           </Select>
           {!isConnected ? (
             <Button onClick={connect} disabled={isConnecting} size="sm">
-              Connect
+              连接
             </Button>
           ) : (
             <Button variant="destructive" onClick={disconnect} size="sm">
               <CircleX />
-              Disconnect
+              断开
             </Button>
           )}
         </div>
@@ -381,7 +381,7 @@ const RealtimePlayground: React.FC<RealtimePlaygroundProps> = ({
             <Volume2 className="size-12" />
             <span className="text-lg text-muted-foreground">Realtime Voice Playground</span>
             <p className="text-sm text-muted-foreground text-center max-w-md">
-              Click <b>Connect</b> to start a realtime session. You can speak using your microphone or type messages.{" "}
+              Click <b>连接</b> to start a realtime session. You can speak using your microphone or type messages.{" "}
               {term("The AI will respond with voice and text.")}
             </p>
           </div>

@@ -55,7 +55,7 @@ const TopUsersView: React.FC<TopUsersViewProps> = ({ fetchUserPage }) => {
           className="font-medium text-foreground underline"
           onClick={() => setRetryToken((token) => token + 1)}
         >
-          Retry
+          重试
         </button>
       </p>
     );

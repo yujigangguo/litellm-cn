@@ -510,7 +510,7 @@ const VectorStoreForm: React.FC<VectorStoreFormProps> = ({
                 {({ ref, value, ...field }) => <Input {...field} ref={ref} value={value ?? ""} />}
               </FormField>
 
-              <FormField control={form.control} name="vector_store_description" label="Description">
+              <FormField control={form.control} name="vector_store_description" label="描述">
                 {({ ref, value, ...field }) => <Textarea {...field} ref={ref} value={value ?? ""} rows={4} />}
               </FormField>
 

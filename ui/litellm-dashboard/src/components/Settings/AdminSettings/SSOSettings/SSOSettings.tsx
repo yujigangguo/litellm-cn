@@ -21,7 +21,7 @@ import { ssoProviderDisplayNames, ssoProviderLogoMap } from "./constants";
 import { detectSSOProvider } from "./utils";
 
 function NotConfigured() {
-  return <span className="text-muted-foreground italic">Not configured</span>;
+  return <span className="text-muted-foreground italic">未配置</span>;
 }
 
 function DetailRow({ children, label }: { children: React.ReactNode; label: string }) {
@@ -238,9 +238,9 @@ export default function SSOSettings() {
                 <Shield className="size-6 text-muted-foreground" />
                 <div>
                   <CardTitle>
-                    <h3>SSO Configuration</h3>
+                    <h3>SSO 配置</h3>
                   </CardTitle>
-                  <CardDescription>Manage Single Sign-On authentication settings</CardDescription>
+                  <CardDescription>管理单点登录认证设置</CardDescription>
                 </div>
               </div>
               {isSSOConfigured && (

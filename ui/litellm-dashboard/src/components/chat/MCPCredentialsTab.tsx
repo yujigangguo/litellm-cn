@@ -111,7 +111,7 @@ const MCPCredentialsTab: React.FC<Props> = ({ accessToken }) => {
                   App
                 </TableHead>
                 <TableHead className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
-                  Connected
+                  已连接
                 </TableHead>
                 <TableHead className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
                   状态
@@ -147,7 +147,7 @@ const MCPCredentialsTab: React.FC<Props> = ({ accessToken }) => {
           <p className="m-0">No connections yet</p>
           <p className="m-0 mt-1 text-xs">
             Go to <span className="font-medium">Integrations</span> and click{" "}
-            <span className="font-medium">Connect</span> to authorize an MCP server
+            <span className="font-medium">连接</span> to authorize an MCP server
           </p>
         </div>
       ) : (
@@ -159,7 +159,7 @@ const MCPCredentialsTab: React.FC<Props> = ({ accessToken }) => {
                   App
                 </TableHead>
                 <TableHead className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
-                  Connected
+                  已连接
                 </TableHead>
                 <TableHead className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
                   状态

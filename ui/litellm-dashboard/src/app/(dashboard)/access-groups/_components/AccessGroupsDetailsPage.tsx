@@ -169,7 +169,7 @@ export function AccessGroupDetail({ accessGroupId, onBack }: AccessGroupDetailPr
         </CardHeader>
         <CardContent>
           <dl className="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-2 text-sm">
-            <dt className="text-muted-foreground">Description</dt>
+            <dt className="text-muted-foreground">描述</dt>
             <dd className="text-foreground">{accessGroup.description || "—"}</dd>
             <dt className="text-muted-foreground">创建时间</dt>
             <dd className="flex items-center gap-1 text-foreground">
@@ -269,7 +269,7 @@ export function AccessGroupDetail({ accessGroupId, onBack }: AccessGroupDetailPr
               </TabsTrigger>
               <TabsTrigger value="agents" className="flex-none gap-2 rounded-none px-4 py-2">
                 <BotIcon className="size-4" />
-                Agents
+                助手
                 <Badge variant="secondary">{agents.length}</Badge>
               </TabsTrigger>
               <TabsTrigger value="skills" className="flex-none gap-2 rounded-none px-4 py-2">

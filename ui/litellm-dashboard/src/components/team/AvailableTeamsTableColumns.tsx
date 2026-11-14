@@ -63,8 +63,8 @@ export const getAvailableTeamsTableColumns = ({
   {
     id: "description",
     accessorKey: "description",
-    meta: { title: "Description" },
-    header: "Description",
+    meta: { title: "描述" },
+    header: "描述",
     size: 280,
     enableSorting: false,
     cell: ({ row }) => {
@@ -79,8 +79,8 @@ export const getAvailableTeamsTableColumns = ({
   {
     id: "members",
     accessorFn: (team) => team.members_with_roles.length,
-    meta: { title: "Members" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Members" />,
+    meta: { title: "成员" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="成员" />,
     size: 120,
     enableSorting: true,
     cell: ({ row }) => (
@@ -90,7 +90,7 @@ export const getAvailableTeamsTableColumns = ({
   {
     id: "models",
     meta: { title: "模型" },
-    header: "Models",
+    header: "模型",
     size: 260,
     enableSorting: false,
     cell: ({ row }) => <ModelsCell models={row.original.models} />,

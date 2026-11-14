@@ -42,7 +42,7 @@ const EndpointUsageTable: React.FC<EndpointUsageTableProps> = ({ endpointData })
 
   const columns: ColumnDef<EndpointRow>[] = [
     {
-      header: "Endpoint",
+      header: "端点",
       accessorKey: "endpoint",
       cell: ({ row }) => <span className="font-mono text-xs text-foreground">{row.original.endpoint}</span>,
     },
@@ -59,7 +59,7 @@ const EndpointUsageTable: React.FC<EndpointUsageTableProps> = ({ endpointData })
         return (
           <div className="flex items-center gap-3">
             <div className="relative min-w-16 flex-1">
-              <Meter value={successPercentage} max={totalPercentage || 100} aria-label="Successful requests">
+              <Meter value={successPercentage} max={totalPercentage || 100} aria-label="成功请求">
                 <MeterTrack className={failurePercentage > 0 ? "h-1 bg-destructive/70" : "h-1"}>
                   <MeterIndicator className="bg-[#2b3fd6]" />
                 </MeterTrack>
@@ -83,7 +83,7 @@ const EndpointUsageTable: React.FC<EndpointUsageTableProps> = ({ endpointData })
       cell: ({ row }) => <span className="tabular-nums">{row.original.api_requests.toLocaleString()}</span>,
     },
     {
-      header: "Success Rate",
+      header: "成功率",
       accessorKey: "successRate",
       meta: { numeric: true },
       cell: ({ row }) => {
@@ -102,13 +102,13 @@ const EndpointUsageTable: React.FC<EndpointUsageTableProps> = ({ endpointData })
       },
     },
     {
-      header: "Total Tokens",
+      header: "Token 总数",
       accessorKey: "total_tokens",
       meta: { numeric: true },
       cell: ({ row }) => <span className="tabular-nums">{row.original.total_tokens.toLocaleString()}</span>,
     },
     {
-      header: "Spend",
+      header: "花费",
       accessorKey: "spend",
       meta: { numeric: true },
       cell: ({ row }) => <MoneyCell value={row.original.spend} decimals={2} />,

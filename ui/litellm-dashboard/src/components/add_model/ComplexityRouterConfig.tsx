@@ -118,7 +118,7 @@ export const CLASSIFICATION_RUBRIC_DESCRIPTIONS: Record<ClassificationRubric, { 
         "coding-assistant traffic, and mixed traffic.",
     },
     chat: {
-      label: "Chat",
+      label: "聊天",
       description:
         "Drops the engineering examples, for a router serving only conversational traffic that never sees those " +
         "requests.",
@@ -224,7 +224,7 @@ const TierSetToolbar: React.FC<{
           </Button>
           <SimpleTooltip content={rowsError || undefined}>
             <Button variant="outline" disabled={Boolean(rowsError)} onClick={() => onEditingChange?.(false)}>
-              Done
+              完成
             </Button>
           </SimpleTooltip>
           {isCustomSet && (
@@ -317,7 +317,7 @@ const TierRowHeader: React.FC<{
         onClick={onRemove}
       >
         <Trash2 />
-        Remove
+        移除
       </Button>
     )}
   </div>
@@ -743,7 +743,7 @@ const ComplexityRouterConfig: React.FC<ComplexityRouterConfigProps> = ({
                         onRemove={() => removeTierRow(row.id)}
                       />
                       {tierInfo && !customTierSet && (
-                        <span className="block mb-2 text-xs text-muted-foreground">Examples: {tierInfo.examples}</span>
+                        <span className="block mb-2 text-xs text-muted-foreground">示例： {tierInfo.examples}</span>
                       )}
                       {editingTiers && (
                         <TierRowEditFields
@@ -781,7 +781,7 @@ const ComplexityRouterConfig: React.FC<ComplexityRouterConfigProps> = ({
                         value={row.models}
                         onValueChange={(models: string[]) => setRowModels(row, models)}
                         placeholder={`Select model(s) for ${label.toLowerCase()} queries`}
-                        emptyText="No models found"
+                        emptyText="未找到模型"
                         className={tierMissing ? "w-full border-destructive" : "w-full"}
                       />
                       <TierModelEffortRows

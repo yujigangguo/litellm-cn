@@ -195,7 +195,7 @@ function TeamAdminSettingsFormFields({
         </Button>
         <Button type="submit" disabled={isSaving || !hasChanges}>
           {isSaving ? <UiLoadingSpinner className="size-4" /> : <Save className="size-4" />}
-          Save Changes
+          保存更改
         </Button>
       </div>
     </form>

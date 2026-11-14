@@ -33,7 +33,7 @@ export default function UsageStatStrip({
           label="花费"
           value={formatUsd(totals.spend)}
           pending={loading}
-          hint={budget ? `of ${formatUsd(budget)} budget` : "未设预算"}
+          hint={budget ? `预算 ${formatUsd(budget)}` : "未设预算"}
         />
       </StatCell>
       <StatCell trend={<Sparkline data={daily} dataKey="requests" color={BRAND} className="h-14" />}>
@@ -41,13 +41,13 @@ export default function UsageStatStrip({
         {!requestCountsPending && (
           <div className="mt-0.5 flex gap-3 text-xs leading-4 text-muted-foreground">
             <span>
-              <span className="text-success tabular-nums">{totals.successful.toLocaleString()}</span> ok
+              <span className="text-success tabular-nums">{totals.successful.toLocaleString()}</span> 成功
             </span>
             <span>
               <span className={totals.failed > 0 ? "text-destructive tabular-nums" : "tabular-nums"}>
                 {totals.failed.toLocaleString()}
               </span>{" "}
-              failed
+              失败
             </span>
           </div>
         )}
@@ -56,9 +56,9 @@ export default function UsageStatStrip({
         <Stat
           label="Token 总数"
           value={loading ? null : formatCompact(totals.tokens)}
-          exact={`${totals.tokens.toLocaleString()} tokens`}
+          exact={`${totals.tokens.toLocaleString()} 个 Token`}
           pending={loading}
-          hint={loading ? undefined : `${formatCompact(totals.cacheReadTokens)} cache read`}
+          hint={loading ? undefined : `${formatCompact(totals.cacheReadTokens)} 缓存读取`}
         />
         {!loading && (
           <Popover>
@@ -66,36 +66,34 @@ export default function UsageStatStrip({
               查看 Token 明细
             </PopoverTrigger>
             <PopoverContent side="right" align="start" className="w-80 gap-3">
-              <PopoverTitle>What counts toward total tokens?</PopoverTitle>
+              <PopoverTitle>总 Token 数包括哪些？</PopoverTitle>
               <dl className="space-y-2 text-sm tabular-nums">
                 <div className="flex justify-between gap-4">
-                  <dt>Input tokens</dt>
+                  <dt>输入 Token</dt>
                   <dd>{totals.inputTokens.toLocaleString()}</dd>
                 </div>
                 <div className="flex justify-between gap-4 pl-3 text-xs text-muted-foreground">
-                  <dt>Cache reads</dt>
+                  <dt>缓存读取</dt>
                   <dd>{totals.cacheReadTokens.toLocaleString()}</dd>
                 </div>
                 <div className="flex justify-between gap-4 pl-3 text-xs text-muted-foreground">
-                  <dt>Cache writes</dt>
+                  <dt>缓存写入</dt>
                   <dd>{totals.cacheWriteTokens.toLocaleString()}</dd>
                 </div>
                 <div className="flex justify-between gap-4">
-                  <dt>Output tokens</dt>
+                  <dt>输出 Token</dt>
                   <dd>{totals.outputTokens.toLocaleString()}</dd>
                 </div>
                 <div className="flex justify-between gap-4 border-t pt-2 font-medium">
-                  <dt>Total tokens</dt>
+                  <dt>Token 总数</dt>
                   <dd>{totals.tokens.toLocaleString()}</dd>
                 </div>
               </dl>
               <p className="text-xs leading-5 text-muted-foreground">
-                Input includes cache reads and writes. Cached input has separate pricing, so total tokens alone cannot
-                explain the cost.
+                输入包含缓存读取和缓存写入。缓存输入单独计价，所以仅看 Token 总数无法解释成本。
               </p>
               <p className="text-xs leading-5 text-muted-foreground">
-                A client may show a different subset of tokens. Compare the same person, client and time range before
-                comparing counts.
+                不同客户端可能显示不同的 Token 子集。比较数量前，请先确保是同一个人、同一个客户端和同一时间范围。
               </p>
             </PopoverContent>
           </Popover>
@@ -108,7 +106,7 @@ export default function UsageStatStrip({
             label="平均延迟"
             value={totals.avgLatencyMs === null ? "—" : formatLatency(totals.avgLatencyMs)}
             pending={loading}
-            hint={totals.successRate === null ? undefined : `${totals.successRate.toFixed(1)}% success rate`}
+            hint={totals.successRate === null ? undefined : `${totals.successRate.toFixed(1)}% 成功率`}
           />
         </div>
       </StatCell>

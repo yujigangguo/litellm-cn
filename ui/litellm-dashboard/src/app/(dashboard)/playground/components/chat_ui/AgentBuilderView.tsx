@@ -484,8 +484,8 @@ export default function AgentBuilderView({
         {/* Roster */}
         <div className="w-60 shrink-0 border-r border-border bg-card flex flex-col">
           <div className="flex items-center justify-between border-b border-border p-3">
-            <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Agents</span>
-            <Button variant="ghost" size="icon-sm" onClick={handleAddAgent} aria-label="Add agent">
+            <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">助手</span>
+            <Button variant="ghost" size="icon-sm" onClick={handleAddAgent} aria-label="添加助手">
               <Plus />
             </Button>
           </div>
@@ -545,7 +545,7 @@ export default function AgentBuilderView({
                   </TabsTrigger>
                   <TabsTrigger value="chat" disabled={isNewAgent} className="flex-none rounded-none px-4 py-2">
                     <MessageSquare />
-                    Chat
+                    聊天
                   </TabsTrigger>
                   <TabsTrigger value="test" disabled={isNewAgent} className="flex-none rounded-none px-4 py-2">
                     <FlaskConical />
@@ -553,7 +553,7 @@ export default function AgentBuilderView({
                   </TabsTrigger>
                   <TabsTrigger value="connect" disabled={isNewAgent} className="flex-none rounded-none px-4 py-2">
                     <LinkIcon />
-                    Connect
+                    连接
                   </TabsTrigger>
                 </TabsList>
 

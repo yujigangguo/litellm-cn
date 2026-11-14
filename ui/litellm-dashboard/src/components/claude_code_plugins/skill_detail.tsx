@@ -17,7 +17,7 @@ const SkillSource: React.FC<{ source: Plugin["source"] }> = ({ source }) => {
   if (href) {
     return (
       <div className="mb-6">
-        <div className="mb-1 text-xs text-muted-foreground">Source</div>
+        <div className="mb-1 text-xs text-muted-foreground">来源</div>
         <a
           href={href}
           target="_blank"
@@ -35,7 +35,7 @@ const SkillSource: React.FC<{ source: Plugin["source"] }> = ({ source }) => {
   }
   return (
     <div className="mb-6">
-      <div className="mb-1 text-xs text-muted-foreground">Source</div>
+      <div className="mb-1 text-xs text-muted-foreground">来源</div>
       <div className="break-all text-[13px] text-foreground">{getSourceDisplayText(source)}</div>
     </div>
   );
@@ -68,10 +68,10 @@ const SkillDetail: React.FC<SkillDetailProps> = ({ skill, onBack }) => {
   );
 
   const detailRows = [
-    ...(skill.category ? [{ property: "Category", value: skill.category }] : []),
+    ...(skill.category ? [{ property: "分类", value: skill.category }] : []),
     ...(skill.domain ? [{ property: "Domain", value: skill.domain }] : []),
     ...(skill.namespace ? [{ property: "Namespace", value: skill.namespace }] : []),
-    ...(skill.version ? [{ property: "Version", value: skill.version }] : []),
+    ...(skill.version ? [{ property: "版本", value: skill.version }] : []),
     ...(skill.author?.name ? [{ property: "Author", value: skill.author.name }] : []),
     ...(skill.created_at ? [{ property: "Added", value: new Date(skill.created_at).toLocaleDateString() }] : []),
   ];

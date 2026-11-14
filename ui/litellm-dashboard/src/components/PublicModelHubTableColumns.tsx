@@ -223,8 +223,8 @@ export const getPublicModelHubColumns = ({
     {
       id: "mode",
       accessorKey: "mode",
-      meta: { title: "Mode" },
-      header: ({ column }) => <DataTableSortHeader column={column} title="Mode" />,
+      meta: { title: "模式" },
+      header: ({ column }) => <DataTableSortHeader column={column} title="模式" />,
       size: 110,
       sortingFn: "alphanumeric",
       cell: ({ row }) => (
@@ -264,10 +264,10 @@ export const getPublicModelHubColumns = ({
         showProviderLogos ? (
           <div className="flex flex-col gap-0.5 text-xs tabular-nums">
             <span>
-              Input {row.original.input_cost_per_token ? formatCost(row.original.input_cost_per_token) : "Free"}
+              输入 {row.original.input_cost_per_token ? formatCost(row.original.input_cost_per_token) : "Free"}
             </span>
             <span className="text-muted-foreground">
-              Output {row.original.output_cost_per_token ? formatCost(row.original.output_cost_per_token) : "Free"}
+              输出 {row.original.output_cost_per_token ? formatCost(row.original.output_cost_per_token) : "Free"}
             </span>
           </div>
         ) : (
@@ -290,8 +290,8 @@ export const getPublicModelHubColumns = ({
     },
     {
       id: "features",
-      meta: { title: "Features", skeleton: "chips" },
-      header: "Features",
+      meta: { title: "功能", skeleton: "chips" },
+      header: "功能",
       size: 140,
       cell: ({ row }) => {
         const features = Object.entries(row.original)
@@ -303,7 +303,7 @@ export const getPublicModelHubColumns = ({
     {
       id: "custom_tags",
       meta: { title: "标签", skeleton: "chips" },
-      header: "Tags",
+      header: "标签",
       size: 140,
       cell: ({ row }) => <OverflowChips items={row.original.custom_tags ?? []} />,
     },
@@ -378,8 +378,8 @@ export const getPublicAgentHubColumns = ({ onAgentClick }: PublicAgentHubColumns
   {
     id: "name",
     accessorKey: "name",
-    meta: { title: "Agent Name" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Agent Name" />,
+    meta: { title: "助手名称" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="助手名称" />,
     size: 200,
     enableSorting: true,
     sortingFn: "alphanumeric",
@@ -395,8 +395,8 @@ export const getPublicAgentHubColumns = ({ onAgentClick }: PublicAgentHubColumns
   {
     id: "description",
     accessorKey: "description",
-    meta: { title: "Description" },
-    header: "Description",
+    meta: { title: "描述" },
+    header: "描述",
     size: 260,
     enableSorting: false,
     cell: ({ row }) => (
@@ -408,8 +408,8 @@ export const getPublicAgentHubColumns = ({ onAgentClick }: PublicAgentHubColumns
   {
     id: "version",
     accessorKey: "version",
-    meta: { title: "Version" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Version" />,
+    meta: { title: "版本" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="版本" />,
     size: 90,
     enableSorting: true,
     sortingFn: "alphanumeric",
@@ -418,7 +418,7 @@ export const getPublicAgentHubColumns = ({ onAgentClick }: PublicAgentHubColumns
   {
     id: "provider",
     meta: { title: "供应商" },
-    header: "Provider",
+    header: "供应商",
     size: 130,
     enableSorting: false,
     cell: ({ row }) =>
@@ -431,7 +431,7 @@ export const getPublicAgentHubColumns = ({ onAgentClick }: PublicAgentHubColumns
   {
     id: "skills",
     meta: { title: "技能", skeleton: "chips" },
-    header: "Skills",
+    header: "技能",
     size: 160,
     enableSorting: false,
     cell: ({ row }) => <OverflowChips items={(row.original.skills || []).map((skill) => skill.name)} />,
@@ -486,8 +486,8 @@ export const getPublicMCPHubColumns = ({ onServerClick }: PublicMCPHubColumnsDep
   },
   {
     id: "description",
-    meta: { title: "Description" },
-    header: "Description",
+    meta: { title: "描述" },
+    header: "描述",
     size: 260,
     enableSorting: false,
     cell: ({ row }) => {
@@ -502,8 +502,8 @@ export const getPublicMCPHubColumns = ({ onServerClick }: PublicMCPHubColumnsDep
   {
     id: "transport",
     accessorKey: "transport",
-    meta: { title: "Transport", skeleton: "badge" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Transport" />,
+    meta: { title: "传输", skeleton: "badge" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="传输" />,
     size: 110,
     enableSorting: true,
     sortingFn: "alphanumeric",

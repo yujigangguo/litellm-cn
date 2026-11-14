@@ -135,7 +135,7 @@ const PassThroughGuardrailsSection: React.FC<PassThroughGuardrailsSectionProps> 
                           <div>
                             <div className="mb-1 font-medium">Specify which request fields to check</div>
                             <div className="space-y-1 text-xs">
-                              <div>Examples:</div>
+                              <div>示例：</div>
                               <div>• query</div>
                               <div>• documents[*].text</div>
                               <div>• messages[*].content</div>
@@ -184,7 +184,7 @@ const PassThroughGuardrailsSection: React.FC<PassThroughGuardrailsSectionProps> 
                           <div>
                             <div className="mb-1 font-medium">Specify which response fields to check</div>
                             <div className="space-y-1 text-xs">
-                              <div>Examples:</div>
+                              <div>示例：</div>
                               <div>• results[*].text</div>
                               <div>• choices[*].message.content</div>
                             </div>

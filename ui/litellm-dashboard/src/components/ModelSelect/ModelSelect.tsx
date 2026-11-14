@@ -141,7 +141,7 @@ const unavailableGroups = (
   if (!offeredListKnown) return [];
   const items = selectedOptions.filter((option) => !offeredByValue.has(option.value));
   if (items.length === 0) return [];
-  return [{ label: "Unavailable", items }];
+  return [{ label: "不可用", items }];
 };
 
 export const ModelSelect = (props: ModelSelectProps) => {
@@ -287,7 +287,7 @@ export const ModelSelect = (props: ModelSelectProps) => {
           <ComboboxChipsInput id={id} placeholder="Select Models" aria-label="Select Models" className="min-w-24" />
         </ComboboxChips>
         <ComboboxContent anchor={anchor}>
-          <ComboboxEmpty>No models found</ComboboxEmpty>
+          <ComboboxEmpty>未找到模型</ComboboxEmpty>
           <ComboboxList>
             {(group: ModelOptionGroup) => (
               <ComboboxGroup key={group.label} items={group.items}>

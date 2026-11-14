@@ -113,7 +113,7 @@ export const MemoryEditModal: React.FC<MemoryEditModalProps> = ({ open, mode, in
                 name="metadata"
                 label={labelWithHint(
                   <span>
-                    Metadata <span className="text-muted-foreground">(optional JSON)</span>
+                    元数据 <span className="text-muted-foreground">(optional JSON)</span>
                   </span>,
                   "Optional structured metadata — must be valid JSON if provided.",
                 )}

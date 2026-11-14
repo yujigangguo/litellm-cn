@@ -84,7 +84,7 @@ const UserEnvVarsForm: React.FC<UserEnvVarsFormProps> = ({ required, isSaving, o
       <div className="mt-6 flex items-center justify-end gap-2 border-t border-border pt-2">
         {onClear && (
           <Button type="button" variant="destructive" className="mr-auto" onClick={onClear} disabled={isSaving}>
-            Clear
+            清除
           </Button>
         )}
         <Button type="button" variant="outline" onClick={onCancel} disabled={isSaving}>

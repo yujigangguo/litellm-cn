@@ -103,7 +103,7 @@ export const getProjectsTableColumns = ({
   {
     id: "models",
     meta: { title: "模型", skeleton: "badge" },
-    header: "Models",
+    header: "模型",
     size: 110,
     enableSorting: false,
     cell: ({ row }) => <ProjectModelsCell project={row.original} />,
@@ -112,7 +112,7 @@ export const getProjectsTableColumns = ({
     id: "status",
     accessorKey: "blocked",
     meta: { title: "状态", skeleton: "badge" },
-    header: "Status",
+    header: "状态",
     size: 110,
     enableSorting: false,
     cell: ({ row }) => (
@@ -135,8 +135,8 @@ export const getProjectsTableColumns = ({
   {
     id: "updated_at",
     accessorKey: "updated_at",
-    meta: { title: "Updated" },
-    header: "Updated",
+    meta: { title: "更新时间" },
+    header: "更新时间",
     size: 140,
     enableSorting: false,
     cell: ({ row }) => <DateCell value={row.original.updated_at} precision="date" />,

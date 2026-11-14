@@ -692,13 +692,13 @@ export default function CompareUI({ accessToken, disabledPersonalKeyCreation }: 
         <div className="border-b px-4 py-2">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2">
-              <span className="text-sm font-medium text-muted-foreground">Virtual Key Source</span>
+              <span className="text-sm font-medium text-muted-foreground">虚拟密钥来源</span>
               <Select
                 value={apiKeySource}
                 onValueChange={(value) => setApiKeySource(value as "session" | "custom")}
                 disabled={disabledPersonalKeyCreation}
               >
-                <SelectTrigger className="w-48" aria-label="Virtual Key Source">
+                <SelectTrigger className="w-48" aria-label="虚拟密钥来源">
                   <SelectValue>{apiKeySource === "custom" ? "Virtual Key" : "Current UI Session"}</SelectValue>
                 </SelectTrigger>
                 <SelectContent>
@@ -719,9 +719,9 @@ export default function CompareUI({ accessToken, disabledPersonalKeyCreation }: 
               )}
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-sm font-medium text-muted-foreground">Endpoint</span>
+              <span className="text-sm font-medium text-muted-foreground">端点</span>
               <Select value={selectedEndpoint} onValueChange={(value) => setSelectedEndpoint(value as EndpointIdType)}>
-                <SelectTrigger className="w-56" aria-label="Endpoint">
+                <SelectTrigger className="w-56" aria-label="端点">
                   <SelectValue>{endpointConfig.label}</SelectValue>
                 </SelectTrigger>
                 <SelectContent>

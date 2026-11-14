@@ -79,7 +79,7 @@ function SendButton({ draft, disabled }: { draft: DraftState; disabled: boolean 
     <InputGroupButton
       size="icon-xs"
       variant="default"
-      aria-label="Send message"
+      aria-label="发送消息"
       disabled={disabled}
       onClick={() => void draft.send()}
     >
@@ -150,7 +150,7 @@ export function Composer({
       onKeyDown={handleKeyDown}
       placeholder={capabilities.placeholder}
       rows={2}
-      aria-label="Message"
+      aria-label="消息"
       className="max-h-60"
     />
   );
@@ -168,10 +168,10 @@ export function Composer({
       <InputGroupAddon align="block-end" className="gap-1" onClick={focusMessage}>
         {capabilities.mcp && mcpControl}
         {capabilities.vectorStores && (
-          <ChecklistMenu label="Vector stores" icon={<Database />} emptyText="No vector stores yet" {...vectorStores} />
+          <ChecklistMenu label="向量库" icon={<Database />} emptyText="No vector stores yet" {...vectorStores} />
         )}
         {capabilities.guardrails && (
-          <ChecklistMenu label="防护规则" icon={<Shield />} emptyText="No guardrails yet" {...guardrails} />
+          <ChecklistMenu label="防护规则" icon={<Shield />} emptyText="暂无防护规则" {...guardrails} />
         )}
         {capabilities.codeInterpreter && (
           <Toggle

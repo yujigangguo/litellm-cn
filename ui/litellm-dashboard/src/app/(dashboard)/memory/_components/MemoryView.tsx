@@ -178,7 +178,7 @@ export const MemoryView: React.FC<MemoryViewProps> = ({ accessToken }) => {
       <div className="flex flex-col gap-6">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-semibold text-foreground">Memory</h1>
+            <h1 className="text-2xl font-semibold text-foreground">记忆</h1>
             <p className="mt-1 text-sm text-muted-foreground">
               Inspect what your agents have stored under{" "}
               <code className="rounded-sm border border-border bg-muted px-1 py-0.5 font-mono text-xs text-foreground">
@@ -236,7 +236,7 @@ export const MemoryView: React.FC<MemoryViewProps> = ({ accessToken }) => {
             ? [
                 { label: "密钥", value: deleteRow.key, code: true },
                 { label: "Memory ID", value: deleteRow.memory_id, code: true },
-                { label: "User ID", value: deleteRow.user_id ?? "-", code: true },
+                { label: "用户 ID", value: deleteRow.user_id ?? "-", code: true },
                 { label: "团队 ID", value: deleteRow.team_id ?? "-", code: true },
               ]
             : []

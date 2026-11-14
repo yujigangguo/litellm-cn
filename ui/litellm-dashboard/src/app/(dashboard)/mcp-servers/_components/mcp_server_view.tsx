@@ -175,7 +175,7 @@ export const MCPServerView: React.FC<MCPServerViewProps> = ({
         <TabsContent value="0" keepMounted>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <Card className="p-4">
-              <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">Transport</p>
+              <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">传输</p>
               <div className="mt-3">
                 {getTransportBadge(handleTransport(mcpServer.transport ?? undefined, mcpServer.spec_path ?? undefined))}
               </div>
@@ -242,7 +242,7 @@ export const MCPServerView: React.FC<MCPServerViewProps> = ({
               <h2 className="text-lg font-medium">MCP Server Settings</h2>
               {editing && canEdit ? null : (
                 <Button variant="outline" disabled={!canEdit} onClick={() => setEditing(true)}>
-                  Edit Settings
+                  编辑设置
                 </Button>
               )}
             </div>
@@ -277,7 +277,7 @@ export const MCPServerView: React.FC<MCPServerViewProps> = ({
                   </div>
                 </div>
                 <div className="grid grid-cols-3 gap-4 py-3">
-                  <p className="text-sm font-medium text-muted-foreground">Description</p>
+                  <p className="text-sm font-medium text-muted-foreground">描述</p>
                   <div className="col-span-2 text-sm">
                     {mcpServer.description || <span className="text-muted-foreground">—</span>}
                   </div>
@@ -299,7 +299,7 @@ export const MCPServerView: React.FC<MCPServerViewProps> = ({
                   </div>
                 </div>
                 <div className="grid grid-cols-3 gap-4 py-3">
-                  <p className="text-sm font-medium text-muted-foreground">Transport</p>
+                  <p className="text-sm font-medium text-muted-foreground">传输</p>
                   <div className="col-span-2">
                     {getTransportBadge(handleTransport(mcpServer.transport, mcpServer.spec_path))}
                   </div>
@@ -324,10 +324,10 @@ export const MCPServerView: React.FC<MCPServerViewProps> = ({
                     {mcpServer.allow_all_keys ? (
                       <Badge variant="outline">
                         <span className="h-1.5 w-1.5 rounded-full bg-success" />
-                        Enabled
+                        启用
                       </Badge>
                     ) : (
-                      <Badge variant="outline">Disabled</Badge>
+                      <Badge variant="outline">停用</Badge>
                     )}
                   </div>
                 </div>
@@ -351,7 +351,7 @@ export const MCPServerView: React.FC<MCPServerViewProps> = ({
                           Enabled (PKCE passthrough)
                         </Badge>
                       ) : (
-                        <Badge variant="outline">Disabled</Badge>
+                        <Badge variant="outline">停用</Badge>
                       )}
                     </div>
                   </div>
@@ -365,10 +365,10 @@ export const MCPServerView: React.FC<MCPServerViewProps> = ({
                         {mcpServer.oauth_passthrough ? (
                           <Badge variant="outline">
                             <span className="h-1.5 w-1.5 rounded-full bg-success" />
-                            Enabled
+                            启用
                           </Badge>
                         ) : (
-                          <Badge variant="outline">Disabled</Badge>
+                          <Badge variant="outline">停用</Badge>
                         )}
                       </div>
                     </div>

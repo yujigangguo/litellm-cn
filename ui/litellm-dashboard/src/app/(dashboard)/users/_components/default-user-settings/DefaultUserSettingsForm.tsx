@@ -102,7 +102,7 @@ const TeamPickerField = ({ control, index }: { control: SettingsControl; index: 
           isLoading={isLoading}
           isFetchingNextPage={isFetchingNextPage}
           placeholder="Search a team"
-          emptyText="No teams found"
+          emptyText="未找到团队"
           inputId={id}
           aria-invalid={ariaInvalid}
           aria-describedby={ariaDescribedBy}
@@ -129,7 +129,7 @@ const TeamsField = ({ control }: { control: SettingsControl }) => {
           <div className="mb-3 flex items-center justify-between">
             <p className="text-sm font-medium">团队 {index + 1}</p>
             <Button type="button" variant="destructive" size="sm" onClick={() => remove(index)}>
-              Remove
+              移除
             </Button>
           </div>
 
@@ -138,7 +138,7 @@ const TeamsField = ({ control }: { control: SettingsControl }) => {
 
             <FormField control={control} name={`teams.${index}.max_budget_in_team`} label="Max Budget in Team (USD)">
               {({ ref, ...budgetField }) => (
-                <Input {...budgetField} ref={ref} type="number" step="any" min={0} placeholder="Optional" />
+                <Input {...budgetField} ref={ref} type="number" step="any" min={0} placeholder="可选" />
               )}
             </FormField>
 
@@ -200,7 +200,7 @@ const SettingsView = ({ values, roleOptions }: SettingsViewProps) => {
     <div className="flex flex-col gap-4">
       <ViewRow label="Default Role">{roleLabel === "" ? "Not set" : roleLabel}</ViewRow>
       <ViewRow label="Max Budget (USD)">{values.max_budget === "" ? "Not set" : values.max_budget}</ViewRow>
-      <ViewRow label="Reset Budget">{durationLabel}</ViewRow>
+      <ViewRow label="重置预算">{durationLabel}</ViewRow>
       <ViewRow label="Default Models">
         {values.models.length === 0
           ? "Not set"
@@ -209,7 +209,7 @@ const SettingsView = ({ values, roleOptions }: SettingsViewProps) => {
       <div>
         <p className="text-sm font-medium">Default Teams</p>
         {values.teams.length === 0 ? (
-          <p className="text-sm text-muted-foreground">None</p>
+          <p className="text-sm text-muted-foreground">无</p>
         ) : (
           values.teams.map((team) => (
             <p key={team.team_id} className="text-sm text-muted-foreground">
@@ -267,7 +267,7 @@ const SettingsForm = ({ initialValues, roleOptions, updateSettings, onCancel, on
               onValueChange={(selected) => onChange(selected ?? "")}
             >
               <SelectTrigger id={id} className="w-full" aria-invalid={ariaInvalid} aria-describedby={ariaDescribedBy}>
-                <SelectValue placeholder="Not set" />
+                <SelectValue placeholder="未设置" />
               </SelectTrigger>
               <SelectContent>
                 {roleOptions.map((option) => (
@@ -295,7 +295,7 @@ const SettingsForm = ({ initialValues, roleOptions, updateSettings, onCancel, on
         <FormField
           control={form.control}
           name="budget_duration"
-          label="Reset Budget"
+          label="重置预算"
           description="How often the default budget resets"
         >
           {({ id, value, onChange, "aria-invalid": ariaInvalid, "aria-describedby": ariaDescribedBy }) => (
@@ -360,7 +360,7 @@ const SettingsForm = ({ initialValues, roleOptions, updateSettings, onCancel, on
 const SettingsCard = ({ action, children }: { action?: React.ReactNode; children: React.ReactNode }) => (
   <Card>
     <CardHeader>
-      <CardTitle>Default User Settings</CardTitle>
+      <CardTitle>默认用户设置</CardTitle>
       <CardDescription>
         Applied to every new internal user created through SSO or the user management APIs.
       </CardDescription>
@@ -415,7 +415,7 @@ export const DefaultUserSettingsForm = ({
       action={
         isEditing ? undefined : (
           <Button type="button" onClick={() => setIsEditing(true)}>
-            Edit Settings
+            编辑设置
           </Button>
         )
       }

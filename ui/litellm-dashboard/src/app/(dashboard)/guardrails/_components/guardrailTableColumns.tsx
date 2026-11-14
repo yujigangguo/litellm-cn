@@ -75,8 +75,8 @@ export const getGuardrailTableColumns = ({
   {
     id: "guardrail_id",
     accessorKey: "guardrail_id",
-    meta: { title: "Guardrail ID" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Guardrail ID" />,
+    meta: { title: "防护规则 ID" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="防护规则 ID" />,
     size: 200,
     enableSorting: true,
     cell: ({ row }) => (
@@ -106,15 +106,15 @@ export const getGuardrailTableColumns = ({
   {
     id: "provider",
     meta: { title: "供应商" },
-    header: "Provider",
+    header: "供应商",
     size: 180,
     enableSorting: false,
     cell: ({ row }) => <GuardrailProviderCell provider={row.original.litellm_params.guardrail} />,
   },
   {
     id: "mode",
-    meta: { title: "Mode" },
-    header: "Mode",
+    meta: { title: "模式" },
+    header: "模式",
     size: 130,
     enableSorting: false,
     cell: ({ row }) => {
@@ -128,8 +128,8 @@ export const getGuardrailTableColumns = ({
   },
   {
     id: "default_on",
-    meta: { title: "Default On" },
-    header: "Default On",
+    meta: { title: "默认开启" },
+    header: "默认开启",
     size: 120,
     enableSorting: false,
     cell: ({ row }) => {

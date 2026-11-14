@@ -114,7 +114,7 @@ export const SearchToolView: React.FC<SearchToolViewProps> = ({
       {searchTool.search_tool_info?.description && (
         <Card className="mt-6">
           <CardContent>
-            <p className="text-sm text-muted-foreground">Description</p>
+            <p className="text-sm text-muted-foreground">描述</p>
             <p className="mt-2 text-foreground">{searchTool.search_tool_info.description}</p>
           </CardContent>
         </Card>

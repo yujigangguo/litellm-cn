@@ -385,7 +385,7 @@ const MCPConnect: React.FC<MCPConnectProps> = ({ currentServerAccessGroups = [] 
               </span>
               <FeatureCard
                 icon={<Code className="text-purple-600 dark:text-purple-400" size={16} />}
-                title="Configuration"
+                title="配置"
                 description="Cursor MCP configuration"
                 serverName="Zapier Gmail"
                 accessGroups={["dev-group"]}

@@ -80,7 +80,7 @@ const KeyDetailContent: React.FC<KeyDetailContentProps> = ({ apiKey, detail, hid
       <p className="py-4 text-sm text-muted-foreground">
         Could not load key details.{" "}
         <button type="button" className="font-medium text-foreground underline" onClick={onRetry}>
-          Retry
+          重试
         </button>
       </p>
     );
@@ -385,7 +385,7 @@ const KeyActivityPanel: React.FC<KeyActivityPanelProps> = ({
     <p className="px-4 py-8 text-center text-sm text-muted-foreground">
       Could not load keys for this range.{" "}
       <button type="button" className="font-medium text-foreground underline" onClick={retryFirstPage}>
-        Retry
+        重试
       </button>
     </p>
   );
@@ -489,8 +489,8 @@ const KeyActivityPanel: React.FC<KeyActivityPanelProps> = ({
         <Search className="size-3.5 text-muted-foreground" />
       </InputGroupAddon>
       <InputGroupInput
-        aria-label="Search keys"
-        placeholder="Search alias, hash, user ID, or email"
+        aria-label="搜索密钥"
+        placeholder="搜索别名、哈希、用户 ID 或邮箱"
         value={query}
         onChange={(event) => updateQuery(event.target.value)}
       />
@@ -535,7 +535,7 @@ const KeyActivityPanel: React.FC<KeyActivityPanelProps> = ({
               <p>
                 Could not load more keys.{" "}
                 <button type="button" className="font-medium text-foreground underline" onClick={retryNextPage}>
-                  Retry
+                  重试
                 </button>
               </p>
             )}

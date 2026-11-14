@@ -35,7 +35,7 @@ function RateLimitCell({ value }: { value: number | null | undefined }) {
 
 function BudgetDurationCell({ value }: { value: string | null | undefined }) {
   if (!value) {
-    return <span className="text-muted-foreground">Not set</span>;
+    return <span className="text-muted-foreground">未设置</span>;
   }
   return <span className="whitespace-nowrap">{getBudgetDurationLabel(value)}</span>;
 }
@@ -95,8 +95,8 @@ export const getBudgetTableColumns = ({
   {
     id: "budget_id",
     accessorKey: "budget_id",
-    meta: { title: "Budget ID" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Budget ID" />,
+    meta: { title: "预算 ID" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="预算 ID" />,
     cell: ({ row }) => (
       <IdCell value={row.original.budget_id} variant="plain" truncate={false} copyable className="whitespace-nowrap" />
     ),
@@ -108,7 +108,7 @@ export const getBudgetTableColumns = ({
     meta: { title: "预算上限", numeric: true },
     header: ({ column }) => <DataTableSortHeader column={column} title="预算上限" />,
     size: 120,
-    cell: ({ row }) => <MoneyCell value={row.original.max_budget} decimals={2} showZero emptyText="Unlimited" />,
+    cell: ({ row }) => <MoneyCell value={row.original.max_budget} decimals={2} showZero emptyText="不限" />,
   },
   {
     id: "tpm_limit",
@@ -129,8 +129,8 @@ export const getBudgetTableColumns = ({
   {
     id: "tpd_limit",
     accessorKey: "tpd_limit",
-    meta: { title: "TPD (batch)", numeric: true },
-    header: ({ column }) => <DataTableSortHeader column={column} title="TPD (batch)" />,
+    meta: { title: "TPD（批处理）", numeric: true },
+    header: ({ column }) => <DataTableSortHeader column={column} title="TPD（批处理）" />,
     size: 110,
     cell: ({ row }) => <RateLimitCell value={row.original.tpd_limit} />,
   },
@@ -138,9 +138,9 @@ export const getBudgetTableColumns = ({
     id: "budget_duration",
     accessorKey: "budget_duration",
     filterFn: serverFilter,
-    meta: { title: "Reset" },
+    meta: { title: "重置" },
     sortDescFirst: false,
-    header: ({ column }) => <DataTableSortHeader column={column} title="Reset" />,
+    header: ({ column }) => <DataTableSortHeader column={column} title="重置" />,
     size: 110,
     cell: ({ row }) => <BudgetDurationCell value={row.original.budget_duration} />,
   },

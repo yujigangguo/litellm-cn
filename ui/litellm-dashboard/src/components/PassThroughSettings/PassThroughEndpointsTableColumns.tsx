@@ -147,8 +147,8 @@ export const getPassThroughEndpointsTableColumns = ({
   },
   {
     id: "source",
-    meta: { title: "Source", skeleton: "badge" },
-    header: "Source",
+    meta: { title: "来源", skeleton: "badge" },
+    header: "来源",
     size: 100,
     enableSorting: false,
     cell: ({ row }) => {
@@ -159,8 +159,8 @@ export const getPassThroughEndpointsTableColumns = ({
   {
     id: "path",
     accessorKey: "path",
-    meta: { title: "Path" },
-    header: "Path",
+    meta: { title: "路径" },
+    header: "路径",
     size: 200,
     enableSorting: false,
     cell: ({ row }) => (
@@ -203,8 +203,8 @@ export const getPassThroughEndpointsTableColumns = ({
   },
   {
     id: "headers",
-    meta: { title: "Headers" },
-    header: "Headers",
+    meta: { title: "请求头" },
+    header: "请求头",
     size: 180,
     enableSorting: false,
     cell: ({ row }) => <HeadersCell value={row.original.headers || {}} />,

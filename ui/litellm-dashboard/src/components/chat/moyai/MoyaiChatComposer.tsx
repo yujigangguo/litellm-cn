@@ -56,7 +56,7 @@ export default function MoyaiChatComposer({
             value={value}
             onChange={(event) => onChange(event.target.value)}
             placeholder={placeholder}
-            aria-label="Message"
+            aria-label="消息"
             onPaste={onPaste}
             onKeyDown={(event) => {
               if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) {

@@ -100,7 +100,7 @@ export const AccessGroupCreateDialog = ({
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Create Access Group</DialogTitle>
+          <DialogTitle>创建访问组</DialogTitle>
         </DialogHeader>
 
         <form onSubmit={onSubmit} noValidate>
@@ -120,7 +120,7 @@ export const AccessGroupCreateDialog = ({
               </TabsTrigger>
               <TabsTrigger value="agents">
                 <BotIcon />
-                Agents
+                助手
               </TabsTrigger>
               <TabsTrigger value="skills">
                 <SparklesIcon />
@@ -133,7 +133,7 @@ export const AccessGroupCreateDialog = ({
                 <FormField control={form.control} name="name" label="Group Name">
                   {({ ref, ...field }) => <Input {...field} ref={ref} placeholder="e.g. Engineering Team" />}
                 </FormField>
-                <FormField control={form.control} name="description" label="Description">
+                <FormField control={form.control} name="description" label="描述">
                   {({ ref, ...field }) => (
                     <Textarea
                       {...field}
@@ -147,7 +147,7 @@ export const AccessGroupCreateDialog = ({
             </TabsContent>
 
             <TabsContent value="models" className="pt-4">
-              <FormField control={form.control} name="modelIds" label="Allowed Models">
+              <FormField control={form.control} name="modelIds" label="允许的模型">
                 {(field) => <ModelSelect context="global" value={field.value} onChange={field.onChange} />}
               </FormField>
             </TabsContent>

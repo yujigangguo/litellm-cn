@@ -20,7 +20,7 @@ export const createDeploymentHealthHandle = (): DeploymentHealthHandle => Dialog
 export const activeWarnings = (warnings: readonly DeploymentWarning[]): DeploymentWarning[] =>
   warnings.filter((warning) => !warning.ignore);
 
-const pluralWarnings = (count: number): string => `${count} active ${count === 1 ? "warning" : "warnings"}`;
+const pluralWarnings = (count: number): string => `${count} 条活动告警`;
 
 export const DeploymentHealthIcon = ({ handle }: { handle: DeploymentHealthHandle }) => {
   const { canView } = useDeploymentHealthAccess();
@@ -34,7 +34,7 @@ export const DeploymentHealthIcon = ({ handle }: { handle: DeploymentHealthHandl
     <SheetTrigger
       handle={handle}
       render={<Button variant="ghost" size="icon" className="relative text-muted-foreground hover:text-foreground" />}
-      aria-label={active.length > 0 ? `Deployment health, ${pluralWarnings(active.length)}` : "Deployment health"}
+      aria-label={active.length > 0 ? `部署健康，${pluralWarnings(active.length)}` : "部署健康"}
     >
       <Shield className="size-4" aria-hidden />
       {active.length > 0 ? (
@@ -63,7 +63,7 @@ export const DeploymentHealthBanner = ({ handle }: { handle: DeploymentHealthHan
     <Alert
       variant={critical ? "error" : "warning"}
       role={critical ? "alert" : "status"}
-      aria-label="Deployment alert"
+      aria-label="部署告警"
       className="min-h-10 shrink-0 items-center *:[svg]:text-warning data-[variant=error]:*:[svg]:text-destructive rounded-none border-x-0 border-t-0 border-b-warning/25 bg-warning/10 px-4 py-2 text-[13px] leading-5 text-foreground data-[variant=error]:border-b-destructive/25 data-[variant=error]:bg-destructive/10"
     >
       <Icon aria-hidden />

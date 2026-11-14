@@ -144,7 +144,7 @@ export const PiiEntityList: React.FC<PiiEntityListProps> = ({
     <div className="overflow-hidden rounded-lg border border-border shadow-xs">
       <div className="flex border-b border-border bg-muted/40 px-5 py-3">
         <span className="flex-1 font-semibold">PII Type</span>
-        <span className="w-32 text-right font-semibold">Action</span>
+        <span className="w-32 text-right font-semibold">操作</span>
       </div>
       <div className="max-h-[400px] overflow-y-auto">
         {entities.length === 0 ? (
@@ -176,7 +176,7 @@ export const PiiEntityList: React.FC<PiiEntityListProps> = ({
                     onValueChange={(value: string | null) => value && onActionSelect(entity, value)}
                     disabled={!isSelected}
                   >
-                    <SelectTrigger className={`w-[120px] ${isSelected ? "" : "opacity-50"}`} aria-label="Action">
+                    <SelectTrigger className={`w-[120px] ${isSelected ? "" : "opacity-50"}`} aria-label="操作">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>

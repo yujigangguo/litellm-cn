@@ -22,7 +22,7 @@ const KeySavingsTab = ({ accessToken, keyToken, userId, userRole, activity }: Ke
     scopeNote={
       hasProxyWideSpendView(userRole)
         ? undefined
-        : "Showing your own requests on this key. A key shared across a team will have spend from other members that is not counted here."
+        : "仅显示你在这把密钥上的请求。团队共享密钥还会包含其他成员的消费，这里不计入。"
     }
   />
 );

@@ -226,7 +226,7 @@ const AutoRouterClassifierTabs: React.FC<AutoRouterClassifierTabsProps> = ({
       {family === "jev" &&
         (decisionModel ?? (
           <div className="space-y-2">
-            <Label htmlFor={`${id}-decision-model`}>Decision model</Label>
+            <Label htmlFor={`${id}-decision-model`}>决策模型</Label>
             <Select
               items={[
                 { value: "jev", label: "Jev" },
@@ -345,7 +345,7 @@ const AutoRouterClassifierTabs: React.FC<AutoRouterClassifierTabsProps> = ({
         <p className="text-xs text-muted-foreground">
           Could not check availability.{" "}
           <button type="button" className="underline" onClick={() => availability.refetch?.()}>
-            Retry
+            重试
           </button>
         </p>
       )}

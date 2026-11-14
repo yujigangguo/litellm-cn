@@ -80,7 +80,7 @@ const ContentFilterDetails: React.FC<ContentFilterDetailsProps> = ({ response })
       return (
         <div className="bg-card rounded-lg border border-destructive/20 p-4">
           <div className="text-destructive">
-            <h5 className="font-medium mb-2">Error</h5>
+            <h5 className="font-medium mb-2">错误</h5>
             <p className="text-sm">{response}</p>
           </div>
         </div>
@@ -172,7 +172,7 @@ const ContentFilterDetails: React.FC<ContentFilterDetailsProps> = ({ response })
                     <KV label="Keyword:" mono>
                       {detection.keyword || "unknown"}
                     </KV>
-                    {detection.description && <KV label="Description:">{detection.description}</KV>}
+                    {detection.description && <KV label="描述：">{detection.description}</KV>}
                   </div>
                   <div className="space-y-1">
                     <KV label="Action:">{chip(detection.action, detection.action === "BLOCK" ? "red" : "blue")}</KV>

@@ -9,14 +9,14 @@ import React from "react";
 const COMMUNITY_LINKS = [
   {
     href: "https://www.litellm.ai/support",
-    label: "Join Slack",
+    label: "加入 Slack",
     tooltip: "LiteLLM Slack community",
     Icon: Slack,
   },
   {
     href: "https://github.com/BerriAI/litellm",
-    label: "LiteLLM on GitHub",
-    tooltip: "LiteLLM on GitHub",
+    label: "GitHub 上的 LiteLLM",
+    tooltip: "GitHub 上的 LiteLLM",
     Icon: Github,
   },
 ] as const;
@@ -30,7 +30,7 @@ export const CommunityEngagementButtons: React.FC = () => {
 
   return (
     <TooltipProvider>
-      <ButtonGroup aria-label="Community links">
+      <ButtonGroup aria-label="社区链接">
         {COMMUNITY_LINKS.map(({ href, label, tooltip, Icon }) => (
           <Tooltip key={href}>
             <TooltipTrigger

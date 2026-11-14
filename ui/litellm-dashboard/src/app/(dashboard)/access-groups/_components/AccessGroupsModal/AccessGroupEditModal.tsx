@@ -90,7 +90,7 @@ function AccessGroupEditForm({ accessGroup, onCancel, onSuccess }: Omit<AccessGr
           取消
         </Button>
         <Button type="button" onClick={() => void handleOk()} disabled={editMutation.isPending}>
-          Save Changes
+          保存更改
         </Button>
       </div>
     </form>

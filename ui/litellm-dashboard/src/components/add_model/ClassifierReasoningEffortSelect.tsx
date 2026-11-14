@@ -47,7 +47,7 @@ const ClassifierReasoningEffortSelect = ({
       </div>
       <Select
         items={[
-          { value: PROVIDER_DEFAULT, label: "Default" },
+          { value: PROVIDER_DEFAULT, label: "默认" },
           ...options.map((effort) => ({ value: effort, label: optionLabel(effort) })),
         ]}
         value={value ?? PROVIDER_DEFAULT}
@@ -59,7 +59,7 @@ const ClassifierReasoningEffortSelect = ({
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value={PROVIDER_DEFAULT}>Default</SelectItem>
+          <SelectItem value={PROVIDER_DEFAULT}>默认</SelectItem>
           {options.map((effort) => (
             <SelectItem key={effort} value={effort}>
               {optionLabel(effort)}

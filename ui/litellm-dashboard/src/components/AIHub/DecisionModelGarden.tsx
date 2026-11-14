@@ -30,7 +30,7 @@ const ROUTE_LINKS: Readonly<Record<DecisionRoute, { readonly href: string; reado
 
 const DEPLOYMENT_NAMED_PROVIDERS: ReadonlySet<string> = new Set(["azure", "azure_ai"]);
 
-const OWN_DEPLOYMENT_LINK = { href: DECISIONS_PROVIDERS_DOCS_URL, label: "Deploy under your own name" } as const;
+const OWN_DEPLOYMENT_LINK = { href: DECISIONS_PROVIDERS_DOCS_URL, label: "以自己的名义部署" } as const;
 
 const needsOwnDeploymentName = (row: DecisionGardenModel): boolean =>
   row.route === "decisions" && DEPLOYMENT_NAMED_PROVIDERS.has(row.provider);
@@ -75,7 +75,7 @@ function DecisionModelCard({ row, canAddModels }: DecisionModelCardProps) {
         {canAddModels && (
           <Button size="xs" variant="outline" nativeButton={false} role="link" render={<a href={addModelHref(row)} />}>
             <Plus />
-            Add model
+            添加模型
           </Button>
         )}
       </div>
@@ -118,7 +118,7 @@ const DecisionModelGarden: React.FC<DecisionModelGardenProps> = ({ accessToken, 
           <Sparkles className="size-4 text-muted-foreground" />
         </div>
         <div className="min-w-0 flex-1">
-          <h3 className="m-0 text-base font-semibold text-foreground">Decision models LiteLLM supports</h3>
+          <h3 className="m-0 text-base font-semibold text-foreground">LiteLLM 支持的决策模型</h3>
           <p className="m-0 mt-0.5 text-sm text-muted-foreground">
             {routedRows.length} decision {plural(routedRows.length, "model", "models")} across {routedProviderCount}{" "}
             {plural(routedProviderCount, "provider", "providers")} {plural(routedRows.length, "answers", "answer")} on{" "}
@@ -137,7 +137,7 @@ const DecisionModelGarden: React.FC<DecisionModelGardenProps> = ({ accessToken, 
           render={<a href={DECISIONS_DOCS_URL} target="_blank" rel="noopener noreferrer" />}
         >
           <BookOpen />
-          Decisions docs
+          决策模型文档
         </Button>
       </div>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">

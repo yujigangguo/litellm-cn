@@ -1,4 +1,3 @@
-import { useTerminology } from "@/contexts/TerminologyContext";
 import React from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -33,7 +32,7 @@ function activeWorkspaceFor(
   pluginLabel: string | undefined,
   gatewayLabel: string,
 ): { label: string; icon: WorkspaceIconName } {
-  if (isChatRoute) return { label: "Chat", icon: CHAT };
+  if (isChatRoute) return { label: "聊天", icon: CHAT };
   if (isMoyaiRoute) return { label: "Moyai", icon: MOYAI };
   return { label: pluginLabel ?? gatewayLabel, icon: GATEWAY };
 }
@@ -81,7 +80,6 @@ interface ViewSwitcherProps {
 }
 
 export default function ViewSwitcher({ className, contentClassName }: ViewSwitcherProps) {
-  const term = useTerminology();
   const { mode, setMode, plugins } = usePluginMode();
   const { data: uiSettings } = useUISettings();
   const pathname = usePathname();
@@ -94,7 +92,7 @@ export default function ViewSwitcher({ className, contentClassName }: ViewSwitch
   const isMoyaiRoute = isWorkspaceRoute(normalizedPathname, MOYAI);
   const isStandaloneRoute = isChatRoute || isMoyaiRoute;
 
-  const gatewayLabel = term("AI Gateway");
+  const gatewayLabel = "AI 网关";
   const { label: activeLabel, icon: activeIcon } = activeWorkspaceFor(
     isChatRoute,
     isMoyaiRoute,
@@ -122,7 +120,7 @@ export default function ViewSwitcher({ className, contentClassName }: ViewSwitch
         <span className="flex items-center gap-2">
           <WorkspaceIcon workspace={CHAT} />
           <span className="flex max-w-[220px] flex-col">
-            <span className="font-medium">Chat</span>{" "}
+            <span className="font-medium">聊天</span>{" "}
             <span className="text-xs leading-snug text-muted-foreground">Chat UI for using LLMs, MCPs, Agents</span>{" "}
             {!chatEnabled && (
               <span className="whitespace-normal text-xs leading-snug text-muted-foreground">
@@ -173,7 +171,7 @@ export default function ViewSwitcher({ className, contentClassName }: ViewSwitch
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        aria-label={`Switch workspace, current: ${activeLabel}`}
+        aria-label={`切换工作区，当前：${activeLabel}`}
         render={
           <Button
             type="button"

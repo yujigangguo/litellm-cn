@@ -86,7 +86,7 @@ export const getRequestLogsTableColumns = ({
   },
   {
     id: "type",
-    header: "Type",
+    header: "类型",
     size: 90,
     enableSorting: false,
     meta: { skeleton: "badge" },
@@ -138,7 +138,7 @@ export const getRequestLogsTableColumns = ({
   },
   {
     id: "status",
-    header: "Status",
+    header: "状态",
     size: 100,
     enableSorting: false,
     meta: { skeleton: "badge" },
@@ -162,7 +162,7 @@ export const getRequestLogsTableColumns = ({
   {
     id: "session_id",
     accessorKey: "session_id",
-    header: "Session ID",
+    header: "会话 ID",
     size: 120,
     enableSorting: false,
     cell: ({ row }) => <IdCell value={row.original.session_id} onClick={() => onSessionClick(row.original)} />,
@@ -170,7 +170,7 @@ export const getRequestLogsTableColumns = ({
   {
     id: "request_id",
     accessorKey: "request_id",
-    header: "Request ID",
+    header: "请求 ID",
     enableSorting: false,
     cell: ({ row }) => {
       const log = row.original;
@@ -272,14 +272,14 @@ export const getRequestLogsTableColumns = ({
   },
   {
     id: "team_alias",
-    header: "Team Name",
+    header: "团队名称",
     size: 150,
     enableSorting: false,
     cell: ({ row }) => <TruncatedText value={readMetaString(row.original.metadata, "user_api_key_team_alias")} />,
   },
   {
     id: "key_hash",
-    header: "Key Hash",
+    header: "密钥哈希",
     size: 110,
     enableSorting: false,
     cell: ({ row }) => (
@@ -288,7 +288,7 @@ export const getRequestLogsTableColumns = ({
   },
   {
     id: "key_alias",
-    header: "Key Alias",
+    header: "密钥别名",
     size: 150,
     enableSorting: false,
     cell: ({ row }) => <TruncatedText value={readMetaString(row.original.metadata, "user_api_key_alias")} />,
@@ -359,7 +359,7 @@ export const getRequestLogsTableColumns = ({
   {
     id: "user",
     accessorKey: "user",
-    header: "Internal User",
+    header: "内部用户",
     size: 150,
     enableSorting: false,
     cell: ({ row }) => (
@@ -375,7 +375,7 @@ export const getRequestLogsTableColumns = ({
   {
     id: "end_user",
     accessorKey: "end_user",
-    header: "End User",
+    header: "终端用户",
     size: 140,
     enableSorting: false,
     cell: ({ row }) => <TruncatedText value={row.original.end_user} />,
@@ -383,7 +383,7 @@ export const getRequestLogsTableColumns = ({
   {
     id: "request_tags",
     accessorKey: "request_tags",
-    header: "Tags",
+    header: "标签",
     size: 150,
     enableSorting: false,
     meta: { skeleton: "chips" },

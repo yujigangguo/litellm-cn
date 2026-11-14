@@ -314,7 +314,7 @@ const CreateSearchTool: React.FC<CreateSearchToolProps> = ({
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Need Help?
+                        需要帮助？
                       </a>
                     }
                   />
@@ -323,7 +323,7 @@ const CreateSearchTool: React.FC<CreateSearchToolProps> = ({
                 <div className="flex gap-2">
                   <Button type="submit" variant="outline" onClick={handleTestConnection} disabled={isTestingConnection}>
                     {isTestingConnection && <UiLoadingSpinner className="size-4" />}
-                    Test Connection
+                    测试连接
                   </Button>
                   <Button type="submit" variant="outline" disabled={isLoading}>
                     {isLoading && <UiLoadingSpinner className="size-4" />}

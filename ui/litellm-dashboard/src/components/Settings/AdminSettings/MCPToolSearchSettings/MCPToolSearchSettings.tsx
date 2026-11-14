@@ -241,7 +241,7 @@ export default function MCPToolSearchSettings({ accessToken }: MCPToolSearchSett
               disabled={!isDirty || isUpdating}
             >
               {isUpdating ? <UiLoadingSpinner className="size-4" /> : <Save />}
-              Save Settings
+              保存设置
             </Button>
           </div>
         </form>

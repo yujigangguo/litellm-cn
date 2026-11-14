@@ -198,8 +198,8 @@ const INITIAL_VALUES: GuardrailFormValues = {
 };
 
 const ALWAYS_ON_ITEMS = [
-  { label: "Yes", value: true },
-  { label: "No", value: false },
+  { label: "是", value: true },
+  { label: "否", value: false },
 ];
 
 const DEFAULT_MODES = ["pre_call", "during_call", "post_call", "logging_only"];
@@ -892,8 +892,8 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
                 <SelectValue placeholder="Select an option" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value={true}>Yes</SelectItem>
-                <SelectItem value={false}>No</SelectItem>
+                <SelectItem value={true}>是</SelectItem>
+                <SelectItem value={false}>否</SelectItem>
               </SelectContent>
             </Select>
           )}
@@ -1213,7 +1213,7 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
   const getStepConfigs = () => {
     if (shouldRenderContentFilterConfigSettings(selectedProvider)) {
       return [
-        { title: "Basic Info", optional: false },
+        { title: "基本信息", optional: false },
         { title: "Topics", optional: false },
         { title: "Patterns", optional: false },
         { title: "Keywords", optional: false },
@@ -1222,18 +1222,18 @@ const AddGuardrailForm: React.FC<AddGuardrailFormProps> = ({ visible, onClose, a
     }
     if (shouldRenderPIIConfigSettings(selectedProvider)) {
       return [
-        { title: "Basic Info", optional: false },
+        { title: "基本信息", optional: false },
         { title: "PII Configuration", optional: false },
       ];
     }
     if (isDecisionModelProvider) {
       return [
-        { title: "Basic Info", optional: false },
+        { title: "基本信息", optional: false },
         { title: "Decision Model Configuration", optional: false },
       ];
     }
     return [
-      { title: "Basic Info", optional: false },
+      { title: "基本信息", optional: false },
       { title: "Provider Configuration", optional: false },
     ];
   };

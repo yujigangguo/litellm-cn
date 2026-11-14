@@ -82,7 +82,7 @@ const ProviderDiscountTable: React.FC<ProviderDiscountTableProps> = ({
       data={data}
       columns={[
         {
-          header: "Provider",
+          header: "供应商",
           cell: (row) => {
             const { displayName } = getProviderLogoAndName(row.provider);
             return (
@@ -94,7 +94,7 @@ const ProviderDiscountTable: React.FC<ProviderDiscountTableProps> = ({
           },
         },
         {
-          header: "Models",
+          header: "模型",
           cell: (row) =>
             row.modelPattern ? (
               <span className="font-mono text-sm">{row.modelPattern}</span>
@@ -159,7 +159,7 @@ const ProviderDiscountTable: React.FC<ProviderDiscountTableProps> = ({
           width: "250px",
         },
         {
-          header: "Actions",
+          header: "操作",
           cell: (row) => {
             const label = rowLabel(row);
             return (

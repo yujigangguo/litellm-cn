@@ -29,7 +29,7 @@ const ALL_VALUE = "all";
 const STATUS_FILTER_ITEMS = [
   { value: ALL_VALUE, label: "All Statuses" },
   { value: "success", label: "成功" },
-  { value: "failure", label: "Failure" },
+  { value: "failure", label: "失败" },
 ] as const;
 
 const CACHE_FILTER_ITEMS = [
@@ -83,7 +83,7 @@ function TeamFilterField({
         value={value}
         onValueChange={(next) => onChange(next ?? undefined)}
         placeholder="Search or select a team"
-        emptyText="No teams found"
+        emptyText="未找到团队"
       />
     </DataTableFilterField>
   );
@@ -166,7 +166,7 @@ function ModelFilterField({ value, onChange }: { value: string; onChange: (value
         isLoading={isLoading}
         isFetchingNextPage={isFetchingNextPage}
         placeholder="Search a model"
-        emptyText="No models found"
+        emptyText="未找到模型"
       />
     </DataTableFilterField>
   );
@@ -200,7 +200,7 @@ function UserIdFilterField({
   }, [data]);
 
   return (
-    <DataTableFilterField label="User ID">
+    <DataTableFilterField label="用户 ID">
       <PaginatedSearchSelect
         options={options}
         value={value}
@@ -211,7 +211,7 @@ function UserIdFilterField({
         isLoading={isLoading}
         isFetchingNextPage={isFetchingNextPage}
         placeholder="Search an internal user"
-        emptyText="No users found"
+        emptyText="未找到用户"
       />
     </DataTableFilterField>
   );

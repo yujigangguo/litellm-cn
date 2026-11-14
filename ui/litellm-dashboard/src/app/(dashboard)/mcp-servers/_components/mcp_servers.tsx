@@ -54,7 +54,7 @@ import { listMCPUserEnvVarStatus } from "@/components/networking";
 export type SortKey = "created_desc" | "updated_desc" | "name_asc" | "health";
 
 const SORT_OPTIONS: { value: SortKey; label: string }[] = [
-  { value: "created_desc", label: "Recently created" },
+  { value: "created_desc", label: "最近创建" },
   { value: "updated_desc", label: "Recently updated" },
   { value: "name_asc", label: "Name (A→Z)" },
   { value: "health", label: "Health (unhealthy first)" },
@@ -316,7 +316,7 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID, i
   const teamSelectItems = React.useMemo(
     () => ({
       all: isInternalUser ? "All Available Servers" : "All Servers",
-      personal: "Personal",
+      personal: "个人",
       ...Object.fromEntries(uniqueTeams.map((team) => [team.team_id, team.team_alias || team.team_id])),
     }),
     [isInternalUser, uniqueTeams],
@@ -335,7 +335,7 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID, i
 
   const accessGroupSelectItems = React.useMemo(
     () => ({
-      all: "All Access Groups",
+      all: "全部访问组",
       ...Object.fromEntries(uniqueMcpAccessGroups.map((group) => [group, group])),
     }),
     [uniqueMcpAccessGroups],
@@ -506,20 +506,20 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID, i
               <h1 className="text-xl font-semibold">MCP 服务</h1>
               {filteredServers.length > 0 && <Badge variant="secondary">{filteredServers.length}</Badge>}
             </div>
-            <p className="mt-1 text-sm text-muted-foreground">Configure and manage your MCP servers</p>
+            <p className="mt-1 text-sm text-muted-foreground">配置和管理 MCP 服务</p>
           </div>
           <div className="flex flex-wrap items-center justify-end gap-2">
             <Link href={uiHref("connect")} className={cn(buttonVariants({ variant: "outline" }), "shrink-0")}>
               <Plug />
-              My Connections
+              我的连接
             </Link>
             {isAdminRole(userRole) ? (
               <>
                 <Button className="shrink-0" variant="secondary" onClick={() => setImportVisible(true)}>
-                  Import from JSON
+                  从 JSON 导入
                 </Button>
                 <Button className="shrink-0" onClick={() => setDiscoveryVisible(true)}>
-                  + Add New MCP Server
+                  + 添加 MCP 服务
                 </Button>
               </>
             ) : (
@@ -560,36 +560,36 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID, i
         <Tabs defaultValue="servers" className="mt-2 w-full">
           <TabsList variant="line" className="h-auto w-full justify-start rounded-none border-b p-0">
             <TabsTrigger value="servers" className="flex-none rounded-none px-4 py-2">
-              All Servers
+              全部服务
             </TabsTrigger>
             <TabsTrigger value="toolsets" className="flex-none rounded-none px-4 py-2">
-              Toolsets
+              工具集
             </TabsTrigger>
             <TabsTrigger value="connect" className="flex-none rounded-none px-4 py-2">
-              Connect
+              连接
             </TabsTrigger>
             {isAdminRole(userRole) && (
               <>
                 <TabsTrigger value="semantic-filter" className="flex-none rounded-none px-4 py-2">
-                  Semantic Filter
+                  语义筛选
                 </TabsTrigger>
 
                 <TabsTrigger value="tool-search" className="flex-none rounded-none px-4 py-2">
-                  Tool Search
+                  工具搜索
                 </TabsTrigger>
 
                 <TabsTrigger value="network-settings" className="flex-none rounded-none px-4 py-2">
-                  Network Settings
+                  网络设置
                 </TabsTrigger>
 
                 <TabsTrigger value="submitted" className="flex-none rounded-none px-4 py-2">
-                  Submitted MCPs
+                  已提交的 MCP
                 </TabsTrigger>
               </>
             )}
             {isProxyAdminTierRole(userRole) && (
               <TabsTrigger value="connections" className="flex-none rounded-none px-4 py-2">
-                Live Connections
+                实时连接
               </TabsTrigger>
             )}
           </TabsList>
@@ -639,13 +639,13 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID, i
                       <div className="h-6 w-px bg-border" />
                       <div className="flex items-center gap-2">
                         <p className="flex items-center text-sm font-medium whitespace-nowrap text-muted-foreground">
-                          Access Group
+                          访问组
                           <Tooltip>
                             <TooltipTrigger
                               render={
                                 <CircleHelp
                                   className="ml-1 size-3.5 text-muted-foreground"
-                                  aria-label="About access groups"
+                                  aria-label="关于访问组"
                                 />
                               }
                             />
@@ -660,11 +660,11 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID, i
                           value={selectedMcpAccessGroup}
                           onValueChange={(v: string | null) => handleMcpAccessGroupChange(v ?? "all")}
                         >
-                          <SelectTrigger className="w-55" aria-label="Access Group">
+                          <SelectTrigger className="w-55" aria-label="访问组">
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="all">All Access Groups</SelectItem>
+                            <SelectItem value="all">全部访问组</SelectItem>
                             {uniqueMcpAccessGroups.map((group) => (
                               <SelectItem key={group} value={group}>
                                 {group}
@@ -682,13 +682,13 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID, i
                       <Search className="size-4 text-muted-foreground" />
                     </InputGroupAddon>
                     <InputGroupInput
-                      placeholder="Search by name, alias, URL, or ID"
+                      placeholder="按名称、别名、URL 或 ID 搜索"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                     />
                   </InputGroup>
                   <div className="flex items-center gap-2">
-                    <p className="text-sm font-medium whitespace-nowrap text-muted-foreground">Sort</p>
+                    <p className="text-sm font-medium whitespace-nowrap text-muted-foreground">排序</p>
                     <Select
                       items={SORT_OPTIONS}
                       value={sortKey}
@@ -707,7 +707,7 @@ const MCPServers: React.FC<MCPServerProps> = ({ accessToken, userRole, userID, i
                     </Select>
                   </div>
                   <div className="ml-auto text-xs text-muted-foreground">
-                    {displayedServers.length} of {filteredServers.length} servers
+                    {displayedServers.length} / {filteredServers.length} 个服务
                   </div>
                 </div>
                 <div className="mt-4 w-full">

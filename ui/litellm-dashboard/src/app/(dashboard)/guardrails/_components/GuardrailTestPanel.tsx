@@ -166,7 +166,7 @@ export function GuardrailTestPanel({
             />
             <div className="mt-1 flex items-center justify-between">
               <span className="text-xs text-muted-foreground">
-                Press <Kbd>Enter</Kbd> to submit • <Kbd>Shift+Enter</Kbd> for new line
+                按 <Kbd>Enter</Kbd> to submit • <Kbd>Shift+Enter</Kbd> for new line
               </span>
               <span className="text-xs text-muted-foreground">Characters: {inputText.length}</span>
             </div>

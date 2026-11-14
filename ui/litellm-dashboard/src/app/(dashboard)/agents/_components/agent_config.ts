@@ -49,14 +49,14 @@ export const AGENT_FORM_CONFIG: {
     fields: [
       {
         name: "name",
-        label: "Display Name",
+        label: "显示名称",
         type: "text",
         required: true,
         placeholder: "e.g., Customer Support Agent",
       },
       {
         name: "description",
-        label: "Description",
+        label: "描述",
         type: "textarea",
         required: false,
         placeholder: "Describe what this agent does...",
@@ -72,7 +72,7 @@ export const AGENT_FORM_CONFIG: {
       },
       {
         name: "version",
-        label: "Version",
+        label: "版本",
         type: "text",
         placeholder: "1.0.0",
         defaultValue: "1.0.0",
@@ -214,13 +214,13 @@ export const SKILL_FIELD_CONFIG = {
   },
   name: {
     name: "name",
-    label: "Skill Name",
+    label: "技能名称",
     required: true,
     placeholder: "e.g., Returns hello world",
   },
   description: {
     name: "description",
-    label: "Description",
+    label: "描述",
     required: true,
     placeholder: "What this skill does",
     rows: 2,
@@ -229,11 +229,11 @@ export const SKILL_FIELD_CONFIG = {
     name: "tags",
     label: "标签",
     required: true,
-    placeholder: "Type a tag and press Enter",
+    placeholder: "输入标签后按回车",
   },
   examples: {
     name: "examples",
-    label: "Examples",
+    label: "示例",
     placeholder: "Type an example and press Enter",
   },
 };

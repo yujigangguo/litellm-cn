@@ -126,8 +126,8 @@ export const getPromptTableColumns = ({
   {
     id: "prompt_id",
     accessorKey: "prompt_id",
-    meta: { title: "Prompt ID" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Prompt ID" />,
+    meta: { title: "提示词 ID" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="提示词 ID" />,
     size: 220,
     enableSorting: true,
     cell: ({ row }) => (
@@ -146,7 +146,7 @@ export const getPromptTableColumns = ({
   {
     id: "model",
     meta: { title: "模型" },
-    header: "Model",
+    header: "模型",
     size: 200,
     enableSorting: false,
     cell: ({ row }) => <PromptModelCell prompt={row.original} modelHubData={modelHubData} />,
@@ -174,8 +174,8 @@ export const getPromptTableColumns = ({
   {
     id: "environment",
     accessorKey: "environment",
-    meta: { title: "Environment", skeleton: "badge" },
-    header: "Environment",
+    meta: { title: "环境", skeleton: "badge" },
+    header: "环境",
     size: 130,
     enableSorting: false,
     cell: ({ row }) => {
@@ -187,7 +187,7 @@ export const getPromptTableColumns = ({
     id: "created_by",
     accessorKey: "created_by",
     meta: { title: "创建人" },
-    header: "Created By",
+    header: "创建人",
     size: 160,
     enableSorting: false,
     cell: ({ row }) => {
@@ -210,7 +210,7 @@ export const getPromptTableColumns = ({
     id: "prompt_type",
     accessorKey: "prompt_info.prompt_type",
     meta: { title: "类型" },
-    header: "Type",
+    header: "类型",
     size: 140,
     enableSorting: false,
     cell: ({ row }) => {

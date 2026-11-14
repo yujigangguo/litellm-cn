@@ -43,7 +43,7 @@ function TagNameCell({ tag, onSelectTag }: { tag: Tag; onSelectTag: (tagName: st
 function TagModelsCell({ tag }: { tag: Tag }) {
   const models = tag.models ?? [];
   if (models.length === 0) {
-    return <Badge variant="secondary">All Models</Badge>;
+    return <Badge variant="secondary">全部模型</Badge>;
   }
   return (
     <div className="flex flex-wrap items-center gap-1">
@@ -74,7 +74,7 @@ function TagRowActions({ tag, onEdit, onDelete }: TagRowActionsProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        aria-label="Open tag actions"
+        aria-label="打开标签操作"
         data-testid={`tag-actions-${tag.name}`}
         className={cn(buttonVariants({ variant: "ghost", size: "icon-sm" }), "text-muted-foreground")}
       >
@@ -115,8 +115,8 @@ export const getTagTableColumns = ({ onSelectTag, onEdit, onDelete }: TagTableCo
   {
     id: "name",
     accessorKey: "name",
-    meta: { title: "Tag Name" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Tag Name" />,
+    meta: { title: "标签名称" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="标签名称" />,
     size: 260,
     enableSorting: true,
     filterFn: "includesString",
@@ -125,8 +125,8 @@ export const getTagTableColumns = ({ onSelectTag, onEdit, onDelete }: TagTableCo
   {
     id: "description",
     accessorKey: "description",
-    meta: { title: "Description" },
-    header: "Description",
+    meta: { title: "描述" },
+    header: "描述",
     size: 300,
     enableSorting: false,
     filterFn: "includesString",
@@ -141,8 +141,8 @@ export const getTagTableColumns = ({ onSelectTag, onEdit, onDelete }: TagTableCo
   },
   {
     id: "models",
-    meta: { title: "Allowed Models", skeleton: "chips" },
-    header: "Allowed Models",
+    meta: { title: "允许的模型", skeleton: "chips" },
+    header: "允许的模型",
     size: 240,
     enableSorting: false,
     cell: ({ row }) => <TagModelsCell tag={row.original} />,

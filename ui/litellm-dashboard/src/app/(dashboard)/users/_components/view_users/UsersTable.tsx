@@ -51,10 +51,10 @@ interface UsersTableProps {
 }
 
 const FILTER_LABELS: Record<string, string> = {
-  user_id: "User ID",
+  user_id: "用户 ID",
   sso_user_id: "SSO ID",
-  user_role: "Role",
-  team: "Team",
+  user_role: "角色",
+  team: "团队",
 };
 
 function EmptyState() {
@@ -63,7 +63,7 @@ function EmptyState() {
       <div className="mb-1 flex size-10 items-center justify-center rounded-lg bg-muted">
         <Users className="size-5 text-muted-foreground" />
       </div>
-      <div className="text-sm font-medium text-foreground">No users found</div>
+      <div className="text-sm font-medium text-foreground">未找到用户</div>
       <div className="text-sm text-muted-foreground">Try adjusting your search or filters.</div>
     </div>
   );
@@ -161,7 +161,7 @@ export function UsersTable({
             table={table}
             searchValue={searchValue}
             onSearchChange={onSearchChange}
-            searchPlaceholder="Search by email or ID…"
+            searchPlaceholder="按邮箱或 ID 搜索…"
             onOpenFilters={() => setFiltersOpen(true)}
             filterLabels={FILTER_LABELS}
             formatFilterValue={formatFilterValue}
@@ -175,7 +175,7 @@ export function UsersTable({
           >
             {({ get, set }) => (
               <>
-                <DataTableFilterField label="User ID">
+                <DataTableFilterField label="用户 ID">
                   <Input
                     value={(get("user_id") as string) ?? ""}
                     onChange={(event) => set("user_id", event.target.value)}
@@ -191,7 +191,7 @@ export function UsersTable({
                     data-testid="users-filter-sso-id"
                   />
                 </DataTableFilterField>
-                <DataTableFilterField label="Role">
+                <DataTableFilterField label="角色">
                   <SearchSelect
                     options={roleOptions}
                     value={(get("user_role") as string) || undefined}
@@ -206,7 +206,7 @@ export function UsersTable({
                     value={(get("team") as string) || undefined}
                     onValueChange={(value) => set("team", value ?? undefined)}
                     placeholder="Select a team…"
-                    emptyText="No teams found"
+                    emptyText="未找到团队"
                   />
                 </DataTableFilterField>
               </>

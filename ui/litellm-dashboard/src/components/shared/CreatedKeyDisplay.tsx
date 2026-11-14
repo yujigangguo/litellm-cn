@@ -81,7 +81,7 @@ const CreatedKeyDisplay: React.FC<CreatedKeyDisplayProps> = ({ apiKey }) => {
         <pre className="m-0 whitespace-normal break-words text-foreground">{baseUrl}</pre>
         <CopyToClipboard text={baseUrl} onCopy={() => toast.success("Gateway URL copied to clipboard")}>
           <Button type="button" variant="outline" className="shrink-0">
-            Copy URL
+            复制 URL
           </Button>
         </CopyToClipboard>
       </div>

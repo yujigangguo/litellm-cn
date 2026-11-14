@@ -56,7 +56,7 @@ function CreateProjectForm({ onClose }: { onClose: () => void }) {
         </Button>
         <Button type="button" onClick={() => void handleSubmit()} disabled={createMutation.isPending}>
           {createMutation.isPending ? <UiLoadingSpinner /> : <FolderPlus />}
-          Create Project
+          创建项目
         </Button>
       </div>
     </form>

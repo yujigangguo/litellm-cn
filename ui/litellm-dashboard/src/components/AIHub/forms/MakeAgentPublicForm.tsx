@@ -124,7 +124,7 @@ const MakeAgentPublicForm: React.FC<MakeAgentPublicFormProps> = ({
                 onCheckedChange={(checked) => handleSelectAll(checked === true)}
                 disabled={agentHubData.length === 0}
               />
-              Select All {agentHubData.length > 0 && `(${agentHubData.length})`}
+              全选 {agentHubData.length > 0 && `(${agentHubData.length})`}
             </label>
           </div>
         </div>

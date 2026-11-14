@@ -48,7 +48,7 @@ export const AUTH_TYPE = {
 };
 
 export const AUTH_TYPE_ITEMS = [
-  { value: AUTH_TYPE.NONE, label: "None" },
+  { value: AUTH_TYPE.NONE, label: "无" },
   { value: AUTH_TYPE.API_KEY, label: "API Key" },
   { value: AUTH_TYPE.BEARER_TOKEN, label: "Bearer Token" },
   { value: AUTH_TYPE.TOKEN, label: "Token" },

@@ -20,7 +20,7 @@ export const FIELD_GROUPS: FieldGroup[] = [
     fields: [
       {
         key: "description",
-        label: "Description",
+        label: "描述",
         description: "Must have a non-empty description",
         check: (s) => !!s.description?.trim(),
       },
@@ -33,7 +33,7 @@ export const FIELD_GROUPS: FieldGroup[] = [
     ],
   },
   {
-    label: "Source",
+    label: "来源",
     fields: [
       {
         key: "source_url",

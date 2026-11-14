@@ -43,12 +43,12 @@ const FILTER_LABELS: Record<string, string> = {
 
 const ROUTING_STATUS_FILTER_VALUES = {
   all: "All",
-  active: "Active",
+  active: "启用",
   paused: "Paused",
 } as const;
 
 const VIEW_MODE_LABELS: Record<ModelViewMode, string> = {
-  current_team: "Current Team Models",
+  current_team: "当前团队模型",
   all: ALL_PROXY_MODELS_LABEL,
 };
 
@@ -98,7 +98,7 @@ function EmptyState() {
       <div className="mb-1 flex size-11 items-center justify-center rounded-xl bg-muted">
         <Search className="size-5 text-muted-foreground" />
       </div>
-      <div className="text-base font-semibold text-foreground">No models found</div>
+      <div className="text-base font-semibold text-foreground">未找到模型</div>
       <div className="max-w-80 text-sm text-muted-foreground">
         No models match your search or filters. Try resetting them.
       </div>
@@ -228,7 +228,7 @@ export function AllModelsTable({
             table={table}
             searchValue={searchValue}
             onSearchChange={onSearchChange}
-            searchPlaceholder="Search model names…"
+            searchPlaceholder="搜索模型名称…"
             onOpenFilters={() => setFiltersOpen(true)}
             onRefresh={onRefresh}
             isRefreshing={isRefreshing}
@@ -238,7 +238,7 @@ export function AllModelsTable({
             <Select value={selectedTeamValue} onValueChange={(value) => onTeamChange(String(value))}>
               <SelectTrigger
                 size="sm"
-                aria-label="Current team"
+                aria-label="当前团队"
                 data-testid="models-team-select"
                 className="gap-2 bg-secondary"
               >
@@ -283,8 +283,8 @@ export function AllModelsTable({
             <Button
               variant="outline"
               size="icon-sm"
-              aria-label="Model Settings"
-              title="Model Settings"
+              aria-label="模型设置"
+              title="模型设置"
               data-testid="models-settings-trigger"
               onClick={onOpenModelSettings}
             >
@@ -302,7 +302,7 @@ export function AllModelsTable({
           >
             {({ get, set }) => (
               <>
-                <DataTableFilterField label="Public Model Name">
+                <DataTableFilterField label="公开模型名称">
                   <SearchSelect
                     options={modelGroupOptions}
                     value={(get(MODEL_NAME_COLUMN_ID) as string) ?? ALL_MODEL_GROUPS_VALUE}
@@ -310,7 +310,7 @@ export function AllModelsTable({
                       set(MODEL_NAME_COLUMN_ID, value === ALL_MODEL_GROUPS_VALUE ? undefined : value ?? undefined)
                     }
                     placeholder="Filter by Public Model Name"
-                    emptyText="No models found"
+                    emptyText="未找到模型"
                   />
                 </DataTableFilterField>
                 <DataTableFilterField label="状态">
@@ -320,7 +320,7 @@ export function AllModelsTable({
                       set(ROUTING_STATUS_FILTER_ID, value === "all" ? undefined : (value as "active" | "paused"))
                     }
                   >
-                    <SelectTrigger aria-label="Filter by status" className="w-full">
+                    <SelectTrigger aria-label="按状态筛选" className="w-full">
                       {ROUTING_STATUS_FILTER_VALUES[
                         (get(ROUTING_STATUS_FILTER_ID) as keyof typeof ROUTING_STATUS_FILTER_VALUES) ?? "all"
                       ] ?? ROUTING_STATUS_FILTER_VALUES.all}

@@ -85,7 +85,7 @@ export function LiteAdminHomeComposer({
             <Button
               type="button"
               size="icon-sm"
-              aria-label="Send message"
+              aria-label="发送消息"
               disabled={submitDisabled || isLoading}
               onClick={onSubmit}
               className="rounded-lg bg-info text-info-foreground shadow-xs hover:bg-info/90"

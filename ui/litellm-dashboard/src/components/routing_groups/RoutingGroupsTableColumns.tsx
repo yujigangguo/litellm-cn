@@ -76,7 +76,7 @@ export const getRoutingGroupsTableColumns = ({
   {
     id: "models",
     meta: { title: "模型", skeleton: "chips" },
-    header: "Models",
+    header: "模型",
     size: 320,
     enableSorting: false,
     cell: ({ row }) => <ModelsCell models={row.original.models} />,

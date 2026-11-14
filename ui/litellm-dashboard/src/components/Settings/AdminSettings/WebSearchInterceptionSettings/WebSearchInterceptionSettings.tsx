@@ -251,7 +251,7 @@ function WebSearchInterceptionForm({ accessToken, initial, schema }: WebSearchIn
               disabled={!isDirty || isUpdating}
             >
               {isUpdating ? <UiLoadingSpinner className="size-4" /> : <Save />}
-              Save Settings
+              保存设置
             </Button>
           </div>
         </form>
@@ -311,7 +311,7 @@ export default function WebSearchInterceptionSettings() {
 
       <Alert variant="info" className="mb-6">
         <Info />
-        <AlertTitle>Web Search Interception</AlertTitle>
+        <AlertTitle>网页搜索拦截</AlertTitle>
         <AlertDescription>
           Serve web search tool calls from a configured search tool instead of passing them upstream, so models without
           native web search can still answer with fresh results. Click &apos;Save Settings&apos; to apply changes across

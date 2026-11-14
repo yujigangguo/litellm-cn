@@ -102,14 +102,14 @@ export const NotificationsBellView: React.FC<NotificationsBellViewProps> = ({ cu
     <Popover>
       <PopoverTrigger
         className="flex! h-9! w-9! items-center justify-center rounded-md! text-muted-foreground transition-colors hover:bg-accent! hover:text-foreground!"
-        aria-label={unreadCount > 0 ? `Notifications, ${unreadCount} unread` : "Notifications"}
+        aria-label={unreadCount > 0 ? `通知，${unreadCount} 条未读` : "通知"}
       >
         <span className="relative inline-flex">
           <Bell className="size-4" aria-hidden />
           {unreadCount > 0 ? <Badge className="absolute -top-0.5 -right-1 size-1.5 p-0" aria-hidden /> : null}
         </span>
       </PopoverTrigger>
-      <PopoverContent align="end" aria-label="Notifications">
+      <PopoverContent align="end" aria-label="通知">
         {announcements.map((announcement, index) => (
           <Fragment key={announcement.readKey}>
             {index > 0 ? <Separator /> : null}

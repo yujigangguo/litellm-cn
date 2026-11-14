@@ -296,7 +296,7 @@ function EmptyConversation({
         <EmptyMedia variant="icon">
           <PlayCircle />
         </EmptyMedia>
-        <EmptyTitle>Send a test request</EmptyTitle>
+        <EmptyTitle>发送测试请求</EmptyTitle>
         <EmptyDescription>
           Pick a model and anything the request should go through, then inspect what the gateway did with it
         </EmptyDescription>

@@ -64,19 +64,19 @@ export default function PlaygroundPage() {
       <PageTabs value={activeTab} onValueChange={setActiveTab} className="gap-0">
         <PageTabsList>
           <PageTabsTrigger value="chat" className={TAB_TRIGGER}>
-            Chat
+            聊天
           </PageTabsTrigger>
           <PageTabsTrigger value="compare" className={TAB_TRIGGER}>
-            Compare
+            对比
           </PageTabsTrigger>
           <PageTabsTrigger value="compliance" className={TAB_TRIGGER}>
-            Compliance
+            合规
           </PageTabsTrigger>
           <PageTabsTrigger value="system-one" className={TAB_TRIGGER}>
-            <BetaBadge>Decisions</BetaBadge>
+            <BetaBadge>决策</BetaBadge>
           </PageTabsTrigger>
           <PageTabsTrigger value="agent-builder" className={TAB_TRIGGER}>
-            Agent builder
+            助手构建器
           </PageTabsTrigger>
         </PageTabsList>
         <PageTabsContent value="chat" className="overflow-hidden data-hidden:hidden" keepMounted>

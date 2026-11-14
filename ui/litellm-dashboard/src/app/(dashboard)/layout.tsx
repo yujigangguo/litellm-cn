@@ -196,7 +196,7 @@ function DashboardShell({ children }: { children: React.ReactNode }) {
                 <SheetTrigger
                   handle={mobileNavigationHandle}
                   render={
-                    <Button variant="ghost" size="icon" className="size-11 md:hidden" aria-label="Open navigation" />
+                    <Button variant="ghost" size="icon" className="size-11 md:hidden" aria-label="打开导航" />
                   }
                 >
                   <Menu />

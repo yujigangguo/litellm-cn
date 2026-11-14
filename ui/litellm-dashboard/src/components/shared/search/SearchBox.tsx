@@ -329,7 +329,7 @@ function Suggestions({ className, children, ...props }: SearchBoxSuggestionsProp
           <Kbd>
             <CornerDownLeft />
           </Kbd>
-          Select
+          选择
         </span>
         {children}
       </div>

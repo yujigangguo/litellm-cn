@@ -110,7 +110,7 @@ export default function AuditLogsPanel({
         </p>
         <img
           src={resolveLogoSrc(auditLogsPreviewImg)}
-          alt="Audit Logs Preview"
+          alt="审计日志预览"
           style={{
             maxWidth: "100%",
             maxHeight: "700px",

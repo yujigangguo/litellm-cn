@@ -56,8 +56,8 @@ interface ProviderParamsResponse {
 }
 
 const BOOLEAN_ITEMS = [
-  { label: "True", value: true },
-  { label: "False", value: false },
+  { label: "是", value: true },
+  { label: "否", value: false },
 ];
 
 const isSecretKey = (fieldKey: string): boolean =>
@@ -154,8 +154,8 @@ const ProviderFieldInput: React.FC<ProviderFieldInputProps> = ({ descriptor, fie
           <SelectValue placeholder={descriptor.description} />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value={true}>True</SelectItem>
-          <SelectItem value={false}>False</SelectItem>
+          <SelectItem value={true}>是</SelectItem>
+          <SelectItem value={false}>否</SelectItem>
         </SelectContent>
       </Select>
     );

@@ -36,7 +36,7 @@ const TagFilteringToggle: React.FC<TagFilteringToggleProps> = ({
                   rel="noopener noreferrer"
                   className="text-info hover:text-info/80 underline"
                 >
-                  Learn more
+                  了解更多
                 </a>
               </>
             )}

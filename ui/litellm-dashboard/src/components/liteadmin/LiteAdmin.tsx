@@ -215,7 +215,7 @@ export function AriaUsageComposer() {
   if (!state) return null;
   const { open, setUsageContainer } = state;
   return (
-    <section aria-label="Ask Aria about usage" hidden={open} className="mb-4">
+    <section aria-label="询问 Aria 用量" hidden={open} className="mb-4">
       <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
         <h2 className="flex items-center gap-2 text-sm font-medium">
           <AriaAvatar size={24} /> {ARIA_AGENT_LABEL}
@@ -279,7 +279,7 @@ function Destination({
             <Alert variant="destructive">
               <AlertDescription>{target?.error || "Could not load gateway settings."}</AlertDescription>
               <Button variant="link" onClick={retry}>
-                Retry
+                重试
               </Button>
             </Alert>
           )}
@@ -534,7 +534,7 @@ function ModelPicker({
       options={(models.data ?? []).map((item) => ({ value: item.model_group, label: item.model_group }))}
       value={value}
       onValueChange={onChange}
-      placeholder="Choose a chat model"
+      placeholder="选择聊天模型"
       emptyText={models.data?.length ? "No matching models" : "No available models"}
       disabled={disabled}
       allowClear={false}
@@ -550,7 +550,7 @@ function ModelStatus({ models }: { models: UseQueryResult<ModelGroup[]> }) {
       <AlertDescription>
         Could not load models.{" "}
         <Button variant="link" onClick={() => void models.refetch()}>
-          Retry
+          重试
         </Button>
       </AlertDescription>
     </Alert>

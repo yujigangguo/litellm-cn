@@ -66,7 +66,7 @@ const MCPServerSelector: React.FC<MCPServerSelectorProps> = ({
     ...accessGroups.map((group) => ({
       label: group,
       value: group,
-      description: "Access Group",
+      description: "访问组",
     })),
     ...visibleServers.map((server) => ({
       label: `${server.server_name || server.server_id} (${server.server_id})`,

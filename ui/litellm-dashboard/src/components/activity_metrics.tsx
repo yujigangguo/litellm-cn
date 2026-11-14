@@ -197,7 +197,7 @@ const ModelTopKeys = ({
               setRetryToken((token) => token + 1);
             }}
           >
-            Retry
+            重试
           </button>
         </p>
       </TopKeysPanel>

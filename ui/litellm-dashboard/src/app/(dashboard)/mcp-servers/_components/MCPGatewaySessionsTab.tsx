@@ -169,7 +169,7 @@ function SessionsBody({
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
         <StatCard label="Live sessions" value={data.total_sessions} />
         <StatCard label={term("AI clients")} value={data.by_client.length} />
-        <StatCard label="Users" value={data.by_user.length} />
+        <StatCard label="用户" value={data.by_user.length} />
       </div>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <GroupCountTable title={term("Sessions by AI client")} labelHeader="Client" groups={data.by_client} />
@@ -240,7 +240,7 @@ function SessionsBody({
                       aria-label={`Disconnect session ${session.session_id_prefix}`}
                     >
                       <Unplug className="size-4" />
-                      Disconnect
+                      断开
                     </Button>
                   </TableCell>
                 ) : null}
@@ -283,7 +283,7 @@ export function MCPGatewaySessionsTab({ accessToken, canTerminate }: MCPGatewayS
     <div className="mt-4 space-y-4" data-testid="mcp-gateway-sessions-tab">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <h2 className="text-base font-semibold text-foreground">Live Connections</h2>
+          <h2 className="text-base font-semibold text-foreground">实时连接</h2>
           <p className="text-sm text-muted-foreground">
             {term(
               "Stateful Streamable HTTP sessions currently open on this proxy worker, grouped by the AI client that sent the MCP initialize request and by the authenticated LiteLLM user. Stateless requests and SSE connections are not counted.",
@@ -339,7 +339,7 @@ export function MCPGatewaySessionsTab({ accessToken, canTerminate }: MCPGatewayS
               取消
             </Button>
             <Button variant="destructive" onClick={confirmDisconnect} disabled={terminate.isPending}>
-              Disconnect
+              断开
             </Button>
           </AlertDialogFooter>
         </AlertDialogContent>

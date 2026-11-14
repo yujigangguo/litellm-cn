@@ -67,7 +67,7 @@ const getKeyStatus = (key: KeyResponse): KeyStatus => {
     const isScimBlocked = (key.metadata as Record<string, unknown> | null | undefined)?.scim_blocked === true;
     return {
       tone: "error",
-      label: "Blocked",
+      label: "已停用",
       tooltip: isScimBlocked
         ? "Blocked by SCIM (external identity provider deactivated or deleted the owning user)."
         : "Blocked. Requests using this key will be rejected with 401.",
@@ -79,7 +79,7 @@ const getKeyStatus = (key: KeyResponse): KeyStatus => {
   }
   return {
     tone: "success",
-    label: "Active",
+    label: "启用",
     tooltip: "This key is not blocked and has not expired.",
   };
 };
@@ -159,7 +159,7 @@ export const getKeyTableColumns = ({
     id: "team_alias",
     accessorKey: "team_id",
     meta: { title: "团队" },
-    header: "Team",
+    header: "团队",
     size: 120,
     enableSorting: false,
     cell: (info) => {
@@ -178,8 +178,8 @@ export const getKeyTableColumns = ({
   {
     id: "organization_alias",
     accessorKey: "org_id",
-    meta: { title: "Organization" },
-    header: "Organization",
+    meta: { title: "组织" },
+    header: "组织",
     size: 140,
     enableSorting: false,
     cell: (info) => {
@@ -229,7 +229,7 @@ export const getKeyTableColumns = ({
     id: "created_by",
     accessorKey: "created_by",
     meta: { title: "创建人" },
-    header: "Created By",
+    header: "创建人",
     size: 160,
     enableSorting: false,
     cell: (info) => {
@@ -347,7 +347,7 @@ export const getKeyTableColumns = ({
     id: "models",
     accessorKey: "models",
     meta: { title: "模型", skeleton: "chips" },
-    header: "Models",
+    header: "模型",
     size: 220,
     enableSorting: false,
     cell: (info) => (

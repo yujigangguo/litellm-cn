@@ -105,7 +105,7 @@ export const ByokCredentialModal: React.FC<ByokCredentialModalProps> = ({ server
                 </div>
               </div>
 
-              <h2 className="text-2xl font-bold text-foreground mb-2">Connect {serverDisplayName}</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-2">连接 {serverDisplayName}</h2>
               <p className="text-muted-foreground mb-6">
                 LiteLLM needs access to {serverDisplayName} to complete your request.
               </p>

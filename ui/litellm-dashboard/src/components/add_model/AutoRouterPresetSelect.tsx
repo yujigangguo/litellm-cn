@@ -115,7 +115,7 @@ export default function AutoRouterPresetSelect({
           <div className="text-xs mt-1 text-destructive">
             Could not load templates, so only Start from scratch is shown.{" "}
             <button type="button" className="underline" onClick={onRetry}>
-              Retry
+              重试
             </button>
           </div>
         )}

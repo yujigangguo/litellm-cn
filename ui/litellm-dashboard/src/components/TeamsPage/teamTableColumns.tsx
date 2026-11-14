@@ -174,8 +174,8 @@ export const getTeamTableColumns = ({
     {
       id: "organization_alias",
       accessorKey: "organization_id",
-      meta: { title: "Organization" },
-      header: ({ column }) => <DataTableSortHeader column={column} title="Organization" />,
+      meta: { title: "组织" },
+      header: ({ column }) => <DataTableSortHeader column={column} title="组织" />,
       sortDescFirst: false,
       size: 160,
       enableSorting: true,
@@ -195,7 +195,7 @@ export const getTeamTableColumns = ({
     {
       id: "resources",
       meta: {
-        title: "Resources",
+        title: "资源",
         renderSkeleton: () => (
           <div className="flex items-center gap-1.5">
             <Skeleton className="h-6 w-12 rounded-md" />
@@ -208,7 +208,7 @@ export const getTeamTableColumns = ({
         <DataTableMultiSortHeader
           table={table}
           fields={[
-            { id: "members", label: "Members" },
+            { id: "members", label: "成员" },
             { id: "models", label: "模型" },
             { id: "keys_count", label: "密钥" },
           ]}
@@ -253,8 +253,8 @@ export const getTeamTableColumns = ({
     {
       id: "members",
       accessorFn: teamMemberCount,
-      meta: { title: "Members", numeric: true },
-      header: ({ column }) => <DataTableSortHeader column={column} title="Members" />,
+      meta: { title: "成员", numeric: true },
+      header: ({ column }) => <DataTableSortHeader column={column} title="成员" />,
       sortDescFirst: true,
       size: 110,
       enableSorting: true,
@@ -294,8 +294,8 @@ export const getTeamTableColumns = ({
     {
       id: "updated_at",
       accessorKey: "updated_at",
-      meta: { title: "Updated" },
-      header: ({ column }) => <DataTableSortHeader column={column} title="Updated" />,
+      meta: { title: "更新时间" },
+      header: ({ column }) => <DataTableSortHeader column={column} title="更新时间" />,
       sortDescFirst: false,
       size: 130,
       enableSorting: true,

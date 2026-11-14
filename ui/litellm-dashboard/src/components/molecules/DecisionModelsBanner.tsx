@@ -62,7 +62,7 @@ const DecisionModelsBanner: React.FC = () => {
           localStorage.setItem(STORAGE_KEY, "true");
         }}
         className="shrink-0"
-        aria-label="Dismiss banner"
+        aria-label="关闭横幅"
       >
         <X />
       </Button>

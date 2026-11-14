@@ -138,7 +138,7 @@ const SOURCE_BADGES: Readonly<Record<CoordinationRedisSource, SourceBadgeDescrip
 
 const NOT_CONFIGURED_BADGE: SourceBadgeDescriptor = {
   tone: "neutral",
-  label: "Not configured",
+  label: "未配置",
   tooltip: "Cross-pod rate limits, spend tracking, and the pod lock manager have no Redis to coordinate through.",
 };
 

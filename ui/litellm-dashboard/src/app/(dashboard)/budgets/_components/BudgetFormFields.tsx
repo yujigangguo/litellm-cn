@@ -59,7 +59,7 @@ const numberProps = <T extends { value?: number | null; onChange: (value: number
     onChange(event.target.value === "" ? null : event.target.valueAsNumber),
 });
 
-const OptionalBadge = () => <Badge variant="secondary">Optional</Badge>;
+const OptionalBadge = () => <Badge variant="secondary">可选</Badge>;
 
 function SpendLimitField({ form }: { form: BudgetForm }) {
   const amountId = useId();
@@ -129,7 +129,7 @@ export function BudgetFormFields({ form, isEditing }: { form: BudgetForm; isEdit
       <FormField
         control={form.control}
         name="budget_id"
-        label="Budget ID"
+        label="预算 ID"
         description={isEditing ? "Budget ID cannot be changed after creation" : undefined}
         className="gap-2"
       >

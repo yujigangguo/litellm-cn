@@ -148,7 +148,7 @@ const CacheSettings: React.FC<CacheSettingsProps> = ({ accessToken }) => {
       <FormProvider {...form}>
         <form onSubmit={(event) => event.preventDefault()} className="space-y-6">
           <div className="max-w-3xl">
-            <h3 className="text-sm font-medium text-foreground">Cache Settings</h3>
+            <h3 className="text-sm font-medium text-foreground">缓存设置</h3>
             <p className="text-xs text-muted-foreground mt-1">Configure Redis cache for LiteLLM</p>
           </div>
 
@@ -205,7 +205,7 @@ const CacheSettings: React.FC<CacheSettingsProps> = ({ accessToken }) => {
 
           <Collapsible open={advancedOpen} onOpenChange={setAdvancedOpen} className="mt-4">
             <CollapsibleTrigger className="group flex w-full items-center justify-between py-2 text-left">
-              <span className="text-sm font-medium text-foreground">Advanced Settings</span>
+              <span className="text-sm font-medium text-foreground">高级设置</span>
               <ChevronRight className="size-4 text-muted-foreground transition-transform group-data-panel-open:rotate-90" />
             </CollapsibleTrigger>
             <CollapsibleContent>

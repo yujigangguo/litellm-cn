@@ -36,7 +36,7 @@ const rateLimitTypeOptions = (type: RateLimitType): RateLimitTypeOption[] => {
   return [
     {
       value: "best_effort_throughput",
-      label: "Default",
+      label: "默认",
       description: `Best effort throughput - no error if we're overallocating ${lower} (Team/Key Limits checked at runtime).`,
     },
     {

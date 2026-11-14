@@ -651,7 +651,7 @@ export default function ChatConversationPage() {
         />
         {isReadingAttachments && (
           <p role="status" className="mt-2 text-xs text-muted-foreground">
-            Preparing files…
+            正在准备文件…
           </p>
         )}
         {attachments.some((attachment) => attachment.kind === "file") && (

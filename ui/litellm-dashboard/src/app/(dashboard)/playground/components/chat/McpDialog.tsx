@@ -374,7 +374,7 @@ export function McpDialog({
                       rows={visible([{ value: ALL_MCP_SERVERS, label: "All MCP servers" }, ...serverRows])}
                       render={masterRow}
                     />
-                    <RowGroup title="Toolsets" rows={visible(toolsetRows)} render={masterRow} />
+                    <RowGroup title="工具集" rows={visible(toolsetRows)} render={masterRow} />
                   </div>
                 )}
               </ScrollArea>
@@ -383,7 +383,7 @@ export function McpDialog({
           </div>
         )}
         <DialogFooter className="m-0 border-t border-border p-3">
-          <DialogClose render={<Button size="sm" />}>Done</DialogClose>
+          <DialogClose render={<Button size="sm" />}>完成</DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>

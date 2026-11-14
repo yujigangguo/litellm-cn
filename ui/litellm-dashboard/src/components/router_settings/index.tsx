@@ -203,14 +203,14 @@ const RouterSettings: React.FC<RouterSettingsProps> = ({ accessToken, userRole, 
       {/* Actions - Sticky at bottom */}
       <div className="border-t border-border pt-6 flex justify-end gap-3">
         <Button variant="outline" onClick={() => window.location.reload()}>
-          Reset
+          重置
         </Button>
         <Button
           onClick={handleSaveChanges}
           disabled={routerSettingsSource === null}
           title={routerSettingsSource === null ? SOURCE_UNKNOWN_HINT : undefined}
         >
-          Save Changes
+          保存更改
         </Button>
       </div>
     </div>

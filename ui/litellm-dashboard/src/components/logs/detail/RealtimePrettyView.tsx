@@ -365,8 +365,8 @@ function ResponseTurn({ response, index }: { response: RealtimeResponse; index: 
       ))}
 
       {/* Token breakdown if available */}
-      {usage?.input_token_details && <TokenBreakdown label="Input" details={usage.input_token_details} />}
-      {usage?.output_token_details && <TokenBreakdown label="Output" details={usage.output_token_details} />}
+      {usage?.input_token_details && <TokenBreakdown label="输入" details={usage.input_token_details} />}
+      {usage?.output_token_details && <TokenBreakdown label="输出" details={usage.output_token_details} />}
     </div>
   );
 }

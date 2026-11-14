@@ -699,7 +699,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
     <MountedFormField
       label={
         <span>
-          User ID{" "}
+          用户 ID{" "}
           <SimpleTooltip content="The user who will own this key and be responsible for its usage">
             <Info className="ml-1 inline size-3.5 align-text-bottom" />
           </SimpleTooltip>
@@ -734,7 +734,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                 onSearchChange={fetchUsers}
                 isLoading={userSearchLoading}
                 placeholder="Type email or user ID to search for users"
-                emptyText="No users found"
+                emptyText="未找到用户"
                 loadingText="Searching..."
                 inputId={control.id}
                 aria-required={control["aria-required"] === "true" ? true : undefined}
@@ -831,7 +831,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                 <MountedFormField
                   label={
                     <span>
-                      Organization{" "}
+                      组织{" "}
                       <SimpleTooltip content="The organization this key belongs to. Selecting an organization filters the available teams.">
                         <Info className="ml-1 inline size-3.5 align-text-bottom" />
                       </SimpleTooltip>
@@ -1073,7 +1073,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                         className="mt-4"
                         label={
                           <span>
-                            Reset Budget{" "}
+                            重置预算{" "}
                             <SimpleTooltip content="How often the budget should reset. For example, setting 'daily' will reset the budget every 24 hours">
                               <Info className="ml-1 inline size-3.5 align-text-bottom" />
                             </SimpleTooltip>
@@ -1087,7 +1087,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                             id={control.id}
                             value={control.value as string | null | undefined}
                             showNeverResets
-                            placeholder="Not set"
+                            placeholder="未设置"
                             onChange={(next) => control.onChange(next ?? undefined)}
                           />
                         )}
@@ -1440,7 +1440,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                         <MountedFormField
                           label={
                             <span>
-                              Prompts{" "}
+                              提示词{" "}
                               <SimpleTooltip content="Allow this key to use specific prompt templates">
                                 <a
                                   href="https://docs.litellm.ai/docs/proxy/prompt_management"
@@ -1562,7 +1562,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                       <MountedFormField
                         label={
                           <span>
-                            Metadata{" "}
+                            元数据{" "}
                             <SimpleTooltip content="JSON object with additional information about this key. Used for tracking or custom logic">
                               <Info className="ml-1 inline size-3.5 align-text-bottom" />
                             </SimpleTooltip>
@@ -1711,7 +1711,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                       {premiumUser ? (
                         <Collapsible className="mt-4 mb-4 overflow-hidden rounded-lg border">
                           <CollapsibleTrigger className={SECTION_HEADER_CLASS}>
-                            <b>Logging Settings</b>
+                            <b>日志设置</b>
                             <ChevronDown className={SECTION_CHEVRON_CLASS} />
                           </CollapsibleTrigger>
                           <CollapsibleContent className="px-4 pb-3">
@@ -1743,7 +1743,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                             <div style={{ opacity: 0.5 }}>
                               <Collapsible className="mt-4 mb-4 overflow-hidden rounded-lg border">
                                 <CollapsibleTrigger className={SECTION_HEADER_CLASS}>
-                                  <b>Logging Settings</b>
+                                  <b>日志设置</b>
                                   <ChevronDown className={SECTION_CHEVRON_CLASS} />
                                 </CollapsibleTrigger>
                                 <CollapsibleContent className="px-4 pb-3">
@@ -1769,7 +1769,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                         className="mt-4 mb-4 overflow-hidden rounded-lg border"
                       >
                         <CollapsibleTrigger className={SECTION_HEADER_CLASS}>
-                          <b>Router Settings</b>
+                          <b>路由设置</b>
                           <ChevronDown className={SECTION_CHEVRON_CLASS} />
                         </CollapsibleTrigger>
                         <CollapsibleContent className="px-4 pb-3">
@@ -1838,7 +1838,7 @@ const CreateKey: React.FC<CreateKeyProps> = ({ team, teams, data, addKey, autoOp
                       <Collapsible className="mt-4 mb-4 overflow-hidden rounded-lg border">
                         <CollapsibleTrigger className={SECTION_HEADER_CLASS}>
                           <div className="flex items-center gap-2">
-                            <b>Advanced Settings</b>
+                            <b>高级设置</b>
                             <SimpleTooltip
                               content={
                                 <span>

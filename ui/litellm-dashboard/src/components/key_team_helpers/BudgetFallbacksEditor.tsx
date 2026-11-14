@@ -102,7 +102,7 @@ export function BudgetFallbacksEditor({ value, onChange, availableModels }: Budg
                   updateEntry(entry.id, { primaryModel: v, fallbackModels: newFallbacks });
                 }}
                 placeholder="Select model"
-                emptyText="No models found"
+                emptyText="未找到模型"
               />
             </div>
 
@@ -120,7 +120,7 @@ export function BudgetFallbacksEditor({ value, onChange, availableModels }: Budg
                 value={entry.fallbackModels}
                 onValueChange={(values) => updateEntry(entry.id, { fallbackModels: values })}
                 placeholder={entry.primaryModel ? "Select fallback models" : "Select a primary model first"}
-                emptyText="No models found"
+                emptyText="未找到模型"
                 disabled={!entry.primaryModel}
                 className="w-full"
               />

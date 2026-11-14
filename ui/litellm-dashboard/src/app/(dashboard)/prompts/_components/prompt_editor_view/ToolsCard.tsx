@@ -18,7 +18,7 @@ const ToolsCard: React.FC<ToolsCardProps> = ({ tools, onAddTool, onEditTool, onR
         <p className="text-sm font-medium">工具</p>
         <Button variant="ghost" size="sm" onClick={onAddTool}>
           <PlusIcon size={14} className="mr-1" />
-          Add
+          添加
         </Button>
       </div>
       {tools.length === 0 ? (

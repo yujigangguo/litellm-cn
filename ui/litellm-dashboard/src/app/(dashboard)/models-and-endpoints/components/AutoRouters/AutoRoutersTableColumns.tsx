@@ -118,7 +118,7 @@ export const getAutoRoutersTableColumns = ({
     id: "kind",
     accessorKey: "kind",
     meta: { title: "类型" },
-    header: "Type",
+    header: "类型",
     size: 180,
     enableSorting: false,
     cell: ({ row }) => <TypeCell row={row.original} />,

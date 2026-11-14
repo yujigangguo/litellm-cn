@@ -160,7 +160,7 @@ ${formattedBody}
           </div>
 
           <div className="mb-5 rounded-lg border border-destructive/30 bg-destructive/10 p-4 shadow-xs">
-            <p className="mb-2 font-medium">Error:</p>
+            <p className="mb-2 font-medium">错误：</p>
             <p className="text-sm leading-relaxed text-destructive">{errorMessage}</p>
 
             {error && (

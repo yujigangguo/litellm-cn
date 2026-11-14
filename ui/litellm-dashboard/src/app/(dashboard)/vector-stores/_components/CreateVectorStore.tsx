@@ -255,7 +255,7 @@ const CreateVectorStore: React.FC<CreateVectorStoreProps> = ({ accessToken, onSu
     <TooltipProvider>
       <div className="space-y-6">
         <div>
-          <h3 className="text-lg font-medium">Create Vector Store</h3>
+          <h3 className="text-lg font-medium">创建向量库</h3>
           <p className="text-sm text-muted-foreground">
             Upload documents and select a provider to create a new vector store with embedded content.
           </p>
@@ -265,7 +265,7 @@ const CreateVectorStore: React.FC<CreateVectorStoreProps> = ({ accessToken, onSu
         <Card>
           <CardContent>
             <div className="mb-4">
-              <p className="font-medium">Step 1: Upload Documents</p>
+              <p className="font-medium">第 1 步：上传文档</p>
               <p className="text-sm text-muted-foreground block mt-1">
                 Upload one or more documents (PDF, TXT, DOCX, MD). Maximum file size: 50MB per file.
               </p>
@@ -280,7 +280,7 @@ const CreateVectorStore: React.FC<CreateVectorStoreProps> = ({ accessToken, onSu
               }}
             >
               <Inbox className="size-12 text-primary" />
-              <span className="text-base">Click or drag files to this area to upload</span>
+              <span className="text-base">点击或拖拽文件到此区域上传</span>
               <span className="text-sm text-muted-foreground">
                 Support for single or bulk upload. Supported formats: PDF, TXT, DOCX, MD
               </span>
@@ -315,7 +315,7 @@ const CreateVectorStore: React.FC<CreateVectorStoreProps> = ({ accessToken, onSu
         <Card>
           <CardContent className="space-y-4">
             <div>
-              <p className="font-medium">Step 2: Configure Vector Store</p>
+              <p className="font-medium">第 2 步：配置向量库</p>
               <p className="text-sm text-muted-foreground block mt-1">
                 Choose the provider and optionally provide a name and description for your vector store.
               </p>

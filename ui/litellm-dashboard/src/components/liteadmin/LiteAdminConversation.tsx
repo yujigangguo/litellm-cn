@@ -101,7 +101,7 @@ export function LiteAdminConversation({
               <AriaAvatar size={40} />
               <p className="text-base font-semibold">Hi, I’m Aria.</p>
             </div>
-            <div className="flex w-full flex-col gap-2" aria-label="Suggested questions">
+            <div className="flex w-full flex-col gap-2" aria-label="建议问题">
               {SUGGESTED_QUESTIONS.map((question) => (
                 <Button
                   key={question}
@@ -120,7 +120,7 @@ export function LiteAdminConversation({
           </div>
         )}
         <MessageScroller.Button
-          aria-label="Jump to latest"
+          aria-label="跳到最新"
           className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full shadow-sm data-[active=false]:pointer-events-none data-[active=false]:opacity-0"
           render={<Button variant="outline" size="icon-sm" />}
         >
@@ -187,7 +187,7 @@ function ActionCard({
           <Collapsible>
             <CollapsibleTrigger render={<Button variant="ghost" size="xs" />}>
               <ChevronDown className="size-3" />
-              Details
+              详情
             </CollapsibleTrigger>
             <CollapsibleContent>{fields}</CollapsibleContent>
           </Collapsible>

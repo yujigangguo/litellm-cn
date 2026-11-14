@@ -122,7 +122,7 @@ function EvalEntryCard({ entry }: { entry: EvalInformation }) {
               <TableRow>
                 <TableHead style={{ width: 160 }}>Criterion</TableHead>
                 <TableHead style={{ width: 65 }}>Weight</TableHead>
-                <TableHead style={{ width: 65 }}>Score</TableHead>
+                <TableHead style={{ width: 65 }}>分数</TableHead>
                 <TableHead style={{ width: 75 }}>
                   <TooltipProvider>
                     <Tooltip>
@@ -189,7 +189,7 @@ function EvalEntryCard({ entry }: { entry: EvalInformation }) {
                 <TableRow>
                   <TableCell>
                     <span className="font-semibold" style={{ fontSize: 12 }}>
-                      Total
+                      总计
                     </span>
                   </TableCell>
                   <TableCell />

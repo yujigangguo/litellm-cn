@@ -18,7 +18,7 @@ export function ErrorState({ title = "Failed to load", message, onRetry }: Error
       {message ? <div className="max-w-prose text-center text-sm text-muted-foreground">{message}</div> : null}
       {onRetry ? (
         <Button variant="outline" size="sm" className="mt-2" onClick={onRetry}>
-          Retry
+          重试
         </Button>
       ) : null}
     </div>

@@ -436,7 +436,7 @@ const MCPToolsViewer = ({
                     {toolsAreaLoading && (
                       <div className="flex flex-col items-center justify-center rounded-lg border border-border bg-card py-8">
                         <UiLoadingSpinner className="mb-3 size-6 text-muted-foreground" />
-                        <p className="text-xs font-medium">Loading tools...</p>
+                        <p className="text-xs font-medium">正在加载工具…</p>
                       </div>
                     )}
 
@@ -444,7 +444,7 @@ const MCPToolsViewer = ({
                     {(mcpToolsResponse?.error || mcpToolsError) && !toolsAreaLoading && !toolsData.length && (
                       <div className="rounded-lg border border-destructive/40 bg-destructive/5 p-3 text-xs text-destructive">
                         <p className="font-medium">
-                          Error: {mcpToolsResponse?.message || (mcpToolsError as Error)?.message}
+                          错误： {mcpToolsResponse?.message || (mcpToolsError as Error)?.message}
                         </p>
                       </div>
                     )}

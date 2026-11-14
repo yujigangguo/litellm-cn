@@ -802,7 +802,7 @@ export default function ComplianceUI({
                           type="button"
                           onClick={() => toggleGuardrail(id)}
                           className="hover:text-indigo-900 dark:hover:text-indigo-100"
-                          aria-label="Remove"
+                          aria-label="移除"
                         >
                           <X className="w-2.5 h-2.5" />
                         </button>
@@ -847,7 +847,7 @@ export default function ComplianceUI({
                 }}
                 className="flex items-center justify-center gap-1.5 px-4 py-1.5 rounded-lg text-xs font-medium text-muted-foreground hover:bg-accent transition-colors"
               >
-                <RotateCcw className="w-3 h-3" /> Reset
+                <RotateCcw className="w-3 h-3" /> 重置
               </button>
             </div>
           </div>
@@ -884,7 +884,7 @@ export default function ComplianceUI({
                       onClick={selectAll}
                       className="text-[11px] font-medium text-info hover:text-info/80"
                     >
-                      Select All
+                      全选
                     </button>
                     <span className="text-muted-foreground text-[10px]">·</span>
                     <button
@@ -892,7 +892,7 @@ export default function ComplianceUI({
                       onClick={deselectAll}
                       className="text-[11px] font-medium text-muted-foreground hover:text-foreground"
                     >
-                      Clear
+                      清除
                     </button>
                   </div>
                   <div className="flex items-center gap-1">
@@ -904,7 +904,7 @@ export default function ComplianceUI({
                       }}
                       className={`flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-sm transition-colors ${showAddPrompt ? "bg-info/10 text-info" : "text-muted-foreground hover:bg-accent"}`}
                     >
-                      <Plus className="w-3 h-3" /> Add
+                      <Plus className="w-3 h-3" /> 添加
                     </button>
                     <button
                       type="button"
@@ -963,7 +963,7 @@ export default function ComplianceUI({
                         disabled={!newPromptText.trim()}
                         className={`text-[11px] font-medium px-2.5 py-1 rounded-sm ${newPromptText.trim() ? "bg-info text-info-foreground" : "bg-muted text-muted-foreground"}`}
                       >
-                        Add
+                        添加
                       </button>
                     </div>
                   </div>
@@ -1307,7 +1307,7 @@ export default function ComplianceUI({
                     />
                     <div className="flex items-center justify-between px-3 pb-2">
                       <span className="text-[10px] text-muted-foreground">
-                        Press <Kbd>Enter</Kbd> to submit · <Kbd>Shift+Enter</Kbd> for new line
+                        按 <Kbd>Enter</Kbd> to submit · <Kbd>Shift+Enter</Kbd> for new line
                       </span>
                       <span className="text-[10px] text-muted-foreground tabular-nums">{quickTestInput.length}</span>
                     </div>
@@ -1338,7 +1338,7 @@ export default function ComplianceUI({
                           disabled={filteredResults.length === 0}
                           className="flex items-center gap-1 text-[11px] font-medium text-muted-foreground hover:text-foreground hover:bg-accent px-2 py-1 rounded-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent"
                         >
-                          <Download className="w-3 h-3" /> Export CSV
+                          <Download className="w-3 h-3" /> 导出 CSV
                         </button>
                         <div className="flex items-center gap-2.5 text-[11px]">
                           <span className="flex items-center gap-1 text-success">
@@ -1441,7 +1441,7 @@ export default function ComplianceUI({
                                   : "bg-destructive/10 border-destructive/20 text-destructive"
                             }`}
                           >
-                            <span className="text-[10px] font-semibold uppercase tracking-wider opacity-90">Score</span>
+                            <span className="text-[10px] font-semibold uppercase tracking-wider opacity-90">分数</span>
                             <span>{Math.round((matchCount / completedResults.length) * 100)}%</span>
                           </div>
                         </div>

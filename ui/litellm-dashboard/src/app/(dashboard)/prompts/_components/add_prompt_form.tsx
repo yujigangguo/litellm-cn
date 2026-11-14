@@ -149,11 +149,11 @@ const AddPromptForm: React.FC<AddPromptFormProps> = ({ visible, onClose, accessT
     <Dialog open={visible} onOpenChange={(open) => !open && handleCancel()}>
       <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-[600px]">
         <DialogHeader>
-          <DialogTitle>Add New Prompt</DialogTitle>
+          <DialogTitle>添加提示词</DialogTitle>
         </DialogHeader>
         <form onSubmit={(event) => event.preventDefault()} noValidate>
           <FieldGroup>
-            <FormField control={form.control} name="prompt_id" label="Prompt ID">
+            <FormField control={form.control} name="prompt_id" label="提示词 ID">
               {({ ref, ...field }) => (
                 <Input {...field} ref={ref} placeholder="Enter unique prompt ID (e.g., my_prompt_id)" />
               )}

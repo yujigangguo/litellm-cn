@@ -174,7 +174,7 @@ const ContentCategoryConfiguration: React.FC<ContentCategoryConfigurationProps> 
 
   const columns: ColumnDef<SelectedCategory>[] = [
     {
-      header: "Category",
+      header: "分类",
       accessorKey: "display_name",
       cell: ({ row }) => {
         const category = availableCategories.find((c) => c.name === row.original.category);
@@ -187,7 +187,7 @@ const ContentCategoryConfiguration: React.FC<ContentCategoryConfigurationProps> 
       },
     },
     {
-      header: "Action",
+      header: "操作",
       accessorKey: "action",
       size: 150,
       cell: ({ row }) => (
@@ -196,7 +196,7 @@ const ContentCategoryConfiguration: React.FC<ContentCategoryConfigurationProps> 
           value={row.original.action}
           onValueChange={(value: string | null) => value && onCategoryUpdate(row.original.id, "action", value)}
         >
-          <SelectTrigger size="sm" className="w-full" aria-label="Action">
+          <SelectTrigger size="sm" className="w-full" aria-label="操作">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -241,7 +241,7 @@ const ContentCategoryConfiguration: React.FC<ContentCategoryConfigurationProps> 
       cell: ({ row }) => (
         <Button variant="outline" size="sm" onClick={() => onCategoryRemove(row.original.id)}>
           <Trash2 />
-          Remove
+          移除
         </Button>
       ),
     },
@@ -287,7 +287,7 @@ const ContentCategoryConfiguration: React.FC<ContentCategoryConfigurationProps> 
           </Combobox>
           <Button onClick={handleAddCategory} disabled={!selectedCategoryName}>
             <Plus />
-            Add
+            添加
           </Button>
         </div>
 

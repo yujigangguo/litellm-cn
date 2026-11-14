@@ -255,7 +255,7 @@ const AddPassThroughEndpoint: React.FC<AddFallbacksProps> = ({
                 <RoutePreview pathValue={pathValue} targetValue={targetValue} includeSubpath={includeSubpath} />
 
                 <Card className="block p-6">
-                  <h3 className="mb-2 text-lg font-semibold text-foreground">Headers</h3>
+                  <h3 className="mb-2 text-lg font-semibold text-foreground">请求头</h3>
                   <p className="mb-6 text-sm text-muted-foreground">
                     Add headers that will be sent with every request to the target API
                   </p>

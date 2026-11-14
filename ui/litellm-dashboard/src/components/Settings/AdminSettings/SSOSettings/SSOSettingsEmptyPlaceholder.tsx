@@ -12,13 +12,13 @@ export default function SSOSettingsEmptyPlaceholder({ onAdd }: SSOSettingsEmptyP
       <div className="mb-4 flex size-12 items-center justify-center rounded-full bg-muted">
         <Shield className="size-6 text-muted-foreground" />
       </div>
-      <h4 className="text-base font-semibold text-foreground">No SSO Configuration Found</h4>
+      <h4 className="text-base font-semibold text-foreground">未找到 SSO 配置</h4>
       <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
         Configure Single Sign-On (SSO) to enable seamless authentication for your team members using your identity
         provider.
       </p>
       <Button size="lg" onClick={onAdd} className="mt-4">
-        Configure SSO
+        配置 SSO
       </Button>
     </div>
   );

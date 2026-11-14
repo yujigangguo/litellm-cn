@@ -113,7 +113,7 @@ const ToolRow: React.FC<ToolRowProps> = ({
           onClick={(e) => e.stopPropagation()}
         >
           <div>
-            <p className="mb-1 block text-xs font-medium">Display Name</p>
+            <p className="mb-1 block text-xs font-medium">显示名称</p>
             <Input
               placeholder={tool.name}
               value={toolNameToDisplayName[tool.name] || ""}
@@ -131,7 +131,7 @@ const ToolRow: React.FC<ToolRowProps> = ({
             )}
           </div>
           <div>
-            <p className="mb-1 block text-xs font-medium">Description</p>
+            <p className="mb-1 block text-xs font-medium">描述</p>
             <Textarea
               className="field-sizing-fixed"
               placeholder={tool.description || "No description"}
@@ -433,7 +433,7 @@ const MCPToolConfiguration: React.FC<MCPToolConfigurationProps> = ({
         {isLoadingTools && (
           <div className="flex items-center justify-center gap-3 py-6">
             <UiLoadingSpinner className="size-6 text-muted-foreground" />
-            <p className="text-sm">Loading tools...</p>
+            <p className="text-sm">正在加载工具…</p>
           </div>
         )}
 

@@ -321,7 +321,7 @@ const MCPToolPermissions: React.FC<MCPToolPermissionsProps> = ({
                       onClick={() => handleSelectAll(entry)}
                       disabled={isLoading}
                     >
-                      Select All
+                      全选
                     </button>
                     <button
                       type="button"
@@ -342,7 +342,7 @@ const MCPToolPermissions: React.FC<MCPToolPermissionsProps> = ({
               {isLoading && (
                 <div className="flex items-center justify-center py-8">
                   <UiLoadingSpinner />
-                  <p className="ml-3 text-sm text-muted-foreground">Loading tools...</p>
+                  <p className="ml-3 text-sm text-muted-foreground">正在加载工具…</p>
                 </div>
               )}
 

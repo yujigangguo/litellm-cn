@@ -124,7 +124,7 @@ const SearchConnectionTest: React.FC<SearchConnectionTestProps> = ({ litellmPara
           </div>
 
           <div className="mb-5 rounded-lg border border-destructive/30 bg-destructive/10 p-4">
-            <p className="mb-2 font-semibold text-foreground">Error: </p>
+            <p className="mb-2 font-semibold text-foreground">错误： </p>
             <p className="text-sm leading-relaxed text-destructive">{errorMessage}</p>
 
             {testResult.error_type && (

@@ -110,7 +110,7 @@ export function AccessGroupBaseForm({
         </TabsTrigger>
         <TabsTrigger value={AGENTS_TAB}>
           <BotIcon size={16} />
-          Agents
+          助手
         </TabsTrigger>
         <TabsTrigger value={SKILLS_TAB}>
           <SparklesIcon size={16} />
@@ -125,7 +125,7 @@ export function AccessGroupBaseForm({
               <Input {...field} ref={ref} placeholder="e.g. Engineering Team" disabled={isNameDisabled} />
             )}
           </FormField>
-          <FormField control={form.control} name="description" label="Description">
+          <FormField control={form.control} name="description" label="描述">
             {({ ref, ...field }) => (
               <Textarea {...field} ref={ref} rows={4} placeholder="Describe the purpose of this access group..." />
             )}
@@ -134,7 +134,7 @@ export function AccessGroupBaseForm({
       </TabsContent>
 
       <TabsContent value={MODELS_TAB} className="pt-4">
-        <FormField control={form.control} name="modelIds" label="Allowed Models">
+        <FormField control={form.control} name="modelIds" label="允许的模型">
           {(field) => <ModelSelect context="global" value={field.value} onChange={field.onChange} />}
         </FormField>
       </TabsContent>

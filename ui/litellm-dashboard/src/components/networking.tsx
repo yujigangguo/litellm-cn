@@ -1852,7 +1852,7 @@ export const modelAvailableCall = async (
     return await gatewayApiClient.get(`/models`, {
       accessToken,
       query: {
-        include_model_access_groups: "True",
+        include_model_access_groups: "是",
         return_wildcard_routes: return_wildcard_routes === true ? "True" : undefined,
         only_model_access_groups: only_model_access_groups === true ? "True" : undefined,
         team_id: teamID || undefined,

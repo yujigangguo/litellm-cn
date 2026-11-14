@@ -313,7 +313,7 @@ export const BedrockGuardrailDetails: React.FC<{ response: BedrockGuardrailRespo
                         <thead>
                           <tr className="text-left text-muted-foreground">
                             <th className="py-1 pr-4">类型</th>
-                            <th className="py-1 pr-4">Action</th>
+                            <th className="py-1 pr-4">操作</th>
                             <th className="py-1 pr-4">Detected</th>
                             <th className="py-1 pr-4">Strength</th>
                             <th className="py-1 pr-4">Confidence</th>
@@ -344,10 +344,10 @@ export const BedrockGuardrailDetails: React.FC<{ response: BedrockGuardrailRespo
                         <thead>
                           <tr className="text-left text-muted-foreground">
                             <th className="py-1 pr-4">类型</th>
-                            <th className="py-1 pr-4">Action</th>
+                            <th className="py-1 pr-4">操作</th>
                             <th className="py-1 pr-4">Detected</th>
-                            <th className="py-1 pr-4">Score</th>
-                            <th className="py-1 pr-4">Threshold</th>
+                            <th className="py-1 pr-4">分数</th>
+                            <th className="py-1 pr-4">阈值</th>
                           </tr>
                         </thead>
                         <tbody>

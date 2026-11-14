@@ -134,7 +134,7 @@ export function ComparisonPanel({
               />
             </div>
             <div>
-              <label className="text-xs font-medium text-muted-foreground block mb-0.5">Vector Stores</label>
+              <label className="text-xs font-medium text-muted-foreground block mb-0.5">向量库</label>
               <VectorStoreSelector
                 value={comparison.vectorStores}
                 onChange={(value) => handleSettingChange("vectorStores", value)}
@@ -153,7 +153,7 @@ export function ComparisonPanel({
         </div>
         {/* Advanced Settings */}
         <div>
-          <h4 className="text-xs font-semibold text-foreground mb-1.5 uppercase tracking-wide">Advanced Settings</h4>
+          <h4 className="text-xs font-semibold text-foreground mb-1.5 uppercase tracking-wide">高级设置</h4>
           <div className="space-y-2">
             <div className="flex items-center gap-2 pb-1">
               <Checkbox

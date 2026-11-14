@@ -297,7 +297,7 @@ const Fallbacks: React.FC<FallbacksProps> = ({ accessToken, userRole, userID }) 
           <TableHeader>
             <TableRow>
               <TableHead>Model Name</TableHead>
-              <TableHead>Fallbacks</TableHead>
+              <TableHead>备用模型</TableHead>
               <TableHead>操作</TableHead>
             </TableRow>
           </TableHeader>

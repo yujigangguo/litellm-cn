@@ -126,7 +126,7 @@ export function ChatComposer({
               <InputGroupButton
                 type="button"
                 size="icon-sm"
-                aria-label="Send message"
+                aria-label="发送消息"
                 data-testid="chat-send-button"
                 disabled={submitDisabled || isLoading}
                 onClick={submitIfAllowed}

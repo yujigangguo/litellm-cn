@@ -140,7 +140,7 @@ const AgentsPanel: React.FC<AgentsPanelProps> = ({ accessToken, userRole, teams 
   return (
     <div className="w-full mx-auto flex-auto overflow-y-auto m-8 p-2">
       <div className="flex flex-col gap-2 mb-4">
-        <h1 className="text-2xl font-bold">Agents</h1>
+        <h1 className="text-2xl font-bold">助手</h1>
         <p className="text-sm text-muted-foreground">
           {term(
             "List of A2A-spec agents that are available to be used in your organization. Go to AI Hub, to make agents public.",
@@ -148,7 +148,7 @@ const AgentsPanel: React.FC<AgentsPanelProps> = ({ accessToken, userRole, teams 
         </p>
         <Alert className="mb-3">
           <Info />
-          <AlertTitle>How do agents authenticate?</AlertTitle>
+          <AlertTitle>助手如何认证？</AlertTitle>
           <AlertDescription>
             Agents can authenticate with a virtual key or a trusted identity provider using JWT. Configure an identity
             binding when adding or editing an agent. JWT authentication does not require a virtual key.
@@ -158,7 +158,7 @@ const AgentsPanel: React.FC<AgentsPanelProps> = ({ accessToken, userRole, teams 
           <div className="mt-2 flex items-center gap-4">
             <Button onClick={handleAddAgent} disabled={!accessToken}>
               <Plus />
-              Add New Agent
+              添加助手
             </Button>
           </div>
         )}

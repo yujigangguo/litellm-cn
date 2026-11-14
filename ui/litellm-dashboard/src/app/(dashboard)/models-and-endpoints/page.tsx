@@ -50,15 +50,15 @@ const TAB_KEYS = [BASE_TAB_KEY, ...MODEL_TAB_SLUGS] as const;
 const PREFILL_URL_PARAMS = { provider: parseAsString, litellm_model: parseAsString };
 
 const TAB_LABELS: Record<ModelTabSlug, string> = {
-  add: "Add Model",
-  "auto-routers": "Auto-Routers",
-  "llm-credentials": "LLM Credentials",
-  "pass-through": "Pass-Through Endpoints",
-  health: "Health Status",
-  "retry-settings": "Model Retry Settings",
-  "model-group-alias": "Model Group Alias",
-  "access-group-budgets": "Model Access Group Budgets",
-  "price-data": "Price Data Reload",
+  add: "添加模型",
+  "auto-routers": "自动路由",
+  "llm-credentials": "模型凭据",
+  "pass-through": "透传端点",
+  health: "健康状态",
+  "retry-settings": "模型重试设置",
+  "model-group-alias": "模型组别名",
+  "access-group-budgets": "模型访问组预算",
+  "price-data": "价格数据重载",
 };
 
 const renderPanel = (key: string) => {
@@ -230,9 +230,9 @@ export default function ModelsAndEndpointsPage() {
               </div>
               <div className="flex shrink-0 items-center gap-2 pb-1">
                 {lastRefreshed && (
-                  <span className="text-xs text-muted-foreground">Last Refreshed: {lastRefreshed}</span>
+                  <span className="text-xs text-muted-foreground">最近刷新：{lastRefreshed}</span>
                 )}
-                <Button variant="ghost" size="icon-sm" onClick={handleRefreshClick} aria-label="Refresh models">
+                <Button variant="ghost" size="icon-sm" onClick={handleRefreshClick} aria-label="刷新模型">
                   <RefreshCw />
                 </Button>
               </div>

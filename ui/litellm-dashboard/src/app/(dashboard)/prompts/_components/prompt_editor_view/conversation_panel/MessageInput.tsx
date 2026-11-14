@@ -29,7 +29,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
           value={inputMessage}
           onChange={(e) => onInputChange(e.target.value)}
           onKeyDown={onKeyDown}
-          placeholder="Type your message... (Shift+Enter for new line)"
+          placeholder="输入消息…（Shift+Enter 换行）"
           disabled={isLoading}
           rows={1}
           className="field-sizing-content max-h-24 min-h-8 flex-1 resize-none overflow-y-auto border-0 bg-transparent px-0 py-1 text-sm shadow-none focus-visible:ring-0"
@@ -41,7 +41,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
           onClick={onSend}
           disabled={isDisabled}
           className="ml-2 shrink-0 rounded-full"
-          aria-label="Send message"
+          aria-label="发送消息"
         >
           <ArrowUp aria-hidden="true" />
         </Button>

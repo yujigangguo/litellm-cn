@@ -464,10 +464,10 @@ export default function UserInfoView({
         message="Are you sure you want to delete this user? This action cannot be undone."
         resourceInformationTitle="User Information"
         resourceInformation={[
-          { label: "Email", value: userData.user_email },
-          { label: "User ID", value: userData.user_id, code: true },
+          { label: "邮箱", value: userData.user_email },
+          { label: "用户 ID", value: userData.user_id, code: true },
           {
-            label: "Global Proxy Role",
+            label: "全局代理角色",
             value: (userData.user_role && possibleUIRoles?.[userData.user_role]?.ui_label) || userData.user_role || "-",
           },
           {
@@ -490,11 +490,11 @@ export default function UserInfoView({
             概览
           </TabsTrigger>
           <TabsTrigger value="details" className="flex-none data-active:text-primary after:bg-primary">
-            Details
+            详情
           </TabsTrigger>
           {canViewSavings && (
             <TabsTrigger value="savings" className="flex-none data-active:text-primary after:bg-primary">
-              Savings
+              节省
             </TabsTrigger>
           )}
           {canViewAutoRouterUsage && (
@@ -606,7 +606,7 @@ export default function UserInfoView({
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-medium">User Settings</h3>
               {!isEditing && userRole && rolesWithWriteAccess.includes(userRole) && (
-                <Button onClick={() => setIsEditing(true)}>Edit Settings</Button>
+                <Button onClick={() => setIsEditing(true)}>编辑设置</Button>
               )}
             </div>
 
@@ -627,7 +627,7 @@ export default function UserInfoView({
             ) : (
               <div className="space-y-4">
                 <div>
-                  <p className="font-medium">User ID</p>
+                  <p className="font-medium">用户 ID</p>
                   <div className="flex items-center cursor-pointer">
                     <span className="font-mono">{userData.user_id}</span>
                     <Button
@@ -646,17 +646,17 @@ export default function UserInfoView({
                 </div>
 
                 <div>
-                  <p className="font-medium">Email</p>
+                  <p className="font-medium">邮箱</p>
                   <p>{userData.user_email || "Not Set"}</p>
                 </div>
 
                 <div>
-                  <p className="font-medium">User Alias</p>
+                  <p className="font-medium">用户别名</p>
                   <p>{userData.user_alias || "Not Set"}</p>
                 </div>
 
                 <div>
-                  <p className="font-medium">Global Proxy Role</p>
+                  <p className="font-medium">全局代理角色</p>
                   <p>{userData.user_role || "Not Set"}</p>
                 </div>
 
@@ -700,7 +700,7 @@ export default function UserInfoView({
                 </div>
 
                 <div>
-                  <p className="font-medium">Metadata</p>
+                  <p className="font-medium">元数据</p>
                   <pre className="bg-muted p-2 rounded-sm text-xs overflow-auto mt-1">
                     {JSON.stringify(userData.metadata || {}, null, 2)}
                   </pre>
@@ -770,8 +770,8 @@ export default function UserInfoView({
         resourceInformationTitle="Team Membership"
         resourceInformation={[
           { label: "团队", value: teamToRemove?.team_alias || teamToRemove?.team_id },
-          { label: "User ID", value: userData?.user_id, code: true },
-          { label: "Email", value: userData?.user_email },
+          { label: "用户 ID", value: userData?.user_id, code: true },
+          { label: "邮箱", value: userData?.user_email },
         ]}
         onCancel={handleRemoveTeamCancel}
         onOk={handleRemoveTeamConfirm}
@@ -806,7 +806,7 @@ export default function UserInfoView({
                 >
                   <ComboboxInput id={ADD_TEAM_FIELD_ID} placeholder="Select a team" className="w-full" />
                   <ComboboxContent>
-                    <ComboboxEmpty>No teams found</ComboboxEmpty>
+                    <ComboboxEmpty>未找到团队</ComboboxEmpty>
                     <ComboboxList>
                       {(team: TeamOption) => (
                         <ComboboxItem key={team.team_id} value={team} title={team.team_alias}>

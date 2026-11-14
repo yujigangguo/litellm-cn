@@ -77,7 +77,7 @@ export const getIndexesTableColumns = ({
     id: "created_by",
     accessorKey: "created_by",
     meta: { title: "创建人" },
-    header: "Created By",
+    header: "创建人",
     size: 160,
     enableSorting: false,
     cell: ({ row }) => {

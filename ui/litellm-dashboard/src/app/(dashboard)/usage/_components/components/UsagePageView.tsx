@@ -567,7 +567,7 @@ const UsagePage: React.FC<UsagePageProps> = ({ teams, organizations, teamsLoadin
                       gatewayActivity && gatewayActivity.by_route.length > 0 ? (
                         <Panel
                           testId="gateway-requests-by-endpoint"
-                          title="Gateway Requests by Endpoint"
+                          title="按端点的网关请求"
                           subtitle="Successful and failed requests per route"
                           bodyClassName="px-2 pt-4"
                         >
@@ -611,8 +611,8 @@ const UsagePage: React.FC<UsagePageProps> = ({ teams, organizations, teamsLoadin
                         <Search className="size-4 text-muted-foreground" />
                       </InputGroupAddon>
                       <InputGroupInput
-                        aria-label="Search models"
-                        placeholder="Search by model name"
+                        aria-label="搜索模型"
+                        placeholder="按模型名称搜索"
                         value={modelQuery}
                         onChange={(event) => setModelQuery(event.target.value)}
                       />

@@ -25,8 +25,8 @@ const DecisionModelSection = ({
     <div className="mt-2 overflow-hidden rounded-lg border border-border">
       <div className="flex border-b border-border bg-muted/40 px-4 py-2 text-xs font-semibold">
         <span className="flex-1">Check</span>
-        <span className="w-24 text-right">Action</span>
-        <span className="w-24 text-right">Threshold</span>
+        <span className="w-24 text-right">操作</span>
+        <span className="w-24 text-right">阈值</span>
       </div>
       {checks.map((check) => (
         <div key={check.name} className="flex items-center border-b border-border px-4 py-2 text-sm last:border-b-0">
@@ -75,7 +75,7 @@ export const GuardrailReadOnlyDetails = ({
 }) => (
   <div className="space-y-4">
     <div>
-      <p className="font-medium">Guardrail ID</p>
+      <p className="font-medium">防护规则 ID</p>
       <div className="font-mono">{guardrailId}</div>
     </div>
     <div>
@@ -89,7 +89,7 @@ export const GuardrailReadOnlyDetails = ({
     <GuardrailModeRows litellmParams={litellmParams} />
     <GuardrailStreamScopeDetail raw={streamScope} />
     <div>
-      <p className="font-medium">Default On</p>
+      <p className="font-medium">默认开启</p>
       <Badge variant={defaultOn ? "secondary" : "outline"}>{defaultOn ? "Yes" : "No"}</Badge>
     </div>
     {litellmParams.guardrail === "decision_model" && litellmParams.decision_model && (

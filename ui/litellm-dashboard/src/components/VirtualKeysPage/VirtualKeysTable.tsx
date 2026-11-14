@@ -39,10 +39,10 @@ const FILTER_COLUMNS = ["team_id", "org_id", "user_id", "key_hash", "status"] as
 type FilterColumn = (typeof FILTER_COLUMNS)[number];
 
 const FILTER_LABELS: Record<FilterColumn, string> = {
-  team_id: "Team",
-  org_id: "Organization",
-  user_id: "User ID",
-  key_hash: "Key ID",
+  team_id: "团队",
+  org_id: "组织",
+  user_id: "用户 ID",
+  key_hash: "密钥 ID",
   status: "Status",
 };
 
@@ -51,7 +51,7 @@ type KeyStatusFilter = (typeof KEY_STATUS_VALUES)[number];
 const ALL_STATUSES = "all";
 
 const KEY_STATUS_LABELS: Record<KeyStatusFilter, string> = {
-  active: "Active",
+  active: "启用",
   expired: "Expired",
   revoked: "Revoked (blocked)",
   deleted: "Deleted",
@@ -279,7 +279,7 @@ export function VirtualKeysTable({ headerActions }: VirtualKeysTableProps) {
               table={table}
               searchValue={searchInput}
               onSearchChange={setSearch}
-              searchPlaceholder="Search by key alias or ID…"
+              searchPlaceholder="按密钥别名或 ID 搜索…"
               onRefresh={() => refetch?.()}
               isRefreshing={isFetching}
               onOpenFilters={() => setFiltersOpen(true)}
@@ -301,10 +301,10 @@ export function VirtualKeysTable({ headerActions }: VirtualKeysTableProps) {
                       value={(get("team_id") as string) || undefined}
                       onValueChange={(value) => set("team_id", value ?? undefined)}
                       placeholder="Select a team…"
-                      emptyText="No teams found"
+                      emptyText="未找到团队"
                     />
                   </DataTableFilterField>
-                  <DataTableFilterField label="Organization">
+                  <DataTableFilterField label="组织">
                     <SearchSelect
                       options={orgOptions}
                       value={(get("org_id") as string) || undefined}
@@ -313,7 +313,7 @@ export function VirtualKeysTable({ headerActions }: VirtualKeysTableProps) {
                       emptyText="No organizations found"
                     />
                   </DataTableFilterField>
-                  <DataTableFilterField label="User ID">
+                  <DataTableFilterField label="用户 ID">
                     <Input
                       value={(get("user_id") as string) ?? ""}
                       onChange={(event) => set("user_id", event.target.value)}

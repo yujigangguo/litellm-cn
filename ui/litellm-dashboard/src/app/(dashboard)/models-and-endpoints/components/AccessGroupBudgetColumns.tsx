@@ -92,8 +92,8 @@ export const getAccessGroupBudgetColumns = ({
   {
     id: "access_group",
     accessorKey: "access_group",
-    meta: { title: "Access Group" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Access Group" />,
+    meta: { title: "访问组" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="访问组" />,
     size: 220,
     enableSorting: true,
     cell: ({ row }) => (
@@ -105,7 +105,7 @@ export const getAccessGroupBudgetColumns = ({
   {
     id: "models",
     meta: { title: "模型", skeleton: "chips" },
-    header: "Models",
+    header: "模型",
     size: 280,
     enableSorting: false,
     cell: ({ row }) => <ModelsCell models={row.original.model_names} />,

@@ -328,7 +328,7 @@ function CreateToolsetModal({ open, onClose, onSave, initialToolset }: CreateToo
             <FormField control={form.control} name="toolset_name" label="Toolset Name" className="flex-1">
               {(field) => <Input {...field} placeholder="e.g. github-linear-tools" />}
             </FormField>
-            <FormField control={form.control} name="description" label="Description" className="flex-1">
+            <FormField control={form.control} name="description" label="描述" className="flex-1">
               {(field) => <Input {...field} placeholder="Optional description" />}
             </FormField>
           </FieldGroup>
@@ -349,7 +349,7 @@ function CreateToolsetModal({ open, onClose, onSave, initialToolset }: CreateToo
               />
               {search && (
                 <InputGroupAddon align="inline-end">
-                  <InputGroupButton size="icon-xs" aria-label="Clear search" onClick={() => setSearch("")}>
+                  <InputGroupButton size="icon-xs" aria-label="清除搜索" onClick={() => setSearch("")}>
                     <X />
                   </InputGroupButton>
                 </InputGroupAddon>

@@ -59,13 +59,13 @@ export default function ChatModelPicker({
       <PopoverContent align="start" className="chat-theme w-[min(360px,calc(100vw-2rem))] p-0">
         <div className="space-y-3 p-3">
           <div>
-            <p className="text-sm font-medium">Model Hub</p>
+            <p className="text-sm font-medium">模型中心</p>
             <p className="text-xs text-muted-foreground">Choose a model to try it here.</p>
           </div>
           <div className="relative">
             <Search className="absolute left-2.5 top-2.5 size-4 text-muted-foreground" />
             <Input
-              aria-label="Search models"
+              aria-label="搜索模型"
               placeholder="Search models or providers"
               value={search}
               onChange={(event) => setSearch(event.target.value)}

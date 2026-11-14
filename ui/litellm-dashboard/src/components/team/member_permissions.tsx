@@ -84,11 +84,11 @@ const MemberPermissions: React.FC<MemberPermissionsProps> = ({ teamId, accessTok
           <div className="flex gap-3">
             <Button variant="outline" onClick={handleReset}>
               <RotateCw className="size-3.5" />
-              Reset
+              重置
             </Button>
             <Button onClick={handleSave} disabled={saving}>
               <Save className="size-3.5" />
-              Save Changes
+              保存更改
             </Button>
           </div>
         )}
@@ -103,9 +103,9 @@ const MemberPermissions: React.FC<MemberPermissionsProps> = ({ teamId, accessTok
           <Table className="min-w-full">
             <TableHeader>
               <TableRow>
-                <TableHead>Method</TableHead>
-                <TableHead>Endpoint</TableHead>
-                <TableHead>Description</TableHead>
+                <TableHead>方法</TableHead>
+                <TableHead>端点</TableHead>
+                <TableHead>描述</TableHead>
                 <TableHead className="sticky right-0 bg-card shadow-[-4px_0_4px_-4px_rgba(0,0,0,0.1)] text-center">
                   Allow Access
                 </TableHead>

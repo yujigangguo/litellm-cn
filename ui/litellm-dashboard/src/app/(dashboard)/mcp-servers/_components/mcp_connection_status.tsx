@@ -77,7 +77,7 @@ const MCPConnectionStatus: React.FC<MCPConnectionStatusProps> = ({
               {!isLoadingTools && !toolsError && tools.length > 0 && (
                 <div className="flex items-center gap-1">
                   <CircleCheck className="size-4" />
-                  <p className="text-sm font-medium">Connected</p>
+                  <p className="text-sm font-medium">已连接</p>
                 </div>
               )}
 
@@ -130,7 +130,7 @@ const MCPConnectionStatus: React.FC<MCPConnectionStatusProps> = ({
                 <div className="mt-3">
                   <Button variant="outline" size="sm" onClick={fetchTools}>
                     <RefreshCw />
-                    Retry
+                    重试
                   </Button>
                 </div>
               </Alert>

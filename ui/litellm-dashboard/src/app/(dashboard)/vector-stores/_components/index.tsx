@@ -143,9 +143,9 @@ const VectorStoreManagement: React.FC<VectorStoreProps> = ({ accessToken, userID
     <div className="mx-4">
       <div className="gap-2 p-8 w-full mt-2">
         <div className="flex justify-between mt-2 w-full items-center mb-4">
-          <h1 className="text-xl font-semibold tracking-tight text-foreground">Vector Store Management</h1>
+          <h1 className="text-xl font-semibold tracking-tight text-foreground">向量库管理</h1>
           <div className="flex items-center space-x-2">
-            {lastRefreshed && <p className="text-sm text-muted-foreground">Last Refreshed: {lastRefreshed}</p>}
+            {lastRefreshed && <p className="text-sm text-muted-foreground">最近刷新：{lastRefreshed}</p>}
             <Button variant="outline" size="icon-sm" aria-label="刷新" onClick={handleRefreshClick}>
               <RefreshCw className="size-4" />
             </Button>
@@ -160,18 +160,18 @@ const VectorStoreManagement: React.FC<VectorStoreProps> = ({ accessToken, userID
           <TabsList variant="line" className="mb-6 h-auto w-full justify-start rounded-none p-0">
             {canCreateVectorStores && (
               <TabsTrigger value="create" className="flex-none rounded-none px-4 py-2">
-                Create Vector Store
+                创建向量库
               </TabsTrigger>
             )}
             <TabsTrigger value="manage" className="flex-none rounded-none px-4 py-2">
-              Manage Vector Stores
+              管理向量库
             </TabsTrigger>
             <TabsTrigger value="test" className="flex-none rounded-none px-4 py-2">
-              Test Vector Store
+              测试向量库
             </TabsTrigger>
             {isProxyAdminRole(userRole || "") && (
               <TabsTrigger value="indexes" className="flex-none rounded-none px-4 py-2">
-                Indexes
+                索引
               </TabsTrigger>
             )}
           </TabsList>

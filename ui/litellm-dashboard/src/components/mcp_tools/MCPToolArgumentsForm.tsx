@@ -17,8 +17,8 @@ const argumentValues = (schema: InputSchema, values: ToolFormValues): Record<str
 const STRING_SCHEMA_MESSAGES: Readonly<Record<string, string>> = { input: "Please enter input for this tool" };
 
 const BOOLEAN_ITEMS = [
-  { value: true, label: "True" },
-  { value: false, label: "False" },
+  { value: true, label: "是" },
+  { value: false, label: "否" },
 ];
 
 const isBlank = (value: unknown): boolean => value === undefined || value === null || value === "";
@@ -308,7 +308,7 @@ const MCPToolArgumentsForm = forwardRef<MCPToolArgumentsFormRef, MCPToolArgument
               name="args.0"
               label={
                 <span>
-                  Input <span className="text-destructive">*</span>
+                  输入 <span className="text-destructive">*</span>
                 </span>
               }
             >
@@ -363,7 +363,7 @@ const MCPToolArgumentsForm = forwardRef<MCPToolArgumentsFormRef, MCPToolArgument
                             </SelectValue>
                           </SelectTrigger>
                           <SelectContent>
-                            {!required && <SelectItem value={null}>Select {key}</SelectItem>}
+                            {!required && <SelectItem value={null}>选择 {key}</SelectItem>}
                             {prop.enum.map((v) => (
                               <SelectItem key={v} value={v}>
                                 {v === "" ? "Empty string" : v}
@@ -389,9 +389,9 @@ const MCPToolArgumentsForm = forwardRef<MCPToolArgumentsFormRef, MCPToolArgument
                             <SelectValue placeholder={`Select ${key}`} />
                           </SelectTrigger>
                           <SelectContent>
-                            {!required && <SelectItem value={null}>Select {key}</SelectItem>}
-                            <SelectItem value={true}>True</SelectItem>
-                            <SelectItem value={false}>False</SelectItem>
+                            {!required && <SelectItem value={null}>选择 {key}</SelectItem>}
+                            <SelectItem value={true}>是</SelectItem>
+                            <SelectItem value={false}>否</SelectItem>
                           </SelectContent>
                         </Select>
                       );

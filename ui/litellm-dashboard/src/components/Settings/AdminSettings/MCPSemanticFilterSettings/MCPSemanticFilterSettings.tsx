@@ -261,7 +261,7 @@ export default function MCPSemanticFilterSettings({ accessToken }: MCPSemanticFi
 
                   <Card className="mb-4">
                     <CardHeader className="border-b">
-                      <CardTitle>Configuration</CardTitle>
+                      <CardTitle>配置</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <FieldGroup>
@@ -359,7 +359,7 @@ export default function MCPSemanticFilterSettings({ accessToken }: MCPSemanticFi
                       disabled={!isDirty || isUpdating}
                     >
                       {isUpdating ? <UiLoadingSpinner className="size-4" /> : <Save />}
-                      Save Settings
+                      保存设置
                     </Button>
                   </div>
                 </form>

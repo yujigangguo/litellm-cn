@@ -66,14 +66,14 @@ export function ProjectsPage() {
       <PageHeader>
         <PageHeaderTitle>
           <Folder />
-          Projects
+          项目
         </PageHeaderTitle>
-        <PageHeaderDescription>Manage projects within your teams</PageHeaderDescription>
+        <PageHeaderDescription>管理团队内的项目</PageHeaderDescription>
         {canCreateProject && (
           <PageHeaderControls>
             <Button onClick={() => setIsCreateModalVisible(true)}>
               <Plus className="size-4" />
-              Create Project
+              创建项目
             </Button>
           </PageHeaderControls>
         )}
@@ -92,7 +92,7 @@ export function ProjectsPage() {
             />
             {searchText && (
               <InputGroupAddon align="inline-end">
-                <InputGroupButton size="icon-xs" aria-label="Clear search" onClick={() => setSearchText("")}>
+                <InputGroupButton size="icon-xs" aria-label="清除搜索" onClick={() => setSearchText("")}>
                   <X />
                 </InputGroupButton>
               </InputGroupAddon>

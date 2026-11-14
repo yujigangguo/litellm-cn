@@ -194,8 +194,8 @@ const HealthCheckComponent: React.FC<HealthCheckComponentProps> = ({
         if (modelId) {
           healthStatusMap[modelId] = {
             status: "none",
-            lastCheck: "None",
-            lastSuccess: "None",
+            lastCheck: "无",
+            lastSuccess: "无",
             loading: false,
             error: undefined,
             fullError: undefined,
@@ -474,7 +474,7 @@ const HealthCheckComponent: React.FC<HealthCheckComponentProps> = ({
         const healthStatus = modelId ? modelHealthStatuses[modelId] : null;
         const status = healthStatus || {
           status: "none",
-          lastCheck: "None",
+          lastCheck: "无",
           loading: false,
         };
         return {
@@ -563,7 +563,7 @@ const HealthCheckComponent: React.FC<HealthCheckComponentProps> = ({
           {selectedErrorDetails && (
             <div className="space-y-4">
               <div>
-                <span className="font-medium">Error:</span>
+                <span className="font-medium">错误：</span>
                 <div className="mt-2 rounded-md border border-destructive/30 bg-destructive/10 p-3">
                   <span className="text-destructive">{selectedErrorDetails.cleanedError}</span>
                 </div>

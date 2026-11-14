@@ -34,7 +34,7 @@ const ALL_VALUE = "all";
 
 const ACTION_OPTIONS = [
   { label: "创建时间", value: "created" },
-  { label: "Updated", value: "updated" },
+  { label: "更新时间", value: "updated" },
   { label: "Deleted", value: "deleted" },
   { label: "Rotated", value: "rotated" },
   { label: "Kill switch fired", value: "kill_switch_fired" },
@@ -43,10 +43,10 @@ const ACTION_OPTIONS = [
 const TABLE_OPTIONS = [
   { label: "密钥", value: "LiteLLM_VerificationToken" },
   { label: "团队", value: "LiteLLM_TeamTable" },
-  { label: "Users", value: "LiteLLM_UserTable" },
+  { label: "用户", value: "LiteLLM_UserTable" },
   { label: "组织", value: "LiteLLM_OrganizationTable" },
   { label: "模型", value: "LiteLLM_ProxyModelTable" },
-  { label: "Agents", value: "LiteLLM_AgentsTable" },
+  { label: "助手", value: "LiteLLM_AgentsTable" },
 ] as const;
 
 const ACTION_FILTER_ITEMS = [
@@ -62,8 +62,8 @@ const TABLE_FILTER_ITEMS = [
 const FILTER_LABELS: Record<string, string> = {
   object_id: "Object ID",
   changed_by: "Changed By",
-  team_id: "Team ID",
-  key_hash: "Key Hash",
+  team_id: "团队 ID",
+  key_hash: "密钥哈希",
   action: "Action",
   table_name: "Table",
 };
@@ -183,7 +183,7 @@ export function AuditLogsTable({
                     placeholder="Enter key hash…"
                   />
                 </DataTableFilterField>
-                <DataTableFilterField label="Action">
+                <DataTableFilterField label="操作">
                   <Select
                     items={ACTION_FILTER_ITEMS}
                     value={(get("action") as string) ?? ALL_VALUE}

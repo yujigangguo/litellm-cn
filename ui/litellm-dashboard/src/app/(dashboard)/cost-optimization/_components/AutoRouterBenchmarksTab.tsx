@@ -81,7 +81,7 @@ const HeroCard: React.FC<{ view: BenchmarkView }> = ({ view }) => {
   const classifierCost = stats.baseline_spend == null ? null : stats.savings_estimated_classifier_cost ?? null;
   const comparedAll = stats.savings_estimated_turns === stats.turns;
   return (
-    <Card className="overflow-hidden py-0" role="region" aria-label="Auto-router savings">
+    <Card className="overflow-hidden py-0" role="region" aria-label="自动路由节省">
       <div className="grid md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <div className="flex flex-col items-center justify-center gap-2 p-6">
           <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">

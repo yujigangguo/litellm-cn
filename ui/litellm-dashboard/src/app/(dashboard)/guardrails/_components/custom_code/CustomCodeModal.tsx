@@ -528,8 +528,8 @@ const CustomCodeModal: React.FC<CustomCodeModalProps> = ({ visible, onClose, onS
             </Select>
           </div>
           <div className="flex items-center gap-2 pt-5">
-            <span className="text-sm text-muted-foreground">Default On</span>
-            <Switch checked={defaultOn} onCheckedChange={setDefaultOn} aria-label="Default On" />
+            <span className="text-sm text-muted-foreground">默认开启</span>
+            <Switch checked={defaultOn} onCheckedChange={setDefaultOn} aria-label="默认开启" />
           </div>
         </div>
         {mode.length > 0 && (
@@ -760,7 +760,7 @@ const CustomCodeModal: React.FC<CustomCodeModalProps> = ({ visible, onClose, onS
                         >
                           {copiedPrimitive === p.name ? (
                             <span className="flex items-center gap-1 font-mono text-xs">
-                              <CheckCircle2 className="size-3.5" /> Copied!
+                              <CheckCircle2 className="size-3.5" /> 已复制！
                             </span>
                           ) : (
                             <>

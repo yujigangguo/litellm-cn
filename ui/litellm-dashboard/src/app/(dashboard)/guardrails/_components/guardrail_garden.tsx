@@ -52,7 +52,7 @@ const GuardrailGarden: React.FC<GuardrailGardenProps> = ({ accessToken, onGuardr
             <Search className="size-4 text-muted-foreground" />
           </InputGroupAddon>
           <InputGroupInput
-            placeholder="Search guardrails"
+            placeholder="搜索防护规则"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />

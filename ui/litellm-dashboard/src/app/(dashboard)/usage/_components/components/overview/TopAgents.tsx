@@ -112,7 +112,7 @@ function AgentItem({
         )}
       </span>
       <span className="text-right">
-        <span className="block text-sm tabular-nums text-foreground">{formatCompact(agent.tokens)} tokens</span>
+        <span className="block text-sm tabular-nums text-foreground">{formatCompact(agent.tokens)} Token</span>
         <span className="block text-xs tabular-nums text-muted-foreground">
           {formatCompactUsd(agent.spend)} · {share.toFixed(1)}%
         </span>
@@ -191,7 +191,7 @@ export default function TopAgents({
   const coverage = totalTokens > 0 ? Math.min(attributedTokens / totalTokens, 1) : 1;
   const subtitle =
     coverage < COVERAGE_NOTE_BELOW
-      ? `Daily usage by agent. ${Math.round(coverage * 100)}% of tokens came with a User-Agent; the rest is unattributed`
+      ? `按 Agent 的每日用量。${Math.round(coverage * 100)}% 的 Token 带有 User-Agent；其余未归属`
       : "每日按 Agent（User-Agent）用量";
   const half = Math.ceil(agents.length / 2);
 
@@ -201,7 +201,7 @@ export default function TopAgents({
       title="Agent 排行"
       subtitle={subtitle}
       testId="top-agents"
-      action={<Segmented label="Agent metric" value={metric} options={METRICS} onChange={setMetric} />}
+      action={<Segmented label="助手指标" value={metric} options={METRICS} onChange={setMetric} />}
       bodyClassName="px-0 pt-4 pb-0"
     >
       <TopAgentsBody loading={loading} empty={agents.length === 0}>

@@ -32,7 +32,7 @@ const CategoryTable: React.FC<CategoryTableProps> = ({
 }) => {
   const columns: ColumnDef<ContentCategory>[] = [
     {
-      header: "Category",
+      header: "分类",
       accessorKey: "display_name",
       cell: ({ row }) => {
         const { category, display_name: displayName } = row.original;
@@ -76,7 +76,7 @@ const CategoryTable: React.FC<CategoryTableProps> = ({
       },
     },
     {
-      header: "Action",
+      header: "操作",
       accessorKey: "action",
       size: 150,
       cell: ({ row }) => {
@@ -90,7 +90,7 @@ const CategoryTable: React.FC<CategoryTableProps> = ({
             value={action}
             onValueChange={(value: string | null) => value && onActionChange?.(id, value as "BLOCK" | "MASK")}
           >
-            <SelectTrigger size="sm" className="w-[120px]" aria-label="Action">
+            <SelectTrigger size="sm" className="w-[120px]" aria-label="操作">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>

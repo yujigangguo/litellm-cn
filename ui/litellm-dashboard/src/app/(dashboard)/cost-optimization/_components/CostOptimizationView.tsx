@@ -47,12 +47,12 @@ const CostOptimizationView: React.FC<CostOptimizationViewProps> = ({ accessToken
           </PageHeaderDescription>
           <PageHeaderControls>
             <PageTabsList>
-              <PageTabsTrigger value="usage">Overall</PageTabsTrigger>
+              <PageTabsTrigger value="usage">总计</PageTabsTrigger>
               {canViewProxyWideCostData && (
                 <>
-                  <PageTabsTrigger value="compression">Prompt Compression</PageTabsTrigger>
-                  <PageTabsTrigger value="caching">Prompt Caching</PageTabsTrigger>
-                  <PageTabsTrigger value="autorouter-usage">Auto-Router</PageTabsTrigger>
+                  <PageTabsTrigger value="compression">提示压缩</PageTabsTrigger>
+                  <PageTabsTrigger value="caching">提示缓存</PageTabsTrigger>
+                  <PageTabsTrigger value="autorouter-usage">自动路由</PageTabsTrigger>
                 </>
               )}
             </PageTabsList>
@@ -64,17 +64,18 @@ const CostOptimizationView: React.FC<CostOptimizationViewProps> = ({ accessToken
           className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 rounded-lg border border-border bg-muted/50 px-4 py-4"
         >
           <Info className="mt-0.5 size-5 text-primary" aria-hidden="true" />
-          <p className="font-medium text-foreground">This is an experimental dashboard</p>
+          <p className="font-medium text-foreground">这是实验性看板</p>
           <p className="col-start-2 text-sm text-muted-foreground">
-            Have feedback? Join the discussion{" "}
+            有反馈？
             <a
               href="https://github.com/BerriAI/litellm/discussions/32168"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary underline underline-offset-2"
             >
-              here
+              在这里
             </a>
+            参与讨论
           </p>
         </div>
 

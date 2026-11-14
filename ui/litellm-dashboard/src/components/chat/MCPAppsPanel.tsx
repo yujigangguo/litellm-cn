@@ -398,7 +398,7 @@ const MCPAppsPanel: React.FC<Props> = ({ accessToken, selectedServers, onChange,
             }}
             className="font-semibold h-[38px] min-w-[110px]"
           >
-            Disconnect
+            断开
           </Button>
         );
       }
@@ -520,7 +520,7 @@ const MCPAppsPanel: React.FC<Props> = ({ accessToken, selectedServers, onChange,
               {loadingCounts ? (
                 <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
                   <Loader2 className="h-3 w-3 animate-spin" />
-                  Loading tools...
+                  正在加载工具…
                 </span>
               ) : totalTools > 0 ? (
                 <span className="flex items-center gap-1 text-xs text-muted-foreground">
@@ -548,7 +548,7 @@ const MCPAppsPanel: React.FC<Props> = ({ accessToken, selectedServers, onChange,
             All
           </TabsTrigger>
           <TabsTrigger value="connected" className="rounded-none px-4 py-2 text-[13px]">
-            Connected{connectedCount > 0 ? ` (${connectedCount})` : ""}
+            已连接{connectedCount > 0 ? ` (${connectedCount})` : ""}
           </TabsTrigger>
         </TabsList>
       </Tabs>

@@ -133,7 +133,7 @@ export function LoggingSettingsView({
                       <span className="block text-xs text-destructive">Disabled for this key</span>
                     </div>
                   </div>
-                  <Badge variant="destructive">Disabled</Badge>
+                  <Badge variant="destructive">停用</Badge>
                 </div>
               );
             })}
@@ -153,7 +153,7 @@ export function LoggingSettingsView({
       <div className={`bg-card border border-border rounded-lg p-6 ${className}`}>
         <div className="flex items-center gap-2 mb-6">
           <div>
-            <span className="block font-semibold text-foreground">Logging Settings</span>
+            <span className="block font-semibold text-foreground">日志设置</span>
             <span className="block text-xs text-muted-foreground">
               Active logging integrations and disabled callbacks for this key
             </span>
@@ -166,7 +166,7 @@ export function LoggingSettingsView({
 
   return (
     <div className={`${className}`}>
-      <span className="block font-medium text-foreground mb-3">Logging Settings</span>
+      <span className="block font-medium text-foreground mb-3">日志设置</span>
       {content}
     </div>
   );

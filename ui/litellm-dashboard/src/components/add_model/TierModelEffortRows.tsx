@@ -82,7 +82,7 @@ const TierModelEffortRows: React.FC<TierModelEffortRowsProps> = (props) => {
             {options.length > 0 && (
               <Select
                 items={[
-                  { value: PROVIDER_DEFAULT, label: "Default" },
+                  { value: PROVIDER_DEFAULT, label: "默认" },
                   ...options.map((option) => ({ value: option, label: option })),
                 ]}
                 value={effort ?? PROVIDER_DEFAULT}
@@ -98,7 +98,7 @@ const TierModelEffortRows: React.FC<TierModelEffortRowsProps> = (props) => {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value={PROVIDER_DEFAULT}>Default</SelectItem>
+                  <SelectItem value={PROVIDER_DEFAULT}>默认</SelectItem>
                   {options.map((option) => (
                     <SelectItem key={option} value={option}>
                       {option}

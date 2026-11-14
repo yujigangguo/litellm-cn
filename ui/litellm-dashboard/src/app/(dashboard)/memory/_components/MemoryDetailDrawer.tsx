@@ -44,7 +44,7 @@ export function MemoryDetailDrawer({ row, onClose }: MemoryDetailDrawerProps) {
                 <code className={CODE_CLASS}>{row.memory_id}</code>
               </div>
               <div>
-                <span className={`block ${LABEL_CLASS}`}>User ID</span>
+                <span className={`block ${LABEL_CLASS}`}>用户 ID</span>
                 <span className={row.user_id ? "text-sm text-foreground" : "text-sm text-muted-foreground"}>
                   {row.user_id ?? "-"}
                 </span>
@@ -62,7 +62,7 @@ export function MemoryDetailDrawer({ row, onClose }: MemoryDetailDrawerProps) {
             </div>
             {row.metadata !== undefined && row.metadata !== null && (
               <div>
-                <span className={LABEL_CLASS}>Metadata</span>
+                <span className={LABEL_CLASS}>元数据</span>
                 <p className={`${BLOCK_CLASS} text-xs`}>{JSON.stringify(row.metadata, null, 2)}</p>
               </div>
             )}
@@ -73,7 +73,7 @@ export function MemoryDetailDrawer({ row, onClose }: MemoryDetailDrawerProps) {
               </span>
               <span aria-hidden="true">·</span>
               <span>
-                Updated {formatTimestamp(row.updated_at)}
+                更新时间 {formatTimestamp(row.updated_at)}
                 {row.updated_by ? ` by ${row.updated_by}` : ""}
               </span>
             </div>

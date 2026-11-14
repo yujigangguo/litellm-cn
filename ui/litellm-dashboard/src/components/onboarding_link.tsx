@@ -88,7 +88,7 @@ export default function OnboardingModal({
         </DialogHeader>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-1.5">
-            <p className="text-xs text-muted-foreground">User ID</p>
+            <p className="text-xs text-muted-foreground">用户 ID</p>
             <p className="font-mono text-sm break-all">{invitationLinkData?.user_id}</p>
           </div>
           <div className="flex flex-col gap-1.5">
@@ -104,7 +104,7 @@ export default function OnboardingModal({
                   onClick={() => copyToClipboard(invitationUrl)}
                 >
                   <Copy />
-                  Copy
+                  复制
                 </InputGroupButton>
               </InputGroupAddon>
             </InputGroup>

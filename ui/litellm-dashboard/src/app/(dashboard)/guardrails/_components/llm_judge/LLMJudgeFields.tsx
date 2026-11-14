@@ -106,11 +106,11 @@ const LLMJudgeFields: React.FC<LLMJudgeFieldsProps> = ({ availableModels, contro
               id={id}
               aria-invalid={ariaInvalid}
               aria-describedby={ariaDescribedBy}
-              placeholder="Select a model"
+              placeholder="选择模型"
               className="w-full"
             />
             <ComboboxContent>
-              <ComboboxEmpty>No matching models</ComboboxEmpty>
+              <ComboboxEmpty>没有匹配的模型</ComboboxEmpty>
               <ComboboxList>
                 {(model: string) => (
                   <ComboboxItem key={model} value={model} title={model}>

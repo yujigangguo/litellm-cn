@@ -103,7 +103,7 @@ export default function GithubCopilotConnectModal({
               <code data-testid="github-device-code" className="rounded-md bg-muted px-3 py-2 font-mono text-lg">
                 {state.userCode}
               </code>
-              <CopyButton value={state.userCode} label="Copy code" copiedLabel="Code copied" />
+              <CopyButton value={state.userCode} label="复制代码" copiedLabel="Code copied" />
             </div>
             <p className="text-sm text-muted-foreground">Waiting for you to approve the request on GitHub...</p>
           </div>
@@ -125,7 +125,7 @@ export default function GithubCopilotConnectModal({
           )}
           {state.kind === "connected" && (
             <Button variant="destructive" onClick={onDisconnect}>
-              Disconnect
+              断开
             </Button>
           )}
           <Button onClick={onClose}>{state.kind === "connected" ? "Done" : "关闭"}</Button>

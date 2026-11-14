@@ -42,8 +42,8 @@ interface DictFieldProps {
 }
 
 const BOOLEAN_ITEMS = [
-  { label: "True", value: true },
-  { label: "False", value: false },
+  { label: "是", value: true },
+  { label: "否", value: false },
 ];
 
 const isSecretKey = (fieldKey: string): boolean =>
@@ -71,8 +71,8 @@ const BooleanSelect: React.FC<{ control: GuardrailFieldControlProps; placeholder
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value={true}>True</SelectItem>
-        <SelectItem value={false}>False</SelectItem>
+        <SelectItem value={true}>是</SelectItem>
+        <SelectItem value={false}>否</SelectItem>
       </SelectContent>
     </Select>
   );
@@ -170,7 +170,7 @@ const DictField: React.FC<DictFieldProps> = ({ field, fullFieldKey, control, val
             className="text-destructive hover:text-destructive/80"
             onClick={() => removeEntry(entry.id, entry.key)}
           >
-            Remove
+            移除
           </Button>
         </div>
       ))}

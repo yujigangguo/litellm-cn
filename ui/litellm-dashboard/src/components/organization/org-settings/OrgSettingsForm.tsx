@@ -78,7 +78,7 @@ export const OrgSettingsForm = ({
   return (
     <form onSubmit={onSubmit} noValidate>
       <FieldGroup>
-        <FormField control={form.control} name="organization_alias" label="Organization Name">
+        <FormField control={form.control} name="organization_alias" label="组织名称">
           {({ ref, ...field }) => <Input {...field} ref={ref} />}
         </FormField>
 
@@ -97,7 +97,7 @@ export const OrgSettingsForm = ({
           {({ ref, ...field }) => <Input {...field} ref={ref} type="number" step="any" min={0} />}
         </FormField>
 
-        <FormField control={form.control} name="budget_duration" label="Reset Budget">
+        <FormField control={form.control} name="budget_duration" label="重置预算">
           {({ id, value, onChange, "aria-invalid": ariaInvalid, "aria-describedby": ariaDescribedBy }) => (
             <Select
               items={BUDGET_DURATION_OPTIONS}
@@ -126,7 +126,7 @@ export const OrgSettingsForm = ({
           {({ ref, ...field }) => <Input {...field} ref={ref} type="number" step={1} min={0} />}
         </FormField>
 
-        <FormField control={form.control} name="vector_stores" label="Vector Stores">
+        <FormField control={form.control} name="vector_stores" label="向量库">
           {(field) => (
             <VectorStoreSelector
               value={field.value}
@@ -148,7 +148,7 @@ export const OrgSettingsForm = ({
           )}
         </FormField>
 
-        <FormField control={form.control} name="metadata" label="Metadata">
+        <FormField control={form.control} name="metadata" label="元数据">
           {({ ref, ...field }) => <Textarea {...field} ref={ref} rows={4} />}
         </FormField>
       </FieldGroup>

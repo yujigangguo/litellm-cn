@@ -19,7 +19,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 const SEVERITY_LABELS: Record<UserBannerSeverity, string> = {
   info: "Info",
   warning: "Warning",
-  error: "Error",
+  error: "错误",
 };
 
 const SEVERITY_ITEMS = (Object.keys(SEVERITY_LABELS) as UserBannerSeverity[]).map((severity) => ({
@@ -97,7 +97,7 @@ function UserBannerSettingsForm({ persisted, isLoading, isPending, saveBanner }:
             </div>
 
             <div className="flex flex-col gap-2">
-              <Label htmlFor="user-banner-message">Message</Label>
+              <Label htmlFor="user-banner-message">消息</Label>
               <Textarea
                 id="user-banner-message"
                 value={draft.message}

@@ -258,7 +258,7 @@ const KeysPanel: React.FC<Props> = ({ accessToken, userId, premiumUser }) => {
                     </TableCell>
                     <TableCell>
                       {!record.expires ? (
-                        <span className="text-muted-foreground text-[13px]">Never</span>
+                        <span className="text-muted-foreground text-[13px]">永不过期</span>
                       ) : (
                         <Badge variant={expired ? "destructive" : "outline"}>
                           {expired ? "Expired" : formatExpiresUtc(record.expires)}

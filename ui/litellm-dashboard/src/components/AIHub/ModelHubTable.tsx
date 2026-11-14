@@ -83,7 +83,7 @@ function modelTableEmptyState(
     };
   }
   return models.length > 0
-    ? { title: "No matching models", body: "Adjust the filters to see more models." }
+    ? { title: "没有匹配的模型", body: "Adjust the filters to see more models." }
     : { title: "No models yet", body: "Models added to this proxy will appear here." };
 }
 
@@ -471,13 +471,13 @@ const ModelHubTable: React.FC<ModelHubTableProps> = ({
                 )}
               </div>
               <div className="flex items-center space-x-4">
-                <p>Model Hub URL:</p>
+                <p>模型中心 URL：</p>
                 <div className="flex items-center bg-border px-2 py-1 rounded-sm">
                   <p className="mr-2">{getUiPageUrl(`${getProxyBaseUrl()}/ui/model_hub_table`)}</p>
                   <button
                     onClick={() => void copyToClipboard(getUiPageUrl(`${getProxyBaseUrl()}/ui/model_hub_table`))}
                     className="p-1 hover:bg-accent rounded-sm transition-colors"
-                    title="Copy URL"
+                    title="复制 URL"
                   >
                     <Copy size={16} className="text-muted-foreground" />
                   </button>
@@ -498,16 +498,16 @@ const ModelHubTable: React.FC<ModelHubTableProps> = ({
             {!isChat && (
               <TabsList variant="line" className="mb-4 h-auto w-full justify-start rounded-none border-b p-0">
                 <TabsTrigger value="models" className="flex-none rounded-none px-4 py-2">
-                  Model Hub
+                  模型中心
                 </TabsTrigger>
                 <TabsTrigger value="agents" className="flex-none rounded-none px-4 py-2">
-                  Agent Hub
+                  助手中心
                 </TabsTrigger>
                 <TabsTrigger value="mcp" className="flex-none rounded-none px-4 py-2">
-                  MCP Hub
+                  MCP 中心
                 </TabsTrigger>
                 <TabsTrigger value="skills" className="flex-none rounded-none px-4 py-2">
-                  Skill Hub
+                  技能中心
                 </TabsTrigger>
               </TabsList>
             )}
@@ -528,7 +528,7 @@ const ModelHubTable: React.FC<ModelHubTableProps> = ({
                   {/* Header with Make Public Button */}
                   {publicPage == false && canModify && (
                     <div className="flex justify-end mb-4">
-                      <Button onClick={() => handleMakePublicPage()}>Select Models to Make Public</Button>
+                      <Button onClick={() => handleMakePublicPage()}>选择要公开的模型</Button>
                     </div>
                   )}
 
@@ -566,7 +566,7 @@ const ModelHubTable: React.FC<ModelHubTableProps> = ({
                 {!isChat && (
                   <div className="mt-4 text-center space-y-2">
                     <p className="text-sm text-muted-foreground">
-                      Showing {filteredData.length} of {modelHubData?.length || 0} models
+                      显示 {filteredData.length} of {modelHubData?.length || 0} models
                     </p>
                   </div>
                 )}
@@ -599,7 +599,7 @@ const ModelHubTable: React.FC<ModelHubTableProps> = ({
                         <InputGroupAddon align="inline-end">
                           <InputGroupButton
                             size="icon-xs"
-                            aria-label="Clear search"
+                            aria-label="清除搜索"
                             onClick={() => setAgentSearchTerm("")}
                           >
                             <X />
@@ -636,7 +636,7 @@ const ModelHubTable: React.FC<ModelHubTableProps> = ({
 
                 <div className="mt-4 text-center space-y-2">
                   <p className="text-sm text-muted-foreground">
-                    Showing {filteredAgentData.length} of {agentHubData?.length || 0} agents
+                    显示 {filteredAgentData.length} of {agentHubData?.length || 0} agents
                   </p>
                 </div>
               </TabsContent>
@@ -679,7 +679,7 @@ const ModelHubTable: React.FC<ModelHubTableProps> = ({
 
                 <div className="mt-4 text-center space-y-2">
                   <p className="text-sm text-muted-foreground">
-                    Showing {mcpHubData?.length || 0} MCP server{mcpHubData?.length !== 1 ? "s" : ""}
+                    显示 {mcpHubData?.length || 0} MCP server{mcpHubData?.length !== 1 ? "s" : ""}
                   </p>
                 </div>
               </TabsContent>
@@ -734,7 +734,7 @@ const ModelHubTable: React.FC<ModelHubTableProps> = ({
                     <p>{selectedModel.model_group}</p>
                   </div>
                   <div>
-                    <p className="font-medium">Mode:</p>
+                    <p className="font-medium">模式：</p>
                     <p>{displayMode(selectedModel.mode) ?? "Not specified"}</p>
                   </div>
                   <div>
@@ -749,7 +749,7 @@ const ModelHubTable: React.FC<ModelHubTableProps> = ({
                   </div>
                   {selectedModel.description && (
                     <div className="col-span-2">
-                      <p className="font-medium">Description:</p>
+                      <p className="font-medium">描述：</p>
                       <p className="mt-1">{selectedModel.description}</p>
                     </div>
                   )}
@@ -916,7 +916,7 @@ const ModelHubTable: React.FC<ModelHubTableProps> = ({
                   </div>
                 </div>
                 <div>
-                  <p className="font-medium">Description:</p>
+                  <p className="font-medium">描述：</p>
                   <p className="mt-1">{selectedAgent.description}</p>
                 </div>
               </div>
@@ -948,7 +948,7 @@ const ModelHubTable: React.FC<ModelHubTableProps> = ({
                         <Badge key={mode} variant="secondary">
                           {mode}
                         </Badge>
-                      )) || <p>Not specified</p>}
+                      )) || <p>未指定</p>}
                     </div>
                   </div>
                   <div>
@@ -958,7 +958,7 @@ const ModelHubTable: React.FC<ModelHubTableProps> = ({
                         <Badge key={mode} variant="outline">
                           {mode}
                         </Badge>
-                      )) || <p>Not specified</p>}
+                      )) || <p>未指定</p>}
                     </div>
                   </div>
                 </div>
@@ -989,7 +989,7 @@ const ModelHubTable: React.FC<ModelHubTableProps> = ({
                         <p className="text-sm mb-2">{skill.description}</p>
                         {skill.examples && skill.examples.length > 0 && (
                           <div>
-                            <p className="text-xs font-medium text-foreground">Examples:</p>
+                            <p className="text-xs font-medium text-foreground">示例：</p>
                             <div className="flex flex-wrap gap-1 mt-1">
                               {skill.examples.map((example, idx) => (
                                 <Badge key={idx} variant="outline">
@@ -1076,7 +1076,7 @@ const ModelHubTable: React.FC<ModelHubTableProps> = ({
                 </div>
                 {selectedMcpServer.description && (
                   <div className="mt-2">
-                    <p className="font-medium">Description:</p>
+                    <p className="font-medium">描述：</p>
                     <p className="mt-1">{selectedMcpServer.description}</p>
                   </div>
                 )}
@@ -1139,7 +1139,7 @@ const ModelHubTable: React.FC<ModelHubTableProps> = ({
 
               {/* Metadata */}
               <div>
-                <p className="text-lg font-semibold mb-4">Metadata</p>
+                <p className="text-lg font-semibold mb-4">元数据</p>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <p className="font-medium">Created By:</p>

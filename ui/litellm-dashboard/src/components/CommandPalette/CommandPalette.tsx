@@ -124,7 +124,7 @@ function CommandPaletteDialog({ setOpen }: { setOpen: (open: boolean) => void })
         title: key.key_alias || "Unnamed key",
         subtitle,
         icon: <KeyRound className="size-4" />,
-        typeLabel: "Key",
+        typeLabel: "密钥",
         key,
       };
     });
@@ -143,7 +143,7 @@ function CommandPaletteDialog({ setOpen }: { setOpen: (open: boolean) => void })
       title: `Filter the keys table for “${trimmedQuery}”`,
       subtitle: "Open Virtual Keys with this search applied",
       icon: <Search className="size-4" />,
-      typeLabel: "Action",
+      typeLabel: "操作",
     };
 
     return [

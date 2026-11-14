@@ -383,7 +383,7 @@ export function LogDetailsDrawer({
                 )}
                 {isSessionMode && sessionTruncated && (
                   <div className="mt-1 text-[11px] text-warning font-mono">
-                    Showing most recent {logsForList.length} of {sessionTotalCount}
+                    显示最近 {logsForList.length} / {sessionTotalCount} 条
                   </div>
                 )}
                 {isSessionMode && (
@@ -394,7 +394,7 @@ export function LogDetailsDrawer({
                   >
                     <TabsList className="w-full">
                       <TabsTrigger value="duration" className="text-[11px]">
-                        Duration
+                        耗时
                       </TabsTrigger>
                       <TabsTrigger value="start_time" className="text-[11px]">
                         Start time

@@ -18,6 +18,7 @@ import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/cva.config";
 import { uiHref } from "@/utils/uiHref";
 import { isProxyAdminRole } from "@/utils/roles";
+import { roleDisplayName } from "@/lib/role-display";
 import { ChevronsUpDown, Crown, IdCard, KeyRound, LogOut, Mail, ShieldCheck } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -151,7 +152,8 @@ const SidebarAccountMenu: React.FC<SidebarAccountMenuProps> = ({ onLogout, colla
   const initials = initialsFromIdentity(userEmail, userId);
   const hue = hueFromString(seed);
   const displayName = navAccountDisplayName(userEmail, userId);
-  const triggerLabel = `Account menu — ${userRole ?? "Unknown role"} — signed in as ${userEmail || userId || "unknown"}`;
+  const roleText = roleDisplayName(userRole);
+  const triggerLabel = `账户菜单 — ${roleText || "未知角色"} — 已登录为 ${userEmail || userId || "未知用户"}`;
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -172,7 +174,7 @@ const SidebarAccountMenu: React.FC<SidebarAccountMenuProps> = ({ onLogout, colla
           <>
             <span className="min-w-0 flex-1 leading-tight">
               <span className="block truncate text-[13px] font-medium text-sidebar-foreground">{displayName}</span>
-              {userRole && <span className="block truncate text-[11px] text-muted-foreground">{userRole}</span>}
+              {roleText && <span className="block truncate text-[11px] text-muted-foreground">{roleText}</span>}
             </span>
             <ChevronsUpDown size={16} strokeWidth={1.75} className="shrink-0 text-muted-foreground" aria-hidden />
           </>
@@ -224,13 +226,13 @@ const SidebarAccountMenu: React.FC<SidebarAccountMenuProps> = ({ onLogout, colla
               </Badge>
             )}
           </InfoRow>
-          <InfoRow icon={<ShieldCheck className="size-[17px]" />} label="Role">
-            <Badge variant="secondary">{userRole}</Badge>
+          <InfoRow icon={<ShieldCheck className="size-[17px]" />} label="角色">
+            <Badge variant="secondary">{roleText}</Badge>
           </InfoRow>
-          <InfoRow icon={<Mail className="size-[17px]" />} label="Email">
+          <InfoRow icon={<Mail className="size-[17px]" />} label="邮箱">
             <MonoValue value={userEmail} copyLabel="Copy email" />
           </InfoRow>
-          <InfoRow icon={<IdCard className="size-[17px]" />} label="User ID">
+          <InfoRow icon={<IdCard className="size-[17px]" />} label="用户 ID">
             <MonoValue value={userId} copyLabel="Copy user ID" />
           </InfoRow>
         </div>
@@ -251,7 +253,7 @@ const SidebarAccountMenu: React.FC<SidebarAccountMenuProps> = ({ onLogout, colla
           ))}
           {premiumUser === true && canUseLiteAdmin && (
             <div className="flex h-[38px] items-center justify-between gap-3 px-3">
-              <span className="text-[13px] text-foreground">Hide {ARIA_AGENT_LABEL}</span>
+              <span className="text-[13px] text-foreground">隐藏 {ARIA_AGENT_LABEL}</span>
               <Switch
                 size="sm"
                 checked={disableLiteAdmin}

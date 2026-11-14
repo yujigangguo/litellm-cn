@@ -162,7 +162,7 @@ export const KeyMetadataField = ({ form }: { form: KeyEditForm }) => (
   <FormField
     control={form.control}
     name="metadata"
-    label="Metadata"
+    label="元数据"
     description="Tags are managed by the Tags field above. A tags array typed here is moved to that field."
   >
     {(field) => (

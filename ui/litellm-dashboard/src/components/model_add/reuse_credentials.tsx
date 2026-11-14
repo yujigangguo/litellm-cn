@@ -88,7 +88,7 @@ const ReuseCredentialsModal: React.FC<ReuseCredentialsModalProps> = ({
                         href="https://github.com/BerriAI/litellm/issues"
                         className="text-sm text-primary underline-offset-4 hover:underline"
                       >
-                        Need Help?
+                        需要帮助？
                       </a>
                     }
                   />

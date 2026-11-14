@@ -102,7 +102,7 @@ const PatternModal: React.FC<PatternModalProps> = ({
           </div>
 
           <div>
-            <p className="font-semibold">Action</p>
+            <p className="font-semibold">操作</p>
             <p className="mt-1 mb-2 text-muted-foreground">
               Choose what action the guardrail should take when this pattern is detected
             </p>
@@ -111,7 +111,7 @@ const PatternModal: React.FC<PatternModalProps> = ({
               value={patternAction}
               onValueChange={(value: string | null) => value && onActionChange(value as "BLOCK" | "MASK")}
             >
-              <SelectTrigger className="w-full" aria-label="Action">
+              <SelectTrigger className="w-full" aria-label="操作">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -129,7 +129,7 @@ const PatternModal: React.FC<PatternModalProps> = ({
           <Button variant="outline" onClick={onCancel}>
             取消
           </Button>
-          <Button onClick={onAdd}>Add</Button>
+          <Button onClick={onAdd}>添加</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

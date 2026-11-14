@@ -35,7 +35,7 @@ export function IssueList({ id, validation }: { id: string; validation: PayloadV
     return null;
   }
   return (
-    <ul id={id} aria-label="Payload validation issues" className="grid max-h-36 gap-1 overflow-auto border-t px-3 py-2">
+    <ul id={id} aria-label="请求载荷校验问题" className="grid max-h-36 gap-1 overflow-auto border-t px-3 py-2">
       {validation.issues.map((issue, index) => (
         <li key={`${issue.path}-${index}`} className="flex items-start gap-1.5 text-xs">
           {issue.severity === "error" ? (

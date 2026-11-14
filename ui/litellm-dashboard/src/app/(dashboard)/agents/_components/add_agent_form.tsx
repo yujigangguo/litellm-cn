@@ -810,7 +810,7 @@ const AddAgentForm: React.FC<AddAgentFormProps> = ({ visible, onClose, accessTok
       <div className="mt-4">
         {agentType === CUSTOM_AGENT_TYPE ? (
           <FieldGroup>
-            <AgentFormField name="agent_name" label="Agent Name" rules={{ required: "Please enter an agent name" }}>
+            <AgentFormField name="agent_name" label="助手名称" rules={{ required: "Please enter an agent name" }}>
               {({ value, onChange, ref, ...control }) => (
                 <Input
                   {...control}
@@ -821,7 +821,7 @@ const AddAgentForm: React.FC<AddAgentFormProps> = ({ visible, onClose, accessTok
                 />
               )}
             </AgentFormField>
-            <AgentFormField name="description" label="Description">
+            <AgentFormField name="description" label="描述">
               {({ value, onChange, ref, ...control }) => (
                 <Textarea
                   {...control}
@@ -1062,7 +1062,7 @@ const AddAgentForm: React.FC<AddAgentFormProps> = ({ visible, onClose, accessTok
             {selectedLogo && currentStep < 1 && (
               <Logo src={selectedLogo} label="Agent" className="h-6 w-6 object-contain" />
             )}
-            <DialogTitle className="text-xl font-semibold text-foreground">Add New Agent</DialogTitle>
+            <DialogTitle className="text-xl font-semibold text-foreground">添加助手</DialogTitle>
           </div>
         </DialogHeader>
         <TooltipProvider>
@@ -1100,7 +1100,7 @@ const AddAgentForm: React.FC<AddAgentFormProps> = ({ visible, onClose, accessTok
                     {isSubmitting ? "Creating..." : "Create Agent →"}
                   </Button>
                 )}
-                {currentStep === 4 && <Button onClick={handleClose}>Done</Button>}
+                {currentStep === 4 && <Button onClick={handleClose}>完成</Button>}
               </div>
             </div>
           </div>

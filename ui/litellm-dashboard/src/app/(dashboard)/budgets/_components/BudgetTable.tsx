@@ -35,9 +35,9 @@ interface BudgetTableProps {
 const PAGE_SIZE_OPTIONS = [25, 50, 100];
 
 const FILTER_LABELS: Record<string, string> = {
-  budget_duration: "Reset",
-  max_budget: "Max Budget",
-  created_at: "Created",
+  budget_duration: "重置",
+  max_budget: "预算上限",
+  created_at: "创建时间",
 };
 
 const durationLabel = (value: string): string =>
@@ -147,7 +147,7 @@ function BudgetFilterFields({ get, set }: FilterDraft) {
 
   return (
     <>
-      <DataTableFilterField label="Reset">
+      <DataTableFilterField label="重置">
         <DurationFilter
           selected={(get("budget_duration") as string[] | undefined) ?? []}
           onChange={(selected) => set("budget_duration", selected)}
@@ -248,7 +248,7 @@ const BudgetTable: React.FC<BudgetTableProps> = ({ list, canModify, onEditClick,
             table={table}
             searchValue={list.searchValue}
             onSearchChange={list.onSearchChange}
-            searchPlaceholder="Search by budget ID…"
+            searchPlaceholder="按预算 ID 搜索…"
             onOpenFilters={() => setFiltersOpen(true)}
             onRefresh={list.refetch}
             isRefreshing={list.isFetching}

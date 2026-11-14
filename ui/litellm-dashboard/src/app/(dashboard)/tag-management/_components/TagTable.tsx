@@ -48,15 +48,15 @@ function TagFilters({ table }: { table: Table<Tag> }) {
   return (
     <div className="flex flex-wrap items-center gap-2">
       <Input
-        aria-label="Filter by tag name"
-        placeholder="Filter by tag name…"
+        aria-label="按标签名称筛选"
+        placeholder="按标签名称筛选…"
         className="h-8 w-56"
         value={(table.getColumn("name")?.getFilterValue() as string | undefined) ?? ""}
         onChange={(event) => table.getColumn("name")?.setFilterValue(event.target.value)}
       />
       <Input
-        aria-label="Filter by description"
-        placeholder="Filter by description…"
+        aria-label="按描述筛选"
+        placeholder="按描述筛选…"
         className="h-8 w-56"
         value={(table.getColumn("description")?.getFilterValue() as string | undefined) ?? ""}
         onChange={(event) => table.getColumn("description")?.setFilterValue(event.target.value)}

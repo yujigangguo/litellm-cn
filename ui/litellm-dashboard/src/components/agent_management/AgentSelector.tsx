@@ -65,7 +65,7 @@ const AgentSelector: React.FC<AgentSelectorProps> = ({
     ...accessGroups.map((group) => ({
       label: group,
       value: `group:${group}`,
-      description: "Access Group",
+      description: "访问组",
     })),
     ...agents.map((agent) => ({
       label: `${agent.agent_name || agent.agent_id}`,

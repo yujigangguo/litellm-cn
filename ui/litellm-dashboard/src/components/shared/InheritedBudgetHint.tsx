@@ -6,7 +6,7 @@ import type { Organization } from "@/components/networking";
 import { formatNumberWithCommas } from "@/utils/dataUtils";
 
 export interface InheritedBudgetGate {
-  scope: "Team" | "Team member" | "Organization" | "User";
+  scope: string;
   alias: string;
   maxBudget: number;
   budgetDuration: string | null;
@@ -52,7 +52,7 @@ export interface UserBudgetSource {
 const teamGate = (team: TeamBudgetSource | null | undefined): InheritedBudgetGate | null =>
   team && team.max_budget != null
     ? {
-        scope: "Team",
+        scope: "团队",
         alias: team.team_alias || team.team_id,
         maxBudget: team.max_budget,
         budgetDuration: team.budget_duration ?? null,
@@ -64,7 +64,7 @@ const organizationGate = (organization: OrganizationBudgetSource | null | undefi
     organization?.litellm_budget_table;
   return organization && budgetTable?.max_budget != null
     ? {
-        scope: "Organization",
+        scope: "组织",
         alias: organization.organization_alias || organization.organization_id,
         maxBudget: budgetTable.max_budget,
         budgetDuration: budgetTable.budget_duration ?? null,
@@ -75,7 +75,7 @@ const organizationGate = (organization: OrganizationBudgetSource | null | undefi
 const userGate = (user: UserBudgetSource | null | undefined): InheritedBudgetGate | null =>
   user && user.max_budget != null
     ? {
-        scope: "User",
+        scope: "用户",
         alias: user.user_alias || user.user_email || user.user_id,
         maxBudget: user.max_budget,
         budgetDuration: user.budget_duration ?? null,
@@ -114,7 +114,7 @@ export const teamMemberBudgetGate = (
   }
 
   return {
-    scope: "Team member",
+    scope: "团队成员",
     alias: `${memberLabel || userId} in ${teamInfo.team_info.team_alias || teamInfo.team_info.team_id}`,
     maxBudget: budgetRow.max_budget + activeIncrease(membershipBudget, now),
     budgetDuration: budgetRow.budget_duration ?? null,

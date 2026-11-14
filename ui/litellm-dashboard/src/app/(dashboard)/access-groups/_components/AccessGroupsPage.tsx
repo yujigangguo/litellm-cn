@@ -67,12 +67,12 @@ export function AccessGroupsPage() {
           <Boxes />
           访问组
         </PageHeaderTitle>
-        <PageHeaderDescription>Manage resource permissions for your organization</PageHeaderDescription>
+        <PageHeaderDescription>管理组织的资源权限</PageHeaderDescription>
         {canModify && (
           <PageHeaderControls>
             <Button onClick={() => setIsCreateModalVisible(true)}>
               <Plus className="size-4" />
-              Create Access Group
+              创建访问组
             </Button>
           </PageHeaderControls>
         )}
@@ -91,7 +91,7 @@ export function AccessGroupsPage() {
             />
             {searchText && (
               <InputGroupAddon align="inline-end">
-                <InputGroupButton size="icon-xs" aria-label="Clear search" onClick={() => setSearchText("")}>
+                <InputGroupButton size="icon-xs" aria-label="清除搜索" onClick={() => setSearchText("")}>
                   <X />
                 </InputGroupButton>
               </InputGroupAddon>
@@ -119,7 +119,7 @@ export function AccessGroupsPage() {
         resourceInformation={[
           { label: "ID", value: groupToDelete?.id, code: true },
           { label: "名称", value: groupToDelete?.name },
-          { label: "Description", value: groupToDelete?.description || "—" },
+          { label: "描述", value: groupToDelete?.description || "—" },
         ]}
         onCancel={() => setGroupToDelete(null)}
         onOk={() => {

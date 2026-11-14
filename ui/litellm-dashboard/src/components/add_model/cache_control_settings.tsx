@@ -30,7 +30,7 @@ export interface CacheControlInjectionPoint {
 
 export const NEW_CACHE_CONTROL_POINT: CacheControlInjectionPoint = { location: "message" };
 
-const LOCATION_ITEMS = [{ value: "message", label: "Message" }] as const;
+const LOCATION_ITEMS = [{ value: "message", label: "消息" }] as const;
 
 const ROLE_ITEMS = [
   { value: "user", label: "用户" },
@@ -99,7 +99,7 @@ const CacheControlInjectionPoints: React.FC<CacheControlInjectionPointsProps> = 
           </div>
 
           <div className="w-[180px] space-y-1">
-            <LabelWithHint label="Role" hint={CACHE_CONTROL_ROLE_HINT} />
+            <LabelWithHint label="角色" hint={CACHE_CONTROL_ROLE_HINT} />
             <Select
               items={ROLE_ITEMS}
               value={point.role ?? null}
@@ -111,7 +111,7 @@ const CacheControlInjectionPoints: React.FC<CacheControlInjectionPointsProps> = 
                 <SelectValue placeholder="Select a role" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value={null}>None</SelectItem>
+                <SelectItem value={null}>无</SelectItem>
                 {ROLE_ITEMS.map((item) => (
                   <SelectItem key={item.value} value={item.value}>
                     {item.label}
@@ -125,7 +125,7 @@ const CacheControlInjectionPoints: React.FC<CacheControlInjectionPointsProps> = 
             <LabelWithHint label="Index" hint={CACHE_CONTROL_INDEX_HINT} />
             <NumericalInput
               type="number"
-              placeholder="Optional"
+              placeholder="可选"
               step={1}
               value={point.index ?? ""}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>

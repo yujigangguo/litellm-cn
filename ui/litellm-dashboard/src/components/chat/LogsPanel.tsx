@@ -137,7 +137,7 @@ function LogsError({ onRetry }: { onRetry: () => void }) {
       <AlertCircle className="h-6 w-6 text-destructive/70" />
       Failed to load your logs
       <Button variant="outline" size="sm" onClick={onRetry}>
-        Retry
+        重试
       </Button>
     </div>
   );
@@ -153,7 +153,7 @@ function LogsTable({ rows, onRowClick }: { rows: LogRow[]; onRowClick: (row: Log
             <TableHead className="text-[11px] font-medium uppercase tracking-wide">模型</TableHead>
             <TableHead className="text-[11px] font-medium uppercase tracking-wide">状态</TableHead>
             <TableHead className="text-right text-[11px] font-medium uppercase tracking-wide">Token 数</TableHead>
-            <TableHead className="text-right text-[11px] font-medium uppercase tracking-wide">Duration</TableHead>
+            <TableHead className="text-right text-[11px] font-medium uppercase tracking-wide">耗时</TableHead>
             <TableHead className="text-right text-[11px] font-medium uppercase tracking-wide">成本</TableHead>
           </TableRow>
         </TableHeader>
@@ -217,13 +217,13 @@ function LogDetailDialog({
                 </div>
               </div>
               <div className="rounded-md border bg-card p-3">
-                <div className="mb-0.5 text-xs text-muted-foreground">Duration</div>
+                <div className="mb-0.5 text-xs text-muted-foreground">耗时</div>
                 <div className="text-sm text-foreground">{formatDuration(log)}</div>
               </div>
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <div className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Request</div>
+              <div className="text-xs font-medium uppercase tracking-wide text-muted-foreground">请求</div>
               {isLoading ? (
                 <Skeleton className="h-16 w-full" />
               ) : (
@@ -231,7 +231,7 @@ function LogDetailDialog({
               )}
             </div>
             <div className="flex flex-col gap-1.5">
-              <div className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Response</div>
+              <div className="text-xs font-medium uppercase tracking-wide text-muted-foreground">响应</div>
               {isLoading ? <Skeleton className="h-16 w-full" /> : <JsonBlock value={details?.response} />}
             </div>
           </div>
@@ -287,8 +287,8 @@ const LogsPanel: React.FC<Props> = ({ accessToken, userId }) => {
         <LogsTable rows={rows} onRowClick={setSelectedLog} />
         <div className="mt-3 flex items-center justify-between">
           <p className="m-0 text-xs text-muted-foreground">
-            {total.toLocaleString()} request{total === 1 ? "" : "s"}
-            {totalPages > 1 ? ` · Page ${page} of ${totalPages}` : ""}
+            {total.toLocaleString()} 条请求
+            {totalPages > 1 ? ` · 第 ${page} / ${totalPages} 页` : ""}
           </p>
           {totalPages > 1 && (
             <div className="flex gap-1">

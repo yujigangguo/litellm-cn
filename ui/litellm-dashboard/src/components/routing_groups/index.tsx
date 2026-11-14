@@ -123,7 +123,7 @@ const RoutingGroups: React.FC = () => {
               />
               {searchQuery && (
                 <InputGroupAddon align="inline-end">
-                  <InputGroupButton size="icon-xs" aria-label="Clear search" onClick={() => setSearchQuery("")}>
+                  <InputGroupButton size="icon-xs" aria-label="清除搜索" onClick={() => setSearchQuery("")}>
                     <X />
                   </InputGroupButton>
                 </InputGroupAddon>
@@ -144,7 +144,7 @@ const RoutingGroups: React.FC = () => {
                 Create Group
               </Button>
               <span className="text-sm whitespace-nowrap text-muted-foreground">
-                Showing {filteredGroups.length} {filteredGroups.length === 1 ? "result" : "results"}
+                显示 {filteredGroups.length} {filteredGroups.length === 1 ? "result" : "results"}
               </span>
             </div>
           </div>

@@ -262,7 +262,7 @@ export const CreateUserButton: React.FC<CreateuserProps> = ({
   );
 
   const metadataField = (
-    <FormField control={form.control} name="metadata" label="Metadata">
+    <FormField control={form.control} name="metadata" label="元数据">
       {({ ref, value, ...control }) => (
         <Textarea {...control} ref={ref} value={value ?? ""} rows={4} placeholder="Enter metadata as JSON" />
       )}
@@ -326,7 +326,7 @@ export const CreateUserButton: React.FC<CreateuserProps> = ({
   return (
     <>
       <Button type="button" onClick={() => setIsModalVisible(true)}>
-        + Invite User
+        + 邀请用户
       </Button>
       <Dialog open={isModalVisible} onOpenChange={(open) => !open && handleCancel()}>
         <DialogContent className="max-h-[calc(100dvh-2rem)] overflow-y-auto sm:max-w-[800px]">
@@ -352,7 +352,7 @@ export const CreateUserButton: React.FC<CreateuserProps> = ({
                 <FormField
                   control={form.control}
                   name="organization_ids"
-                  label="Organization"
+                  label="组织"
                   description="The user will be added to the selected organization(s)."
                 >
                   {({ id, value, onChange }) => (

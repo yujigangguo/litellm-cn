@@ -122,7 +122,7 @@ const EmailEventSettings: React.FC<EmailEventSettingsProps> = ({ accessToken }) 
 
         <div className="mt-6 flex gap-4">
           <Button onClick={handleSaveSettings} disabled={loading}>
-            Save Changes
+            保存更改
           </Button>
           <Button variant="secondary" onClick={handleResetSettings} disabled={loading}>
             Reset to Defaults

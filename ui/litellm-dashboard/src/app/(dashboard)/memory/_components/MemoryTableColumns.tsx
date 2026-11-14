@@ -82,7 +82,7 @@ export const getMemoryTableColumns = ({
     id: "key",
     accessorKey: "key",
     meta: { title: "名称" },
-    header: "Name",
+    header: "名称",
     size: 200,
     enableSorting: false,
     cell: ({ row }) => (
@@ -106,8 +106,8 @@ export const getMemoryTableColumns = ({
   {
     id: "user_id",
     accessorKey: "user_id",
-    meta: { title: "User ID" },
-    header: "User ID",
+    meta: { title: "用户 ID" },
+    header: "用户 ID",
     size: 160,
     enableSorting: false,
     cell: ({ row }) => {
@@ -119,7 +119,7 @@ export const getMemoryTableColumns = ({
     id: "team_id",
     accessorKey: "team_id",
     meta: { title: "团队 ID" },
-    header: "Team ID",
+    header: "团队 ID",
     size: 160,
     enableSorting: false,
     cell: ({ row }) => {
@@ -130,8 +130,8 @@ export const getMemoryTableColumns = ({
   {
     id: "updated_at",
     accessorKey: "updated_at",
-    meta: { title: "Updated" },
-    header: "Updated",
+    meta: { title: "更新时间" },
+    header: "更新时间",
     size: 170,
     enableSorting: false,
     cell: ({ row }) => <DateCell value={row.original.updated_at} />,

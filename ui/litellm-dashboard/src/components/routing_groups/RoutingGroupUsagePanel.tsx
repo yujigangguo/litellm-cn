@@ -73,7 +73,7 @@ export function RoutingGroupUsagePanel({ group, baseUrl }: RoutingGroupUsagePane
       <p className="mb-3 text-sm text-muted-foreground">
         {group.routing_strategy === "priority" ? (
           <>
-            Request <span className="font-medium text-foreground">{group.group_name}</span> to try eligible models in
+            请求 <span className="font-medium text-foreground">{group.group_name}</span> to try eligible models in
             priority order. Direct requests to a member model keep their existing routing behavior.
           </>
         ) : (

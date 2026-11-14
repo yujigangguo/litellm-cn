@@ -170,7 +170,7 @@ const AdditionalModelSettings: React.FC<AdditionalModelSettingsProps> = ({
                   rel="noopener noreferrer"
                   className="text-info hover:text-info/80"
                 >
-                  Learn more
+                  了解更多
                 </a>
               </p>
             </PopoverContent>

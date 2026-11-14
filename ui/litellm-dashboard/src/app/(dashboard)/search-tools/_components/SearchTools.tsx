@@ -225,7 +225,7 @@ const SearchTools: React.FC<SearchToolsProps> = ({ accessToken, userRole, userID
           )}
         </FormField>
 
-        <FormField control={form.control} name="description" label="Description">
+        <FormField control={form.control} name="description" label="描述">
           {({ ref, value, ...field }) => (
             <Textarea {...field} ref={ref} value={value ?? ""} rows={3} placeholder="Description of this search tool" />
           )}
@@ -288,7 +288,7 @@ const SearchTools: React.FC<SearchToolsProps> = ({ accessToken, userRole, userID
                   label: "供应商",
                   value: providerInfo?.ui_friendly_name || toolToDelete.litellm_params.search_provider,
                 },
-                { label: "Description", value: toolToDelete.search_tool_info?.description || "-" },
+                { label: "描述", value: toolToDelete.search_tool_info?.description || "-" },
               ]
             : []
         }
@@ -336,7 +336,7 @@ const SearchTools: React.FC<SearchToolsProps> = ({ accessToken, userRole, userID
         </DialogContent>
       </Dialog>
 
-      <h1 className="text-lg font-semibold text-foreground">Search Tools</h1>
+      <h1 className="text-lg font-semibold text-foreground">搜索工具</h1>
       <p className="mt-2 text-sm text-muted-foreground">Configure and manage your search providers</p>
       {isAdminRole(userRole) && (
         <Button className="mt-4 mb-4" variant="outline" onClick={() => setCreateModalVisible(true)}>

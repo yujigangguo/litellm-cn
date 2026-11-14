@@ -230,7 +230,7 @@ function FieldHelp({ label, text }: FieldHelpProps) {
           <span>
             {text}{" "}
             <a href={TEAM_ADMIN_FIELDS_DOCS_URL} target="_blank" rel="noopener noreferrer" className="underline">
-              Learn more
+              了解更多
             </a>
           </span>
         </TooltipContent>

@@ -144,7 +144,7 @@ export function ProjectBaseForm({ form, advancedOpen, onAdvancedOpenChange }: Pr
           </FormField>
         </div>
 
-        <FormField control={form.control} name="description" label="Description">
+        <FormField control={form.control} name="description" label="描述">
           {({ ref, ...field }) => (
             <Textarea
               {...field}
@@ -237,7 +237,7 @@ export function ProjectBaseForm({ form, advancedOpen, onAdvancedOpenChange }: Pr
               <ChevronDown
                 className={`size-4 text-muted-foreground transition-transform ${advancedOpen ? "" : "-rotate-90"}`}
               />
-              <span className="text-sm font-semibold text-foreground">Advanced Settings</span>
+              <span className="text-sm font-semibold text-foreground">高级设置</span>
             </button>
           }
         />
@@ -366,7 +366,7 @@ export function ProjectBaseForm({ form, advancedOpen, onAdvancedOpenChange }: Pr
 
           <Separator className="my-4" />
 
-          <p className="mb-3 text-sm font-semibold text-foreground">Metadata</p>
+          <p className="mb-3 text-sm font-semibold text-foreground">元数据</p>
           {metadata.fields.map((field, index) => (
             <div key={field.id} className="mb-2 flex items-start gap-2">
               <FormField control={form.control} name={`metadata.${index}.key`}>

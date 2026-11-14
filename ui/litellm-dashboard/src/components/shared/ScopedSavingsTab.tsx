@@ -81,7 +81,7 @@ const ScopedSavingsTab = ({ accessToken, scope, activity, entityType, scopeNote 
   return (
     <div className="w-full space-y-6">
       <div className="flex flex-wrap items-center justify-end gap-4">
-        <span className="text-sm text-muted-foreground">Spend is bucketed by UTC day</span>
+        <span className="text-sm text-muted-foreground">花费按 UTC 日期分桶</span>
         <AdvancedDatePicker value={dateValue} onValueChange={onDateChange} />
       </div>
 
@@ -100,13 +100,13 @@ const ScopedSavingsTab = ({ accessToken, scope, activity, entityType, scopeNote 
 
       <Card>
         <CardHeader>
-          <CardTitle>Savings</CardTitle>
+          <CardTitle>节省</CardTitle>
           <CardDescription>{savingsSubtitle}</CardDescription>
           <CardAction className="flex flex-wrap items-center justify-end gap-x-4 gap-y-2">
             <CustomLegend categories={SAVINGS_SERIES} colors={SAVINGS_COLORS} />
             <Tabs value={accumulation} onValueChange={(value) => setAccumulation(value as SavingsAccumulation)}>
               <TabsList>
-                <TabsTrigger value="cumulative">Cumulative</TabsTrigger>
+                <TabsTrigger value="cumulative">累计</TabsTrigger>
                 <TabsTrigger value="per-interval">{intervalLabel}</TabsTrigger>
               </TabsList>
             </Tabs>

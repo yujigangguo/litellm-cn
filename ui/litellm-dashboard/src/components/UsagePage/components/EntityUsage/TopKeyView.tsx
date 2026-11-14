@@ -111,7 +111,7 @@ const TopKeyView: React.FC<TopKeyViewProps> = ({ topKeys, teams, showTags = fals
   // Define columns for the table view
   const baseColumns = [
     {
-      header: "Key ID",
+      header: "密钥 ID",
       accessorKey: "api_key",
       meta: QUIET_HEADER,
       cell: (info: any) =>
@@ -122,7 +122,7 @@ const TopKeyView: React.FC<TopKeyViewProps> = ({ topKeys, teams, showTags = fals
         ),
     },
     {
-      header: "Key Alias",
+      header: "密钥别名",
       accessorKey: "key_alias",
       meta: QUIET_HEADER,
       cell: (info: any) => info.getValue() || "-",
@@ -130,7 +130,7 @@ const TopKeyView: React.FC<TopKeyViewProps> = ({ topKeys, teams, showTags = fals
     ...(topKeys.some((k) => k.user)
       ? [
           {
-            header: "User",
+            header: "用户",
             accessorKey: "user",
             meta: QUIET_HEADER,
             cell: (info: any) => info.getValue() || "-",
@@ -140,7 +140,7 @@ const TopKeyView: React.FC<TopKeyViewProps> = ({ topKeys, teams, showTags = fals
   ];
 
   const tagsColumn = {
-    header: "Tags",
+    header: "标签",
     accessorKey: "tags",
     meta: QUIET_HEADER,
     cell: (info: any) => {
@@ -199,7 +199,7 @@ const TopKeyView: React.FC<TopKeyViewProps> = ({ topKeys, teams, showTags = fals
   };
 
   const spendColumn = {
-    header: "Spend (USD)",
+    header: "花费（美元）",
     accessorKey: "spend",
     meta: { ...QUIET_HEADER, numeric: true },
     cell: (info: any) => <MoneyCell value={info.getValue()} decimals={2} />,
@@ -216,7 +216,7 @@ const TopKeyView: React.FC<TopKeyViewProps> = ({ topKeys, teams, showTags = fals
     <>
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
         <Segmented
-          label="Number of top keys to show"
+          label="展示的密钥数量"
           value={String(topKeysLimit)}
           options={LIMIT_OPTIONS}
           onChange={(limit) => setTopKeysLimit(Number(limit))}

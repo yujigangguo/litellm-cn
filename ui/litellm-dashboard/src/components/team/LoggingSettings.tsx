@@ -333,7 +333,7 @@ const LoggingSettings: React.FC<LoggingSettingsProps> = ({
                       className="w-5 h-5 object-contain"
                     />
                   )}
-                  <span className="text-sm font-medium">{callbackDisplayName || "New Integration"} Configuration</span>
+                  <span className="text-sm font-medium">{callbackDisplayName || "New Integration"} 配置</span>
                 </div>
                 <Button
                   variant="ghost"
@@ -343,7 +343,7 @@ const LoggingSettings: React.FC<LoggingSettingsProps> = ({
                   type="button"
                 >
                   <Trash2 />
-                  Remove
+                  移除
                 </Button>
               </div>
               <div className="space-y-4">

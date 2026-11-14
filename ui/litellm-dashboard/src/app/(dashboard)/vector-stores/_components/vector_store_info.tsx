@@ -222,10 +222,10 @@ const VectorStoreInfoView: React.FC<VectorStoreInfoViewProps> = ({
       <Tabs defaultValue="details">
         <TabsList variant="line" className="mb-6 h-auto w-full justify-start rounded-none p-0">
           <TabsTrigger value="details" className="flex-none rounded-none px-4 py-2">
-            Details
+            详情
           </TabsTrigger>
           <TabsTrigger value="test" className="flex-none rounded-none px-4 py-2">
-            Test Vector Store
+            测试向量库
           </TabsTrigger>
         </TabsList>
 
@@ -244,11 +244,11 @@ const VectorStoreInfoView: React.FC<VectorStoreInfoViewProps> = ({
                           {({ ref, ...field }) => <Input {...field} ref={ref} disabled />}
                         </FormField>
 
-                        <FormField control={form.control} name="vector_store_name" label="Vector Store Name">
+                        <FormField control={form.control} name="vector_store_name" label="向量库名称">
                           {({ ref, value, ...field }) => <Input {...field} ref={ref} value={value ?? ""} />}
                         </FormField>
 
-                        <FormField control={form.control} name="vector_store_description" label="Description">
+                        <FormField control={form.control} name="vector_store_description" label="描述">
                           {({ ref, value, ...field }) => <Textarea {...field} ref={ref} value={value ?? ""} rows={4} />}
                         </FormField>
 
@@ -338,7 +338,7 @@ const VectorStoreInfoView: React.FC<VectorStoreInfoViewProps> = ({
                         <Button type="button" variant="outline" onClick={() => setIsEditing(false)}>
                           取消
                         </Button>
-                        <Button type="submit">Save Changes</Button>
+                        <Button type="submit">保存更改</Button>
                       </div>
                     </form>
                   </TooltipProvider>
@@ -363,7 +363,7 @@ const VectorStoreInfoView: React.FC<VectorStoreInfoViewProps> = ({
                       <p>{vectorStoreDetails.vector_store_name || "-"}</p>
                     </div>
                     <div>
-                      <p className="font-medium">Description</p>
+                      <p className="font-medium">描述</p>
                       <p>{vectorStoreDetails.vector_store_description || "-"}</p>
                     </div>
                     <div>
@@ -383,7 +383,7 @@ const VectorStoreInfoView: React.FC<VectorStoreInfoViewProps> = ({
                       </div>
                     </div>
                     <div>
-                      <p className="font-medium">Metadata</p>
+                      <p className="font-medium">元数据</p>
                       <div className="bg-muted p-3 rounded-sm mt-2 font-mono text-xs overflow-auto max-h-48">
                         <pre>{metadataString}</pre>
                       </div>

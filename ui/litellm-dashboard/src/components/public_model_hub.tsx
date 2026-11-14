@@ -424,10 +424,10 @@ const PublicModelHub: React.FC<PublicModelHubProps> = ({ accessToken, isEmbedded
               <Tabs value={isChat ? "models" : activeTab} onValueChange={setActiveTab} className="public-hub-tabs">
                 {!isChat && (
                   <TabsList>
-                    <TabsTrigger value="models">Model Hub</TabsTrigger>
-                    {hasAgents && <TabsTrigger value="agents">Agent Hub</TabsTrigger>}
-                    {hasMcpServers && <TabsTrigger value="mcp">MCP Hub</TabsTrigger>}
-                    <TabsTrigger value="skills">Skill Hub</TabsTrigger>
+                    <TabsTrigger value="models">模型中心</TabsTrigger>
+                    {hasAgents && <TabsTrigger value="agents">助手中心</TabsTrigger>}
+                    {hasMcpServers && <TabsTrigger value="mcp">MCP 中心</TabsTrigger>}
+                    <TabsTrigger value="skills">技能中心</TabsTrigger>
                   </TabsList>
                 )}
 
@@ -459,7 +459,7 @@ const PublicModelHub: React.FC<PublicModelHubProps> = ({ accessToken, isEmbedded
                     <div className={isChat ? "chat-model-filter-search" : undefined}>
                       {!isChat && (
                         <div className="flex items-center space-x-2 mb-3">
-                          <p className="text-sm font-medium text-foreground">Search Models:</p>
+                          <p className="text-sm font-medium text-foreground">搜索模型：</p>
                           <Tooltip>
                             <TooltipTrigger render={<Info className="w-4 h-4 text-muted-foreground cursor-help" />} />
                             <TooltipContent side="top" className={portalClassName}>
@@ -474,8 +474,8 @@ const PublicModelHub: React.FC<PublicModelHubProps> = ({ accessToken, isEmbedded
                         {isChat ? (
                           <Input
                             type="text"
-                            placeholder="Search models"
-                            aria-label="Search models"
+                            placeholder="搜索模型"
+                            aria-label="搜索模型"
                             value={models.searchValue}
                             onChange={(e) => models.onSearchChange(e.target.value)}
                             className="pl-9"
@@ -554,7 +554,7 @@ const PublicModelHub: React.FC<PublicModelHubProps> = ({ accessToken, isEmbedded
                       </div>
                     )}
                     <div className={isChat ? "chat-model-filter-select min-w-0" : "min-w-0"}>
-                      {!isChat && <p className="text-sm font-medium mb-3 text-foreground">Mode:</p>}
+                      {!isChat && <p className="text-sm font-medium mb-3 text-foreground">模式：</p>}
                       <MultiSelect
                         options={modeOptions}
                         contentClassName={portalClassName}
@@ -669,7 +669,7 @@ const PublicModelHub: React.FC<PublicModelHubProps> = ({ accessToken, isEmbedded
 
                     <div className="mt-8 text-center">
                       <p className="text-sm text-muted-foreground">
-                        Showing {filteredAgentData.length} of {agentHubData?.length || 0} agents
+                        显示 {filteredAgentData.length} of {agentHubData?.length || 0} agents
                       </p>
                     </div>
                   </TabsContent>
@@ -738,7 +738,7 @@ const PublicModelHub: React.FC<PublicModelHubProps> = ({ accessToken, isEmbedded
 
                     <div className="mt-8 text-center">
                       <p className="text-sm text-muted-foreground">
-                        Showing {filteredMcpData.length} of {mcpHubData?.length || 0} MCP servers
+                        显示 {filteredMcpData.length} of {mcpHubData?.length || 0} MCP servers
                       </p>
                     </div>
                   </TabsContent>
@@ -788,7 +788,7 @@ const PublicModelHub: React.FC<PublicModelHubProps> = ({ accessToken, isEmbedded
                         <p>{selectedModel.model_group}</p>
                       </div>
                       <div>
-                        <p className="font-medium">Mode:</p>
+                        <p className="font-medium">模式：</p>
                         <p>{displayMode(selectedModel.mode) ?? "Not specified"}</p>
                       </div>
                       <div>
@@ -818,7 +818,7 @@ const PublicModelHub: React.FC<PublicModelHubProps> = ({ accessToken, isEmbedded
                       </div>
                       {selectedModel.description && (
                         <div className="col-span-2">
-                          <p className="font-medium">Description:</p>
+                          <p className="font-medium">描述：</p>
                           <p className="mt-1">{selectedModel.description}</p>
                         </div>
                       )}
@@ -953,7 +953,7 @@ const PublicModelHub: React.FC<PublicModelHubProps> = ({ accessToken, isEmbedded
                         onClick={() => copyToClipboard(usageExample(selectedModel))}
                         className="text-sm text-info hover:text-info/80 cursor-pointer"
                       >
-                        Copy to clipboard
+                        复制到剪贴板
                       </button>
                     </div>
                   </div>
@@ -1000,7 +1000,7 @@ const PublicModelHub: React.FC<PublicModelHubProps> = ({ accessToken, isEmbedded
                         <p>{selectedAgent.version}</p>
                       </div>
                       <div className="col-span-2">
-                        <p className="font-medium">Description:</p>
+                        <p className="font-medium">描述：</p>
                         <p>{selectedAgent.description}</p>
                       </div>
                       {selectedAgent.url && (
@@ -1200,7 +1200,7 @@ if _public_card.supports_authenticated_extended_card:
                           }}
                           className="text-sm text-info hover:text-info/80 cursor-pointer"
                         >
-                          Copy to clipboard
+                          复制到剪贴板
                         </button>
                       </div>
                     </div>
@@ -1257,7 +1257,7 @@ print(response.model_dump(mode='json', exclude_none=True))`;
                           }}
                           className="text-sm text-info hover:text-info/80 cursor-pointer"
                         >
-                          Copy to clipboard
+                          复制到剪贴板
                         </button>
                       </div>
                     </div>
@@ -1317,7 +1317,7 @@ print(response.model_dump(mode='json', exclude_none=True))`;
                         </Badge>
                       </div>
                       <div className="col-span-2">
-                        <p className="font-medium">Description:</p>
+                        <p className="font-medium">描述：</p>
                         <p>{selectedMcpServer.mcp_info?.description || "-"}</p>
                       </div>
                     </div>
@@ -1419,7 +1419,7 @@ if __name__ == "__main__":
                         }}
                         className="text-sm text-info hover:text-info/80 cursor-pointer"
                       >
-                        Copy to clipboard
+                        复制到剪贴板
                       </button>
                     </div>
                   </div>

@@ -75,7 +75,7 @@ export function FallbackGroupConfig({
           value={group.primaryModel}
           onValueChange={handlePrimaryChange}
           placeholder="Select primary model"
-          emptyText="No models found"
+          emptyText="未找到模型"
           disabled={disablePrimaryModel}
           className="h-12"
         />
@@ -116,7 +116,7 @@ export function FallbackGroupConfig({
               placeholder={
                 canAddMoreFallbacks ? "Select fallback models to add..." : `Maximum ${maxFallbacks} fallbacks reached`
               }
-              emptyText="No models found"
+              emptyText="未找到模型"
               disabled={!group.primaryModel}
               className="w-full"
             />

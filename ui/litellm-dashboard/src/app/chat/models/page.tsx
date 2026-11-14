@@ -12,7 +12,7 @@ export default function ChatModelsPage() {
     <div className="moyai-models-page">
       <div className="moyai-models-content">
         <header className="moyai-models-header">
-          <p className="text-xs font-medium text-muted-foreground">Model Hub</p>
+          <p className="text-xs font-medium text-muted-foreground">模型中心</p>
           <h1>模型</h1>
           <p className="text-sm text-muted-foreground">
             Find the right model. Explore providers, compare pricing, and see what each model can do.

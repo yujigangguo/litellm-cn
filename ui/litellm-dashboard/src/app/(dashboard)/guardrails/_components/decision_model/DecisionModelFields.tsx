@@ -50,7 +50,7 @@ const NoDecisionModels: React.FC<{ providerFilter: string | null }> = ({ provide
   return (
     <Alert variant="info" role="note" aria-label="No decision models">
       <Info />
-      <AlertTitle>No decision models yet</AlertTitle>
+      <AlertTitle>暂无决策模型</AlertTitle>
       <AlertDescription>
         <p>
           Add a decision model{source} to use this guardrail. A model shows up here once its mode is decisions.{" "}
@@ -138,7 +138,7 @@ const DecisionModelFields: React.FC<DecisionModelFieldsProps> = ({
               className="w-full"
             />
             <ComboboxContent>
-              <ComboboxEmpty>No matching models</ComboboxEmpty>
+              <ComboboxEmpty>没有匹配的模型</ComboboxEmpty>
               <ComboboxList>
                 {(model: string) => {
                   const provider = providerByModel.get(model);
@@ -203,7 +203,7 @@ const DecisionModelFields: React.FC<DecisionModelFieldsProps> = ({
               </div>
               <div className="flex items-end gap-6">
                 <div className="w-32">
-                  <span className="mb-1 block text-xs font-medium text-muted-foreground">Action</span>
+                  <span className="mb-1 block text-xs font-medium text-muted-foreground">操作</span>
                   <Select
                     items={ACTION_ITEMS}
                     value={check.action}
@@ -224,7 +224,7 @@ const DecisionModelFields: React.FC<DecisionModelFieldsProps> = ({
                   </Select>
                 </div>
                 <div className="w-56">
-                  <span className="mb-1 block text-xs font-medium text-muted-foreground">Threshold</span>
+                  <span className="mb-1 block text-xs font-medium text-muted-foreground">阈值</span>
                   <div className="flex h-9 items-center">
                     <ThresholdSlider
                       aria-label={`Question ${position} threshold`}

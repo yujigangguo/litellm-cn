@@ -379,7 +379,7 @@ export const StartForm: React.FC = () => {
               )}
             </div>
           </Field>
-          <Field label="Duration">
+          <Field label="耗时">
             <Select value={durationDays} onValueChange={(v: string | null) => setDurationDays(v ?? "7")}>
               <SelectTrigger className="w-full">
                 <SelectValue>{DURATION_OPTIONS.find((o) => o.value === durationDays)?.label}</SelectValue>

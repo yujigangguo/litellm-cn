@@ -213,7 +213,7 @@ const MemberModal = <T extends BaseMember>({
         <form onSubmit={form.handleSubmit(handleSubmit)}>
           <FieldGroup>
             {config.showEmail && (
-              <FormField control={form.control} name="user_email" label="Email">
+              <FormField control={form.control} name="user_email" label="邮箱">
                 {({ ref, value, onChange, ...rest }) => (
                   <Input
                     {...rest}
@@ -231,7 +231,7 @@ const MemberModal = <T extends BaseMember>({
             )}
 
             {config.showUserId && (
-              <FormField control={form.control} name="user_id" label="User ID">
+              <FormField control={form.control} name="user_id" label="用户 ID">
                 {({ ref, value, onChange, ...rest }) => (
                   <Input
                     {...rest}
@@ -249,7 +249,7 @@ const MemberModal = <T extends BaseMember>({
               name="role"
               label={
                 <span className="flex items-center gap-2">
-                  <span>Role</span>
+                  <span>角色</span>
                   {mode === "edit" && initialData && (
                     <span className="text-sm text-muted-foreground">(Current: {getRoleLabel(initialData.role)})</span>
                   )}

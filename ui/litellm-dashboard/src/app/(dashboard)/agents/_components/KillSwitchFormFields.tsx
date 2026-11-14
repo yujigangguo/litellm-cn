@@ -145,7 +145,7 @@ const KillSwitchFormFields = () => (
       placeholder="https://example.com/hooks/kill-agent"
     />
 
-    <AgentFormField name="kill_switch.method" label="Method">
+    <AgentFormField name="kill_switch.method" label="方法">
       {({ value, onChange, ref: _ref, ...control }) => (
         <Select value={typeof value === "string" ? value : "POST"} onValueChange={onChange}>
           <SelectTrigger {...control} className="w-full">
@@ -163,7 +163,7 @@ const KillSwitchFormFields = () => (
     </AgentFormField>
 
     <Field>
-      <FieldTitle>Headers</FieldTitle>
+      <FieldTitle>请求头</FieldTitle>
       <KeyValueFieldArray
         name="kill_switch.headers"
         addLabel="Add Header"

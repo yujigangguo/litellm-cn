@@ -13,6 +13,7 @@ import {
 import { navAccountDisplayName } from "@/components/Navbar/navDisplayName";
 import { uiHref } from "@/utils/uiHref";
 import { isProxyAdminRole } from "@/utils/roles";
+import { roleDisplayName } from "@/lib/role-display";
 import { ChevronDown, ChevronsUpDown, Crown, KeyRound, LogOut, Mail, ShieldCheck, User } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -119,7 +120,7 @@ const UserDropdown: React.FC<UserDropdownProps> = ({ onLogout, variant = "navbar
       <div className="flex w-full items-center justify-between gap-2">
         <div className="flex items-center gap-2">
           <User className="size-4" />
-          <span className="text-muted-foreground">User ID</span>
+          <span className="text-muted-foreground">用户 ID</span>
         </div>
         <div className="flex items-center gap-1">
           <span className="max-w-[150px] truncate" title={userId || "-"}>
@@ -131,9 +132,9 @@ const UserDropdown: React.FC<UserDropdownProps> = ({ onLogout, variant = "navbar
       <div className="flex w-full items-center justify-between gap-2">
         <div className="flex items-center gap-2">
           <ShieldCheck className="size-4" />
-          <span className="text-muted-foreground">Role</span>
+          <span className="text-muted-foreground">角色</span>
         </div>
-        <span>{userRole}</span>
+        <span>{roleDisplayName(userRole)}</span>
       </div>
       <Separator className="my-2" />
       <div className="flex w-full items-center justify-between gap-2">
@@ -207,7 +208,7 @@ const UserDropdown: React.FC<UserDropdownProps> = ({ onLogout, variant = "navbar
       </div>
       {premiumUser === true && canUseLiteAdmin && (
         <div className="flex w-full items-center justify-between gap-2">
-          <span className="text-muted-foreground">Hide {ARIA_AGENT_LABEL}</span>
+          <span className="text-muted-foreground">隐藏 {ARIA_AGENT_LABEL}</span>
           <Switch
             size="sm"
             checked={disableLiteAdmin}
@@ -223,6 +224,7 @@ const UserDropdown: React.FC<UserDropdownProps> = ({ onLogout, variant = "navbar
   const initials = initialsFromIdentity(userEmail, userId);
   const hue = hueFromString(seed);
   const displayName = navAccountDisplayName(userEmail, userId);
+  const roleText = roleDisplayName(userRole);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -235,7 +237,7 @@ const UserDropdown: React.FC<UserDropdownProps> = ({ onLogout, variant = "navbar
                 "flex w-full items-center rounded-lg border border-transparent transition-colors hover:bg-sidebar-accent",
                 collapsed ? "justify-center px-0 py-1" : "gap-2.5 px-2 py-1.5 text-left",
               )}
-              aria-label={`Account menu — ${userRole ?? "Unknown role"} — signed in as ${userEmail || userId || "unknown"}`}
+              aria-label={`账户菜单 — ${roleText || "未知角色"} — 已登录为 ${userEmail || userId || "未知用户"}`}
               aria-haspopup="dialog"
               title={collapsed ? displayName : undefined}
             />
@@ -250,7 +252,7 @@ const UserDropdown: React.FC<UserDropdownProps> = ({ onLogout, variant = "navbar
             <>
               <span className="min-w-0 flex-1 leading-tight">
                 <span className="block truncate text-[13px] font-medium text-sidebar-foreground">{displayName}</span>
-                {userRole && <span className="block truncate text-[11px] text-muted-foreground">{userRole}</span>}
+                {roleText && <span className="block truncate text-[11px] text-muted-foreground">{roleText}</span>}
               </span>
               <ChevronsUpDown size={16} strokeWidth={1.75} className="shrink-0 text-muted-foreground" aria-hidden />
             </>
@@ -262,7 +264,7 @@ const UserDropdown: React.FC<UserDropdownProps> = ({ onLogout, variant = "navbar
             <button
               type="button"
               className="flex! max-w-[min(200px,34vw)] items-center gap-2 rounded-md! py-0.5! pl-1! pr-2! transition-colors hover:bg-accent!"
-              aria-label={`Account menu — ${userRole ?? "Unknown role"} — signed in as ${userEmail || userId || "unknown"}`}
+              aria-label={`账户菜单 — ${roleText || "未知角色"} — 已登录为 ${userEmail || userId || "未知用户"}`}
               aria-haspopup="dialog"
             />
           }

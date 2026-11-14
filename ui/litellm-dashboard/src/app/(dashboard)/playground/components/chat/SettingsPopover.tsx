@@ -78,7 +78,7 @@ function TagField({
               ) : (
                 <>
                   <Plus />
-                  Add {tag}
+                  添加 {tag}
                 </>
               )}
             </ComboboxItem>
@@ -148,7 +148,7 @@ function ProxyBaseUrlField({
         <FieldLabel htmlFor="playground-base-url">Proxy base URL</FieldLabel>
         {value ? (
           <Button variant="link" size="xs" className="h-auto p-0" onClick={() => onChange("")}>
-            Clear
+            清除
           </Button>
         ) : (
           suggested && (
@@ -187,7 +187,7 @@ function TemperatureInput({ value, onChange }: { value: number | null; onChange:
     <Input
       aria-label="Temperature value"
       inputMode="decimal"
-      placeholder="Default"
+      placeholder="默认"
       value={draft ?? value?.toString() ?? ""}
       onChange={(event) => edit(event.target.value)}
       onBlur={() => setDraft(null)}
@@ -233,7 +233,7 @@ function SamplingFields({
             const parsed = Number.parseInt(event.target.value, 10);
             update({ maxTokens: Number.isFinite(parsed) && parsed > 0 ? parsed : null });
           }}
-          placeholder="Default"
+          placeholder="默认"
           className="h-8 w-24"
         />
       </Field>

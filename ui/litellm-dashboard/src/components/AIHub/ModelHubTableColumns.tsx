@@ -71,7 +71,7 @@ function ModelHubRowActions({ model, onModelClick }: ModelHubRowActionsProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        aria-label="Open model actions"
+        aria-label="打开模型操作"
         data-testid={`model-hub-actions-${model.model_group}`}
         className={cn(buttonVariants({ variant: "ghost", size: "icon-sm" }), "text-muted-foreground")}
       >
@@ -163,8 +163,8 @@ export const getModelHubTableColumns = ({
     {
       id: "mode",
       accessorFn: (row) => (row.mode ? displayMode(row.mode) : ""),
-      meta: { title: "Mode", className: "hidden lg:table-cell" },
-      header: ({ column }) => <DataTableSortHeader column={column} title="Mode" />,
+      meta: { title: "模式", className: "hidden lg:table-cell" },
+      header: ({ column }) => <DataTableSortHeader column={column} title="模式" />,
       size: 110,
       enableSorting: true,
       sortingFn: "alphanumeric",
@@ -202,8 +202,8 @@ export const getModelHubTableColumns = ({
     {
       id: "input_cost_per_token",
       accessorKey: "input_cost_per_token",
-      meta: { title: "Cost/1M", skeleton: "twoLine", numeric: true },
-      header: ({ column }) => <DataTableSortHeader column={column} title="Cost/1M" />,
+      meta: { title: "成本/百万 Token", skeleton: "twoLine", numeric: true },
+      header: ({ column }) => <DataTableSortHeader column={column} title="成本/百万 Token" />,
       size: 110,
       enableSorting: true,
       sortingFn: (rowA, rowB) => {
@@ -225,8 +225,8 @@ export const getModelHubTableColumns = ({
     },
     {
       id: "capabilities",
-      meta: { title: "Features", skeleton: "chips", className: showProviderLogos ? "hidden md:table-cell" : undefined },
-      header: "Features",
+      meta: { title: "功能", skeleton: "chips", className: showProviderLogos ? "hidden md:table-cell" : undefined },
+      header: "功能",
       size: 220,
       enableSorting: false,
       cell: ({ row }) => {
@@ -248,7 +248,7 @@ export const getModelHubTableColumns = ({
     {
       id: "custom_tags",
       meta: { title: "标签", skeleton: "chips" },
-      header: "Tags",
+      header: "标签",
       size: 160,
       enableSorting: false,
       cell: ({ row }) => {
@@ -262,8 +262,8 @@ export const getModelHubTableColumns = ({
     {
       id: "is_public_model_group",
       accessorKey: "is_public_model_group",
-      meta: { title: "Public", skeleton: "badge", className: "hidden md:table-cell" },
-      header: ({ column }) => <DataTableSortHeader column={column} title="Public" />,
+      meta: { title: "公开", skeleton: "badge", className: "hidden md:table-cell" },
+      header: ({ column }) => <DataTableSortHeader column={column} title="公开" />,
       size: 100,
       enableSorting: true,
       sortingFn: (rowA, rowB) => {
@@ -273,9 +273,9 @@ export const getModelHubTableColumns = ({
       },
       cell: ({ row }) =>
         row.original.is_public_model_group === true ? (
-          <StatusBadge tone="success" label="Yes" />
+          <StatusBadge tone="success" label="是" />
         ) : (
-          <StatusBadge tone="neutral" label="No" />
+          <StatusBadge tone="neutral" label="否" />
         ),
     },
     {

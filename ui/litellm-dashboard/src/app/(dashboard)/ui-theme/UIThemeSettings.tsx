@@ -125,7 +125,7 @@ const UIThemeSettings: React.FC<UIThemeSettingsProps> = ({ userID, userRole, acc
   return (
     <div className="w-full mx-auto max-w-4xl px-6 py-8">
       <div className="mb-8">
-        <h1 className="mb-2 text-2xl font-bold">UI Theme Customization</h1>
+        <h1 className="mb-2 text-2xl font-bold">UI 主题定制</h1>
         <p className="text-sm text-muted-foreground">
           Customize your LiteLLM admin dashboard with a custom logo and favicon.
         </p>
@@ -134,7 +134,7 @@ const UIThemeSettings: React.FC<UIThemeSettingsProps> = ({ userID, userRole, acc
         <CardContent className="space-y-6">
           <div>
             <Label htmlFor="ui-theme-logo-url" className="mb-2">
-              Custom Logo URL
+              自定义 Logo URL
             </Label>
             <Input
               id="ui-theme-logo-url"
@@ -146,12 +146,12 @@ const UIThemeSettings: React.FC<UIThemeSettingsProps> = ({ userID, userRole, acc
               }}
             />
             <p className="mt-1 text-xs text-muted-foreground">
-              Enter a URL for your custom logo or leave empty for default
+              输入自定义 Logo 的 URL，留空使用默认
             </p>
           </div>
           <div>
             <Label htmlFor="ui-theme-logo-url-dark" className="mb-2">
-              Custom Logo URL (dark mode)
+              自定义 Logo URL（深色模式）
             </Label>
             <Input
               id="ui-theme-logo-url-dark"
@@ -168,7 +168,7 @@ const UIThemeSettings: React.FC<UIThemeSettingsProps> = ({ userID, userRole, acc
           </div>
           <div>
             <Label htmlFor="ui-theme-favicon-url" className="mb-2">
-              Custom Favicon URL
+              自定义网站图标 URL
             </Label>
             <Input
               id="ui-theme-favicon-url"
@@ -186,11 +186,11 @@ const UIThemeSettings: React.FC<UIThemeSettingsProps> = ({ userID, userRole, acc
           <div className="flex gap-3 pt-4">
             <Button onClick={handleSave} disabled={loading}>
               {loading && <UiLoadingSpinner className="size-4" />}
-              Save Changes
+              保存更改
             </Button>
             <Button variant="outline" onClick={handleReset} disabled={loading}>
               {loading && <UiLoadingSpinner className="size-4" />}
-              Reset to Default
+              恢复默认
             </Button>
           </div>
         </CardContent>

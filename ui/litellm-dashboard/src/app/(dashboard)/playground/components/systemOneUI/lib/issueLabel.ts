@@ -1,11 +1,11 @@
 const TOP_LEVEL: Record<string, string> = {
   state: "Input",
-  input: "Input",
+  input: "输入",
   model: "Model",
   questions: "Questions",
   safety_identifier: "Safety identifier",
-  root: "Request",
-  syntax: "Request",
+  root: "请求",
+  syntax: "请求",
 };
 
 const QUESTION_FIELD: Record<string, string> = {

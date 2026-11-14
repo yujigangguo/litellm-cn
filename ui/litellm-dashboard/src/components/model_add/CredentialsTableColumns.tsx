@@ -137,7 +137,7 @@ export const getCredentialsTableColumns = ({
       id: "provider",
       accessorKey: "credential_info.custom_llm_provider",
       meta: { title: "供应商" },
-      header: "Provider",
+      header: "供应商",
       size: 320,
       enableSorting: false,
       cell: ({ row }) => (
@@ -150,13 +150,13 @@ export const getCredentialsTableColumns = ({
     {
       id: "source",
       accessorFn: (row) => row.source ?? "db",
-      meta: { title: "Source" },
-      header: "Source",
+      meta: { title: "来源" },
+      header: "来源",
       size: 140,
       enableSorting: false,
       cell: ({ row }) =>
         row.original.source === "config" ? (
-          <StatusBadge tone="neutral" label="Config" />
+          <StatusBadge tone="neutral" label="配置" />
         ) : (
           <StatusBadge tone="info" label="DB" />
         ),

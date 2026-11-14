@@ -103,7 +103,7 @@ const ProviderMarginTable: React.FC<ProviderMarginTableProps> = ({
       data={data}
       columns={[
         {
-          header: "Provider",
+          header: "供应商",
           cell: (row) => {
             if (row.provider === "global") {
               return (
@@ -187,7 +187,7 @@ const ProviderMarginTable: React.FC<ProviderMarginTableProps> = ({
           width: "350px",
         },
         {
-          header: "Actions",
+          header: "操作",
           cell: (row) => {
             const displayName = marginRowDisplayName(row.provider);
             return (

@@ -21,7 +21,7 @@ export default function BackgroundChatSettings() {
       <div role="alert" className="text-sm text-destructive">
         Could not load background chat settings.
         <Button variant="ghost" size="sm" onClick={() => void query.refetch()}>
-          Retry
+          重试
         </Button>
       </div>
     );

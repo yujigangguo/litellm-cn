@@ -148,7 +148,7 @@ export default function PluginSettings() {
   return (
     <Card>
       <CardHeader>
-        <h4 className="text-base font-semibold text-foreground">Plugins</h4>
+        <h4 className="text-base font-semibold text-foreground">插件</h4>
         <p className="text-sm text-foreground">
           Register external services as plugins. Once added, users can toggle to the plugin from the mode switcher in
           the top-left of the sidebar.
@@ -168,7 +168,7 @@ export default function PluginSettings() {
           <TableHeader>
             <TableRow>
               <TableHead>名称</TableHead>
-              <TableHead>Display Name</TableHead>
+              <TableHead>显示名称</TableHead>
               <TableHead>URL</TableHead>
               <TableHead>Plugin Key</TableHead>
               <TableHead>操作</TableHead>
@@ -193,7 +193,7 @@ export default function PluginSettings() {
               >
                 {({ ref, ...field }) => <Input {...field} ref={ref} placeholder="litellm-platform-plugin" />}
               </FormField>
-              <FormField control={form.control} name="display_name" label="Display Name">
+              <FormField control={form.control} name="display_name" label="显示名称">
                 {({ ref, ...field }) => <Input {...field} ref={ref} placeholder="Agent Control Plane" />}
               </FormField>
               <FormField control={form.control} name="url" label="URL" description="Base URL of the plugin service">

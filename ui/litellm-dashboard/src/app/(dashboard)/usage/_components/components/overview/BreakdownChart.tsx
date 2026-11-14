@@ -63,7 +63,7 @@ export function BreakdownControls({
   return (
     <div className="flex flex-wrap items-center gap-2">
       <Segmented
-        label="Metric"
+        label="指标"
         value={state.metric}
         options={METRIC_OPTIONS}
         onChange={(metric) => onChange({ ...state, metric })}

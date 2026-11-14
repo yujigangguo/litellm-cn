@@ -59,8 +59,8 @@ export const getAgentsTableColumns = ({
   {
     id: "agent_name",
     accessorKey: "agent_name",
-    meta: { title: "Agent Name" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Agent Name" />,
+    meta: { title: "助手名称" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="助手名称" />,
     size: 200,
     enableSorting: true,
     cell: ({ row }) => {
@@ -75,8 +75,8 @@ export const getAgentsTableColumns = ({
   {
     id: "agent_id",
     accessorKey: "agent_id",
-    meta: { title: "Agent ID" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Agent ID" />,
+    meta: { title: "助手 ID" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="助手 ID" />,
     size: 200,
     enableSorting: true,
     cell: ({ row }) => (
@@ -99,13 +99,13 @@ export const getAgentsTableColumns = ({
   {
     id: "model",
     meta: { title: "模型" },
-    header: "Model",
+    header: "模型",
     size: 170,
     enableSorting: false,
     cell: ({ row }) => {
       const model = row.original.litellm_params?.model;
       if (!model) {
-        return <span className="text-muted-foreground">N/A</span>;
+        return <span className="text-muted-foreground">不适用</span>;
       }
       return (
         <Badge variant="outline" className="max-w-40 font-normal">
@@ -131,14 +131,14 @@ export const getAgentsTableColumns = ({
   {
     id: "status",
     meta: { title: "状态" },
-    header: "Status",
+    header: "状态",
     size: 130,
     enableSorting: false,
     cell: ({ row }) => {
       const hasKeys = (row.original.keys?.length ?? 0) > 0;
       if (row.original.jwt_auth_configured) return <StatusBadge tone="success" label="JWT configured" />;
       return hasKeys ? (
-        <StatusBadge tone="success" label="Active" />
+        <StatusBadge tone="success" label="启用" />
       ) : (
         <StatusBadge tone="warning" label="Needs Setup" />
       );

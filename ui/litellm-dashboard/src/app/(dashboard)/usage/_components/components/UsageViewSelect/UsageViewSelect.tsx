@@ -42,7 +42,7 @@ const OPTIONS: OptionConfig[] = [
   {
     value: "global",
     label: "全局用量",
-    showForAdmin: "Global Usage",
+    showForAdmin: "全局用量",
     showForNonAdmin: "Your Usage",
     description: "View usage across all resources",
     descriptionForAdmin: "View usage across all resources",

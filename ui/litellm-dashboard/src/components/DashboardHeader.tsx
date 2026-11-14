@@ -98,7 +98,7 @@ export function DashboardHeader({
           <NotificationsBell accessToken={accessToken} />
           <Popover open={!isDesktop && mobileToolsOpen} onOpenChange={setMobileToolsOpen}>
             <PopoverTrigger
-              render={<Button variant="ghost" size="icon" className="size-11" aria-label="More options" />}
+              render={<Button variant="ghost" size="icon" className="size-11" aria-label="更多选项" />}
             >
               <Ellipsis />
             </PopoverTrigger>

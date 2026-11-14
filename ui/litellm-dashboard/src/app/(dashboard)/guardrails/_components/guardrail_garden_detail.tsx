@@ -27,12 +27,12 @@ const GuardrailDetailView: React.FC<GuardrailDetailViewProps> = ({ card, onBack,
   const [activeTab, setActiveTab] = useState("overview");
 
   const detailRows = [
-    { property: "Provider", value: CATEGORY_LABELS[card.category].provider },
+    { property: "供应商", value: CATEGORY_LABELS[card.category].provider },
     ...(card.subcategory ? [{ property: "Subcategory", value: card.subcategory }] : []),
     ...(card.category === "decision_model"
-      ? [{ property: "Cost", value: "Billed per call by the decision model provider" }]
+      ? [{ property: "成本", value: "Billed per call by the decision model provider" }]
       : []),
-    ...(card.category === "litellm" ? [{ property: "Cost", value: "$0 / request" }] : []),
+    ...(card.category === "litellm" ? [{ property: "成本", value: "$0 / request" }] : []),
     ...(card.category === "litellm" ? [{ property: "External Dependencies", value: "None" }] : []),
     ...(card.category === "litellm" ? [{ property: "Latency", value: card.eval?.latency || "<1ms" }] : []),
   ];
@@ -130,7 +130,7 @@ const GuardrailDetailView: React.FC<GuardrailDetailViewProps> = ({ card, onBack,
           <div className="w-60 shrink-0">
             {/* Guardrail ID */}
             <div className="mb-7">
-              <div className="mb-1 text-xs text-muted-foreground">Guardrail ID</div>
+              <div className="mb-1 text-xs text-muted-foreground">防护规则 ID</div>
               <div className="break-all text-[13px] text-foreground">litellm/{card.id}</div>
             </div>
 
@@ -166,7 +166,7 @@ const GuardrailDetailView: React.FC<GuardrailDetailViewProps> = ({ card, onBack,
           <table className="w-full max-w-[560px] border-collapse text-sm">
             <thead>
               <tr className="border-b border-border bg-muted">
-                <th className="px-4 py-3 text-left font-medium text-muted-foreground">Metric</th>
+                <th className="px-4 py-3 text-left font-medium text-muted-foreground">指标</th>
                 <th className="px-4 py-3 text-left font-medium text-muted-foreground">Value</th>
               </tr>
             </thead>

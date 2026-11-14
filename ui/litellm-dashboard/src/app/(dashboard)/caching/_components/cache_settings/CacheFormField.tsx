@@ -111,7 +111,7 @@ const CacheFormField: React.FC<CacheFormFieldProps> = ({ field, embeddingModels,
                 <ComboboxClear />
               </ComboboxInput>
               <ComboboxContent>
-                <ComboboxEmpty>No models found</ComboboxEmpty>
+                <ComboboxEmpty>未找到模型</ComboboxEmpty>
                 <ComboboxList>
                   {(model: EmbeddingModelOption) => (
                     <ComboboxItem key={model.value} value={model} title={model.label}>

@@ -572,12 +572,12 @@ const Settings: React.FC<SettingsPageProps> = ({ accessToken, userRole, userID, 
       <div className="grid grid-cols-1 gap-2 p-8 w-full mt-2">
         <Tabs defaultValue="logging-callbacks">
           <TabsList variant="line">
-            <TabsTrigger value="logging-callbacks">Logging Callbacks</TabsTrigger>
-            <TabsTrigger value="cloudzero-cost-tracking">CloudZero Cost Tracking</TabsTrigger>
-            <TabsTrigger value="alerting-types">Alerting Types</TabsTrigger>
-            <TabsTrigger value="alerting-settings">Alerting Settings</TabsTrigger>
-            <TabsTrigger value="email-alerts">Email Alerts</TabsTrigger>
-            <TabsTrigger value="ms-teams-alerts">MS Teams Alerts</TabsTrigger>
+            <TabsTrigger value="logging-callbacks">日志回调</TabsTrigger>
+            <TabsTrigger value="cloudzero-cost-tracking">CloudZero 成本跟踪</TabsTrigger>
+            <TabsTrigger value="alerting-types">告警类型</TabsTrigger>
+            <TabsTrigger value="alerting-settings">告警设置</TabsTrigger>
+            <TabsTrigger value="email-alerts">邮件告警</TabsTrigger>
+            <TabsTrigger value="ms-teams-alerts">MS Teams 告警</TabsTrigger>
           </TabsList>
           <TabsContent value="logging-callbacks" keepMounted>
             <LoggingCallbacksTable
@@ -670,7 +670,7 @@ const Settings: React.FC<SettingsPageProps> = ({ accessToken, userRole, userID, 
                 </TableBody>
               </Table>
               <Button size="xs" className="mt-2" onClick={handleSaveAlerts}>
-                Save Changes
+                保存更改
               </Button>
 
               <Button
@@ -791,8 +791,8 @@ const Settings: React.FC<SettingsPageProps> = ({ accessToken, userRole, userID, 
         message="Are you sure you want to delete this callback? This action cannot be undone."
         resourceInformationTitle="Callback Information"
         resourceInformation={[
-          { label: "Callback Name", value: callbackToDelete?.name },
-          { label: "Mode", value: callbackToDelete?.mode || "success" },
+          { label: "回调名称", value: callbackToDelete?.name },
+          { label: "模式", value: callbackToDelete?.mode || "success" },
         ]}
         onCancel={() => {
           setShowDeleteConfirmModal(false);

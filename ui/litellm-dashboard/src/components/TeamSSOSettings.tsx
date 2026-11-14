@@ -70,7 +70,7 @@ const SettingRow: React.FC<SettingRowProps> = ({ label, description, isEditing, 
   </div>
 );
 
-const NotSet = () => <span className="italic text-muted-foreground">Not set</span>;
+const NotSet = () => <span className="italic text-muted-foreground">未设置</span>;
 
 const renderTags = (values: string[], displayFn?: (v: string) => string) => {
   if (!values || values.length === 0) return <NotSet />;
@@ -195,7 +195,7 @@ const TeamSSOSettings: React.FC<TeamSSOSettingsProps> = ({ accessToken }) => {
       <CardHeader className="gap-4 border-b border-border pb-6">
         <div>
           <CardTitle>
-            <h3 className="text-lg font-semibold text-foreground">Default Team Settings</h3>
+            <h3 className="text-lg font-semibold text-foreground">默认团队设置</h3>
           </CardTitle>
           <CardDescription className="mt-1">
             These settings will be applied by default when creating new teams.
@@ -213,13 +213,13 @@ const TeamSSOSettings: React.FC<TeamSSOSettingsProps> = ({ accessToken }) => {
                 ) : (
                   <Save data-icon="inline-start" />
                 )}
-                Save Changes
+                保存更改
               </Button>
             </div>
           ) : (
             <Button type="button" variant="outline" onClick={() => setIsEditing(true)}>
               <Edit data-icon="inline-start" />
-              Edit Settings
+              编辑设置
             </Button>
           )}
         </CardAction>
@@ -249,7 +249,7 @@ const TeamSSOSettings: React.FC<TeamSSOSettingsProps> = ({ accessToken }) => {
                     onChange={(event) =>
                       update("max_budget", event.target.value === "" ? null : Number(event.target.value))
                     }
-                    placeholder="Not set"
+                    placeholder="未设置"
                     aria-label="预算上限"
                   />
                 </InputGroup>
@@ -286,7 +286,7 @@ const TeamSSOSettings: React.FC<TeamSSOSettingsProps> = ({ accessToken }) => {
                   onChange={(event) =>
                     update("tpm_limit", event.target.value === "" ? null : Number(event.target.value))
                   }
-                  placeholder="Not set"
+                  placeholder="未设置"
                   min={0}
                   aria-label="TPM Limit"
                 />
@@ -307,7 +307,7 @@ const TeamSSOSettings: React.FC<TeamSSOSettingsProps> = ({ accessToken }) => {
                   onChange={(event) =>
                     update("rpm_limit", event.target.value === "" ? null : Number(event.target.value))
                   }
-                  placeholder="Not set"
+                  placeholder="未设置"
                   min={0}
                   aria-label="RPM Limit"
                 />

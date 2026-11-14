@@ -726,7 +726,7 @@ const AddAutoRouterTab: React.FC<AddAutoRouterTabProps> = ({
                       <p className="text-sm text-destructive">
                         Could not load available models.{" "}
                         <button type="button" className="underline" onClick={() => void refetchModels()}>
-                          Retry
+                          重试
                         </button>
                       </p>
                     )}
@@ -738,7 +738,7 @@ const AddAutoRouterTab: React.FC<AddAutoRouterTabProps> = ({
                 <p className="mt-3 text-sm text-destructive" role="alert">
                   Could not check availability.{" "}
                   <Button type="button" variant="link" onClick={() => void routerAvailability.refetch()}>
-                    Retry
+                    重试
                   </Button>
                 </p>
               )}
@@ -755,7 +755,7 @@ const AddAutoRouterTab: React.FC<AddAutoRouterTabProps> = ({
                         href="https://github.com/BerriAI/litellm/issues"
                         className="text-sm text-primary underline-offset-4 hover:underline"
                       >
-                        Need Help?
+                        需要帮助？
                       </a>
                     }
                   />
@@ -781,7 +781,7 @@ const AddAutoRouterTab: React.FC<AddAutoRouterTabProps> = ({
                     disabled={isTestingConnection}
                   >
                     {isTestingConnection && <UiLoadingSpinner className="size-4" />}
-                    Test Connection
+                    测试连接
                   </Button>
                   <BlockedReasonTooltip reason={saveBlockedReason}>
                     <Button

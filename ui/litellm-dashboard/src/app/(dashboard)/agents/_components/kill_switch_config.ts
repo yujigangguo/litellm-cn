@@ -7,7 +7,7 @@ export type KillSwitchAuthType = KillSwitchAuth["type"] | "none";
 
 export const KILL_SWITCH_METHODS: readonly KillSwitchMethod[] = ["POST", "PUT", "PATCH", "DELETE", "GET"];
 export const KILL_SWITCH_AUTH_TYPES: readonly { value: KillSwitchAuthType; label: string }[] = [
-  { value: "none", label: "None" },
+  { value: "none", label: "无" },
   { value: "bearer", label: "Bearer token" },
   { value: "api_key", label: "API key header" },
   { value: "basic", label: "Basic auth" },

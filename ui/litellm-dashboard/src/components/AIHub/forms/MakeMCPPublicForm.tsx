@@ -143,7 +143,7 @@ const MakeMCPPublicForm: React.FC<MakeMCPPublicFormProps> = ({
                 onCheckedChange={(checked) => handleSelectAll(checked === true)}
                 disabled={mcpHubData.length === 0}
               />
-              Select All {mcpHubData.length > 0 && `(${mcpHubData.length})`}
+              全选 {mcpHubData.length > 0 && `(${mcpHubData.length})`}
             </label>
           </div>
         </div>

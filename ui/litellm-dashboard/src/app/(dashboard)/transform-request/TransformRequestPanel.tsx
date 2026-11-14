@@ -187,7 +187,7 @@ ${formattedBody}
               <Button
                 variant="ghost"
                 size="icon-sm"
-                aria-label="Copy to clipboard"
+                aria-label="复制到剪贴板"
                 className="absolute top-2 right-2"
                 onClick={() => {
                   navigator.clipboard.writeText(transformedResponse || "");

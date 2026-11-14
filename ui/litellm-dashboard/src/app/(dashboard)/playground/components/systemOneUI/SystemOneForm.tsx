@@ -27,7 +27,7 @@ import {
 import type { SystemOnePayloadValidation } from "./lib/validatePayload";
 
 const QUESTION_TYPES: readonly QuestionType[] = ["choice", "noul", "score"];
-const TYPE_LABELS: Record<QuestionType, string> = { choice: "Choice", noul: "Yes / no", score: "Score" };
+const TYPE_LABELS: Record<QuestionType, string> = { choice: "Choice", noul: "Yes / no", score: "分数" };
 const TYPE_HELP: Record<QuestionType, string | undefined> = {
   choice: undefined,
   noul: "The model returns the probability that the answer is yes",
@@ -147,7 +147,7 @@ function NoulCriteria({ question, onChange }: QuestionEditorProps<NoulQuestion>)
         <Input
           id={yesId}
           value={question.criteria?.true ?? ""}
-          placeholder="Optional"
+          placeholder="可选"
           onChange={(event) => onChange(withNoulCriterion(question, "true", event.target.value))}
         />
       </div>
@@ -156,7 +156,7 @@ function NoulCriteria({ question, onChange }: QuestionEditorProps<NoulQuestion>)
         <Input
           id={noId}
           value={question.criteria?.false ?? ""}
-          placeholder="Optional"
+          placeholder="可选"
           onChange={(event) => onChange(withNoulCriterion(question, "false", event.target.value))}
         />
       </div>
@@ -221,7 +221,7 @@ function QuestionCard({ name, index, question, taken, onChange, onRename, onRemo
           <span className="text-sm font-medium">名称</span>
           <KeyInput
             key={name}
-            label="Question name"
+            label="问题名称"
             value={name}
             taken={taken}
             onCommit={onRename}
@@ -229,12 +229,12 @@ function QuestionCard({ name, index, question, taken, onChange, onRename, onRemo
           />
         </div>
         <div className="grid gap-1.5">
-          <span className="text-sm font-medium">Answer type</span>
+          <span className="text-sm font-medium">回答类型</span>
           <Select
             value={question.type}
             onValueChange={(type) => isQuestionType(type) && onChange(retype(question, type))}
           >
-            <SelectTrigger className="w-full" aria-label="Answer type">
+            <SelectTrigger className="w-full" aria-label="回答类型">
               <SelectValue>{TYPE_LABELS[question.type]}</SelectValue>
             </SelectTrigger>
             <SelectContent>
@@ -253,7 +253,7 @@ function QuestionCard({ name, index, question, taken, onChange, onRename, onRemo
           id={instructionsId}
           rows={2}
           value={question.instructions ?? ""}
-          placeholder="What should the model decide?"
+          placeholder="模型需要判断什么？"
           onChange={(event) => onChange({ ...question, instructions: event.target.value })}
         />
       </div>
@@ -285,7 +285,7 @@ export default function SystemOneForm({ value, onChange, validation, onReset }: 
   return (
     <FormFrame validation={validation}>
       <div className="grid gap-1.5">
-        <Label htmlFor={stateId}>Input</Label>
+        <Label htmlFor={stateId}>输入</Label>
         <p className="text-xs text-muted-foreground">
           The text the model reads before it answers, such as a support ticket or a chat message.
         </p>
@@ -293,7 +293,7 @@ export default function SystemOneForm({ value, onChange, validation, onReset }: 
           id={stateId}
           rows={4}
           value={form.state ?? ""}
-          placeholder="Paste the text the model should decide about"
+          placeholder="粘贴需要模型判断的文本"
           onChange={(event) => write({ ...form, state: event.target.value })}
         />
       </div>

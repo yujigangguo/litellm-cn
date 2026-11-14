@@ -672,7 +672,7 @@ export default function KeyInfoView({
               取消
             </Button>
             <Button variant="destructive" onClick={handleResetSpend} disabled={resetSpendLoading}>
-              Reset
+              重置
             </Button>
           </DialogFooter>
         </DialogContent>
@@ -713,7 +713,7 @@ export default function KeyInfoView({
             概览
           </TabsTrigger>
           <TabsTrigger value="savings" className="flex-none rounded-none px-4 py-2">
-            Savings
+            节省
           </TabsTrigger>
           {hasProxyWideSpendView(userRole) && (
             <TabsTrigger value="auto-router-usage" className="flex-none rounded-none px-4 py-2">
@@ -922,7 +922,7 @@ export default function KeyInfoView({
                 <h3 className="text-lg font-medium">Key Settings</h3>
                 {!isEditing && canModifyKey && (
                   <Button variant="outline" onClick={() => setIsEditing(true)}>
-                    Edit Settings
+                    编辑设置
                   </Button>
                 )}
               </div>
@@ -985,7 +985,7 @@ export default function KeyInfoView({
                   )}
 
                   <div>
-                    <p className="text-sm font-medium">Organization</p>
+                    <p className="text-sm font-medium">组织</p>
                     <p className="text-sm">{keyOrganizationId(currentKeyData) || "Not Set"}</p>
                   </div>
 
@@ -1013,7 +1013,7 @@ export default function KeyInfoView({
 
                   {Boolean(currentKeyData.metadata?.enable_prompt_caching) && (
                     <div>
-                      <p className="text-sm font-medium">Prompt Caching</p>
+                      <p className="text-sm font-medium">提示缓存</p>
                       <p className="text-sm">
                         Enabled (auto-injects cache_control markers on Anthropic and Bedrock Claude requests)
                       </p>
@@ -1071,7 +1071,7 @@ export default function KeyInfoView({
 
                   {hasRouterSettings(currentKeyData.router_settings) && (
                     <div>
-                      <p className="text-sm font-medium">Router Settings</p>
+                      <p className="text-sm font-medium">路由设置</p>
                       <div className="mt-1">
                         <RouterSettingsSummary routerSettings={currentKeyData.router_settings} />
                       </div>
@@ -1092,7 +1092,7 @@ export default function KeyInfoView({
                   </div>
 
                   <div>
-                    <p className="text-sm font-medium">Prompts</p>
+                    <p className="text-sm font-medium">提示词</p>
                     <p className="text-sm">
                       {Array.isArray(currentKeyData.metadata?.prompts) && currentKeyData.metadata.prompts.length > 0
                         ? currentKeyData.metadata.prompts.map((prompt, index) => (
@@ -1212,7 +1212,7 @@ export default function KeyInfoView({
                   </div>
 
                   <div>
-                    <p className="text-sm font-medium">Metadata</p>
+                    <p className="text-sm font-medium">元数据</p>
                     <pre className="bg-muted p-2 rounded-sm text-xs overflow-auto mt-1">
                       {formatMetadataForDisplay(stripTagsFromMetadata(currentKeyData.metadata))}
                     </pre>

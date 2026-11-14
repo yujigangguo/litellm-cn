@@ -182,19 +182,19 @@ function submissionToTeamGuardrail(item: GuardrailSubmissionItem): TeamGuardrail
 
 const STATUS_CONFIG: Record<GuardrailStatus, { label: string; bg: string; text: string; dot: string }> = {
   active: {
-    label: "Active",
+    label: "启用",
     bg: "bg-success/10",
     text: "text-success",
     dot: "bg-success",
   },
   pending: {
-    label: "Pending Review",
+    label: "待审核",
     bg: "bg-warning/10",
     text: "text-warning",
     dot: "bg-warning",
   },
   rejected: {
-    label: "Rejected",
+    label: "已拒绝",
     bg: "bg-destructive/10",
     text: "text-destructive",
     dot: "bg-destructive",
@@ -363,14 +363,14 @@ function GuardrailCard({
                   onClick={onApprove}
                   className="text-xs bg-success hover:bg-success/80 text-success-foreground px-3 py-1.5 rounded-md transition-colors font-medium"
                 >
-                  Approve
+                  批准
                 </button>
                 <button
                   type="button"
                   onClick={onReject}
                   className="text-xs border border-destructive/30 text-destructive hover:bg-destructive/10 px-3 py-1.5 rounded-md transition-colors font-medium"
                 >
-                  Reject
+                  拒绝
                 </button>
               </>
             )}
@@ -483,7 +483,7 @@ function DetailPanel({
         </div>
         <p className="text-sm text-muted-foreground mb-5">{g.description}</p>
         <div className="space-y-4">
-          <ConfigRow label="Endpoint">
+          <ConfigRow label="端点">
             <div className="flex items-center gap-1.5">
               <code className="text-xs font-mono text-foreground break-all">{g.endpoint}</code>
               <a
@@ -496,7 +496,7 @@ function DetailPanel({
               </a>
             </div>
           </ConfigRow>
-          <ConfigRow label="Method">
+          <ConfigRow label="方法">
             <span className="text-xs font-mono font-medium text-foreground bg-muted px-2 py-0.5 rounded-sm">
               {g.method}
             </span>
@@ -605,7 +605,7 @@ function DetailPanel({
                   }}
                   className="text-xs font-medium text-info border border-info/20 bg-info/10 hover:bg-info/15 px-2 py-1.5 rounded-sm transition-colors shrink-0"
                 >
-                  Add
+                  添加
                 </button>
               </div>
             )}
@@ -676,7 +676,7 @@ function DetailPanel({
                   }}
                   className="text-xs font-medium text-info border border-info/20 bg-info/10 hover:bg-info/15 px-2 py-1.5 rounded-sm transition-colors"
                 >
-                  Add
+                  添加
                 </button>
               </div>
             )}
@@ -733,7 +733,7 @@ function DetailPanel({
                 className="flex-1 flex items-center justify-center gap-1.5 bg-success hover:bg-success/80 text-success-foreground text-sm font-medium py-2 rounded-md transition-colors"
               >
                 <CheckIcon className="h-4 w-4" />
-                Approve
+                批准
               </button>
               <button
                 type="button"
@@ -741,7 +741,7 @@ function DetailPanel({
                 className="flex-1 flex items-center justify-center gap-1.5 border border-destructive/30 text-destructive hover:bg-destructive/10 text-sm font-medium py-2 rounded-md transition-colors"
               >
                 <XIcon className="h-4 w-4" />
-                Reject
+                拒绝
               </button>
             </div>
           )}
@@ -991,9 +991,9 @@ export function TeamGuardrailsTab({ accessToken }: TeamGuardrailsTabProps) {
       <div className={`flex-1 min-w-0 p-6 overflow-auto ${selected ? "border-r border-border" : ""}`}>
         <div className="grid grid-cols-4 gap-4 mb-6">
           <StatCard label="Total Submitted" value={totalCount} color="text-foreground" />
-          <StatCard label="Pending Review" value={pendingCount} color="text-warning" />
-          <StatCard label="Active" value={activeCount} color="text-success" />
-          <StatCard label="Rejected" value={rejectedCount} color="text-destructive" />
+          <StatCard label="待审核" value={pendingCount} color="text-warning" />
+          <StatCard label="启用" value={activeCount} color="text-success" />
+          <StatCard label="已拒绝" value={rejectedCount} color="text-destructive" />
         </div>
         <div className="flex items-center gap-3 mb-5">
           <div className="relative flex-1 max-w-xs">
@@ -1007,15 +1007,15 @@ export function TeamGuardrailsTab({ accessToken }: TeamGuardrailsTabProps) {
             />
           </div>
           <select
-            aria-label="Filter by status"
+            aria-label="按状态筛选"
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value as typeof statusFilter)}
             className="border border-border rounded-md px-3 py-2 text-sm text-foreground focus:outline-hidden focus:ring-1 focus:ring-ring focus:border-info bg-background"
           >
             <option value="all">All Status</option>
-            <option value="pending">Pending Review</option>
-            <option value="active">Active</option>
-            <option value="rejected">Rejected</option>
+            <option value="pending">待审核</option>
+            <option value="active">启用</option>
+            <option value="rejected">已拒绝</option>
           </select>
           <button
             type="button"
@@ -1098,7 +1098,7 @@ export function TeamGuardrailsTab({ accessToken }: TeamGuardrailsTabProps) {
                 <FormField control={submitForm.control} name="guardrail_name" label="Guardrail Name">
                   {({ ref, ...field }) => <Input {...field} ref={ref} placeholder="e.g. pii-detection" />}
                 </FormField>
-                <FormField control={submitForm.control} name="mode" label="Mode">
+                <FormField control={submitForm.control} name="mode" label="模式">
                   {({ id, value, onChange, "aria-invalid": ariaInvalid, "aria-describedby": ariaDescribedBy }) => (
                     <Select items={GUARDRAIL_MODES} value={value} onValueChange={onChange}>
                       <SelectTrigger

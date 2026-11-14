@@ -32,9 +32,9 @@ export type ErrorEntityKind = (typeof ERROR_ENTITY_KINDS)[number];
 
 export const ERROR_ENTITY_LABEL: Record<ErrorEntityKind, { singular: string; plural: string }> = {
   key: { singular: "Virtual key", plural: "Virtual keys" },
-  team: { singular: "Team", plural: "Teams" },
-  user: { singular: "User", plural: "Users" },
-  model: { singular: "Model", plural: "Models" },
+  team: { singular: "团队", plural: "团队" },
+  user: { singular: "用户", plural: "用户" },
+  model: { singular: "模型", plural: "模型" },
 };
 
 const STATUS_LABELS: Record<number, string> = {
@@ -150,7 +150,7 @@ export const errorSeries = (activity: RequestErrorActivity): ErrorSeries => {
 export type ErrorRateView = "total" | "status";
 
 export const ERROR_RATE_VIEW_OPTIONS: readonly { value: ErrorRateView; label: string }[] = [
-  { value: "total", label: "Total" },
+  { value: "total", label: "总计" },
   { value: "status", label: "By status code" },
 ];
 

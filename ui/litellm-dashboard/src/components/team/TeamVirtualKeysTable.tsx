@@ -175,7 +175,7 @@ export function TeamVirtualKeysTable({ teamId, teamAlias, organization }: TeamVi
       {
         id: "organization_id",
         accessorFn: (key) => (key.organization_id ?? key.org_id) || organization?.organization_id || null,
-        header: "Organization ID",
+        header: "组织 ID",
         size: 140,
         enableSorting: false,
         cell: (info) => {
@@ -212,7 +212,7 @@ export function TeamVirtualKeysTable({ teamId, teamAlias, organization }: TeamVi
       {
         id: "user_id",
         accessorKey: "user_id",
-        header: "User ID",
+        header: "用户 ID",
         size: 70,
         enableSorting: false,
         cell: (info) => {
@@ -243,7 +243,7 @@ export function TeamVirtualKeysTable({ teamId, teamAlias, organization }: TeamVi
       {
         id: "created_by",
         accessorKey: "created_by",
-        header: "Created By",
+        header: "创建人",
         size: 130,
         enableSorting: false,
         cell: (info) => {
@@ -311,8 +311,8 @@ export function TeamVirtualKeysTable({ teamId, teamAlias, organization }: TeamVi
       {
         id: "max_budget",
         accessorKey: "max_budget",
-        meta: { title: "Budget (USD)", numeric: true },
-        header: ({ column }) => <DataTableSortHeader column={column} title="Budget (USD)" variant="header-cycle" />,
+        meta: { title: "预算（美元）", numeric: true },
+        header: ({ column }) => <DataTableSortHeader column={column} title="预算（美元）" variant="header-cycle" />,
         size: 160,
         enableSorting: true,
         cell: (info) => {
@@ -328,7 +328,7 @@ export function TeamVirtualKeysTable({ teamId, teamAlias, organization }: TeamVi
               <span className="text-muted-foreground">(team member)</span>
             </span>
           ) : (
-            <MoneyCell value={info.getValue() as number | null} decimals={0} emptyText="Unlimited" showZero />
+            <MoneyCell value={info.getValue() as number | null} decimals={0} emptyText="不限" showZero />
           );
         },
       },
@@ -345,7 +345,7 @@ export function TeamVirtualKeysTable({ teamId, teamAlias, organization }: TeamVi
       {
         id: "models",
         accessorKey: "models",
-        header: "Models",
+        header: "模型",
         size: 200,
         enableSorting: false,
         cell: (info) => {
@@ -497,11 +497,11 @@ export function TeamVirtualKeysTable({ teamId, teamAlias, organization }: TeamVi
                   table={table}
                   searchValue={searchInput}
                   onSearchChange={handleSearchChange}
-                  searchPlaceholder="Search by key alias or ID…"
+                  searchPlaceholder="按密钥别名或 ID 搜索…"
                   onRefresh={() => refetch?.()}
                   isRefreshing={isFetching}
                   onOpenFilters={() => setFiltersOpen(true)}
-                  filterLabels={{ user_id: "User ID", key_hash: "Key ID" }}
+                  filterLabels={{ user_id: "用户 ID", key_hash: "密钥 ID" }}
                 />
                 <DataTableFilterDrawer
                   table={table}
@@ -512,7 +512,7 @@ export function TeamVirtualKeysTable({ teamId, teamAlias, organization }: TeamVi
                 >
                   {({ get, set }) => (
                     <>
-                      <DataTableFilterField label="User ID">
+                      <DataTableFilterField label="用户 ID">
                         <Input
                           value={(get("user_id") as string) ?? ""}
                           onChange={(event) => set("user_id", event.target.value)}

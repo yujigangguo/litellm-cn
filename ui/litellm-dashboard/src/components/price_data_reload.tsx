@@ -320,8 +320,8 @@ const PriceDataReload: React.FC<PriceDataReloadProps> = ({
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
-                <AlertDialogCancel>No</AlertDialogCancel>
-                <AlertDialogAction onClick={handleHardRefresh}>Yes</AlertDialogAction>
+                <AlertDialogCancel>否</AlertDialogCancel>
+                <AlertDialogAction onClick={handleHardRefresh}>是</AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>

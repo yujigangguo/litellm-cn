@@ -72,7 +72,7 @@ const ActionsCell = ({
         编辑
       </Button>
       <AlertDialog>
-        <AlertDialogTrigger render={<Button variant="outline" size="xs" />}>Remove</AlertDialogTrigger>
+        <AlertDialogTrigger render={<Button variant="outline" size="xs" />}>移除</AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Remove this monthly fee?</AlertDialogTitle>
@@ -95,7 +95,7 @@ const ActionsCell = ({
 
 const baseColumns: ColumnDef<SubscriptionAccountUsage>[] = [
   {
-    header: "Provider",
+    header: "供应商",
     accessorKey: "custom_llm_provider",
     cell: ({ row }) => (
       <div className="flex items-center gap-2 whitespace-nowrap">
@@ -105,7 +105,7 @@ const baseColumns: ColumnDef<SubscriptionAccountUsage>[] = [
     ),
   },
   {
-    header: "Account",
+    header: "账户",
     accessorKey: "account_id",
     cell: ({ row }) => <AccountCell account={row.original} />,
   },

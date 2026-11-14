@@ -871,7 +871,7 @@ const MCPServerEdit: React.FC<MCPServerEditProps> = ({
                     />
                   )}
                 </MountedFormField>
-                <MountedFormField label="Description" name="description">
+                <MountedFormField label="描述" name="description">
                   {(control) => (
                     <Input
                       {...textControl(control)}
@@ -1351,7 +1351,7 @@ const MCPServerEdit: React.FC<MCPServerEditProps> = ({
                     取消
                   </Button>
                   <Button type="submit" disabled={isOAuthPending}>
-                    Save Changes
+                    保存更改
                   </Button>
                 </div>
               </form>
@@ -1368,7 +1368,7 @@ const MCPServerEdit: React.FC<MCPServerEditProps> = ({
                 取消
               </Button>
               <Button onClick={() => void submitForm()} disabled={isOAuthPending}>
-                Save Changes
+                保存更改
               </Button>
             </div>
           </div>

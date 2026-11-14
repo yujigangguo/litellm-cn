@@ -46,7 +46,7 @@ export function createSelectionColumn<TData extends RowData>(
     enableSorting: false,
     enableHiding: false,
     enableResizing: false,
-    meta: { title: "Select", className: "w-11", headerClassName: "w-11" },
+    meta: { title: "选择", className: "w-11", headerClassName: "w-11" },
     header: ({ table }) => <SelectAllCheckbox table={table} />,
     cell: ({ row }) => <SelectRowCheckbox row={row} label={rowAriaLabel?.(row) ?? "Select row"} />,
   };

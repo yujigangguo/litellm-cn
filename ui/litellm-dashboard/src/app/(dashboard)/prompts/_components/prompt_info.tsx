@@ -310,7 +310,7 @@ const PromptInfoView: React.FC<PromptInfoProps> = ({
           <TabsContent value="overview" keepMounted>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <Card className="block p-6">
-                <p>Version</p>
+                <p>版本</p>
                 <div className="mt-2">
                   <h3 className="text-lg font-medium">{currentVersion}</h3>
                   <Badge variant="secondary" className="mt-1">
@@ -351,7 +351,7 @@ const PromptInfoView: React.FC<PromptInfoProps> = ({
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>Version</TableHead>
+                      <TableHead>版本</TableHead>
                       <TableHead>创建人</TableHead>
                       <TableHead>Date</TableHead>
                       <TableHead>操作</TableHead>

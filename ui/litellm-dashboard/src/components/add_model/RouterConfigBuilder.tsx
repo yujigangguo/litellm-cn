@@ -272,7 +272,7 @@ const RouterConfigBuilder: React.FC<RouterConfigBuilderProps> = ({ modelInfo, va
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor={`${route.id}-description`}>Description</Label>
+                        <Label htmlFor={`${route.id}-description`}>描述</Label>
                         <Textarea
                           id={`${route.id}-description`}
                           value={route.description}

@@ -94,13 +94,13 @@ const BudgetPanel: React.FC<BudgetSettingsPageProps> = ({ accessToken }) => {
                 <>
                   <Button onClick={() => setIsCreateModelVisible(true)}>
                     <Plus className="size-4" />
-                    Create Budget
+                    创建预算
                   </Button>
                   <ToolbarSeparator className="mx-0 h-6" />
                 </>
               )}
               <PageTabsTrigger value="budgets">预算</PageTabsTrigger>
-              <PageTabsTrigger value="examples">Examples</PageTabsTrigger>
+              <PageTabsTrigger value="examples">示例</PageTabsTrigger>
             </PageTabsList>
           </PageHeaderControls>
         </PageHeader>
@@ -126,11 +126,11 @@ const BudgetPanel: React.FC<BudgetSettingsPageProps> = ({ accessToken }) => {
               message="Are you sure you want to delete this budget? This action cannot be undone."
               resourceInformationTitle="Budget Information"
               resourceInformation={[
-                { label: "Budget ID", value: selectedBudget?.budget_id, code: true },
+                { label: "预算 ID", value: selectedBudget?.budget_id, code: true },
                 { label: "预算上限", value: selectedBudget?.max_budget },
                 { label: "TPM", value: selectedBudget?.tpm_limit },
                 { label: "RPM", value: selectedBudget?.rpm_limit },
-                { label: "TPD (batch)", value: selectedBudget?.tpd_limit },
+                { label: "TPD（批处理）", value: selectedBudget?.tpd_limit },
               ]}
               onCancel={handleDeleteCancel}
               onOk={handleDeleteConfirm}

@@ -48,7 +48,7 @@ export default function HomePage() {
           <div className="flex items-center justify-between gap-2 rounded-xl border bg-card px-4 py-3 text-sm">
             <span className="text-destructive">Failed to load usage</span>
             <Button variant="outline" size="sm" onClick={usage.retry}>
-              Retry
+              重试
             </Button>
           </div>
         ) : (
@@ -101,7 +101,7 @@ export default function HomePage() {
 
           <Panel
             title="排行榜"
-            subtitle={`Share of tokens over the last ${HOME_USAGE_DAYS} days, with the change between the first and second half of the period`}
+            subtitle={`最近 ${HOME_USAGE_DAYS} 天 Token 占比，以及前后半段的变化`}
             testId="home-leaderboard"
           >
             <Leaderboard

@@ -266,7 +266,7 @@ const SchemaFormFields: React.FC<SchemaFormFieldsProps> = ({
   };
 
   if (error) {
-    return <div className="text-destructive">Error: {error}</div>;
+    return <div className="text-destructive">错误： {error}</div>;
   }
 
   if (!schemaProperties?.properties) {

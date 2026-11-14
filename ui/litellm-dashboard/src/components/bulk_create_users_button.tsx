@@ -506,7 +506,7 @@ const BulkCreateUsersButton: React.FC<BulkCreateUsersProps> = ({
               <div className="flex items-center">
                 <span className="text-xs text-muted-foreground truncate max-w-[150px]">{record.invitation_link}</span>
                 <CopyToClipboard text={record.invitation_link} onCopy={() => toast.success("Invitation link copied!")}>
-                  <button className="ml-1 text-info text-xs hover:text-info/80">Copy</button>
+                  <button className="ml-1 text-info text-xs hover:text-info/80">复制</button>
                 </CopyToClipboard>
               </div>
             </div>
@@ -532,7 +532,7 @@ const BulkCreateUsersButton: React.FC<BulkCreateUsersProps> = ({
   return (
     <>
       <Button className="mb-0" onClick={() => setIsModalVisible(true)}>
-        + Bulk Invite Users
+        + 批量邀请用户
       </Button>
 
       <Dialog open={isModalVisible} onOpenChange={(open) => !open && setIsModalVisible(false)}>
@@ -655,7 +655,7 @@ const BulkCreateUsersButton: React.FC<BulkCreateUsersProps> = ({
                         </div>
                         <Button variant="outline" size="sm" onClick={removeSelectedFile} className="flex items-center">
                           <Trash2 className="size-4" />
-                          Remove
+                          移除
                         </Button>
                       </div>
 
@@ -815,8 +815,8 @@ const BulkCreateUsersButton: React.FC<BulkCreateUsersProps> = ({
                       <TableHeader>
                         <TableRow>
                           <TableHead className="w-20">Row</TableHead>
-                          <TableHead>Email</TableHead>
-                          <TableHead>Role</TableHead>
+                          <TableHead>邮箱</TableHead>
+                          <TableHead>角色</TableHead>
                           <TableHead>团队</TableHead>
                           <TableHead className={NUMERIC_CELL_CLASS}>预算</TableHead>
                           <TableHead>状态</TableHead>
@@ -840,7 +840,7 @@ const BulkCreateUsersButton: React.FC<BulkCreateUsersProps> = ({
                   {pageCount > 1 && (
                     <div className="flex items-center justify-end gap-3 mt-2">
                       <span className="text-sm text-muted-foreground">
-                        Page {currentPage + 1} of {pageCount}
+                        第 {currentPage + 1} / {pageCount} 页
                       </span>
                       <Button
                         variant="outline"

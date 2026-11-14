@@ -111,7 +111,7 @@ export default function AutoRouterSimpleSetup({
         <p role="alert" className="text-sm text-destructive">
           Could not load deployed models.{" "}
           <Button type="button" variant="link" onClick={onRetry}>
-            Retry
+            重试
           </Button>
         </p>
       )}

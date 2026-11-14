@@ -262,7 +262,7 @@ const PassThroughInfoView: React.FC<PassThroughInfoProps> = ({
           <TabsContent value="overview" keepMounted>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <Card className="block p-6">
-                <p className="text-sm">Path</p>
+                <p className="text-sm">路径</p>
                 <div className="mt-2">
                   <h3 className="text-lg font-medium font-mono">{endpointData.path}</h3>
                 </div>
@@ -276,7 +276,7 @@ const PassThroughInfoView: React.FC<PassThroughInfoProps> = ({
               </Card>
 
               <Card className="block p-6">
-                <p className="text-sm">Configuration</p>
+                <p className="text-sm">配置</p>
                 <div className="mt-2 space-y-2">
                   <div>
                     <Badge variant={endpointData.include_subpath ? "secondary" : "outline"}>
@@ -326,7 +326,7 @@ const PassThroughInfoView: React.FC<PassThroughInfoProps> = ({
             {endpointData.headers && Object.keys(endpointData.headers).length > 0 && (
               <Card className="block mt-6 p-6">
                 <div className="flex justify-between items-center">
-                  <p className="text-sm font-medium">Headers</p>
+                  <p className="text-sm font-medium">请求头</p>
                   <Badge variant="secondary">{Object.keys(endpointData.headers).length} headers configured</Badge>
                 </div>
                 <div className="mt-4">
@@ -370,7 +370,7 @@ const PassThroughInfoView: React.FC<PassThroughInfoProps> = ({
                   <div className="space-x-2">
                     {!isEditing && (
                       <>
-                        <Button onClick={() => setIsEditing(true)}>Edit Settings</Button>
+                        <Button onClick={() => setIsEditing(true)}>编辑设置</Button>
                         <Button onClick={handleDeleteEndpoint} variant="destructive">
                           Delete Endpoint
                         </Button>
@@ -486,13 +486,13 @@ const PassThroughInfoView: React.FC<PassThroughInfoProps> = ({
                       <Button type="button" variant="outline" onClick={() => setIsEditing(false)}>
                         取消
                       </Button>
-                      <Button type="submit">Save Changes</Button>
+                      <Button type="submit">保存更改</Button>
                     </div>
                   </form>
                 ) : (
                   <div className="space-y-4">
                     <div>
-                      <p className="text-sm font-medium">Path</p>
+                      <p className="text-sm font-medium">路径</p>
                       <div className="font-mono">{endpointData.path}</div>
                     </div>
                     <div>
@@ -524,7 +524,7 @@ const PassThroughInfoView: React.FC<PassThroughInfoProps> = ({
                       </Badge>
                     </div>
                     <div>
-                      <p className="text-sm font-medium">Headers</p>
+                      <p className="text-sm font-medium">请求头</p>
                       {endpointData.headers && Object.keys(endpointData.headers).length > 0 ? (
                         <div className="mt-2">
                           <PasswordField value={endpointData.headers} />

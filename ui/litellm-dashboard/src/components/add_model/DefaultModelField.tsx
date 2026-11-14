@@ -41,7 +41,7 @@ const DefaultModelField = ({ value, onChange, modelOptions }: DefaultModelFieldP
         value={value.default_model ?? ""}
         onValueChange={handleDefaultModelChange}
         placeholder={defaultModelPlaceholder}
-        emptyText="No models found"
+        emptyText="未找到模型"
         aria-label="Default model"
       />
       <span className="block mt-1 text-xs text-muted-foreground">

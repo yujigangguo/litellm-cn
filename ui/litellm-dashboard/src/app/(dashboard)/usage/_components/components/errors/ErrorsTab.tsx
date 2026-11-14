@@ -134,8 +134,8 @@ export default function ErrorsTab({ activity, loading, failed, userScoped = fals
             hint={summary ? `${count(summary.failed)} of ${count(summary.requests)} requests` : undefined}
           />
         </StatCell>
-        <StatCell label="Failed requests">
-          <Stat label="Failed requests" value={summary ? count(summary.failed) : null} pending={loading} />
+        <StatCell label="失败请求">
+          <Stat label="失败请求" value={summary ? count(summary.failed) : null} pending={loading} />
         </StatCell>
         <StatCell label="Client errors (4xx)">
           <Stat label="Client errors (4xx)" value={summary ? count(summary.clientErrors) : null} pending={loading} />
@@ -159,7 +159,7 @@ export default function ErrorsTab({ activity, loading, failed, userScoped = fals
         <Panel
           title="Error rate over time"
           subtitle="Failed requests as a share of all requests, per day"
-          action={<Segmented label="Show" value={rateView} options={ERROR_RATE_VIEW_OPTIONS} onChange={setRateView} />}
+          action={<Segmented label="显示" value={rateView} options={ERROR_RATE_VIEW_OPTIONS} onChange={setRateView} />}
         >
           <PanelBody loading={loading} height="h-64" empty={rateEmpty}>
             <LineChart

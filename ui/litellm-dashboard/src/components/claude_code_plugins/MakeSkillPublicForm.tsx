@@ -141,7 +141,7 @@ const MakeSkillPublicForm: React.FC<MakeSkillPublicFormProps> = ({
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
                     <p className="font-medium font-mono text-sm break-words">{skill.name}</p>
-                    {skill.enabled && <Badge variant="secondary">Public</Badge>}
+                    {skill.enabled && <Badge variant="secondary">公开</Badge>}
                   </div>
                   {skill.description && (
                     <p className="text-xs text-muted-foreground truncate max-w-sm">{skill.description}</p>

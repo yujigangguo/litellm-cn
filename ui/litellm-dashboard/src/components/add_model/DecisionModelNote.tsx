@@ -33,7 +33,7 @@ export default function DecisionModelNote({ catalog, litellmProvider }: Decision
   return (
     <Alert variant="info" role="note" aria-label="Decision model notice" className="mb-4">
       <Info />
-      <AlertTitle>Decision model</AlertTitle>
+      <AlertTitle>决策模型</AlertTitle>
       <AlertDescription>
         <p>
           For decision requests, call <code>/v1/decisions</code> (OpenAI format) or <code>/v1/systemone</code> (System

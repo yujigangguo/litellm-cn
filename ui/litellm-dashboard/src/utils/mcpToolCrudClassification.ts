@@ -69,7 +69,7 @@ export const CRUD_GROUP_META: Record<
     risk: "medium",
   },
   update: {
-    label: "Update",
+    label: "更新",
     description: "Modify existing resources — edit, patch, rename.",
     risk: "medium",
   },

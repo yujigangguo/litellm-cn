@@ -32,9 +32,9 @@ import CoordinationRedisSettings from "./coordination_redis_settings";
 import { ErrorDrilldownCard } from "./ErrorDrilldown";
 
 const REQUEST_SERIES = {
-  apiRequests: "LLM API requests",
-  cacheHits: "Cache hit",
-  failed: "Failed requests",
+  apiRequests: "LLM API 请求",
+  cacheHits: "缓存命中",
+  failed: "失败请求",
 } as const;
 
 const UNKNOWN_CALL_TYPE = "Unknown";
@@ -154,9 +154,9 @@ const CacheDashboard: React.FC<CachePageProps> = ({ accessToken, token, userRole
   const totals = activity?.totals;
   const hasRequests = totals != null && totals.api_requests + totals.cache_hits + totals.failed_requests > 0;
   const statCards = [
-    { label: "Cache Hit Ratio", value: `${hasRequests ? totals.cache_hit_ratio.toFixed(2) : "0"}%` },
-    { label: "Cache Hits", value: valueFormatterNumbers(totals?.cache_hits ?? 0) },
-    { label: "Cached Completion Tokens", value: valueFormatterNumbers(totals?.cached_completion_tokens ?? 0) },
+    { label: "缓存命中率", value: `${hasRequests ? totals.cache_hit_ratio.toFixed(2) : "0"}%` },
+    { label: "缓存命中", value: valueFormatterNumbers(totals?.cache_hits ?? 0) },
+    { label: "缓存的补全 Token", value: valueFormatterNumbers(totals?.cached_completion_tokens ?? 0) },
   ];
 
   return (
@@ -164,21 +164,21 @@ const CacheDashboard: React.FC<CachePageProps> = ({ accessToken, token, userRole
       <div className="mt-2 flex w-full items-center justify-between border-b">
         <TabsList variant="line" className="h-auto rounded-none p-0">
           <TabsTrigger value="analytics" className="flex-none rounded-none px-4 py-2">
-            Cache Analytics
+            缓存分析
           </TabsTrigger>
           <TabsTrigger value="health" className="flex-none rounded-none px-4 py-2">
-            Cache Health
+            缓存健康
           </TabsTrigger>
           <TabsTrigger value="settings" className="flex-none rounded-none px-4 py-2">
-            Cache Settings
+            缓存设置
           </TabsTrigger>
           <TabsTrigger value="coordination" className="flex-none rounded-none px-4 py-2">
-            Coordination Redis
+            协调 Redis
           </TabsTrigger>
         </TabsList>
 
         <div className="flex items-center space-x-2">
-          {lastRefreshed && <p className="text-sm text-muted-foreground">Last Refreshed: {lastRefreshed}</p>}
+          {lastRefreshed && <p className="text-sm text-muted-foreground">最近刷新：{lastRefreshed}</p>}
           <Button variant="outline" size="icon-sm" onClick={handleRefreshClick} aria-label="刷新">
             <RefreshCw />
           </Button>
@@ -228,7 +228,7 @@ const CacheDashboard: React.FC<CachePageProps> = ({ accessToken, token, userRole
                       ))
                     }
                   </ComboboxValue>
-                  <ComboboxChipsInput placeholder="Select Virtual Keys" />
+                  <ComboboxChipsInput placeholder="选择虚拟密钥" />
                 </ComboboxChips>
                 <ComboboxContent anchor={anchor1}>
                   <ComboboxEmpty>No virtual keys found</ComboboxEmpty>
@@ -261,7 +261,7 @@ const CacheDashboard: React.FC<CachePageProps> = ({ accessToken, token, userRole
                   <ComboboxChipsInput placeholder="Select Models" />
                 </ComboboxChips>
                 <ComboboxContent anchor={anchor2}>
-                  <ComboboxEmpty>No models found</ComboboxEmpty>
+                  <ComboboxEmpty>未找到模型</ComboboxEmpty>
                   <ComboboxList>
                     {(model: string) => (
                       <ComboboxItem key={model} value={model}>
@@ -295,7 +295,7 @@ const CacheDashboard: React.FC<CachePageProps> = ({ accessToken, token, userRole
 
             <Card className="mt-4">
               <CardHeader>
-                <CardTitle className="text-base font-semibold">Cache Hits vs API Requests</CardTitle>
+                <CardTitle className="text-base font-semibold">缓存命中 vs API 请求</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
@@ -338,7 +338,7 @@ const CacheDashboard: React.FC<CachePageProps> = ({ accessToken, token, userRole
             <Card className="mt-6">
               <CardHeader>
                 <CardTitle className="text-base font-semibold">
-                  Cached Completion Tokens vs Generated Completion Tokens
+                  缓存补全 Token vs 生成补全 Token
                 </CardTitle>
               </CardHeader>
               <CardContent>

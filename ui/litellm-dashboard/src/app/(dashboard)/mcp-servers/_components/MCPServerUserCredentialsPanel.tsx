@@ -77,9 +77,9 @@ function CredentialsBody({
           <TableRow>
             <TableHead>用户</TableHead>
             <TableHead>类型</TableHead>
-            <TableHead>Connected</TableHead>
+            <TableHead>已连接</TableHead>
             <TableHead>Expires</TableHead>
-            <TableHead>Updated</TableHead>
+            <TableHead>更新时间</TableHead>
             {onRevoke ? <TableHead className="text-right">操作</TableHead> : null}
           </TableRow>
         </TableHeader>

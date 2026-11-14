@@ -75,18 +75,18 @@ const TagEditForm: React.FC<TagEditFormProps> = ({ tag, seedBudgetFields, userMo
   return (
     <form onSubmit={form.handleSubmit(submitVisibleValues)} noValidate>
       <FieldGroup>
-        <FormField control={form.control} name="name" label="Tag Name">
+        <FormField control={form.control} name="name" label="标签名称">
           {({ ref, ...field }) => <Input {...field} ref={ref} />}
         </FormField>
 
-        <FormField control={form.control} name="description" label="Description">
+        <FormField control={form.control} name="description" label="描述">
           {({ ref, value, ...field }) => <Textarea {...field} ref={ref} value={value ?? ""} rows={4} />}
         </FormField>
 
         <FormField
           control={form.control}
           name="models"
-          label="Allowed Models"
+          label="允许的模型"
           description="Select which models are allowed to process this type of data"
         >
           {({ value, onChange }) => (
@@ -118,7 +118,7 @@ const TagEditForm: React.FC<TagEditFormProps> = ({ tag, seedBudgetFields, userMo
             <FormField
               control={form.control}
               name="budget_duration"
-              label="Reset Budget"
+              label="重置预算"
               description="How often the budget should reset"
             >
               {({ id, value, onChange }) => (
@@ -148,7 +148,7 @@ const TagEditForm: React.FC<TagEditFormProps> = ({ tag, seedBudgetFields, userMo
         <Button type="button" variant="outline" onClick={onCancel}>
           取消
         </Button>
-        <Button type="submit">Save Changes</Button>
+        <Button type="submit">保存更改</Button>
       </div>
     </form>
   );
@@ -282,14 +282,14 @@ const TagInfoView: React.FC<TagInfoViewProps> = ({ tagId, onClose, accessToken, 
                   <p>{tagDetails.name}</p>
                 </div>
                 <div>
-                  <p className="font-medium">Description</p>
+                  <p className="font-medium">描述</p>
                   <p>{tagDetails.description || "-"}</p>
                 </div>
                 <div>
-                  <p className="font-medium">Allowed Models</p>
+                  <p className="font-medium">允许的模型</p>
                   <div className="flex flex-wrap gap-2 mt-2">
                     {!tagDetails.models || tagDetails.models.length === 0 ? (
-                      <Badge variant="secondary">All Models</Badge>
+                      <Badge variant="secondary">全部模型</Badge>
                     ) : (
                       tagDetails.models.map((modelId) => (
                         <Badge key={modelId} variant="secondary">

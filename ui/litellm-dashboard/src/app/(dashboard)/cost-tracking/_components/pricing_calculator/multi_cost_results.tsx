@@ -84,11 +84,11 @@ const SingleModelBreakdown: React.FC<{
             </p>
           </div>
           <div className="min-w-0">
-            <p className="text-xs text-muted-foreground block">{periodLabel} Input</p>
+            <p className="text-xs text-muted-foreground block">{periodLabel} 输入</p>
             <p className="text-sm break-words">{formatCost(periodInputCost)}</p>
           </div>
           <div className="min-w-0">
-            <p className="text-xs text-muted-foreground block">{periodLabel} Output</p>
+            <p className="text-xs text-muted-foreground block">{periodLabel} 输出</p>
             <p className="text-sm break-words">{formatCost(periodOutputCost)}</p>
           </div>
           <div className="min-w-0">
@@ -130,7 +130,7 @@ const MultiCostResults: React.FC<MultiCostResultsProps> = ({ multiResult, timePe
   if (!hasAnyResult && !isAnyLoading && !hasAnyError) {
     return (
       <div className="py-6 text-center border border-dashed border-border rounded-lg bg-muted">
-        <p className="text-muted-foreground">Select models above to see cost estimates</p>
+        <p className="text-muted-foreground">选择上方模型以查看成本估算</p>
       </div>
     );
   }
@@ -221,7 +221,7 @@ const MultiCostResults: React.FC<MultiCostResultsProps> = ({ multiResult, timePe
             </div>
           </div>
           <div className="min-w-0">
-            <span className="text-xs text-muted-foreground">Total {periodLabel}</span>
+            <span className="text-xs text-muted-foreground">总计 {periodLabel}</span>
             <div
               className={`text-lg font-mono break-words ${timePeriod === "day" ? "text-success" : "text-purple-600 dark:text-purple-300"}`}
             >

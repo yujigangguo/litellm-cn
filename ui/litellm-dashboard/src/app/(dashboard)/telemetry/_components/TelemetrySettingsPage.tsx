@@ -163,7 +163,7 @@ function TelemetrySwitch({
   return (
     <div className="flex items-center gap-2 text-sm font-medium">
       <Switch
-        aria-label="Telemetry"
+        aria-label="遥测"
         checked={on}
         disabled={!settings.editable || update.isPending}
         onCheckedChange={(next) =>
@@ -209,7 +209,7 @@ export default function TelemetrySettingsPage() {
         <PageHeader>
           <PageHeaderTitle>
             <Activity />
-            Telemetry
+            遥测
           </PageHeaderTitle>
           <PageHeaderDescription>
             Choose what privacy-safe, aggregated usage data this proxy shares

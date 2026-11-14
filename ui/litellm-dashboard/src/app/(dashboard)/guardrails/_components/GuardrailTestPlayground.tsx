@@ -172,7 +172,7 @@ const GuardrailTestPlayground: React.FC<GuardrailTestPlaygroundProps> = ({
                             <span className="text-muted-foreground">{guardrail.litellm_params.guardrail}</span>
                           </div>
                           <div>
-                            <span className="font-medium">Mode: </span>
+                            <span className="font-medium">模式： </span>
                             <span className="text-muted-foreground">
                               {formatGuardrailMode(guardrail.litellm_params.mode)}
                             </span>

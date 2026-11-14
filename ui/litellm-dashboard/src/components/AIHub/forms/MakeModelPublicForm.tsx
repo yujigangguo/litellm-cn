@@ -141,7 +141,7 @@ const MakeModelPublicForm: React.FC<MakeModelPublicFormProps> = ({
     return (
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold">Select Models to Make Public</h3>
+          <h3 className="text-lg font-semibold">选择要公开的模型</h3>
           <div className="flex items-center space-x-2">
             <label className="flex items-center gap-2 text-sm">
               <Checkbox
@@ -150,7 +150,7 @@ const MakeModelPublicForm: React.FC<MakeModelPublicFormProps> = ({
                 onCheckedChange={(checked) => handleSelectAll(checked === true)}
                 disabled={filteredData.length === 0}
               />
-              Select All {filteredData.length > 0 && `(${filteredData.length})`}
+              全选 {filteredData.length > 0 && `(${filteredData.length})`}
             </label>
           </div>
         </div>

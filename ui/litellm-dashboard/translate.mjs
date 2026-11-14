@@ -11,8 +11,31 @@ import parser from "@babel/parser";
 
 const root = process.cwd();
 const dict = JSON.parse(fs.readFileSync(path.join(root, "zh-dict.json"), "utf8"));
-const ATTRS = new Set(["placeholder", "title", "aria-label", "label", "alt", "description"]);
-const PROPS = new Set(["label", "title", "description", "groupLabel", "placeholder"]);
+const ATTRS = new Set([
+  "placeholder", "title", "aria-label", "label", "alt", "description",
+  "header", "subheader", "helperText", "emptyText", "emptyMessage",
+  "confirmText", "cancelText", "tooltip", "message", "detail", "searchPlaceholder",
+]);
+const LOGIC_KEYS = new Set([
+  "value", "id", "key", "slug", "path", "href", "url", "route", "type",
+  "status", "state", "mode", "role", "kind", "level", "severity", "outcome",
+  "result", "method", "provider", "model", "endpoint", "event", "action",
+  "field", "column", "configKey", "settingKey", "env", "envVar", "param",
+  "params", "api", "database", "db", "table", "sort", "order", "direction",
+  "format", "lang", "locale", "currency", "unit", "date", "time", "timestamp",
+  "createdAt", "updatedAt", "name", "children", "className", "style",
+]);
+const PROPS = new Set([
+  "label", "title", "description", "groupLabel", "placeholder",
+  "header", "subheader", "helperText", "emptyText", "emptyMessage",
+  "confirmText", "cancelText", "tooltip", "message", "detail", "displayName",
+]);
+const CALLS = new Set([
+  "toast.success", "toast.error", "toast.info", "toast.warning", "toast.fromError",
+  "alert", "window.alert", "confirm", "window.confirm",
+  "setError", "setMessage", "notify", "message.success", "message.error",
+  "message.info", "message.warning",
+]);
 const EXCLUDE = /\.(test|spec|integration\.test)\.(tsx|ts)$/;
 
 function walkFiles(dir, out = []) {
@@ -75,7 +98,19 @@ function translateFile(file) {
     if (node.type === "StringLiteral") {
       if (parent?.type === "JSXAttribute" && ATTRS.has(parent.name?.name)) addString(node);
       else if (parent?.type === "ObjectProperty" && PROPS.has(parent.key?.name || parent.key?.value)) addString(node);
-      else if (parent?.type === "ConditionalExpression") addString(node);
+      else if (parent?.type === "ObjectProperty" && parent.value === node && !parent.computed) {
+        const key = parent.key?.name || parent.key?.value;
+        if (!LOGIC_KEYS.has(key)) addString(node);
+      } else if (parent?.type === "JSXExpressionContainer" && parent.parent?.type === "JSXElement") addString(node);
+      else if (parent?.type === "CallExpression") {
+        const callee = parent.callee;
+        const name = callee?.type === "Identifier"
+          ? callee.name
+          : callee?.type === "MemberExpression"
+            ? `${callee.object?.name || callee.object?.property?.name || ""}.${callee.property?.name || ""}`
+            : "";
+        if (CALLS.has(name) && parent.arguments?.[0] === node) addString(node);
+      }
     }
     for (const key of Object.keys(node)) {
       if (key === "loc" || key === "start" || key === "end") continue;

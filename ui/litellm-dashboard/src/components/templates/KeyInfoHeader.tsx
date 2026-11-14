@@ -95,9 +95,9 @@ function UserField({ userAlias, userEmail, userId }: { userAlias?: string | null
   const popoverContent = (
     <div className="flex flex-col gap-2 text-xs min-w-[200px] max-w-[300px]">
       {[
-        { label: "User Alias", value: userAlias ?? null },
+        { label: "用户别名", value: userAlias ?? null },
         { label: "User Email", value: userEmail || null },
-        { label: "User ID", value: userId || null },
+        { label: "用户 ID", value: userId || null },
       ].map(({ label, value }) => (
         <div key={label} className="flex flex-col min-w-0">
           <span className="text-muted-foreground">{label}</span>
@@ -210,7 +210,7 @@ export function KeyInfoHeader({
             {isBlocked && (
               <Badge variant="destructive">
                 <Ban className="size-3" />
-                Blocked
+                已停用
               </Badge>
             )}
           </div>
@@ -303,7 +303,7 @@ export function KeyInfoHeader({
             truncate
           />
           <LabeledField
-            label="Organization"
+            label="组织"
             value={data.orgAlias || data.orgId}
             icon={<Building2 className="size-3.5" />}
             href={data.orgId ? orgDetailHref(data.orgId) : undefined}

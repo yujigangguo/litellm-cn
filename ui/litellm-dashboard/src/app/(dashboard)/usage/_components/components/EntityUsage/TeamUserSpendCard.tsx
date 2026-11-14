@@ -31,40 +31,40 @@ interface TeamUserSpendCardProps {
 const QUIET_HEADER = { headerClassName: "font-normal" };
 
 const columns: ColumnDef<TeamUserSpendRow>[] = [
-  { header: "Team", accessorFn: teamLabel, id: "team", meta: QUIET_HEADER, cell: ({ row }) => teamLabel(row.original) },
+  { header: "团队", accessorFn: teamLabel, id: "team", meta: QUIET_HEADER, cell: ({ row }) => teamLabel(row.original) },
   {
-    header: "User",
+    header: "用户",
     accessorFn: userLabel,
     id: "user",
     meta: QUIET_HEADER,
     cell: ({ row }) => <span className="font-medium text-foreground">{userLabel(row.original)}</span>,
   },
   {
-    header: "Spend",
+    header: "花费",
     accessorKey: "spend",
     meta: { numeric: true, ...QUIET_HEADER },
     cell: ({ row }) => <MoneyCell value={row.original.spend} decimals={4} />,
   },
   {
-    header: "Requests",
+    header: "请求数",
     accessorKey: "api_requests",
     meta: { numeric: true, ...QUIET_HEADER },
     cell: ({ row }) => row.original.api_requests.toLocaleString(),
   },
   {
-    header: "Successful",
+    header: "成功",
     accessorKey: "successful_requests",
     meta: { numeric: true, className: "text-success", ...QUIET_HEADER },
     cell: ({ row }) => row.original.successful_requests.toLocaleString(),
   },
   {
-    header: "Failed",
+    header: "失败",
     accessorKey: "failed_requests",
     meta: { numeric: true, className: "text-destructive", ...QUIET_HEADER },
     cell: ({ row }) => row.original.failed_requests.toLocaleString(),
   },
   {
-    header: "Tokens",
+    header: "Token 数",
     accessorKey: "total_tokens",
     meta: { numeric: true, ...QUIET_HEADER },
     cell: ({ row }) => row.original.total_tokens.toLocaleString(),

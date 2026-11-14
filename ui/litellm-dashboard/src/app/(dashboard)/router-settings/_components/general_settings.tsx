@@ -128,7 +128,7 @@ const SettingValueEditor: React.FC<{
       <Input
         key={String(setting.stored_in_db)}
         aria-label={setting.field_name}
-        placeholder="Comma-separated values"
+        placeholder="逗号分隔的值"
         defaultValue={fromListValue(setting.field_value)}
         onChange={(event) => onChange(setting.field_name, toListValue(event.target.value))}
       />
@@ -138,10 +138,10 @@ const SettingValueEditor: React.FC<{
     return (
       <Select value={setting.field_value ?? null} onValueChange={(newValue) => onChange(setting.field_name, newValue)}>
         <SelectTrigger className="min-w-32">
-          <SelectValue placeholder="Default" />
+          <SelectValue placeholder="默认" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value={null}>Default</SelectItem>
+          <SelectItem value={null}>默认</SelectItem>
           {(setting.field_options ?? []).map((option) => (
             <SelectItem key={option} value={option}>
               {option}
@@ -185,7 +185,7 @@ export const PromptCachingPanel: React.FC<{
   return (
     <Card>
       <CardContent>
-        <CardTitle>Prompt Caching</CardTitle>
+        <CardTitle>提示缓存</CardTitle>
 
         <div className="mt-6 flex items-start justify-between gap-8">
           <div className="min-w-0 max-w-2xl">
@@ -224,11 +224,11 @@ export const PromptCachingPanel: React.FC<{
         {systemFirstSetting && (
           <div className="mt-6 flex items-start justify-between gap-8">
             <div className="min-w-0 max-w-2xl">
-              <p className="font-medium">System messages first for OpenAI</p>
+              <p className="font-medium">OpenAI 系统消息优先</p>
               <p className="mt-1 break-words text-xs text-muted-foreground">{systemFirstSetting.field_description}</p>
             </div>
             <Switch
-              aria-label="System messages first for OpenAI"
+              aria-label="OpenAI 系统消息优先"
               checked={isOn(systemFirstSetting.field_value)}
               onCheckedChange={(checked) => persist(OPENAI_SYSTEM_MESSAGES_FIRST, checked)}
             />
@@ -313,11 +313,11 @@ const GeneralSettings: React.FC<GeneralSettingsPageProps> = ({ accessToken, user
     <div className="w-full">
       <Tabs defaultValue="loadbalancing" className="h-[75vh] w-full">
         <TabsList variant="line" className="mx-8 mt-4">
-          <TabsTrigger value="loadbalancing">Loadbalancing</TabsTrigger>
-          <TabsTrigger value="routing-groups">Routing Groups</TabsTrigger>
-          <TabsTrigger value="fallbacks">Fallbacks</TabsTrigger>
-          <TabsTrigger value="prompt-caching">Prompt Caching</TabsTrigger>
-          <TabsTrigger value="general">General</TabsTrigger>
+          <TabsTrigger value="loadbalancing">负载均衡</TabsTrigger>
+          <TabsTrigger value="routing-groups">路由组</TabsTrigger>
+          <TabsTrigger value="fallbacks">备用模型</TabsTrigger>
+          <TabsTrigger value="prompt-caching">提示缓存</TabsTrigger>
+          <TabsTrigger value="general">通用</TabsTrigger>
         </TabsList>
         <TabsContent value="loadbalancing" className="px-8 py-6" keepMounted>
           <RouterSettings accessToken={accessToken} userRole={userRole} userID={userID} />
@@ -340,7 +340,7 @@ const GeneralSettings: React.FC<GeneralSettingsPageProps> = ({ accessToken, user
                     <TableHead>Setting</TableHead>
                     <TableHead>Value</TableHead>
                     <TableHead>状态</TableHead>
-                    <TableHead>Action</TableHead>
+                    <TableHead>操作</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -370,7 +370,7 @@ const GeneralSettings: React.FC<GeneralSettingsPageProps> = ({ accessToken, user
                           ) : value.stored_in_db == false ? (
                             <StatusBadge tone="neutral" label="In Config" />
                           ) : (
-                            <StatusBadge tone="neutral" label="Not Set" />
+                            <StatusBadge tone="neutral" label="未设置" />
                           )}
                         </TableCell>
                         <TableCell>
@@ -381,7 +381,7 @@ const GeneralSettings: React.FC<GeneralSettingsPageProps> = ({ accessToken, user
                             }
                             onClick={() => handleUpdateField(value.field_name)}
                           >
-                            Update
+                            更新
                           </Button>
                           {value.field_name === "request_tag_mappings" && value.editable === false ? null : (
                             <span

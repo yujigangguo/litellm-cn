@@ -78,7 +78,7 @@ export default function UserConnectionsPanel() {
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-muted-foreground">Could not load your connections.</span>
                   <Button variant="outline" size="sm" onClick={() => refetch()}>
-                    Retry
+                    重试
                   </Button>
                 </div>
               </TableCell>
@@ -105,11 +105,11 @@ export default function UserConnectionsPanel() {
               <TableCell className="text-right">
                 {connection.connected ? (
                   <Button variant="outline" size="sm" onClick={() => disconnect(connection.credential_name)}>
-                    Disconnect
+                    断开
                   </Button>
                 ) : (
                   <Button size="sm" onClick={() => setConnectingCredential(connection.credential_name)}>
-                    Connect
+                    连接
                   </Button>
                 )}
               </TableCell>

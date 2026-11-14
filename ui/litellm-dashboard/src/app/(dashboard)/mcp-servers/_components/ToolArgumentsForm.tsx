@@ -34,8 +34,8 @@ const argumentLabel = (field: ToolArgumentField): React.ReactNode => (
 );
 
 const BOOLEAN_ITEMS = [
-  { value: true, label: "True" },
-  { value: false, label: "False" },
+  { value: true, label: "是" },
+  { value: false, label: "否" },
 ];
 
 const booleanTitle = (value: unknown): string | undefined => {
@@ -84,7 +84,7 @@ const ToolArgumentControl: React.FC<{
         className="w-full rounded-lg border border-input bg-transparent px-3 py-2 text-sm shadow-xs transition-colors focus:border-ring focus:ring-3 focus:ring-ring/50 focus:outline-hidden"
       >
         <option value={-1} disabled={field.required}>
-          Select {field.key}
+          选择 {field.key}
         </option>
         {prop.enum.map((option, index) => (
           <option key={option} value={index}>
@@ -124,9 +124,9 @@ const ToolArgumentControl: React.FC<{
           <SelectValue placeholder={`Select ${field.key}`} />
         </SelectTrigger>
         <SelectContent>
-          {!field.required && <SelectItem value={null}>Select {field.key}</SelectItem>}
-          <SelectItem value={true}>True</SelectItem>
-          <SelectItem value={false}>False</SelectItem>
+          {!field.required && <SelectItem value={null}>选择 {field.key}</SelectItem>}
+          <SelectItem value={true}>是</SelectItem>
+          <SelectItem value={false}>否</SelectItem>
         </SelectContent>
       </Select>
     );
@@ -159,7 +159,7 @@ const ToolArgumentFields: React.FC<{
           name="args.0"
           label={
             <span>
-              Input <span className="text-destructive">*</span>
+              输入 <span className="text-destructive">*</span>
             </span>
           }
         >

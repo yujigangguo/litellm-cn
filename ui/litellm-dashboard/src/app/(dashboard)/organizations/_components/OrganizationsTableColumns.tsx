@@ -87,8 +87,8 @@ export const getOrganizationsTableColumns = ({
   {
     id: "organization_id",
     accessorKey: "organization_id",
-    meta: { title: "Organization ID" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Organization ID" />,
+    meta: { title: "组织 ID" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="组织 ID" />,
     size: 220,
     enableSorting: true,
     cell: ({ row }) => (
@@ -103,8 +103,8 @@ export const getOrganizationsTableColumns = ({
   {
     id: "organization_alias",
     accessorKey: "organization_alias",
-    meta: { title: "Organization Name" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Organization Name" />,
+    meta: { title: "组织名称" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="组织名称" />,
     size: 200,
     enableSorting: true,
     cell: ({ row }) => {
@@ -140,12 +140,12 @@ export const getOrganizationsTableColumns = ({
     accessorFn: (organization) => getOrganizationBudget(organization).max_budget ?? Number.POSITIVE_INFINITY,
     sortUndefined: "last",
     sortDescFirst: true,
-    meta: { title: "Budget (USD)", numeric: true },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Budget (USD)" />,
+    meta: { title: "预算（美元）", numeric: true },
+    header: ({ column }) => <DataTableSortHeader column={column} title="预算（美元）" />,
     size: 120,
     enableSorting: true,
     cell: ({ row }) => (
-      <MoneyCell value={getOrganizationBudget(row.original).max_budget} decimals={2} emptyText="Unlimited" showZero />
+      <MoneyCell value={getOrganizationBudget(row.original).max_budget} decimals={2} emptyText="不限" showZero />
     ),
   },
   {
@@ -183,11 +183,11 @@ export const getOrganizationsTableColumns = ({
     accessorFn: (organization) => organization.members?.length ?? 0,
     sortUndefined: "last",
     sortDescFirst: true,
-    meta: { title: "Members", numeric: true },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Members" />,
+    meta: { title: "成员", numeric: true },
+    header: ({ column }) => <DataTableSortHeader column={column} title="成员" />,
     size: 100,
     enableSorting: true,
-    cell: ({ row }) => <span className="text-sm">{row.original.members?.length ?? 0} Members</span>,
+    cell: ({ row }) => <span className="text-sm">{row.original.members?.length ?? 0} 成员</span>,
   },
   ...(["tpm_limit", "rpm_limit"] as const).map(
     (field): ColumnDef<Organization> => ({

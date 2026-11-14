@@ -30,7 +30,7 @@ export default function MoyaiConnected({
           className={`${styles.rise} mb-5 inline-flex items-center gap-2 rounded-full bg-white/[0.06] px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-[rgba(220,228,255,0.75)] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)]`}
         >
           <span className="size-1.5 rounded-full bg-[#28c840] shadow-[0_0_8px_#28c840]" />
-          Connected
+          已连接
         </div>
         <img src={moyaiHead.src} alt="" className={`${styles.mark} mb-4 h-14 w-auto`} />
         <h1 className="m-0 text-[clamp(28px,3.5vw,44px)] font-medium tracking-[-0.03em] text-white">Moyai connected</h1>

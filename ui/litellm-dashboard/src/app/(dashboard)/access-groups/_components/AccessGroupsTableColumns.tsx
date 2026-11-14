@@ -40,7 +40,7 @@ function ResourcesCell({ group }: { group: AccessGroup }) {
   const items = [
     { key: "models" as const, label: "模型", count: group.modelIds.length },
     { key: "mcpServers" as const, label: "MCP 服务", count: group.mcpServerIds.length },
-    { key: "agents" as const, label: "Agents", count: group.agentIds.length },
+    { key: "agents" as const, label: "助手", count: group.agentIds.length },
     { key: "skills" as const, label: "技能", count: group.skillNames.length },
   ];
 
@@ -142,8 +142,8 @@ export const getAccessGroupsTableColumns = ({
     },
     {
       id: "resources",
-      meta: { title: "Resources" },
-      header: "Resources",
+      meta: { title: "资源" },
+      header: "资源",
       size: 220,
       enableSorting: false,
       cell: ({ row }) => <ResourcesCell group={row.original} />,
@@ -161,8 +161,8 @@ export const getAccessGroupsTableColumns = ({
     {
       id: "updatedAt",
       accessorKey: "updatedAt",
-      meta: { title: "Updated" },
-      header: "Updated",
+      meta: { title: "更新时间" },
+      header: "更新时间",
       size: 150,
       enableSorting: false,
       cell: ({ row }) => <DateCell value={row.original.updatedAt} precision="date" />,

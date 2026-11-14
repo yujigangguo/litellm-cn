@@ -109,7 +109,7 @@ export function ByokConnect({
       <div className="flex gap-2">
         <Button size="sm" onClick={() => void connect()} disabled={isSaving}>
           {isSaving && <Spinner />}
-          Connect
+          连接
         </Button>
         {onCancel && (
           <Button variant="ghost" size="sm" onClick={onCancel} disabled={isSaving}>

@@ -97,8 +97,8 @@ export const getPluginTableColumns = ({
   {
     id: "name",
     accessorKey: "name",
-    meta: { title: "Skill Name" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Skill Name" />,
+    meta: { title: "技能名称" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="技能名称" />,
     size: 220,
     enableSorting: true,
     cell: ({ row }) => (
@@ -113,8 +113,8 @@ export const getPluginTableColumns = ({
   {
     id: "version",
     accessorKey: "version",
-    meta: { title: "Version" },
-    header: "Version",
+    meta: { title: "版本" },
+    header: "版本",
     size: 100,
     enableSorting: false,
     cell: ({ row }) => <span className="text-sm text-muted-foreground">{row.original.version || "N/A"}</span>,
@@ -122,8 +122,8 @@ export const getPluginTableColumns = ({
   {
     id: "description",
     accessorKey: "description",
-    meta: { title: "Description" },
-    header: "Description",
+    meta: { title: "描述" },
+    header: "描述",
     size: 300,
     enableSorting: false,
     cell: ({ row }) => {
@@ -138,8 +138,8 @@ export const getPluginTableColumns = ({
   {
     id: "category",
     accessorKey: "category",
-    meta: { title: "Category", skeleton: "badge" },
-    header: "Category",
+    meta: { title: "分类", skeleton: "badge" },
+    header: "分类",
     size: 150,
     enableSorting: false,
     cell: ({ row }) => <PluginCategoryBadge category={row.original.category ?? undefined} />,
@@ -147,8 +147,8 @@ export const getPluginTableColumns = ({
   {
     id: "enabled",
     accessorKey: "enabled",
-    meta: { title: "Public", skeleton: "badge" },
-    header: "Public",
+    meta: { title: "公开", skeleton: "badge" },
+    header: "公开",
     size: 100,
     enableSorting: false,
     cell: ({ row }) => (

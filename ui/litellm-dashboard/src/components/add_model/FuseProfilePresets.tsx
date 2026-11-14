@@ -142,7 +142,7 @@ function FuseProfilePresetField({
               <div className="flex flex-wrap gap-x-3 gap-y-1">
                 {preset.sources.map((source, index) => (
                   <a key={source} href={source} target="_blank" rel="noopener noreferrer" className="underline">
-                    Source {index + 1}
+                    来源 {index + 1}
                   </a>
                 ))}
               </div>

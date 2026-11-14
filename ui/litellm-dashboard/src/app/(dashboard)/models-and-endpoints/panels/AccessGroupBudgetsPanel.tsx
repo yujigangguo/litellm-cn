@@ -109,7 +109,7 @@ export default function AccessGroupBudgetsPanel() {
         message="Are you sure you want to clear this access group's budget? The recorded shared spend is cleared with it, and the group's models stay available."
         resourceInformationTitle="Access Group"
         resourceInformation={[
-          { label: "Access Group", value: clearing?.access_group ?? null, code: true },
+          { label: "访问组", value: clearing?.access_group ?? null, code: true },
           { label: "预算上限", value: clearing?.budget?.max_budget?.toString() ?? null },
         ]}
         onCancel={() => setClearing(null)}

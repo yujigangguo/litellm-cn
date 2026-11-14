@@ -223,18 +223,18 @@ export function UserEditView({
       <form onSubmit={form.handleSubmit(handleSubmit)}>
         <FieldGroup>
           {!isBulkEdit && (
-            <FormField control={form.control} name="user_id" label="User ID">
+            <FormField control={form.control} name="user_id" label="用户 ID">
               {({ ref, value, ...control }) => <Input {...control} ref={ref} value={value ?? ""} disabled />}
             </FormField>
           )}
 
           {!isBulkEdit && (
-            <FormField control={form.control} name="user_email" label="Email">
+            <FormField control={form.control} name="user_email" label="邮箱">
               {({ ref, value, ...control }) => <Input {...control} ref={ref} value={value ?? ""} />}
             </FormField>
           )}
 
-          <FormField control={form.control} name="user_alias" label="User Alias">
+          <FormField control={form.control} name="user_alias" label="用户别名">
             {({ ref, value, ...control }) => <Input {...control} ref={ref} value={value ?? ""} />}
           </FormField>
 
@@ -314,7 +314,7 @@ export function UserEditView({
             )}
           </FormField>
 
-          <FormField control={form.control} name="budget_duration" label="Reset Budget">
+          <FormField control={form.control} name="budget_duration" label="重置预算">
             {({ id, value, onChange }) => (
               <BudgetDurationDropdown
                 id={id}
@@ -389,7 +389,7 @@ export function UserEditView({
             />
           )}
 
-          <FormField control={form.control} name="metadata" label="Metadata">
+          <FormField control={form.control} name="metadata" label="元数据">
             {({ ref, value, ...control }) => (
               <Textarea {...control} ref={ref} value={value ?? ""} rows={4} placeholder="Enter metadata as JSON" />
             )}
@@ -432,7 +432,7 @@ export function UserEditView({
           <Button variant="secondary" type="button" onClick={onCancel}>
             取消
           </Button>
-          <Button type="submit">Save Changes</Button>
+          <Button type="submit">保存更改</Button>
         </div>
       </form>
     </TooltipProvider>

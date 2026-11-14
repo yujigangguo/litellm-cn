@@ -352,21 +352,21 @@ const AgentInfoView: React.FC<AgentInfoViewProps> = ({ agentId, onClose, accessT
               isAdmin={isAdmin}
             />
             <DetailList>
-              <DetailItem label="Agent ID">{agent.agent_id}</DetailItem>
-              <DetailItem label="Agent Name">{agent.agent_name}</DetailItem>
-              <DetailItem label="Display Name">{agent.agent_card_params?.name || "-"}</DetailItem>
-              <DetailItem label="Description">{agent.agent_card_params?.description || "-"}</DetailItem>
+              <DetailItem label="助手 ID">{agent.agent_id}</DetailItem>
+              <DetailItem label="助手名称">{agent.agent_name}</DetailItem>
+              <DetailItem label="显示名称">{agent.agent_card_params?.name || "-"}</DetailItem>
+              <DetailItem label="描述">{agent.agent_card_params?.description || "-"}</DetailItem>
               <DetailItem label="URL">{agent.agent_card_params?.url || "-"}</DetailItem>
-              <DetailItem label="Version">{agent.agent_card_params?.version || "-"}</DetailItem>
+              <DetailItem label="版本">{agent.agent_card_params?.version || "-"}</DetailItem>
               <DetailItem label="Protocol Version">{agent.agent_card_params?.protocolVersion || "-"}</DetailItem>
               <DetailItem label="Streaming">
                 {agent.agent_card_params?.capabilities?.streaming ? "Yes" : "No"}
               </DetailItem>
               {agent.agent_card_params?.capabilities?.pushNotifications && (
-                <DetailItem label="Push Notifications">Yes</DetailItem>
+                <DetailItem label="Push Notifications">是</DetailItem>
               )}
               {agent.agent_card_params?.capabilities?.stateTransitionHistory && (
-                <DetailItem label="State Transition History">Yes</DetailItem>
+                <DetailItem label="State Transition History">是</DetailItem>
               )}
               <DetailItem label="技能">{agent.agent_card_params?.skills?.length || 0} configured</DetailItem>
               {agent.litellm_params?.model && <DetailItem label="模型">{agent.litellm_params.model}</DetailItem>}
@@ -457,14 +457,14 @@ const AgentInfoView: React.FC<AgentInfoViewProps> = ({ agentId, onClose, accessT
                           <strong>ID:</strong> {skill.id}
                         </div>
                         <div>
-                          <strong>Description:</strong> {skill.description}
+                          <strong>描述：</strong> {skill.description}
                         </div>
                         <div>
                           <strong>Tags:</strong> {Array.isArray(skill.tags) ? skill.tags.join(", ") : skill.tags}
                         </div>
                         {skill.examples && skill.examples.length > 0 && (
                           <div>
-                            <strong>Examples:</strong>{" "}
+                            <strong>示例：</strong>{" "}
                             {Array.isArray(skill.examples) ? skill.examples.join(", ") : skill.examples}
                           </div>
                         )}
@@ -497,7 +497,7 @@ const AgentInfoView: React.FC<AgentInfoViewProps> = ({ agentId, onClose, accessT
                         setIsEditing(true);
                       }}
                     >
-                      Edit Settings
+                      编辑设置
                     </Button>
                   )}
                 </div>
@@ -508,7 +508,7 @@ const AgentInfoView: React.FC<AgentInfoViewProps> = ({ agentId, onClose, accessT
                       <form onSubmit={form.handleSubmit(handleUpdate)}>
                         <FieldGroup className="mb-4">
                           <Field>
-                            <FieldLabel htmlFor="agent-id">Agent ID</FieldLabel>
+                            <FieldLabel htmlFor="agent-id">助手 ID</FieldLabel>
                             <Input id="agent-id" value={agent.agent_id} disabled readOnly />
                           </Field>
                         </FieldGroup>
@@ -612,7 +612,7 @@ const AgentInfoView: React.FC<AgentInfoViewProps> = ({ agentId, onClose, accessT
                           </Button>
                           <Button type="submit" disabled={isSaving} aria-busy={isSaving}>
                             {isSaving && <UiLoadingSpinner className="size-4" />}
-                            Save Changes
+                            保存更改
                           </Button>
                         </div>
                       </form>

@@ -167,9 +167,9 @@ export default function SystemOneUI({ accessToken, disabledPersonalKeyCreation =
   return (
     <div className="flex h-full min-h-0 flex-col overflow-auto p-4 xl:overflow-hidden">
       <div className="mx-auto grid w-full max-w-[1400px] gap-4 xl:min-h-0 xl:flex-1 xl:grid-cols-[minmax(0,11fr)_minmax(0,9fr)]">
-        <section className="flex min-h-96 flex-col gap-4 xl:min-h-0" aria-label="Decisions request editor">
+        <section className="flex min-h-96 flex-col gap-4 xl:min-h-0" aria-label="决策请求编辑器">
           <div className="grid gap-3 rounded-lg border bg-card p-3 sm:grid-cols-3">
-            <SetupField label="Endpoint" htmlFor="decision-endpoint">
+            <SetupField label="端点" htmlFor="decision-endpoint">
               <Select
                 value={endpoint}
                 onValueChange={(value) => {
@@ -179,7 +179,7 @@ export default function SystemOneUI({ accessToken, disabledPersonalKeyCreation =
                   }
                 }}
               >
-                <SelectTrigger id="decision-endpoint" className="w-full" aria-label="Decision endpoint">
+                <SelectTrigger id="decision-endpoint" className="w-full" aria-label="决策端点">
                   <SelectValue>{endpoint}</SelectValue>
                 </SelectTrigger>
                 <SelectContent>
@@ -191,7 +191,7 @@ export default function SystemOneUI({ accessToken, disabledPersonalKeyCreation =
             <SetupField label="模型" htmlFor="decision-model">
               <SearchSelect
                 id="decision-model"
-                aria-label="Decision model"
+                aria-label="决策模型"
                 options={decisionModels.map((model) => ({ label: model, value: model }))}
                 value={payloadModel(rawPayload) ?? null}
                 onValueChange={handleModelPick}
@@ -215,7 +215,7 @@ export default function SystemOneUI({ accessToken, disabledPersonalKeyCreation =
                 }}
                 disabled={disabledPersonalKeyCreation}
               >
-                <SelectTrigger id="decision-key-source" className="w-full" aria-label="Virtual Key Source">
+                <SelectTrigger id="decision-key-source" className="w-full" aria-label="虚拟密钥来源">
                   <SelectValue>{apiKeySource === "custom" ? "Virtual Key" : "Current UI Session"}</SelectValue>
                 </SelectTrigger>
                 <SelectContent>
@@ -239,7 +239,7 @@ export default function SystemOneUI({ accessToken, disabledPersonalKeyCreation =
 
           <Tabs
             role="group"
-            aria-label="Request editor"
+            aria-label="请求编辑器"
             value={view}
             onValueChange={(value) => (value === "form" || value === "curl") && setView(value)}
             className={cn(
@@ -248,7 +248,7 @@ export default function SystemOneUI({ accessToken, disabledPersonalKeyCreation =
             )}
           >
             <div className="flex flex-wrap items-center justify-between gap-2 border-b px-3 py-2">
-              <TabsList aria-label="Request editor view">
+              <TabsList aria-label="请求编辑器视图">
                 <TabsTrigger value="form">Form</TabsTrigger>
                 <TabsTrigger value="curl">cURL</TabsTrigger>
               </TabsList>
@@ -258,7 +258,7 @@ export default function SystemOneUI({ accessToken, disabledPersonalKeyCreation =
                   <Button
                     variant="ghost"
                     size="icon"
-                    aria-label="Clear form"
+                    aria-label="清空表单"
                     className="hover:text-destructive"
                     onClick={() => handlePayloadChange(clearedPayload)}
                     disabled={rawPayload === clearedPayload || isLoading}
@@ -271,7 +271,7 @@ export default function SystemOneUI({ accessToken, disabledPersonalKeyCreation =
                     href={DECISIONS_DOCS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="How to call /v1/decisions and /v1/systemone"
+                    aria-label="如何调用 /v1/decisions 和 /v1/systemone"
                     className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "shrink-0")}
                   >
                     <BookOpen />
@@ -307,7 +307,7 @@ export default function SystemOneUI({ accessToken, disabledPersonalKeyCreation =
             </TabsContent>
             <div
               role="toolbar"
-              aria-label="Request actions"
+              aria-label="请求操作"
               className="flex flex-wrap items-center justify-between gap-3 border-t bg-muted/50 px-4 py-3"
             >
               <ValidationSummary validation={validation} />
@@ -326,7 +326,7 @@ export default function SystemOneUI({ accessToken, disabledPersonalKeyCreation =
           </Tabs>
         </section>
 
-        <section className="grid content-start gap-4 xl:min-h-0 xl:overflow-auto" aria-label="Decisions results">
+        <section className="grid content-start gap-4 xl:min-h-0 xl:overflow-auto" aria-label="决策结果">
           <ResponseView
             response={systemOne.data?.response}
             view={view}

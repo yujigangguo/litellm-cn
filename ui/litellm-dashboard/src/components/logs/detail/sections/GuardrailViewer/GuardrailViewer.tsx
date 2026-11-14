@@ -296,8 +296,8 @@ const MatchDetailsTable = ({ matchDetails }: { matchDetails: MatchDetail[] }) =>
           <thead>
             <tr className="border-b text-left text-muted-foreground">
               <th className="pb-2 pr-4 font-medium">类型</th>
-              <th className="pb-2 pr-4 font-medium">Method</th>
-              <th className="pb-2 pr-4 font-medium">Action</th>
+              <th className="pb-2 pr-4 font-medium">方法</th>
+              <th className="pb-2 pr-4 font-medium">操作</th>
               <th className="pb-2 font-medium">Detail</th>
             </tr>
           </thead>

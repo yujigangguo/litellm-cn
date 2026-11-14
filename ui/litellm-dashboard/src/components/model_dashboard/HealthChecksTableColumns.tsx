@@ -325,8 +325,8 @@ export const getHealthChecksTableColumns = ({
   {
     id: "health_error",
     accessorKey: "health_error",
-    meta: { title: "Error Details" },
-    header: "Error Details",
+    meta: { title: "错误详情" },
+    header: "错误详情",
     size: 240,
     enableSorting: false,
     cell: ({ row }) => {

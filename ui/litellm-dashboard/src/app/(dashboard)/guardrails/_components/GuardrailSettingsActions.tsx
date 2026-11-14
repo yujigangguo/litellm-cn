@@ -33,7 +33,7 @@ export function GuardrailSettingsActions({
         </Button>
       ) : (
         <Button variant="outline" onClick={onEdit}>
-          Edit Settings
+          编辑设置
         </Button>
       )}
       <Button variant="destructive" onClick={() => setIsModalOpen(true)}>

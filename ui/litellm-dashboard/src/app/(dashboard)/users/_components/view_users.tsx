@@ -367,10 +367,10 @@ const ViewUserDashboard: React.FC<ViewUserDashboardProps> = ({
         <Tabs defaultValue="users" className="gap-0">
           <TabsList variant="line" className="mb-4">
             <TabsTrigger value="users" className="flex-none data-active:text-primary after:bg-primary">
-              Users
+              用户
             </TabsTrigger>
             <TabsTrigger value="default-settings" className="flex-none data-active:text-primary after:bg-primary">
-              Default User Settings
+              默认用户设置
             </TabsTrigger>
           </TabsList>
 
@@ -408,10 +408,10 @@ const ViewUserDashboard: React.FC<ViewUserDashboardProps> = ({
         message="Are you sure you want to delete this user? This action cannot be undone."
         resourceInformationTitle="User Information"
         resourceInformation={[
-          { label: "Email", value: userToDelete?.user_email },
-          { label: "User ID", value: userToDelete?.user_id, code: true },
+          { label: "邮箱", value: userToDelete?.user_email },
+          { label: "用户 ID", value: userToDelete?.user_id, code: true },
           {
-            label: "Global Proxy Role",
+            label: "全局代理角色",
             value:
               (userToDelete?.user_role && possibleUIRoles?.[userToDelete.user_role]?.ui_label) ||
               userToDelete?.user_role ||

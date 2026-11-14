@@ -32,7 +32,7 @@ const QUIET_HEADER = { headerClassName: "font-normal" };
 
 const columns: ColumnDef<ProviderSpendData>[] = [
   {
-    header: "Provider",
+    header: "供应商",
     accessorKey: "provider",
     meta: QUIET_HEADER,
     cell: ({ row }) => (
@@ -47,7 +47,7 @@ const columns: ColumnDef<ProviderSpendData>[] = [
     ),
   },
   {
-    header: "Spend",
+    header: "花费",
     accessorKey: "spend",
     meta: { numeric: true, ...QUIET_HEADER },
     cell: ({ row }) =>
@@ -61,19 +61,19 @@ const columns: ColumnDef<ProviderSpendData>[] = [
       ),
   },
   {
-    header: "Successful",
+    header: "成功",
     accessorKey: "successful_requests",
     meta: { numeric: true, className: "text-success", ...QUIET_HEADER },
     cell: ({ row }) => row.original.successful_requests.toLocaleString(),
   },
   {
-    header: "Failed",
+    header: "失败",
     accessorKey: "failed_requests",
     meta: { numeric: true, className: "text-destructive", ...QUIET_HEADER },
     cell: ({ row }) => row.original.failed_requests.toLocaleString(),
   },
   {
-    header: "Tokens",
+    header: "Token 数",
     accessorKey: "tokens",
     meta: { numeric: true, ...QUIET_HEADER },
     cell: ({ row }) => row.original.tokens.toLocaleString(),

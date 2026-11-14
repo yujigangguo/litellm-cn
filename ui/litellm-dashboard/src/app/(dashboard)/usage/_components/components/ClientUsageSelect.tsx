@@ -15,8 +15,8 @@ export default function ClientUsageSelect({
 }) {
   return (
     <SearchSelect
-      aria-label="View client usage"
-      placeholder="View client usage"
+      aria-label="查看客户端用量"
+      placeholder="查看客户端用量"
       value={value}
       options={CLIENT_OPTIONS}
       onValueChange={(client) => onChange(parseUsageClient(client))}

@@ -166,7 +166,7 @@ export function ModelMaxBudgetEditor({
                 value={entry.model}
                 onValueChange={(model) => updateEntry(entry.id, { model })}
                 placeholder="Select model"
-                emptyText="No models found"
+                emptyText="未找到模型"
                 customValue={MODEL_PATTERN_VALUE}
                 reservedValues={entries.flatMap((other) => (other.id !== entry.id && other.model ? [other.model] : []))}
                 disabled={!premiumUser}

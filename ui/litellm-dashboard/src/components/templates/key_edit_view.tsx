@@ -463,7 +463,7 @@ function KeyEditSession({
             placeholder="Get alerts when spend crosses this value, without blocking requests"
           />
 
-          <FormField control={form.control} name="budget_duration" label="Reset Budget">
+          <FormField control={form.control} name="budget_duration" label="重置预算">
             {({ value, onChange, id }) => (
               <BudgetDurationDropdown
                 id={id}
@@ -745,7 +745,7 @@ function KeyEditSession({
             )}
           </FormField>
 
-          <FormField control={form.control} name="vector_stores" label="Vector Stores">
+          <FormField control={form.control} name="vector_stores" label="向量库">
             {({ value, onChange }) => (
               <VectorStoreSelector
                 onChange={onChange}
@@ -817,7 +817,7 @@ function KeyEditSession({
                 disabled={hasProject}
                 inputId={id}
                 placeholder="Select team"
-                emptyText="No teams found"
+                emptyText="未找到团队"
               />
             )}
           </FormField>
@@ -835,7 +835,7 @@ function KeyEditSession({
           )}
 
           <Field>
-            <FieldLabel>Router Settings</FieldLabel>
+            <FieldLabel>路由设置</FieldLabel>
             <RouterSettingsAccordion
               ref={routerSettingsRef}
               accessToken={accessToken || ""}
@@ -844,7 +844,7 @@ function KeyEditSession({
             />
           </Field>
 
-          <FormField control={form.control} name="logging_settings" label="Logging Settings">
+          <FormField control={form.control} name="logging_settings" label="日志设置">
             {({ value, onChange }) => (
               <EditLoggingSettings
                 value={(value as unknown[] | undefined) ?? []}
@@ -883,7 +883,7 @@ function KeyEditSession({
             </Button>
             <Button type="submit" disabled={isKeySaving} aria-busy={isKeySaving}>
               {isKeySaving && <UiLoadingSpinner className="size-4" />}
-              Save Changes
+              保存更改
             </Button>
           </div>
         </div>

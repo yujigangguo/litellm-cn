@@ -54,31 +54,31 @@ export default function TopModelView({ topModels, topModelsLimit, setTopModelsLi
 
   const columns = [
     {
-      header: "Model",
+      header: "模型",
       accessorKey: "key",
       meta: QUIET_HEADER,
       cell: (info: any) => <ModelName name={info.getValue()} />,
     },
     {
-      header: "Spend (USD)",
+      header: "花费（美元）",
       accessorKey: "spend",
       meta: { numeric: true, ...QUIET_HEADER },
       cell: (info: any) => <MoneyCell value={info.getValue()} decimals={2} />,
     },
     {
-      header: "Successful",
+      header: "成功",
       accessorKey: "successful_requests",
       meta: { numeric: true, ...QUIET_HEADER },
       cell: (info: any) => <span className="text-success">{info.getValue()?.toLocaleString() || 0}</span>,
     },
     {
-      header: "Failed",
+      header: "失败",
       accessorKey: "failed_requests",
       meta: { numeric: true, ...QUIET_HEADER },
       cell: (info: any) => <span className="text-destructive">{info.getValue()?.toLocaleString() || 0}</span>,
     },
     {
-      header: "Tokens",
+      header: "Token 数",
       accessorKey: "tokens",
       meta: { numeric: true, ...QUIET_HEADER },
       cell: (info: any) => info.getValue()?.toLocaleString() || 0,

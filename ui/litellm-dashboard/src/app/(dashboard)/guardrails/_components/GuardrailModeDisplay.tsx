@@ -17,7 +17,7 @@ type GuardrailModeParams = {
 
 export const GuardrailModeCard: React.FC<{ litellmParams: GuardrailModeParams }> = ({ litellmParams }) => (
   <Card className="block p-6">
-    <p>Mode</p>
+    <p>模式</p>
     <div className="mt-2">
       <h3 className="text-lg font-medium">{formatGuardrailMode(litellmParams.mode) || "-"}</h3>
       <Badge variant={litellmParams.default_on ? "secondary" : "outline"}>
@@ -38,7 +38,7 @@ export const GuardrailModeCard: React.FC<{ litellmParams: GuardrailModeParams }>
 export const GuardrailModeRows: React.FC<{ litellmParams: GuardrailModeParams }> = ({ litellmParams }) => (
   <>
     <div>
-      <p className="font-medium">Mode</p>
+      <p className="font-medium">模式</p>
       <div>{formatGuardrailMode(litellmParams.mode) || "-"}</div>
     </div>
     {modeIncludesLoggingOnly(litellmParams.mode) && (

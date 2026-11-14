@@ -152,7 +152,7 @@ const ResponseMetrics: React.FC<ResponseMetricsProps> = ({ timeToFirstToken, tot
 
       {usage?.totalTokens !== undefined && (
         <MetricItem
-          label="Total"
+          label="总计"
           tooltip="Total tokens"
           icon={<Hash className="size-3" aria-hidden="true" />}
           value={String(usage.totalTokens)}
@@ -162,7 +162,7 @@ const ResponseMetrics: React.FC<ResponseMetricsProps> = ({ timeToFirstToken, tot
       {typeof usage?.cost === "number" && Number.isFinite(usage.cost) && (
         <MetricItem
           label="成本"
-          tooltip="Cost"
+          tooltip="成本"
           icon={<DollarSign className="size-3" aria-hidden="true" />}
           value={`$${usage.cost.toFixed(6)}`}
         />

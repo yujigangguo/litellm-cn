@@ -1257,7 +1257,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
               <div className="space-y-4">
                 <div>
                   <label className="mb-2 flex items-center text-sm font-medium text-foreground">
-                    <Key className="mr-2 size-4" aria-hidden="true" /> Virtual Key Source
+                    <Key className="mr-2 size-4" aria-hidden="true" /> 虚拟密钥来源
                   </label>
                   <ShadcnSelect
                     disabled={disabledPersonalKeyCreation}
@@ -1266,7 +1266,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
                       setApiKeySource(value as "session" | "custom");
                     }}
                   >
-                    <SelectTrigger className="w-full" size="sm" aria-label="Virtual Key Source">
+                    <SelectTrigger className="w-full" size="sm" aria-label="虚拟密钥来源">
                       <SelectValue>{apiKeySource === "custom" ? "Virtual Key" : "Current UI Session"}</SelectValue>
                     </SelectTrigger>
                     <SelectContent>
@@ -1320,7 +1320,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
                         }}
                       >
                         <Eraser className="size-3" />
-                        Clear
+                        清除
                       </Button>
                     )}
                   </div>
@@ -1401,7 +1401,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
                                 variant="ghost"
                                 size="icon-xs"
                                 className="text-muted-foreground hover:text-foreground"
-                                aria-label="Model Settings"
+                                aria-label="模型设置"
                                 data-testid="model-settings-button"
                               />
                             }
@@ -1409,7 +1409,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
                             <Settings className="size-3.5" />
                           </PopoverTrigger>
                           <PopoverContent side="right" className="w-auto p-0">
-                            <div className="border-b border-border px-4 py-2 text-sm font-medium">Model Settings</div>
+                            <div className="border-b border-border px-4 py-2 text-sm font-medium">模型设置</div>
                             <AdditionalModelSettings
                               showAdvancedParams={isChatModel()}
                               temperature={temperature}
@@ -1661,7 +1661,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
                               {server.has_user_credential ? (
                                 <div className="flex items-center gap-2">
                                   <span className="flex items-center gap-1 text-xs font-medium text-success">
-                                    <Key className="size-3" /> Connected
+                                    <Key className="size-3" /> 已连接
                                   </span>
                                   <button
                                     type="button"
@@ -1678,7 +1678,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
                                   className="rounded-lg bg-info px-3 py-1 text-xs font-medium text-info-foreground hover:bg-info/80"
                                   onClick={() => setByokModalServer(server)}
                                 >
-                                  Connect
+                                  连接
                                 </Button>
                               )}
                             </div>
@@ -1988,7 +1988,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
                             onClick={handleRemoveAudio}
                           >
                             <Trash2 className="size-3" />
-                            Remove
+                            移除
                           </Button>
                         </div>
                       )}
@@ -2216,7 +2216,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
           </DialogHeader>
           <div className="space-y-4 py-2">
             <p className="text-foreground">
-              <strong>Toolsets</strong> are named collections of specific tools from one or more MCP servers. Instead of
+              <strong>工具集</strong> are named collections of specific tools from one or more MCP servers. Instead of
               exposing all tools from a server, a toolset gives an agent exactly the tools it needs.
             </p>
             <div>
@@ -2241,7 +2241,7 @@ const ChatUI: React.FC<ChatUIProps> = ({
             <div>
               <h4 className="mb-1 font-semibold text-foreground">Creating toolsets:</h4>
               <p className="text-sm text-muted-foreground">
-                Admins can create and manage toolsets from the <strong>MCP</strong> page → <strong>Toolsets</strong>{" "}
+                Admins can create and manage toolsets from the <strong>MCP</strong> page → <strong>工具集</strong>{" "}
                 tab. Toolsets can then be assigned to keys and teams to scope their tool access.
               </p>
             </div>

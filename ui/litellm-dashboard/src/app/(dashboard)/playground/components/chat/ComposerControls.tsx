@@ -36,13 +36,13 @@ export function EndpointMenu({
   const current = ENDPOINT_OPTIONS.find((option) => option.value === value);
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<InputGroupButton size="xs" className="shrink-0" aria-label="Endpoint" />}>
+      <DropdownMenuTrigger render={<InputGroupButton size="xs" className="shrink-0" aria-label="端点" />}>
         <span className="font-mono text-xs">{shortEndpoint(current?.label ?? value)}</span>
         <ChevronDown className="text-muted-foreground" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="w-64">
         <DropdownMenuRadioGroup value={value} onValueChange={(next) => onValueChange(next as EndpointType)}>
-          <DropdownMenuLabel>Endpoint</DropdownMenuLabel>
+          <DropdownMenuLabel>端点</DropdownMenuLabel>
           {ENDPOINT_OPTIONS.map((option) => (
             <DropdownMenuRadioItem key={option.value} value={option.value} closeOnClick className="font-mono text-xs">
               {option.label}

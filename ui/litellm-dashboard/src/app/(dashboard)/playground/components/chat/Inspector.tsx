@@ -133,7 +133,7 @@ function Routing({ message }: { message: MessageType }) {
       )}
       <StatGrid
         stats={[
-          { label: "Fallbacks", icon: <Shuffle />, value: count(trace?.attemptedFallbacks) },
+          { label: "备用模型", icon: <Shuffle />, value: count(trace?.attemptedFallbacks) },
           { label: "Retries", icon: <RotateCw />, value: count(trace?.attemptedRetries) },
           { label: "Overhead", icon: <Gauge />, value: millis(trace?.overheadMs) },
         ]}
@@ -194,7 +194,7 @@ function SpeedAndCost({ message }: { message: MessageType }) {
             value: message.timeToFirstToken === undefined ? undefined : formatSeconds(message.timeToFirstToken),
           },
           {
-            label: "Total",
+            label: "总计",
             icon: <Clock />,
             value: message.totalLatency === undefined ? undefined : formatSeconds(message.totalLatency),
           },
@@ -214,7 +214,7 @@ function NothingYet() {
   return (
     <Empty className="flex-1">
       <EmptyHeader>
-        <EmptyTitle className="text-sm">Nothing to inspect yet</EmptyTitle>
+        <EmptyTitle className="text-sm">暂无可检查内容</EmptyTitle>
         <EmptyDescription>
           Each reply shows here with the deployment that served it, fallbacks, guardrails, timing and cost
         </EmptyDescription>
@@ -275,8 +275,8 @@ export function InspectorPanel({ message, code }: { message: MessageType | null;
     <Tabs defaultValue="trace" className="min-h-0 flex-1 gap-0">
       <div className="flex h-12 shrink-0 items-center border-b border-border px-4">
         <TabsList className="w-full">
-          <TabsTrigger value="trace">Trace</TabsTrigger>
-          <TabsTrigger value="code">Code</TabsTrigger>
+          <TabsTrigger value="trace">追踪</TabsTrigger>
+          <TabsTrigger value="code">代码</TabsTrigger>
         </TabsList>
       </div>
       <ScrollArea className="min-h-0 flex-1">

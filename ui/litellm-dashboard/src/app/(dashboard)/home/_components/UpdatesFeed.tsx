@@ -65,7 +65,7 @@ export default function UpdatesFeed({ className }: { className?: string }) {
         <div className="flex items-center justify-between gap-2 py-3 text-sm">
           <span className="text-destructive">Failed to load posts</span>
           <Button variant="outline" size="sm" onClick={() => void refetch()}>
-            Retry
+            重试
           </Button>
         </div>
       )}

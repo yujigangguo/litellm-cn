@@ -108,7 +108,7 @@ export function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
         </CardHeader>
         <CardContent>
           <dl className="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-2 text-sm">
-            <dt className="text-muted-foreground">Description</dt>
+            <dt className="text-muted-foreground">描述</dt>
             <dd className="text-foreground">{project.description || "—"}</dd>
             <dt className="text-muted-foreground">创建时间</dt>
             <dd className="flex items-center gap-1 text-foreground">
@@ -251,7 +251,7 @@ export function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
                     </div>
 
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-muted-foreground">Members</span>
+                      <span className="text-xs text-muted-foreground">成员</span>
                       <span className="text-xs text-foreground">{teamInfo.members_with_roles?.length ?? 0}</span>
                     </div>
                   </div>

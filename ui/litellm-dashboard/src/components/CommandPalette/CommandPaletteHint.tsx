@@ -26,14 +26,14 @@ export function CommandPaletteHint({ scope, onDismiss }: CommandPaletteHintProps
     <div className="fixed bottom-4 left-1/2 z-overlay hidden -translate-x-1/2 items-center gap-1.5 rounded-full border border-border bg-background/80 px-3 py-1.5 text-xs text-muted-foreground shadow-sm backdrop-blur animate-in fade-in slide-in-from-bottom-2 duration-300 md:flex">
       <button type="button" className="flex items-center gap-1.5 hover:text-foreground" onClick={() => setOpen(true)}>
         <Search className="size-3.5" aria-hidden="true" />
-        <span>Press</span>
+        <span>按</span>
         <Kbd>{shortcut}</Kbd>
-        <span>{scope === "keys" ? "to search keys" : "to search or jump to a page"}</span>
+        <span>{scope === "keys" ? "搜索密钥" : "搜索或跳转到页面"}</span>
       </button>
       <button
         type="button"
         className="ml-0.5 flex size-5 items-center justify-center rounded-full hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        aria-label="Dismiss search hint"
+        aria-label="关闭搜索提示"
         onClick={onDismiss}
       >
         <X className="size-3" aria-hidden="true" />

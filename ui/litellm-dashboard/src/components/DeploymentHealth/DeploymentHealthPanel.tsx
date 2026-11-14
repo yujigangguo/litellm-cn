@@ -302,7 +302,7 @@ const PanelBody = () => {
         );
       })}
       {ignored.length > 0 ? (
-        <WarningGroup label="Ignored and snoozed" warnings={ignored} defaultOpen={false} permissions={permissions} />
+        <WarningGroup label="已忽略和已静音" warnings={ignored} defaultOpen={false} permissions={permissions} />
       ) : null}
     </div>
   );
@@ -312,8 +312,8 @@ export const DeploymentHealthPanel = ({ handle }: { handle: DeploymentHealthHand
   <Sheet handle={handle}>
     <SheetContent side="right" className="gap-0 data-[side=right]:sm:max-w-md">
       <SheetHeader className="gap-0.5 pr-12">
-        <SheetTitle className="text-[15px] leading-[22px] font-semibold">Deployment health</SheetTitle>
-        <SheetDescription className="text-[13px] leading-5">Warnings about how this proxy is deployed</SheetDescription>
+        <SheetTitle className="text-[15px] leading-[22px] font-semibold">部署健康</SheetTitle>
+        <SheetDescription className="text-[13px] leading-5">关于此代理部署方式的告警</SheetDescription>
       </SheetHeader>
       <PanelBody />
     </SheetContent>

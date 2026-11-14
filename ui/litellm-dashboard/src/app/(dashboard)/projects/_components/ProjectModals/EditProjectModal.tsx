@@ -115,7 +115,7 @@ function EditProjectForm({ project, onClose, onSuccess }: Omit<EditProjectModalP
         </Button>
         <Button type="button" onClick={() => void handleSubmit()} disabled={updateMutation.isPending}>
           {updateMutation.isPending ? <UiLoadingSpinner /> : <Save />}
-          Save Changes
+          保存更改
         </Button>
       </div>
     </form>

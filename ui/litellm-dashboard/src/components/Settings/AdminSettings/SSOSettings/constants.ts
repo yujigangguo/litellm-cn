@@ -21,7 +21,7 @@ export const ssoProviderDisplayNames: Record<string, string> = {
 
 export const defaultRoleDisplayNames: Record<string, string> = {
   internal_user_viewer: "Internal Viewer",
-  internal_user: "Internal User",
+  internal_user: "内部用户",
   proxy_admin_viewer: "Proxy Admin Viewer",
   proxy_admin: "Proxy Admin",
 };

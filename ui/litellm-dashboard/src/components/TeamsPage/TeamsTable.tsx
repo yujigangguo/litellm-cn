@@ -39,9 +39,9 @@ const toSortOrder = (sorting: SortingState): "asc" | "desc" | undefined => {
 };
 
 const FILTER_LABELS: Record<string, string> = {
-  org_id: "Organization",
+  org_id: "组织",
   alias: "Team alias",
-  team_id: "Team ID",
+  team_id: "团队 ID",
 };
 
 export function TeamsTable({ userRole, userID, onSelectTeam, onEditTeam, onDeleteTeam }: TeamsTableProps) {
@@ -173,7 +173,7 @@ export function TeamsTable({ userRole, userID, onSelectTeam, onEditTeam, onDelet
             table={table}
             searchValue={searchInput}
             onSearchChange={handleSearchChange}
-            searchPlaceholder="Search teams by name or ID…"
+            searchPlaceholder="按名称或 ID 搜索团队…"
             onRefresh={() => refetch?.()}
             isRefreshing={isFetching}
             onOpenFilters={() => setFiltersOpen(true)}
@@ -200,7 +200,7 @@ export function TeamsTable({ userRole, userID, onSelectTeam, onEditTeam, onDelet
           >
             {({ get, set }) => (
               <>
-                <DataTableFilterField label="Organization">
+                <DataTableFilterField label="组织">
                   <SearchSelect
                     options={orgOptions}
                     value={(get("org_id") as string) || undefined}

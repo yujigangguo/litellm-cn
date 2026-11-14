@@ -24,7 +24,7 @@ export default function AutoRouterSummaryTable({ groups, selectedGroup }: AutoRo
         <Table aria-label="Router usage and savings">
           <TableHeader>
             <TableRow>
-              <TableHead>Auto-router</TableHead>
+              <TableHead>自动路由</TableHead>
               <TableHead className="text-right whitespace-normal">Tokens through router</TableHead>
               <TableHead className="text-right whitespace-normal">Cost via router</TableHead>
               <TableHead className="text-right whitespace-normal">Cost per 1M tokens</TableHead>

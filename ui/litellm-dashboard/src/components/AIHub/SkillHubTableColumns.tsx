@@ -72,8 +72,8 @@ export const getSkillHubTableColumns = ({ onSkillClick }: SkillHubTableColumnsDe
   {
     id: "name",
     accessorKey: "name",
-    meta: { title: "Skill Name" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Skill Name" />,
+    meta: { title: "技能名称" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="技能名称" />,
     size: 200,
     enableSorting: true,
     sortingFn: "alphanumeric",
@@ -84,8 +84,8 @@ export const getSkillHubTableColumns = ({ onSkillClick }: SkillHubTableColumnsDe
   {
     id: "description",
     accessorKey: "description",
-    meta: { title: "Description" },
-    header: "Description",
+    meta: { title: "描述" },
+    header: "描述",
     size: 260,
     enableSorting: false,
     cell: ({ row }) => (
@@ -97,8 +97,8 @@ export const getSkillHubTableColumns = ({ onSkillClick }: SkillHubTableColumnsDe
   {
     id: "category",
     accessorKey: "category",
-    meta: { title: "Category", skeleton: "badge" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Category" />,
+    meta: { title: "分类", skeleton: "badge" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="分类" />,
     size: 130,
     enableSorting: true,
     sortingFn: "alphanumeric",
@@ -121,8 +121,8 @@ export const getSkillHubTableColumns = ({ onSkillClick }: SkillHubTableColumnsDe
   },
   {
     id: "source",
-    meta: { title: "Source" },
-    header: "Source",
+    meta: { title: "来源" },
+    header: "来源",
     size: 200,
     enableSorting: false,
     cell: ({ row }) => {

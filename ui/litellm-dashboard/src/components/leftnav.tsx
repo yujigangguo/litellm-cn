@@ -237,21 +237,21 @@ const menuGroups: MenuGroup[] = [
           {
             key: "agents",
             page: "agents",
-            label: "Agents",
+            label: "助手",
             icon: <Bot {...ICON} />,
             roles: rolesAllowedToViewWriteScopedPages,
           },
           {
             key: "workflows",
             page: "workflows",
-            label: "Workflow Runs",
+            label: "工作流运行",
             icon: <Workflow {...ICON} />,
             roles: rolesWithCapability("viewWorkflowRuns"),
           },
           {
             key: "memory",
             page: "memory",
-            label: "Memory",
+            label: "记忆",
             icon: <Database {...ICON} />,
             roles: rolesWithCapability("viewMemory"),
           },
@@ -273,12 +273,12 @@ const menuGroups: MenuGroup[] = [
         label: "工具",
         icon: <Wrench {...ICON} />,
         children: [
-          { key: "search-tools", page: "search-tools", label: "Search Tools", icon: <Search {...ICON} /> },
-          { key: "vector-stores", page: "vector-stores", label: "Vector Stores", icon: <Database {...ICON} /> },
+          { key: "search-tools", page: "search-tools", label: "搜索工具", icon: <Search {...ICON} /> },
+          { key: "vector-stores", page: "vector-stores", label: "向量库", icon: <Database {...ICON} /> },
           {
             key: "tool-policies",
             page: "tool-policies",
-            label: "Tool Policies",
+            label: "工具策略",
             icon: <ShieldCheck {...ICON} />,
             roles: rolesWithCapability("viewToolPolicies"),
           },
@@ -344,7 +344,7 @@ const menuGroups: MenuGroup[] = [
         page: "projects",
         label: (
           <span className="flex items-center gap-2">
-            Projects <BetaBadge />
+            项目 <BetaBadge />
           </span>
         ),
         icon: <Folder {...ICON} />,
@@ -396,21 +396,21 @@ const menuGroups: MenuGroup[] = [
           {
             key: "prompts",
             page: "prompts",
-            label: "Prompts",
+            label: "提示词",
             icon: <FileText {...ICON} />,
             roles: rolesWithCapability("viewPrompts"),
           },
           {
             key: "transform-request",
             page: "transform-request",
-            label: "API Playground",
+            label: "API 调试台",
             icon: <Terminal {...ICON} />,
             roles: [...all_admin_roles, ...internalUserRoles],
           },
           {
             key: "tag-management",
             page: "tag-management",
-            label: "Tag Management",
+            label: "标签管理",
             icon: <Tags {...ICON} />,
             roles: all_admin_roles,
           },
@@ -432,36 +432,36 @@ const menuGroups: MenuGroup[] = [
           {
             key: "router-settings",
             page: "router-settings",
-            label: "Router Settings",
+            label: "路由设置",
             icon: <Route {...ICON} />,
             roles: all_admin_roles,
           },
           {
             key: "logging-and-alerts",
             page: "logging-and-alerts",
-            label: "Logging & Alerts",
+            label: "日志与告警",
             icon: <Bell {...ICON} />,
             roles: all_admin_roles,
           },
           {
             key: "admin-panel",
             page: "admin-panel",
-            label: "Admin Settings",
+            label: "管理员设置",
             icon: <SettingsIcon {...ICON} />,
             roles: all_admin_roles,
           },
           {
             key: "cost-tracking",
             page: "cost-tracking",
-            label: "Cost Tracking",
+            label: "成本跟踪",
             icon: <BarChart3 {...ICON} />,
             roles: all_admin_roles,
           },
-          { key: "ui-theme", page: "ui-theme", label: "UI Theme", icon: <Palette {...ICON} />, roles: all_admin_roles },
+          { key: "ui-theme", page: "ui-theme", label: "UI 主题", icon: <Palette {...ICON} />, roles: all_admin_roles },
           {
             key: "telemetry",
             page: "telemetry",
-            label: "Telemetry",
+            label: "遥测",
             icon: <Activity {...ICON} />,
             roles: proxyAdminTierRoles,
           },
@@ -499,10 +499,10 @@ const findMenuItemKey = (route: string): string => {
 
 const SECTION_DISPLAY: Record<string, string> = {
   "AI GATEWAY": "AI 网关",
-  OBSERVABILITY: "Observability",
-  "ACCESS CONTROL": "Access Control",
-  "DEVELOPER TOOLS": "Developer Tools",
-  SETTINGS: "Settings",
+  OBSERVABILITY: "可观测",
+  "ACCESS CONTROL": "访问控制",
+  "DEVELOPER TOOLS": "开发者工具",
+  SETTINGS: "设置",
 };
 
 export const sectionText = (groupLabel: string): string => SECTION_DISPLAY[groupLabel] ?? groupLabel;
@@ -696,7 +696,7 @@ const Sidebar_: React.FC<SidebarProps> = ({
       <SidebarHeader className="h-14 border-b border-border group-data-[collapsed=true]/sidebar:h-auto">
         <div className="flex items-center justify-between gap-2 group-data-[collapsed=true]/sidebar:flex-col">
           <div className="flex min-w-0 items-center gap-2">
-            <Link href={uiHref("")} className="flex min-w-0 items-center" aria-label="LiteLLM home">
+            <Link href={uiHref("")} className="flex min-w-0 items-center" aria-label="LiteLLM 首页">
               <img src={logoSrc} alt="LiteLLM" className={cn(LOGO_CLASS_NAME, "dark:hidden")} />
               <img
                 src={darkLogoSrc}
@@ -721,7 +721,7 @@ const Sidebar_: React.FC<SidebarProps> = ({
               variant="ghost"
               size="icon-sm"
               onClick={onToggleCollapsed}
-              aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+              aria-label={collapsed ? "展开侧栏" : "收起侧栏"}
               className="flex-none text-muted-foreground"
             >
               {collapsed ? <PanelLeftOpen /> : <PanelLeftClose />}

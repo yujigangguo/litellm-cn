@@ -159,8 +159,8 @@ export const getVectorStoreTableColumns = ({
   {
     id: "vector_store_description",
     accessorKey: "vector_store_description",
-    meta: { title: "Description" },
-    header: "Description",
+    meta: { title: "描述" },
+    header: "描述",
     size: 280,
     enableSorting: false,
     cell: ({ row }) => {
@@ -175,8 +175,8 @@ export const getVectorStoreTableColumns = ({
   {
     id: "source",
     accessorFn: (row) => row.is_config ?? false,
-    meta: { title: "Source", skeleton: "badge" },
-    header: ({ column }) => <DataTableSortHeader column={column} title="Source" />,
+    meta: { title: "来源", skeleton: "badge" },
+    header: ({ column }) => <DataTableSortHeader column={column} title="来源" />,
     size: 110,
     enableSorting: true,
     cell: ({ row }) => {
@@ -196,7 +196,7 @@ export const getVectorStoreTableColumns = ({
     id: "provider",
     accessorKey: "custom_llm_provider",
     meta: { title: "供应商" },
-    header: "Provider",
+    header: "供应商",
     size: 160,
     enableSorting: false,
     cell: ({ row }) => <VectorStoreProviderCell provider={row.original.custom_llm_provider} />,

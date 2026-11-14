@@ -163,10 +163,10 @@ const AllowedClientDialog: React.FC<AllowedClientDialogProps> = ({ draft, onChan
 type DisableableCapability = "prompts" | "resources";
 
 const CAPABILITY_TOGGLES: { capability: DisableableCapability; label: string; description: string }[] = [
-  { capability: "prompts", label: "Prompts", description: "Advertise prompts and answer prompts/list and prompts/get" },
+  { capability: "prompts", label: "提示词", description: "Advertise prompts and answer prompts/list and prompts/get" },
   {
     capability: "resources",
-    label: "Resources",
+    label: "资源",
     description: "Advertise resources and answer resources/list, resources/templates/list and resources/read",
   },
 ];
@@ -485,9 +485,9 @@ const MCPNetworkSettings: React.FC<MCPNetworkSettingsProps> = ({ accessToken }) 
           <p className="text-sm font-medium">Client Identity Header (less secure)</p>
         </div>
         <Input
-          aria-label="Client identity header"
+          aria-label="客户端身份请求头"
           value={clientIdHeader}
-          placeholder="Leave empty to identify clients by JWT only, e.g. x-mcp-client"
+          placeholder="留空则仅用 JWT 识别客户端，例如 x-mcp-client"
           onChange={(e) => setClientIdHeader(e.target.value)}
         />
         <p className="mt-2 text-xs text-muted-foreground">

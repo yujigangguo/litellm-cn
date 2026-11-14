@@ -179,7 +179,7 @@ const MCPServerCard: FC<MCPServerCardProps> = ({
                     }}
                   >
                     <Zap />
-                    Test Connection
+                    测试连接
                   </DropdownMenuItem>
                 )}
                 {onRecheckHealth && onDelete && <DropdownMenuSeparator />}
@@ -384,7 +384,7 @@ const HealthChip: FC<HealthChipProps> = ({
         {lastCheck && <div className="mb-1 text-xs">Last check: {new Date(lastCheck).toLocaleString()}</div>}
         {error && (
           <div className="text-xs">
-            <div className="mb-1 font-medium">Error</div>
+            <div className="mb-1 font-medium">错误</div>
             <div className="wrap-break-word">{error}</div>
           </div>
         )}
@@ -411,7 +411,7 @@ const UserFieldsRow: FC<{ onUpdate?: () => void }> = ({ onUpdate }) => (
             onUpdate();
           }}
         >
-          Update
+          更新
         </Button>
       )}
     </div>
@@ -430,7 +430,7 @@ const ByokRow: FC<ByokRowProps> = ({ connected, onConnect }) => {
         <span className="text-muted-foreground">BYOK credential</span>
         <div className="flex items-center gap-2">
           <Badge variant="outline">
-            <Check /> Connected
+            <Check /> 已连接
           </Badge>
           {onConnect && (
             <Button
@@ -441,7 +441,7 @@ const ByokRow: FC<ByokRowProps> = ({ connected, onConnect }) => {
                 onConnect();
               }}
             >
-              Update
+              更新
             </Button>
           )}
         </div>
@@ -459,7 +459,7 @@ const ByokRow: FC<ByokRowProps> = ({ connected, onConnect }) => {
             onConnect();
           }}
         >
-          Connect
+          连接
         </Button>
       ) : (
         <span className="text-muted-foreground">—</span>

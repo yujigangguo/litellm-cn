@@ -251,7 +251,7 @@ export function PlaygroundChat({
       {capabilities.target === "model" && (
         <TargetPicker
           label="模型"
-          placeholder="Select a model"
+          placeholder="选择模型"
           groups={modelGroups(filterModelsForEndpoint([...modelList], settings.endpoint))}
           value={settings.model}
           onValueChange={selectModel}
@@ -266,7 +266,7 @@ export function PlaygroundChat({
           placeholder="Select an agent"
           groups={[
             {
-              label: "Agents",
+              label: "助手",
               options: (agents.data ?? []).map((agent) => ({
                 value: agent.agent_name,
                 label: agent.agent_name || agent.agent_id,
@@ -291,7 +291,7 @@ export function PlaygroundChat({
                 options: mcp.servers.map((server) => ({ value: server.server_id, label: serverName(server) })),
               },
               {
-                label: "Toolsets",
+                label: "工具集",
                 options: mcp.toolsets.map((toolset) => ({
                   value: `${TOOLSET_PREFIX}${toolset.toolset_id}`,
                   label: toolset.toolset_name,
@@ -363,7 +363,7 @@ export function PlaygroundChat({
         />
       }
       vectorStores={{
-        groups: [{ label: "Vector stores", options: vectorStores.data ?? [] }],
+        groups: [{ label: "向量库", options: vectorStores.data ?? [] }],
         value: settings.vectorStores,
         onValueChange: (value) => update({ vectorStores: value }),
         isLoading: vectorStores.isLoading,
@@ -416,17 +416,17 @@ export function PlaygroundChat({
             {!isWide && (
               <Button variant="outline" size="sm" onClick={() => setSheetOpen(true)}>
                 <PanelRight />
-                Inspector
+                检查器
               </Button>
             )}
             <ButtonGroup>
               <Button variant="outline" size="sm" onClick={newChat}>
                 <SquarePen />
-                New chat
+                新对话
               </Button>
               <DropdownMenu>
                 <DropdownMenuTrigger
-                  render={<Button variant="outline" size="icon-sm" aria-label="More chat actions" />}
+                  render={<Button variant="outline" size="icon-sm" aria-label="更多聊天操作" />}
                 >
                   <ChevronDown />
                 </DropdownMenuTrigger>
@@ -473,13 +473,13 @@ export function PlaygroundChat({
         <div className="mx-auto w-full max-w-3xl px-6 pb-6">{composer}</div>
       </div>
       {isWide ? (
-        <aside aria-label="Inspector" className="flex w-96 shrink-0 flex-col border-l border-border">
+        <aside aria-label="检查器" className="flex w-96 shrink-0 flex-col border-l border-border">
           {inspector}
         </aside>
       ) : (
         <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
           <SheetContent side="right" className="w-96 gap-0 p-0" showCloseButton={false}>
-            <SheetTitle className="sr-only">Inspector</SheetTitle>
+            <SheetTitle className="sr-only">检查器</SheetTitle>
             {inspector}
           </SheetContent>
         </Sheet>

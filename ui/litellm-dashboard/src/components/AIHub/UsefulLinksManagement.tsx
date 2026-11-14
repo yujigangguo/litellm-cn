@@ -227,7 +227,7 @@ const UsefulLinksManagement: React.FC<UsefulLinksManagementProps> = ({ accessTok
     <Card className="mb-6 px-6">
       <div className="flex items-center justify-between cursor-pointer" onClick={() => setIsExpanded(!isExpanded)}>
         <div className="flex flex-col">
-          <h3 className="mb-0 text-lg font-semibold">Link Management</h3>
+          <h3 className="mb-0 text-lg font-semibold">链接管理</h3>
           <p className="text-sm text-muted-foreground">
             Manage the links that are displayed under &apos;Useful Links&apos; on the public model hub.
           </p>
@@ -244,10 +244,10 @@ const UsefulLinksManagement: React.FC<UsefulLinksManagementProps> = ({ accessTok
       {isExpanded && (
         <div className="mt-4">
           <div className="mb-6">
-            <p className="text-sm font-medium text-foreground mb-2">Add New Link</p>
+            <p className="text-sm font-medium text-foreground mb-2">添加新链接</p>
             <div className="grid grid-cols-3 gap-4">
               <div>
-                <label className="block text-xs text-muted-foreground mb-1">Display Name</label>
+                <label className="block text-xs text-muted-foreground mb-1">显示名称</label>
                 <input
                   type="text"
                   value={newLink.displayName}
@@ -257,7 +257,7 @@ const UsefulLinksManagement: React.FC<UsefulLinksManagementProps> = ({ accessTok
                       displayName: e.target.value,
                     })
                   }
-                  placeholder="Friendly name"
+                  placeholder="友好名称"
                   className="w-full px-3 py-2 border border-border rounded-md text-sm"
                 />
               </div>
@@ -283,22 +283,22 @@ const UsefulLinksManagement: React.FC<UsefulLinksManagementProps> = ({ accessTok
                   className={`flex items-center px-4 py-2 rounded-md text-sm ${!newLink.url || !newLink.displayName ? "bg-border text-muted-foreground cursor-not-allowed" : "bg-success text-success-foreground hover:bg-success/80"}`}
                 >
                   <PlusCircleIcon className="w-4 h-4 mr-1" />
-                  Add Link
+                  添加链接
                 </button>
               </div>
             </div>
           </div>
           <div className="flex items-center justify-between mb-2">
-            <p className="text-sm font-medium text-foreground">Manage Existing Links</p>
+            <p className="text-sm font-medium text-foreground">管理现有链接</p>
             <div className="flex items-center space-x-2">
               <Link
                 href={getUiPageUrl(`${getProxyBaseUrl()}/ui/model_hub_table`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs bg-info/10 text-info px-3 py-1.5 rounded-sm hover:bg-info/15 flex items-center"
-                title="Open Public Model Hub"
+                title="打开公开模型中心"
               >
-                Public Model Hub
+                公开模型中心
                 <ExternalLinkIcon className="w-4 h-4 ml-1" />
               </Link>
               {!isRearranging ? (
@@ -306,7 +306,7 @@ const UsefulLinksManagement: React.FC<UsefulLinksManagementProps> = ({ accessTok
                   onClick={handleStartRearranging}
                   className="text-xs bg-purple-50 text-purple-600 px-3 py-1.5 rounded-sm hover:bg-purple-100 flex items-center dark:bg-purple-950 dark:text-purple-300 dark:hover:bg-purple-900"
                 >
-                  Rearrange Order
+                  调整顺序
                 </button>
               ) : (
                 <div className="flex space-x-2">
@@ -331,7 +331,7 @@ const UsefulLinksManagement: React.FC<UsefulLinksManagementProps> = ({ accessTok
               <Table className="[&_td]:py-0.5 [&_th]:py-1">
                 <TableHeader>
                   <TableRow>
-                    <TableHead className="py-1 h-8">Display Name</TableHead>
+                    <TableHead className="py-1 h-8">显示名称</TableHead>
                     <TableHead className="py-1 h-8">URL</TableHead>
                     <TableHead className="py-1 h-8">操作</TableHead>
                   </TableRow>

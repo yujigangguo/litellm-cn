@@ -59,8 +59,8 @@ import PiiConfiguration from "./pii_configuration";
 import ToolPermissionRulesEditor, { ToolPermissionConfig } from "./tool_permission/ToolPermissionRulesEditor";
 
 const DEFAULT_ON_ITEMS = [
-  { label: "Yes", value: true },
-  { label: "No", value: false },
+  { label: "是", value: true },
+  { label: "否", value: false },
 ];
 
 const SectionHeading: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -620,7 +620,7 @@ const GuardrailInfoView: React.FC<GuardrailInfoProps> = ({ guardrailId, onClose,
                   <div className="border rounded-lg overflow-hidden shadow-xs">
                     <div className="bg-muted px-5 py-3 border-b flex">
                       <p className="flex-1 font-semibold text-foreground">Entity Type</p>
-                      <p className="flex-1 font-semibold text-foreground">Configuration</p>
+                      <p className="flex-1 font-semibold text-foreground">配置</p>
                     </div>
                     <div className="max-h-[400px] overflow-y-auto">
                       {Object.entries(guardrailData.litellm_params?.pii_entities_config).map(([key, value]) => (
@@ -721,7 +721,7 @@ const GuardrailInfoView: React.FC<GuardrailInfoProps> = ({ guardrailId, onClose,
                           )}
                         </GuardrailField>
 
-                        <GuardrailField control={form.control} name="default_on" label="Default On">
+                        <GuardrailField control={form.control} name="default_on" label="默认开启">
                           {({ id, value, onChange, "aria-invalid": ariaInvalid, "aria-describedby": describedBy }) => (
                             <Select
                               items={DEFAULT_ON_ITEMS}
@@ -737,8 +737,8 @@ const GuardrailInfoView: React.FC<GuardrailInfoProps> = ({ guardrailId, onClose,
                                 <SelectValue placeholder="Select an option" />
                               </SelectTrigger>
                               <SelectContent>
-                                <SelectItem value={true}>Yes</SelectItem>
-                                <SelectItem value={false}>No</SelectItem>
+                                <SelectItem value={true}>是</SelectItem>
+                                <SelectItem value={false}>否</SelectItem>
                               </SelectContent>
                             </Select>
                           )}
@@ -848,7 +848,7 @@ const GuardrailInfoView: React.FC<GuardrailInfoProps> = ({ guardrailId, onClose,
                           </>
                         )}
 
-                        <SectionHeading>Advanced Settings</SectionHeading>
+                        <SectionHeading>高级设置</SectionHeading>
                         <GuardrailField control={form.control} name="guardrail_info" label="Guardrail Information">
                           {({ ref, value, ...field }) => (
                             <Textarea {...field} ref={ref} value={asText(value)} rows={5} />
@@ -867,7 +867,7 @@ const GuardrailInfoView: React.FC<GuardrailInfoProps> = ({ guardrailId, onClose,
                           >
                             取消
                           </Button>
-                          <Button type="submit">Save Changes</Button>
+                          <Button type="submit">保存更改</Button>
                         </div>
                       </FieldGroup>
                     </form>

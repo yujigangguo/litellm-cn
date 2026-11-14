@@ -705,7 +705,7 @@ const CreateMCPServer: React.FC<CreateMCPServerProps> = ({
                   </MountedFormField>
 
                   <MountedFormField
-                    label={<span className="text-sm font-medium text-foreground">Description</span>}
+                    label={<span className="text-sm font-medium text-foreground">描述</span>}
                     name="description"
                   >
                     {(control) => (

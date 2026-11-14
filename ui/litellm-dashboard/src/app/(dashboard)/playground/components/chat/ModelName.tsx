@@ -25,7 +25,7 @@ export function CopyIconButton({ value, label }: { value: string; label: string 
       >
         <Copy />
       </TooltipTrigger>
-      <TooltipContent>Copy {label}</TooltipContent>
+      <TooltipContent>复制 {label}</TooltipContent>
     </Tooltip>
   );
 }

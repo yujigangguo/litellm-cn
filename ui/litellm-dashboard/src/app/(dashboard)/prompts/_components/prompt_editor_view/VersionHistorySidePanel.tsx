@@ -140,7 +140,7 @@ const VersionHistorySidePanel: React.FC<VersionHistorySidePanelProps> = ({
                       <Badge variant="secondary">{getVersionNumber(item)}</Badge>
                       {index === 0 && <Badge>Latest</Badge>}
                     </div>
-                    {isSelected && <Badge variant="secondary">Active</Badge>}
+                    {isSelected && <Badge variant="secondary">启用</Badge>}
                   </div>
 
                   <div className="flex flex-col gap-1">

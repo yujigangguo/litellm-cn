@@ -38,10 +38,10 @@ export default function DecisionModelSelect({
 
   return (
     <div className="space-y-2">
-      <Label htmlFor={id}>Decision model</Label>
+      <Label htmlFor={id}>决策模型</Label>
       <SearchSelect
         inputId={id}
-        aria-label="Decision model"
+        aria-label="决策模型"
         options={decisionModels.map((model) => ({ value: model.model_group, label: model.model_group }))}
         value={value.jev_classifier_config?.deployment_name ?? ""}
         placeholder="Select the decision model"

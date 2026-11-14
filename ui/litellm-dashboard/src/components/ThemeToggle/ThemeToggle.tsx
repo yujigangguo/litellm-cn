@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 const ThemeToggle: React.FC = () => {
   const { setTheme, resolvedTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
-  const label = isDark ? "Switch to light mode" : "Switch to dark mode";
+  const label = isDark ? "切换到浅色模式" : "切换到深色模式";
 
   return (
     <Button

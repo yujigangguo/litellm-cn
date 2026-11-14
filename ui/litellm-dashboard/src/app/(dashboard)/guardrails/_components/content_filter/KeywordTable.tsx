@@ -26,7 +26,7 @@ const KeywordTable: React.FC<KeywordTableProps> = ({ keywords, onActionChange, o
       accessorKey: "keyword",
     },
     {
-      header: "Action",
+      header: "操作",
       accessorKey: "action",
       size: 150,
       cell: ({ row }) => (
@@ -35,7 +35,7 @@ const KeywordTable: React.FC<KeywordTableProps> = ({ keywords, onActionChange, o
           value={row.original.action}
           onValueChange={(value: string | null) => value && onActionChange(row.original.id, "action", value)}
         >
-          <SelectTrigger size="sm" className="w-[120px]" aria-label="Action">
+          <SelectTrigger size="sm" className="w-[120px]" aria-label="操作">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -49,7 +49,7 @@ const KeywordTable: React.FC<KeywordTableProps> = ({ keywords, onActionChange, o
       ),
     },
     {
-      header: "Description",
+      header: "描述",
       accessorKey: "description",
       cell: ({ row }) => row.original.description || "-",
     },

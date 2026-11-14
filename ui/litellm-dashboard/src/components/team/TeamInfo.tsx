@@ -1569,7 +1569,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                 onClick={() => openSettingsEditor(info.litellm_model_table?.model_aliases ?? {})}
               >
                 <Pencil />
-                Edit Settings
+                编辑设置
               </Button>
             )}
           </div>
@@ -1837,7 +1837,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                     </CollapsibleContent>
                   </Collapsible>
 
-                  <FormField control={form.control} name="budget_duration" label="Reset Budget">
+                  <FormField control={form.control} name="budget_duration" label="重置预算">
                     {({ id, value, onChange }) => (
                       <BudgetDurationDropdown
                         id={id}
@@ -1877,7 +1877,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                   </FormField>
 
                   <Field>
-                    <FieldLabel>Metadata</FieldLabel>
+                    <FieldLabel>元数据</FieldLabel>
                     <MetadataKeyValueFields
                       control={form.control}
                       getValues={form.getValues}
@@ -2001,7 +2001,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                   </FormField>
 
                   <Field>
-                    <FieldLabel>Router Settings</FieldLabel>
+                    <FieldLabel>路由设置</FieldLabel>
                     <RouterSettingsAccordion
                       ref={routerSettingsRef}
                       accessToken={accessToken || ""}
@@ -2113,7 +2113,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                     )}
                   </FormField>
 
-                  <FormField control={form.control} name="vector_stores" label="Vector Stores">
+                  <FormField control={form.control} name="vector_stores" label="向量库">
                     {({ value, onChange }) => (
                       <VectorStoreSelector
                         onChange={onChange}
@@ -2234,7 +2234,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                     )}
                   </FormField>
 
-                  <FormField control={form.control} name="organization_id" label="Organization">
+                  <FormField control={form.control} name="organization_id" label="组织">
                     {({ id, value, onChange }) => (
                       <SearchSelect
                         inputId={id}
@@ -2250,7 +2250,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                     )}
                   </FormField>
 
-                  <FormField control={form.control} name="logging_settings" label="Logging Settings">
+                  <FormField control={form.control} name="logging_settings" label="日志设置">
                     {({ value, onChange }) => (
                       <EditLoggingSettings value={(value as unknown[]) ?? []} onChange={onChange} />
                     )}
@@ -2286,7 +2286,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                     </Button>
                     <Button type="submit" disabled={isTeamSaving}>
                       {isTeamSaving ? <UiLoadingSpinner className="size-4" /> : <Save className="size-4" />}
-                      Save Changes
+                      保存更改
                     </Button>
                   </div>
                 </div>
@@ -2429,7 +2429,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                 <div>Budget Alert Thresholds: {teamMemberBudgetAlertSummary(info.metadata).join("; ") || "None"}</div>
               </div>
               <div>
-                <p className="font-medium">Router Settings</p>
+                <p className="font-medium">路由设置</p>
                 {info.router_settings &&
                 Object.values(info.router_settings).some(
                   (v) => v !== null && v !== undefined && v !== "" && !(Array.isArray(v) && v.length === 0),
@@ -2465,7 +2465,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
                 )}
               </div>
               <div>
-                <p className="font-medium">Organization ID</p>
+                <p className="font-medium">组织 ID</p>
                 <div>{info.organization_id}</div>
               </div>
               <div>
@@ -2680,7 +2680,7 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
               name: "allowed_models",
               label: (
                 <span>
-                  Allowed Models{" "}
+                  允许的模型{" "}
                   <SimpleTooltip content="Models this member can access within this team. Leave empty to inherit all team models.">
                     <Info className="ml-1 inline size-3.5 align-text-bottom" />
                   </SimpleTooltip>
@@ -2710,9 +2710,9 @@ const TeamInfoView: React.FC<TeamInfoProps> = ({
         message="Are you sure you want to remove this member from the team? This action cannot be undone."
         resourceInformationTitle="Team Member Information"
         resourceInformation={[
-          { label: "User ID", value: memberToDelete?.user_id, code: true },
-          { label: "Email", value: memberToDelete?.user_email },
-          { label: "Role", value: memberToDelete?.role },
+          { label: "用户 ID", value: memberToDelete?.user_id, code: true },
+          { label: "邮箱", value: memberToDelete?.user_email },
+          { label: "角色", value: memberToDelete?.role },
         ]}
         onCancel={handleDeleteCancel}
         onOk={handleDeleteConfirm}

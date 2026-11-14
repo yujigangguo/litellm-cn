@@ -41,7 +41,7 @@ function UserRowActions({ user, canViewUserUsage, onUserClick, onDeleteUser, onR
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        aria-label="Open user actions"
+        aria-label="打开用户操作"
         data-testid={`user-actions-${user.user_id}`}
         className={cn(buttonVariants({ variant: "ghost", size: "icon-sm" }), "text-muted-foreground")}
       >
@@ -103,8 +103,8 @@ export const getUsersTableColumns = ({
     {
       id: "user_id",
       accessorKey: "user_id",
-      meta: { title: "User ID" },
-      header: ({ column }) => <DataTableSortHeader column={column} title="User ID" variant="header-cycle" />,
+      meta: { title: "用户 ID" },
+      header: ({ column }) => <DataTableSortHeader column={column} title="用户 ID" variant="header-cycle" />,
       size: 220,
       enableSorting: true,
       cell: ({ row }) => (
@@ -118,8 +118,8 @@ export const getUsersTableColumns = ({
     {
       id: "user_email",
       accessorKey: "user_email",
-      meta: { title: "Email" },
-      header: ({ column }) => <DataTableSortHeader column={column} title="Email" variant="header-cycle" />,
+      meta: { title: "邮箱" },
+      header: ({ column }) => <DataTableSortHeader column={column} title="邮箱" variant="header-cycle" />,
       size: 220,
       enableSorting: true,
       cell: ({ row }) => (
@@ -141,20 +141,20 @@ export const getUsersTableColumns = ({
           return (
             <StatusBadge
               tone="error"
-              label="Inactive"
+              label="停用"
               tooltip={SCIM_INACTIVE_HINT}
               dataTestId={`user-status-${row.original.user_id}`}
             />
           );
         }
-        return <StatusBadge tone="success" label="Active" dataTestId={`user-status-${row.original.user_id}`} />;
+        return <StatusBadge tone="success" label="启用" dataTestId={`user-status-${row.original.user_id}`} />;
       },
     },
     {
       id: "user_role",
       accessorKey: "user_role",
-      meta: { title: "Global Proxy Role" },
-      header: ({ column }) => <DataTableSortHeader column={column} title="Global Proxy Role" variant="header-cycle" />,
+      meta: { title: "全局代理角色" },
+      header: ({ column }) => <DataTableSortHeader column={column} title="全局代理角色" variant="header-cycle" />,
       size: 160,
       enableSorting: true,
       cell: ({ row }) => (
@@ -166,8 +166,8 @@ export const getUsersTableColumns = ({
     {
       id: "user_alias",
       accessorKey: "user_alias",
-      meta: { title: "User Alias" },
-      header: ({ column }) => <DataTableSortHeader column={column} title="User Alias" />,
+      meta: { title: "用户别名" },
+      header: ({ column }) => <DataTableSortHeader column={column} title="用户别名" />,
       sortDescFirst: false,
       size: 150,
       enableSorting: true,
@@ -189,12 +189,12 @@ export const getUsersTableColumns = ({
     {
       id: "max_budget",
       accessorKey: "max_budget",
-      meta: { title: "Budget (USD)", numeric: true },
-      header: ({ column }) => <DataTableSortHeader column={column} title="Budget (USD)" />,
+      meta: { title: "预算（美元）", numeric: true },
+      header: ({ column }) => <DataTableSortHeader column={column} title="预算（美元）" />,
       sortDescFirst: true,
       size: 130,
       enableSorting: true,
-      cell: ({ row }) => <MoneyCell value={row.original.max_budget} decimals={2} emptyText="Unlimited" showZero />,
+      cell: ({ row }) => <MoneyCell value={row.original.max_budget} decimals={2} emptyText="不限" showZero />,
     },
     {
       id: "sso_user_id",
@@ -205,7 +205,7 @@ export const getUsersTableColumns = ({
           <DataTableSortHeader column={column} title="SSO ID" />
           <CellTooltip
             content={SSO_ID_HINT}
-            trigger={<Info className="size-3.5 shrink-0 text-muted-foreground" aria-label="About SSO ID" />}
+            trigger={<Info className="size-3.5 shrink-0 text-muted-foreground" aria-label="关于 SSO ID" />}
           />
         </span>
       ),
@@ -243,7 +243,7 @@ export const getUsersTableColumns = ({
             variant="outline"
             className="whitespace-nowrap border-border bg-muted font-normal text-muted-foreground"
           >
-            No Keys
+            无密钥
           </Badge>
         );
       },

@@ -346,8 +346,8 @@ const RouterSettingsAccordion = forwardRef<RouterSettingsAccordionRef, RouterSet
       <div className="w-full">
         <Tabs defaultValue="1" className="w-full">
           <TabsList variant="line" className="px-8 pt-4">
-            <TabsTrigger value="1">Loadbalancing</TabsTrigger>
-            <TabsTrigger value="2">Fallbacks</TabsTrigger>
+            <TabsTrigger value="1">负载均衡</TabsTrigger>
+            <TabsTrigger value="2">备用模型</TabsTrigger>
           </TabsList>
           <div className="px-8 py-6">
             <TabsContent value="1" keepMounted>

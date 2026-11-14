@@ -59,7 +59,7 @@ function AnswerDetails({ answer }: { answer: SystemOneAnswer }) {
     return (
       <div className="grid gap-3">
         <p className="text-sm font-medium">{percentage}% yes</p>
-        <ProbabilityMeter label="Yes" probability={answer.noul} />
+        <ProbabilityMeter label="是" probability={answer.noul} />
       </div>
     );
   }
@@ -88,7 +88,7 @@ function AnswerDetails({ answer }: { answer: SystemOneAnswer }) {
   return (
     <div className="grid gap-4">
       <div className="flex flex-wrap items-center gap-2">
-        <span className="text-xs text-muted-foreground">Score</span>
+        <span className="text-xs text-muted-foreground">分数</span>
         <Badge>{SCORE_FORMAT.format(answer.score)}</Badge>
         {answer.confidence !== undefined && (
           <Badge variant="outline">{Math.round(answer.confidence * 100)}% confidence</Badge>
@@ -224,7 +224,7 @@ export default function ResponseView({
     return (
       <Card className="gap-0 py-0">
         <CardHeader className="flex min-h-12 flex-row items-center border-b px-4 py-2 [.border-b]:pb-2">
-          <CardTitle className="text-sm font-medium">Response</CardTitle>
+          <CardTitle className="text-sm font-medium">响应</CardTitle>
         </CardHeader>
         <CardContent className="flex min-h-[360px] flex-col items-center justify-center gap-3 p-4 text-center">
           <div className="flex size-10 items-center justify-center rounded-lg bg-muted">

@@ -113,7 +113,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({
             ) : value.stored_in_db == false ? (
               <Badge variant="outline">In Config</Badge>
             ) : (
-              <Badge variant="outline">Not Set</Badge>
+              <Badge variant="outline">未设置</Badge>
             )}
           </TableCell>
           <TableCell>

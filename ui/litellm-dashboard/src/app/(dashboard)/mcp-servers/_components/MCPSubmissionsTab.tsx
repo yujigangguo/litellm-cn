@@ -27,19 +27,19 @@ type MCPStatus = "active" | "pending_review" | "rejected";
 
 const STATUS_CONFIG: Record<MCPStatus, { label: string; bg: string; text: string; dot: string }> = {
   active: {
-    label: "Active",
+    label: "启用",
     bg: "bg-success/10",
     text: "text-success",
     dot: "bg-success",
   },
   pending_review: {
-    label: "Pending Review",
+    label: "待审核",
     bg: "bg-warning/10",
     text: "text-warning",
     dot: "bg-warning",
   },
   rejected: {
-    label: "Rejected",
+    label: "已拒绝",
     bg: "bg-destructive/10",
     text: "text-destructive",
     dot: "bg-destructive",
@@ -294,7 +294,7 @@ function CardReviewActions({ approvalStatus, onApprove, onReject }: CardReviewAc
               onClick={onApprove}
               className="text-xs bg-success hover:bg-success/80 text-success-foreground px-3 py-1.5 rounded-md transition-colors font-medium"
             >
-              Approve
+              批准
             </button>
           )}
           <button
@@ -302,7 +302,7 @@ function CardReviewActions({ approvalStatus, onApprove, onReject }: CardReviewAc
             onClick={onReject}
             className="text-xs border border-destructive/30 text-destructive hover:bg-destructive/10 px-3 py-1.5 rounded-md transition-colors font-medium"
           >
-            Reject
+            拒绝
           </button>
         </div>
       )}
@@ -366,7 +366,7 @@ function ComplianceChecksPanel({ checks, approvalStatus, onApprove, onReject }: 
               onClick={onApprove}
               className="text-xs bg-success hover:bg-success/80 text-success-foreground px-3 py-1.5 rounded-md transition-colors font-medium"
             >
-              Approve
+              批准
             </button>
           )}
           {approvalStatus === "rejected" && (
@@ -384,7 +384,7 @@ function ComplianceChecksPanel({ checks, approvalStatus, onApprove, onReject }: 
               onClick={onReject}
               className="text-xs border border-destructive/30 text-destructive hover:bg-destructive/10 bg-card px-3 py-1.5 rounded-md transition-colors font-medium"
             >
-              Reject
+              拒绝
             </button>
           )}
         </div>
@@ -600,9 +600,9 @@ export function MCPSubmissionsTab({ accessToken }: MCPSubmissionsTabProps) {
 
       <div className="grid grid-cols-4 gap-4 mb-6">
         <StatCard label="Total Submitted" value={summary.total} color="text-foreground" />
-        <StatCard label="Pending Review" value={summary.pending_review} color="text-warning" />
-        <StatCard label="Active" value={summary.active} color="text-success" />
-        <StatCard label="Rejected" value={summary.rejected} color="text-destructive" />
+        <StatCard label="待审核" value={summary.pending_review} color="text-warning" />
+        <StatCard label="启用" value={summary.active} color="text-success" />
+        <StatCard label="已拒绝" value={summary.rejected} color="text-destructive" />
       </div>
 
       <div className="flex items-center gap-3 mb-5">
@@ -622,9 +622,9 @@ export function MCPSubmissionsTab({ accessToken }: MCPSubmissionsTabProps) {
           className="border border-border rounded-md px-3 py-2 text-sm text-foreground focus:outline-hidden focus:ring-1 focus:ring-ring focus:border-info bg-card"
         >
           <option value="all">All Status</option>
-          <option value="pending_review">Pending Review</option>
-          <option value="active">Active</option>
-          <option value="rejected">Rejected</option>
+          <option value="pending_review">待审核</option>
+          <option value="active">启用</option>
+          <option value="rejected">已拒绝</option>
         </select>
       </div>
 

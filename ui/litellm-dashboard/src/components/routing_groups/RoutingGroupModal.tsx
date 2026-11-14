@@ -179,7 +179,7 @@ const RoutingGroupModal: React.FC<RoutingGroupModalProps> = ({
                     </ComboboxValue>
                   </ComboboxChips>
                   <ComboboxContent anchor={modelsAnchor}>
-                    <ComboboxEmpty>No models found</ComboboxEmpty>
+                    <ComboboxEmpty>未找到模型</ComboboxEmpty>
                     <ComboboxList>
                       {(model: string) => (
                         <ComboboxItem key={model} value={model}>
@@ -195,7 +195,7 @@ const RoutingGroupModal: React.FC<RoutingGroupModalProps> = ({
             <FormField
               control={form.control}
               name="routing_strategy"
-              label="Routing Strategy"
+              label="路由策略"
               description={
                 selectedStrategy === "priority"
                   ? "Lower priorities are tried first. Models with the same priority share traffic. Applies only when calling this group."
@@ -272,7 +272,7 @@ const RoutingGroupModal: React.FC<RoutingGroupModalProps> = ({
                             aria-label={`Remove priority for ${entry.model}`}
                             onClick={() => onChange(value.filter((_, itemIndex) => itemIndex !== index))}
                           >
-                            Remove
+                            移除
                           </Button>
                         )}
                       </div>

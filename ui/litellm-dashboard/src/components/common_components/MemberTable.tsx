@@ -154,7 +154,7 @@ const buildColumns = ({
   {
     id: "user_id",
     accessorFn: (member) => member.user_id ?? undefined,
-    header: "User ID",
+    header: "用户 ID",
     enableSorting: false,
     enableGlobalFilter: true,
     cell: ({ row }) =>
@@ -184,7 +184,7 @@ const buildColumns = ({
   ...extraColumns.map(extraColumnDef),
   {
     id: "actions",
-    header: "Actions",
+    header: "操作",
     size: ACTIONS_COLUMN_WIDTH,
     enableSorting: false,
     enableGlobalFilter: false,
@@ -270,7 +270,7 @@ export default function MemberTable({
   return (
     <div className="flex w-full flex-col gap-2">
       <span className="inline-flex text-sm text-foreground">
-        {members.length} Member{members.length !== 1 ? "s" : ""}
+        {members.length} 成员{members.length !== 1 ? "s" : ""}
       </span>
       <DataTable
         data={members}

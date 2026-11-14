@@ -114,7 +114,7 @@ export const getSearchToolTableColumns = ({
   {
     id: "provider",
     meta: { title: "供应商" },
-    header: "Provider",
+    header: "供应商",
     size: 160,
     enableSorting: false,
     cell: ({ row }) => {
@@ -143,8 +143,8 @@ export const getSearchToolTableColumns = ({
   },
   {
     id: "source",
-    meta: { title: "Source", skeleton: "badge" },
-    header: "Source",
+    meta: { title: "来源", skeleton: "badge" },
+    header: "来源",
     size: 100,
     enableSorting: false,
     cell: ({ row }) => {

@@ -172,7 +172,7 @@ const OrganizationInfoView: React.FC<OrganizationInfoProps> = ({
             概览
           </TabsTrigger>
           <TabsTrigger value="members" className="flex-none rounded-none px-4 py-2">
-            Members
+            成员
           </TabsTrigger>
           <TabsTrigger value="settings" className="flex-none rounded-none px-4 py-2">
             设置
@@ -294,7 +294,7 @@ const OrganizationInfoView: React.FC<OrganizationInfoProps> = ({
             <CardContent>
               <div className="mb-4 flex items-center justify-between">
                 <h2 className="text-lg font-semibold text-foreground">Organization Settings</h2>
-                {canEditOrg && !isEditing && <Button onClick={() => setIsEditing(true)}>Edit Settings</Button>}
+                {canEditOrg && !isEditing && <Button onClick={() => setIsEditing(true)}>编辑设置</Button>}
               </div>
 
               {isEditing ? (
@@ -308,11 +308,11 @@ const OrganizationInfoView: React.FC<OrganizationInfoProps> = ({
               ) : (
                 <div className="space-y-4 text-sm">
                   <div>
-                    <p className="font-medium text-foreground">Organization Name</p>
+                    <p className="font-medium text-foreground">组织名称</p>
                     <div>{orgData.organization_alias}</div>
                   </div>
                   <div>
-                    <p className="font-medium text-foreground">Organization ID</p>
+                    <p className="font-medium text-foreground">组织 ID</p>
                     <div className="font-mono">{orgData.organization_id}</div>
                   </div>
                   <div>

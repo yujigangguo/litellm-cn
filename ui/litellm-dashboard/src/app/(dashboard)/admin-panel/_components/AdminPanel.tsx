@@ -214,12 +214,12 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ proxySettings }) => {
   const tabItems = [
     {
       key: "sso-settings",
-      label: "SSO Settings",
+      label: "SSO 设置",
       children: <SSOSettings />,
     },
     {
       key: "security-settings",
-      label: "Security Settings",
+      label: "安全设置",
       children: (
         <>
           <Card className="block p-6">
@@ -288,7 +288,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ proxySettings }) => {
                   <TableHeader>
                     <TableRow>
                       <TableHead>IP Address</TableHead>
-                      <TableHead className="text-right">Action</TableHead>
+                      <TableHead className="text-right">操作</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -334,7 +334,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ proxySettings }) => {
                 </span>
                 <DialogFooter>
                   <Button className="mx-1" onClick={() => confirmDeleteIP()}>
-                    Yes
+                    是
                   </Button>
                   <Button onClick={() => setIsDeleteIPModalVisible(false)}>关闭</Button>
                 </DialogFooter>
@@ -380,7 +380,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ proxySettings }) => {
     },
     {
       key: "ui-settings",
-      label: "UI Settings",
+      label: "UI 设置",
       children: (
         <div className="flex flex-col gap-4">
           <UISettings />
@@ -391,7 +391,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ proxySettings }) => {
     },
     {
       key: "logging-settings",
-      label: "Logging Settings",
+      label: "日志设置",
       children: <LoggingSettings />,
     },
     {
@@ -406,19 +406,19 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ proxySettings }) => {
     },
     {
       key: "plugins",
-      label: "Plugins",
+      label: "插件",
       children: <PluginSettings />,
     },
     {
       key: "web-search-interception",
-      label: "Web Search Interception",
+      label: "网页搜索拦截",
       children: <WebSearchInterceptionSettings />,
     },
   ];
 
   return (
     <div className="w-full m-2 mt-2 p-8">
-      <h2 className="mb-2 text-base font-semibold text-foreground">Admin Access</h2>
+      <h2 className="mb-2 text-base font-semibold text-foreground">管理员访问</h2>
       <p className="mb-4 text-sm text-foreground">Go to &apos;Internal Users&apos; page to add other admins.</p>
       <Tabs defaultValue={tabItems[0].key}>
         <TabsList variant="line" className="mb-4 h-auto flex-wrap">

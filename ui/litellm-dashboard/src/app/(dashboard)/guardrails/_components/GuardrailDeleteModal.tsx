@@ -56,8 +56,8 @@ export function GuardrailDeleteModal({ guardrail, accessToken, onClose, onDelete
         { label: "名称", value: guardrail?.guardrail_name },
         { label: "ID", value: guardrail?.guardrail_id, code: true },
         { label: "供应商", value: providerDisplayName },
-        { label: "Mode", value: formatGuardrailMode(guardrail?.litellm_params?.mode) },
-        { label: "Default On", value: guardrail?.litellm_params?.default_on ? "Yes" : "No" },
+        { label: "模式", value: formatGuardrailMode(guardrail?.litellm_params?.mode) },
+        { label: "默认开启", value: guardrail?.litellm_params?.default_on ? "Yes" : "No" },
       ]}
       onCancel={onClose}
       onOk={handleDelete}

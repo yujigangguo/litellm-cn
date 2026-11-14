@@ -85,11 +85,11 @@ const CreateTagModal: React.FC<CreateTagModalProps> = ({ visible, onCancel, onSu
         <form onSubmit={form.handleSubmit(handleFinish)} noValidate>
           <TooltipProvider>
             <FieldGroup>
-              <FormField control={form.control} name="tag_name" label="Tag Name">
+              <FormField control={form.control} name="tag_name" label="标签名称">
                 {({ ref, ...field }) => <Input {...field} ref={ref} />}
               </FormField>
 
-              <FormField control={form.control} name="description" label="Description">
+              <FormField control={form.control} name="description" label="描述">
                 {({ ref, value, ...field }) => <Textarea {...field} ref={ref} value={value ?? ""} rows={4} />}
               </FormField>
 

@@ -212,7 +212,7 @@ const ComplexityRouterAdvancedSections: React.FC<ComplexityRouterAdvancedSection
       ? [
           {
             key: "compression",
-            label: <strong className="text-foreground font-semibold">Compression</strong>,
+            label: <strong className="text-foreground font-semibold">压缩</strong>,
             children: <CompressionControls value={autoRouterCompression} onChange={onAutoRouterCompressionChange} />,
           },
         ]

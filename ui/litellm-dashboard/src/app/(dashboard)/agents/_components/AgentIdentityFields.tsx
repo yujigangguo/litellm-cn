@@ -16,8 +16,8 @@ const EXECUTION_MODE_OPTIONS = [
   { value: "both", label: "Both" },
 ];
 const EXECUTION_OPTIONS = [
-  { value: "enabled", label: "Enabled" },
-  { value: "disabled", label: "Disabled" },
+  { value: "enabled", label: "启用" },
+  { value: "disabled", label: "停用" },
 ];
 
 export const AgentIdentityFields = ({ accessToken }: { accessToken: string | null }) => {

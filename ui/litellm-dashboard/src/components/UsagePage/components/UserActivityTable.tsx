@@ -47,7 +47,7 @@ const UserActivityTable: React.FC<UserActivityTableProps> = ({
         <p className="px-4 py-8 text-center text-sm text-muted-foreground">
           Could not load users for this range.{" "}
           <button type="button" className="font-medium text-foreground underline" onClick={onRetryFirstPage}>
-            Retry
+            重试
           </button>
         </p>
       );
@@ -118,7 +118,7 @@ const UserActivityTable: React.FC<UserActivityTableProps> = ({
             <p>
               Could not load more users.{" "}
               <button type="button" className="font-medium text-foreground underline" onClick={onRetryNextPage}>
-                Retry
+                重试
               </button>
             </p>
           )}

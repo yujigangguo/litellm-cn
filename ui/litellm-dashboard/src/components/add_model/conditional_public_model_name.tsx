@@ -94,7 +94,7 @@ const columns: ColumnDef<ModelMapping>[] = [
     accessorKey: "public_name",
     header: () => (
       <span className="flex items-center">
-        Public Model Name
+        公开模型名称
         <SimpleTooltip content={publicNameTooltipContent} width="500px" />
       </span>
     ),

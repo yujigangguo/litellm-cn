@@ -294,7 +294,7 @@ const AddModelForm: React.FC<AddModelFormProps> = ({
                       <ConditionalPublicModelName />
 
                       {/* Select Mode */}
-                      <MountedFormField label="Mode" name="mode" className="mb-1">
+                      <MountedFormField label="模式" name="mode" className="mb-1">
                         {(control) => (
                           <Select
                             items={TEST_MODES}
@@ -304,7 +304,7 @@ const AddModelForm: React.FC<AddModelFormProps> = ({
                               setTestMode(value ?? "");
                             }}
                           >
-                            <SelectTrigger id={control.id} className="w-full" aria-label="Mode">
+                            <SelectTrigger id={control.id} className="w-full" aria-label="模式">
                               <SelectValue />
                             </SelectTrigger>
                             <SelectContent>
@@ -321,14 +321,14 @@ const AddModelForm: React.FC<AddModelFormProps> = ({
                         <div className="col-span-5" />
                         <div className="col-span-5">
                           <p className="text-sm mb-5 mt-1">
-                            <strong>Optional</strong> - LiteLLM endpoint to use when health checking this model{" "}
+                            <strong>可选</strong> - LiteLLM endpoint to use when health checking this model{" "}
                             <a
                               href="https://docs.litellm.ai/docs/proxy/health#health"
                               target="_blank"
                               rel="noreferrer"
                               className="text-primary hover:underline"
                             >
-                              Learn more
+                              了解更多
                             </a>
                           </p>
                         </div>
@@ -491,7 +491,7 @@ const AddModelForm: React.FC<AddModelFormProps> = ({
                         href="https://github.com/BerriAI/litellm/issues"
                         className="text-sm text-primary hover:underline"
                       >
-                        Need Help?
+                        需要帮助？
                       </a>
                     </SimpleTooltip>
                     <div className="space-x-2">

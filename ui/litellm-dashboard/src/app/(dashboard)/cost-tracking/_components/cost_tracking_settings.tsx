@@ -189,7 +189,7 @@ const CostTrackingSettings: React.FC<CostTrackingSettingsProps> = ({ userID, use
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-6">
         <div>
           <div className="flex items-center gap-2">
-            <p className="text-xl font-medium text-foreground">Cost Tracking Settings</p>
+            <p className="text-xl font-medium text-foreground">成本跟踪设置</p>
             <DocsMenu items={DOCS_LINKS} />
           </div>
           <p className="text-muted-foreground mt-1">
@@ -204,7 +204,7 @@ const CostTrackingSettings: React.FC<CostTrackingSettingsProps> = ({ userID, use
         {isProxyAdmin && (
           <Collapsible className="rounded-lg border">
             <SectionHeader
-              title="Provider Discounts"
+              title="供应商折扣"
               description="Apply percentage-based discounts to reduce costs for specific providers"
             />
             <CollapsibleContent className="px-0">
@@ -269,7 +269,7 @@ const CostTrackingSettings: React.FC<CostTrackingSettingsProps> = ({ userID, use
         {isProxyAdmin && (
           <Collapsible className="rounded-lg border">
             <SectionHeader
-              title="Fee/Price Margin"
+              title="费用/价格加成"
               description="Add fees or margins to LLM costs for internal billing and cost recovery"
             />
             <CollapsibleContent className="px-0">
@@ -317,7 +317,7 @@ const CostTrackingSettings: React.FC<CostTrackingSettingsProps> = ({ userID, use
         {isProxyAdmin && (
           <Collapsible className="rounded-lg border">
             <SectionHeader
-              title="Block Unpriced Models"
+              title="阻止未定价模型"
               description="Reject requests for models that have no pricing in the cost map instead of logging them as $0 spend"
             />
             <CollapsibleContent className="px-0">
@@ -344,8 +344,8 @@ const CostTrackingSettings: React.FC<CostTrackingSettingsProps> = ({ userID, use
         {/* Accordion 4: Pricing Calculator - Available to all roles */}
         <Collapsible defaultOpen={true} className="rounded-lg border">
           <SectionHeader
-            title="Pricing Calculator"
-            description="Estimate LLM costs based on expected token usage and request volume"
+            title="价格计算器"
+            description="根据预期 Token 用量和请求量估算 LLM 成本"
           />
           <CollapsibleContent className="px-0">
             <div className="p-6">
